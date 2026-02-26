@@ -1,0 +1,13 @@
+<meta xmlns="http://exist-db.org/xquery/repo" commit-id="@commit-id@" commit-time="@commit-time@">
+    <description>Grand Siècle</description>
+    <author>Wolfgang Meier et al.</author>
+    <website>http://tei-publisher.org</website>
+    <status>stable</status>
+    <license>GPLv3</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>GdSiecle</target>
+    <prepare>pre-install.xql</prepare>
+    <finish>post-install.xql</finish>
+    <permissions user="tei" group="tei" mode="rw-rw-r--"/>
+<deployed>2026-02-26T16:30:34.804Z</deployed></meta>
