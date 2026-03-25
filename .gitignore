@@ -17,3 +17,6 @@ test/cypress/downloads/
 CLAUDE.md
 Docs/
 TODO.log
+*.Identifier
+*:Zone.Identifier                                                             
+**/*:Zone.Identifier 

@@ -23,7 +23,9 @@
             "node_modules/**",
             "bower_components/**",
             "build/**",
-            "webtest/**"
+            "webtest/**",
+            "*:Zone.Identifier",
+            "**/*:Zone.Identifier"
         ]
     }
 }
