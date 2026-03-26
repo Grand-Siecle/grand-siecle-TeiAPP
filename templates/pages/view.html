@@ -1,0 +1,83 @@
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html"
+        },
+        "styles": [
+            "resources/css/grand-siecle.css",
+            "transform/grand_siecle.css"
+        ],
+        "script": {
+            "custom": [
+                "resources/scripts/toc.js",
+                "resources/scripts/ner-slider.js"
+            ]
+        },
+        "features": {
+            "toolbar": {
+                "enabled": true
+            }
+        }
+    }
+    ---
+
+    [% template toolbar %]
+    <li class="gs-toolbar">
+        <!-- Orig/Reg toggle: adds/removes class "mode" on pb-page -->
+        <pb-toggle-feature name="mode" default="off"
+            emit="transcription" subscribe="transcription">
+            <pb-i18n key="document.modernized">Modernized</pb-i18n>
+        </pb-toggle-feature>
+
+        <!-- IIIF toggle (JS-driven, see ner-slider.js) -->
+        <button id="iiif-toggle" type="button" class="gs-toolbar-btn">
+            <pb-i18n key="document.facsimile">Facsimile</pb-i18n>
+        </button>
+
+        <!-- NER confidence slider -->
+        <div class="ner-slider-container">
+            <label for="ner-threshold">
+                <pb-i18n key="document.ner-threshold">NER</pb-i18n>
+            </label>
+            <input type="range" id="ner-threshold" min="0" max="1" step="0.05" value="0.5"/>
+            <span id="ner-threshold-value">0.50</span>
+        </div>
+    </li>
+    [% endtemplate %]
+
+    [% block content %]
+    <div class="view-container" id="view-container">
+        <!-- IIIF panel (hidden by default, toggled via JS) -->
+        <div class="iiif-panel">
+            <pb-facsimile
+                default-zoom-level="0"
+                show-navigation-control="show-navigation-control"
+                show-full-page-control="show-full-page-control"
+                subscribe="transcription" emit="transcription">
+            </pb-facsimile>
+        </div>
+
+        <!-- Text panel -->
+        <div class="text-panel">
+            <pb-view src="document1" view="page"
+                column-separator=".tei-cb"
+                append-footnotes="append-footnotes"
+                subscribe="transcription" emit="transcription"
+                animation=""
+                direction="[[$context?defaults?direction]]"/>
+        </div>
+    </div>
+
+    <div class="page-navigation">
+        <pb-navigation direction="backward" unit="page"
+            subscribe="transcription" emit="transcription">
+            <pb-i18n key="navigation.prev">Previous</pb-i18n>
+        </pb-navigation>
+        <pb-navigation direction="forward" unit="page"
+            subscribe="transcription" emit="transcription">
+            <pb-i18n key="navigation.next">Next</pb-i18n>
+        </pb-navigation>
+    </div>
+    [% endblock %]
+</template>

@@ -354,7 +354,7 @@
     "odd-root" : "resources/odd",
     "data-default" : "",
     "direction" : "ltr",
-    "template" : "basic.html",
+    "template" : "view.html",
     "browse" : "browse.html",
     "search" : "div",
     "languages" : [ "bg", "cs", "zh_CN", "zh_TW", "de", "en", "es", "el", "fr", "fi", "it", "ka", "nl", "no", "pl", "pt", "ro", "ru", "sl", "sv", "tr", "uk" ],
