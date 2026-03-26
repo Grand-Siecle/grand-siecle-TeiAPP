@@ -1,0 +1,49 @@
+<div class="organizations">
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html"
+        },
+        "features": {
+            "toolbar": {
+                "zoom": false,
+                "navigation": false
+            },
+            "timeline": {
+                "enabled": false
+            },
+            "upload": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "resources/css/registers-theme.css"
+        ],
+        "theme": {
+            "layout": {
+                "footer": {
+                    "mobile": {
+                        "enabled": false
+                    }
+                }
+            }
+        }
+    }
+    ---
+    [% template breadcrumb %]
+    <li>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="[[ $context-path ]]/organizations"><pb-i18n key="menu.organizations"/></a></li>
+            </ul>
+        </nav>
+    </li>
+    [% endtemplate %]
+    <div class="list">
+        <pb-custom-form id="options" auto-submit="input" emit="transcription">
+            <input id="query" type="search" name="search" data-i18n="[placeholder]search.search" value="[[ $request?parameters?search ]]"/>
+            <input type="hidden" name="description" value="off"/>
+        </pb-custom-form>
+        <pb-split-list url="api/organizations" subforms="#options" selected="A" emit="transcription" subscribe="transcription"/>
+    </div>
+</div>

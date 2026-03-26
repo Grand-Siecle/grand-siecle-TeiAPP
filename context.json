@@ -62,6 +62,9 @@
       "url" : "places",
       "id" : "places"
     }, {
+      "url" : "organizations",
+      "id" : "organizations"
+    }, {
       "url" : "browse.html",
       "id" : "explore"
     } ],
