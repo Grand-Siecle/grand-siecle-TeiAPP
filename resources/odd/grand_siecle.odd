@@ -42,7 +42,7 @@
                      ============================================================ -->
                 <elementSpec ident="pb" mode="change">
                     <model output="print" behaviour="omit"/>
-                    <model predicate="preceding-sibling::*[1][self::pb and @corresp = current()/@corresp]" behaviour="omit">
+                    <model predicate="@corresp = preceding-sibling::pb[1]/@corresp" behaviour="omit">
                         <desc>Skip duplicate consecutive pb with same @corresp</desc>
                     </model>
                     <model behaviour="break" cssClass="tei-pb">
