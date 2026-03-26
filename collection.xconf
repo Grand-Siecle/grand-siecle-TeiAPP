@@ -25,6 +25,7 @@
                 <facet dimension="place" expression="nav:get-metadata(ancestor::tei:TEI, 'place')"/>
                 <facet dimension="person" expression="nav:get-metadata(ancestor::tei:TEI, 'person')"/>
                 <facet dimension="date" expression="nav:get-metadata(ancestor::tei:TEI, 'date') =&gt; tokenize('-')" hierarchical="yes"/>
+                <facet dimension="author-type" expression="nav:get-metadata(ancestor::tei:TEI, 'author-type')"/>
             </text>
             
                 <text qname="tei:div">
@@ -46,6 +47,10 @@
             <text qname="tei:bibl">
                 <field name="name" expression="."/>
             </text>
+            <text qname="tei:org">
+                <field name="name" expression="tei:orgName"/>
+                <field name="sort-name" expression="head((tei:orgName[@type='sort'], tei:orgName)) =&gt; normalize-unicode('NFD') =&gt; replace('\p{IsCombiningDiacriticalMarks}', '')"/>
+            </text>
             <text qname="tei:head"/>
             <text match="//tei:titleStmt/tei:title"/>
             <text match="//tei:msDesc/tei:head"/>
@@ -58,41 +63,8 @@
             </text>
             
 
-            
-            <text qname="dbk:article">
-                <field name="dbk.title" expression="nav:get-metadata(., 'title')"/>
-                <field name="dbk.author" expression="nav:get-metadata(., 'author')"/>
-                <field name="dbk.file" expression="util:document-name(.)"/>
-                <field name="dbk.text" expression="."/>
-                <field name="category" expression="./@label"/>
-                <facet dimension="genre" expression="nav:get-metadata(., 'genre')" hierarchical="yes"/>
-                <facet dimension="language" expression="nav:get-metadata(., 'language')"/>
-            </text>
-            <text qname="dbk:section">
-                <ignore qname="dbk:section"/>
-                <facet dimension="genre" expression="nav:get-metadata(ancestor::dbk:article, 'genre')" hierarchical="yes"/>
-                <facet dimension="language" expression="nav:get-metadata(ancestor::dbk:article, 'language')"/>
-            </text>
-            <text qname="dbk:title"/>
-            
-            
-            
-            <!-- JATS -->
-            <text qname="body">
-                <!-- <ignore qname="sect"/> -->
-                <field name="jats.file" expression="util:document-name(.)"/>
-                <field name="jats.title" expression="nav:get-metadata(., 'title')"/>
-                <field name="jats.author" expression="nav:get-metadata(., 'author')"/>
-                <field name="jats.text" expression="nav:get-metadata(., 'content')"/>
-                <facet dimension="genre" expression="nav:get-metadata(., 'genre')" hierarchical="yes"/>
-                <facet dimension="language" expression="head((./@xml:lang, 'en'))"/>
-            </text>
-            <text qname="sec">
-                <ignore qname="sec"/>
-                <facet dimension="genre" expression="nav:get-metadata(., 'genre')" hierarchical="yes"/>
-                <facet dimension="language" expression="head((root(.)/@xml:lang, 'en'))"/>
-            </text>
-            
+
+
         </lucene>
         <range>
             <create qname="tei:term" type="xs:string"/>
