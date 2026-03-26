@@ -1,0 +1,68 @@
+{
+    "breadcrumb": {
+        "collection-root": "Collections",
+        "document-root": "Collections"
+    },
+    "menu": {
+        "explore": "Explorer",
+        "collections": "Collections",
+        "Start": "Parcourir",
+        "about": "\u00c0 propos",
+        "team": "\u00c9quipe",
+        "contact": "Contact",
+        "project": "Projet",
+        "cite": "Comment citer",
+        "cookies": "Cookies",
+        "credits": "Cr\u00e9dits",
+        "partners": "Partenaires",
+        "people": "Personnes",
+        "places": "Lieux",
+        "organizations": "Organisations",
+        "home": "Accueil"
+    },
+    "timeline": {
+        "range": "P\u00e9riode : "
+    },
+    "browse": {
+        "category": "Cat\u00e9gorie",
+        "author": "Auteur",
+        "title": "Titre"
+    },
+    "search": {
+        "title": "Titre",
+        "content": "Contenu",
+        "results": "R\u00e9sultats de recherche",
+        "placeholder": "Rechercher..."
+    },
+    "register-details": {
+        "document-list": "Documents",
+        "people": "Personnes",
+        "places": "Lieux"
+    },
+    "odd": {
+        "licence": "Licence",
+        "sources": "Sources",
+        "metadata": "M\u00e9tadonn\u00e9es"
+    },
+    "facets": {
+        "place": "Lieu",
+        "author": "Auteur"
+    },
+    "toolbar": {
+        "next": "Suivant",
+        "previous": "Pr\u00e9c\u00e9dent"
+    },
+    "document": {
+        "diplomatic": "Original",
+        "modernized": "Modernis\u00e9",
+        "facsimile": "Fac-simil\u00e9",
+        "ner-threshold": "Confiance NER"
+    },
+    "register": {
+        "organizations": "Organisations"
+    },
+    "navigation": {
+        "prev": "Pr\u00e9c\u00e9dent",
+        "next": "Suivant"
+    }
+}

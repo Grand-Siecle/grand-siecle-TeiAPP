@@ -19,7 +19,8 @@
         "cite": "How to cite",
         "cookies": "Cookies",
         "credits": "Credits",
-        "partners": "Partners"
+        "partners": "Partners",
+        "organizations": "Organizations"
     },
     "timeline": {
         "range": "Time range: "
@@ -51,5 +52,18 @@
     "toolbar": {
         "next": "Next",
         "previous": "Previous"
+    },
+    "document": {
+        "diplomatic": "Original",
+        "modernized": "Modernized",
+        "facsimile": "Facsimile",
+        "ner-threshold": "NER confidence"
+    },
+    "register": {
+        "organizations": "Organizations"
+    },
+    "navigation": {
+        "prev": "Previous",
+        "next": "Next"
     }
 }
