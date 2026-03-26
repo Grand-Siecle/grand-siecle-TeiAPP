@@ -5,6 +5,12 @@
 
 :root {
 
+    /* Grand Siecle color overrides */
+    --jinks-colors-100: #F5F0E8;      /* warm cream — primary background */
+    --jinks-colors-200: #FEFCF7;      /* off-white — secondary background */
+    --jinks-colors-700: #1E3A6D;      /* royal blue — primary accent */
+    --jinks-colors-accent: #9C7A3C;   /* dark gold — secondary accent */
+
     /* Logo */
 
     --jinks-logo-light: url("../images/tei-publisher-logo-contrast-color.svg");
