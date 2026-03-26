@@ -7,9 +7,12 @@ import module namespace nav="http://www.tei-c.org/tei-simple/navigation" at "nav
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 (:~
- : Base URI of the IIIF image API service to use for the images
+ : Base URI of the IIIF image API service to use for the images.
+ : Left empty — Grand Siecle images come as full URLs from various providers
+ : (Gallica, etc.) via sourceDoc/surface/graphic/@url.
+ : Set to a Cantaloupe/Loris URL if using a local image server with @facs prefix paths.
  :)
-declare variable $iiifc:IMAGE_API_BASE := "https://apps.existsolutions.com/cantaloupe/iiif/2/";
+declare variable $iiifc:IMAGE_API_BASE := "";
 
 (:~
  : URL prefix to use for the canvas id
@@ -21,30 +24,53 @@ declare variable $iiifc:CANVAS_ID_PREFIX := "https://e-editiones.org/canvas/";
  :
  : @param $doc the document root node to scan
  :)
-declare function iiifc:milestones($doc as node()) {
+declare function iiifc:milestones($doc as node()) as element()* {
     $doc//tei:pb
 };
 
 (:~
- : Extract the image path from the milestone element. If you need to strip
- : out or add something, this is the place. By default strips any prefix before a colon.
+ : Extract the image URL from the milestone element.
+ : Supports:
+ :   - @facs with full URL or prefixed path (standard TEI Publisher)
+ :   - @facs with fragment ID pointing to surface/graphic
+ :   - @corresp pointing to sourceDoc/surface (Grand Siecle pipeline)
+ : When the resolved URL is a full HTTP(S) URL (any IIIF provider), returns it as-is.
+ : Otherwise applies the standard prefix-stripping (e.g. "iiif:path" -> "path")
+ : for use with IMAGE_API_BASE.
  :)
-declare function iiifc:milestone-id($milestone as element()) {
+declare function iiifc:milestone-id($milestone as element()) as xs:string? {
     let $facs := $milestone/@facs
+    let $corresp := $milestone/@corresp
     let $link :=
-        if (starts-with($facs, "#")) then
-            let $target := id(substring-after($facs, "#"), root($milestone))
+        if ($facs) then
+            if (starts-with($facs, "#")) then
+                let $target := id(substring-after($facs, "#"), root($milestone))
+                return
+                    head($target/descendant-or-self::tei:graphic)/@url/string()
+            else
+                string($facs)
+        else if ($corresp) then
+            (: @corresp points to a surface in sourceDoc :)
+            let $surface-id := substring-after($corresp, "#")
+            let $surface := root($milestone)//tei:surface[@xml:id = $surface-id]
             return
-                head($target/descendant-or-self::tei:graphic)/@url
+                head($surface/tei:graphic)/@url/string()
         else
-            $facs
+            ()
     return
-        replace($link, "^[^:]+:(.*)", "$1")
+        if (starts-with($link, "http")) then
+            (: Full URL from any IIIF provider — return as-is :)
+            $link
+        else if ($link) then
+            (: Relative/prefixed path — strip prefix before colon for use with IMAGE_API_BASE :)
+            replace($link, "^[^:]+:(.*)", "$1")
+        else
+            ()
 };
 
 (:~
  : Provide general metadata fields for the object. The result will be merged into the
- : root of the presentation manifest. 
+ : root of the presentation manifest.
  :)
 declare function iiifc:metadata($doc as element(), $id as xs:string) as map(*) {
     map {

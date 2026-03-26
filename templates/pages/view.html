@@ -24,16 +24,11 @@
 
     [% template toolbar %]
     <li class="gs-toolbar">
-        <!-- Orig/Reg toggle: adds/removes class "mode" on pb-page -->
+        <!-- Orig/Reg toggle -->
         <pb-toggle-feature name="mode" default="off"
             emit="transcription" subscribe="transcription">
             <pb-i18n key="document.modernized">Modernized</pb-i18n>
         </pb-toggle-feature>
-
-        <!-- IIIF toggle (JS-driven, see ner-slider.js) -->
-        <button id="iiif-toggle" type="button" class="gs-toolbar-btn">
-            <pb-i18n key="document.facsimile">Facsimile</pb-i18n>
-        </button>
 
         <!-- NER confidence slider -->
         <div class="ner-slider-container">
@@ -47,26 +42,13 @@
     [% endtemplate %]
 
     [% block content %]
-    <div class="view-container" id="view-container">
-        <!-- IIIF panel (hidden by default, toggled via JS) -->
-        <div class="iiif-panel">
-            <pb-facsimile
-                default-zoom-level="0"
-                show-navigation-control="show-navigation-control"
-                show-full-page-control="show-full-page-control"
-                subscribe="transcription" emit="transcription">
-            </pb-facsimile>
-        </div>
-
-        <!-- Text panel -->
-        <div class="text-panel">
-            <pb-view src="document1" view="page"
-                column-separator=".tei-cb"
-                append-footnotes="append-footnotes"
-                subscribe="transcription" emit="transcription"
-                animation=""
-                direction="[[$context?defaults?direction]]"/>
-        </div>
+    <div class="center">
+        <pb-view src="document1" view="page"
+            column-separator=".tei-cb"
+            append-footnotes="append-footnotes"
+            subscribe="transcription" emit="transcription"
+            animation=""
+            direction="[[$context?defaults?direction]]"/>
     </div>
 
     <div class="page-navigation">

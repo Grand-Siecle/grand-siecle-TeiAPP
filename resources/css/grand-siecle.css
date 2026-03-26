@@ -106,25 +106,6 @@ a:hover { color: #9C7A3C; }
 .mode .choice-orig { display: none; }
 .mode .choice-reg { display: inline; }
 
-/* === Document view layout with IIIF === */
-.view-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
-}
-.view-container.iiif-visible {
-    grid-template-columns: 1fr 1fr;
-}
-.view-container .iiif-panel {
-    display: none;
-    height: 80vh;
-    position: sticky;
-    top: 0;
-}
-.view-container.iiif-visible .iiif-panel {
-    display: block;
-}
-
 /* === Toolbar controls === */
 .gs-toolbar {
     display: flex;

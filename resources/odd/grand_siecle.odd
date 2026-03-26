@@ -45,9 +45,15 @@
                     <model predicate="@corresp = preceding-sibling::pb[1]/@corresp" behaviour="omit">
                         <desc>Skip duplicate consecutive pb with same @corresp</desc>
                     </model>
-                    <model behaviour="break" cssClass="tei-pb">
-                        <param name="type" value="'page'"/>
-                        <param name="label" value="if (@n) then @n else replace(@corresp, '^#', '')"/>
+                    <model behaviour="webcomponent" cssClass="tei-pb">
+                        <desc>Emit pb-facs-link for IIIF viewer synchronization</desc>
+                        <param name="name" value="'pb-facs-link'"/>
+                        <param name="content" value="if (@n) then @n else replace(@corresp, '^#', '')"/>
+                        <param name="emit" value="'transcription'"/>
+                        <param name="subscribe" value="'transcription'"/>
+                        <param name="order" value="count($get(.)/preceding::pb) + 1"/>
+                        <param name="emit-on-load" value="'emit-on-load'"/>
+                        <param name="facs" value="let $corresp := replace(@corresp, '^#', '') let $surface := root($parameters?root)//surface[@xml:id = $corresp] let $url := head($surface/graphic/@url)/string() let $parts := tokenize($url, '/') return if (count($parts) gt 4) then string-join(subsequence($parts, 1, count($parts) - 4), '/') else ''"/>
                     </model>
                 </elementSpec>
 

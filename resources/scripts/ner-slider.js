@@ -1,10 +1,9 @@
 /**
- * Grand Siècle — NER Confidence Slider & IIIF Panel Toggle
+ * Grand Siècle — NER Confidence Slider
  */
 (function() {
     'use strict';
 
-    /* --- NER Confidence Slider --- */
     function applyThreshold(threshold) {
         var entities = document.querySelectorAll('[data-cert]');
         entities.forEach(function(el) {
@@ -27,24 +26,10 @@
         applyThreshold(parseFloat(slider.value));
     }
 
-    /* --- IIIF Panel Toggle --- */
-    function initIiifToggle() {
-        var btn = document.getElementById('iiif-toggle');
-        var container = document.getElementById('view-container');
-        if (!btn || !container) return;
-
-        btn.addEventListener('click', function() {
-            container.classList.toggle('iiif-visible');
-            btn.classList.toggle('active');
-        });
-    }
-
-    /* --- Init on pb-update (after ODD transform) and DOMContentLoaded --- */
     document.addEventListener('pb-update', function() {
         initNerSlider();
     });
     document.addEventListener('DOMContentLoaded', function() {
         initNerSlider();
-        initIiifToggle();
     });
 })();

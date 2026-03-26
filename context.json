@@ -208,14 +208,11 @@
       "enabled" : true
     },
     "iiif" : {
-      "viewer" : "pb-tify",
-      "base_uri" : "https://apps.existsolutions.com/cantaloupe/iiif/2/",
+      "viewer" : "pb-facsimile",
+      "base_uri" : "",
       "milestone_xpath" : "//tei:pb",
-      "enabled" : false,
-      "replace_facs" : {
-        "regex" : "^[^:]+:(.*)",
-        "replace" : "$1"
-      }
+      "enabled" : true,
+      "type": "iiif"
     },
     "toolbar" : {
       "zoom" : true,
