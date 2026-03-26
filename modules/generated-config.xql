@@ -12,7 +12,7 @@ declare variable $config:webcomponents-cdn := "https://cdn.jsdelivr.net/npm/@tei
 declare variable $config:fore := "2.6.0";
 
 declare variable $config:default-view := "div";
-declare variable $config:default-template := "basic.html";
+declare variable $config:default-template := "view.html";
 declare variable $config:default-media := ("web", "print", "epub");
 declare variable $config:search-default := "";
 declare variable $config:sort-default := "category";
