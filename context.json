@@ -35,7 +35,7 @@
   "version" : "1.0.0",
   "id" : "https://e-editiones.org/apps/GdSiecle",
   "_update" : false,
-  "styles" : [ "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css", "resources/css/pico-components.css", "resources/css/jinks-theme.css" ],
+  "styles" : [ "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css", "resources/css/pico-components.css", "resources/css/jinks-theme.css", "resources/css/grand-siecle.css" ],
   "_noDeploy" : false,
   "ci" : {
     "provider" : "github",

@@ -1,0 +1,151 @@
+/* Grand Siecle Theme */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* === Base overrides === */
+body {
+    background-color: #F5F0E8;
+    color: #2C2418;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1E3A6D;
+}
+
+pb-view {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #2C2418;
+}
+
+a { color: #1E3A6D; }
+a:hover { color: #9C7A3C; }
+
+/* === Named Entity Highlighting (background tint for accessibility) === */
+.entity-person {
+    background-color: rgba(43, 91, 138, 0.12);
+    border-left: 2px solid #2B5B8A;
+    padding: 0 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.entity-place {
+    background-color: rgba(58, 107, 74, 0.12);
+    border-left: 2px solid #3A6B4A;
+    padding: 0 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.entity-org {
+    background-color: rgba(91, 58, 122, 0.12);
+    border-left: 2px solid #5B3A7A;
+    padding: 0 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* NER confidence states */
+.entity-low-confidence {
+    opacity: 0.3;
+    border-left-style: dashed;
+    transition: opacity 0.2s;
+}
+
+/* === SegmOnto Zone Styling === */
+.tei-fw-RunningTitleZone {
+    text-align: center;
+    font-variant: small-caps;
+    color: #9C7A3C;
+    font-size: 0.9em;
+    margin: 0.5em 0;
+    letter-spacing: 0.05em;
+}
+.tei-fw-QuireMarksZone {
+    text-align: center;
+    font-size: 0.8em;
+    color: #9C7A3C;
+    opacity: 0.7;
+}
+.tei-note-MarginTextZone {
+    float: right;
+    width: 25%;
+    font-size: 0.85em;
+    color: #5a4a3a;
+    padding-left: 1em;
+    border-left: 1px solid #9C7A3C;
+    margin-left: 1em;
+}
+.tei-ab-MainZone {
+    margin-bottom: 0.5em;
+}
+.tei-foreign {
+    font-style: italic;
+}
+.tei-foreign::after {
+    content: ' [' attr(data-lang) ']';
+    font-size: 0.75em;
+    color: #9C7A3C;
+    font-style: normal;
+}
+.tei-pb {
+    display: block;
+    margin: 1em 0;
+    text-align: right;
+    color: #9C7A3C;
+    font-size: 0.85em;
+    border-bottom: 1px solid rgba(156, 122, 60, 0.3);
+    padding-bottom: 0.25em;
+}
+
+/* === Choice toggle (orig/reg) ===
+   pb-toggle-feature adds/removes class "mode" on pb-page.
+   Default (no class): diplomatic = show orig.
+   With class "mode": modernized = show reg. */
+.choice-reg { display: none; }
+.choice-orig { display: inline; }
+.mode .choice-orig { display: none; }
+.mode .choice-reg { display: inline; }
+
+/* === Document view layout with IIIF === */
+.view-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+.view-container.iiif-visible {
+    grid-template-columns: 1fr 1fr;
+}
+.view-container .iiif-panel {
+    display: none;
+    height: 80vh;
+    position: sticky;
+    top: 0;
+}
+.view-container.iiif-visible .iiif-panel {
+    display: block;
+}
+
+/* === Toolbar controls === */
+.gs-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em 1em;
+    background: #FEFCF7;
+    border-bottom: 1px solid rgba(156, 122, 60, 0.3);
+    flex-wrap: wrap;
+}
+.gs-toolbar label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    color: #2C2418;
+}
+.ner-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.ner-slider-container input[type="range"] {
+    width: 120px;
+    accent-color: #1E3A6D;
+}
