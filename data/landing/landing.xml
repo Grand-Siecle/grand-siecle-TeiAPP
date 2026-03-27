@@ -3,255 +3,178 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Edition Landing Page</title>
+            <title>Grand Siècle - Landing Page</title>
          </titleStmt>
          <publicationStmt>
-            <p>Publication Information</p>
+            <publisher>UNIL</publisher>
          </publicationStmt>
          <sourceDesc>
-            <p>Information about the source</p>
+            <p>Landing page content for the Grand Siècle project</p>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <text>
       <body>
-         <div type="hero" xml:lang="en" rend="two-column">
-            <head>Jinks<hi rend="strong">edition</hi></head>
-            <p>This site presents the results of the digital humanities projects created with TEI
-               Publisher and Jinks. It is a part of the environment for the development of digital
-               scholarly editions and a space for their presentation.</p>
+         <div type="hero" xml:lang="fr">
+            <head>Grand <hi rend="strong">Siècle</hi></head>
+            <p>Les premiers discours français sur la peinture, de la fin du XVI<hi rend="sup">e</hi> au milieu du XVII<hi rend="sup">e</hi> siècle. Un corpus de plus de 300 sources anciennes, transcrites, annotées et interrogeables.</p>
             <list type="links">
-               <item><ref target="#">explore</ref></item>
+               <item><ref target="browse.html">Explorer le corpus</ref></item>
             </list>
          </div>
-        <div type="hero" xml:lang="de" rend="two-column">
-            <head>Jinks<hi rend="strong">edition</hi></head>
-            <p>Diese Seite präsentiert die Ergebnisse von Projekten aus den Digital Humanities, die
-               mit TEI Publisher und Jinks erstellt wurden. Sie ist Teil der Umgebung für die
-               Entwicklung digitaler wissenschaftlicher Editionen und bietet einen Raum für deren
-               Präsentation.</p>
+         <div type="hero" xml:lang="en">
+            <head>Grand <hi rend="strong">Siècle</hi></head>
+            <p>Early French discourse on painting, from the late 16th to the mid-17th century. A corpus of over 300 ancient sources, transcribed, annotated and searchable.</p>
+            <list type="links">
+               <item><ref target="browse.html">Explore the corpus</ref></item>
+            </list>
          </div>
-         <div type="about" xml:lang="en" n="About" rend="two-column">
-            <head>Working environment for creating and publishing of digital scholarly
-               editions</head>
-            <p>Jinks application manager is designed as a working environment for creating and
-               publishing of digital scholarly editions. Editions created with this framework are
-               aiming to meet the varied needs of several humanities disciplines (textual
-               scholarship, literary studies, linguistics, history and more). Jinks builds on what
-               is common, at the same time providing the choice and customisation possibilities to
-               the editors and developers.</p>
-            <p>The platform follows the international standard for the encoding of textual data,
-               TEI, and bases its visualisations on TEI Publisher. As a result, it enables
-               publication of different types of material: from the basic presentation of texts and
-               documents in digital form to the most complex scholarly editions. There is room for
-               various forms of textual delivery (transcriptions, translations, facsimiles) and
-               annotations.</p>
-            <p>Tools and working environment are not enough. To best serve the needs of editors, a
-               consistent and efficient process for creating and publishing digital scholarly
-               editions is needed. This project is offering such a process. It includes sets of good
-               practices and workflows and takes into account both how scholarly editors work and
-               how IT specialists, responsible for the technical side of editions, complete their
-               tasks.</p>
+
+         <div type="about" xml:lang="fr" n="Le projet" rend="two-column">
+            <head>Naissance d'un langage artistique français</head>
+            <p>Entre la fin du XVI<hi rend="sup">e</hi> et le milieu du XVII<hi rend="sup">e</hi> siècle, la peinture française connaît de profonds bouleversements. Sous l'impulsion d'Henri IV, Louis XIII et Louis XIV, des régentes Marie de Médicis et Anne d'Autriche et des ministres Richelieu et Mazarin, d'importantes commandes publiques sont lancées. Une nouvelle génération de peintres émerge : Vouet, Poussin, Blanchard, Mignard, Le Sueur, Le Brun, Claude, Champaigne.</p>
+            <p>Ces jeunes artistes font connaître leur nom dans l'Europe entière. Ils défendent et illustrent la naissance d'un art proprement français, toujours nourri des modèles antiques et italiens, mais qui, désormais, peint, pense et parle en français. Le premier XVII<hi rend="sup">e</hi> siècle voit l'émergence de nouvelles manières de parler et d'écrire sur la peinture, qui affirment la nécessité de débattre en français des principes et des règles de l'art.</p>
+            <p>C'est à l'étude systématique de ces premiers discours français sur la peinture que ce projet est consacré. Il s'agit de battre en brèche l'idée reçue situant la naissance des théories artistiques françaises dans la seconde moitié du XVII<hi rend="sup">e</hi> siècle.</p>
          </div>
-        <div type="about" xml:lang="de" n="About" rend="two-column">
-            <head>Arbeitsumgebung für die Erstellung und Veröffentlichung digitaler
-               wissenschaftlicher Editionen</head>
-            <p>Der Jinks Application Manager wurde als Arbeitsumgebung für die Erstellung und
-               Veröffentlichung digitaler wissenschaftlicher Editionen konzipiert. Editionen, die
-               mit diesem Framework erstellt wurden, sollen den vielfältigen Anforderungen
-               verschiedener geisteswissenschaftlicher Disziplinen (Editionswissenschaft,
-               Literaturwissenschaft, Linguistik, Geschichte und mehr) gerecht werden. Jinks baut
-               auf einer gemeinsamen Basis auf und bietet gleichzeitig Auswahl- und Anpassungsmöglichkeiten
-               für die Editorinnen und Editoren sowie Entwicklerinnen und Entwickler.</p>
-            <p>Die Plattform folgt dem internationalen Standard zur Kodierung von Textdaten, TEI,
-               und nutzt TEI Publisher für die Darstellung. Dadurch ermöglicht sie die
-               Publikation unterschiedlichster Materialien: von der grundlegenden Präsentation von
-               Texten und Dokumenten in digitaler Form bis hin zu komplexen
-               wissenschaftlichen Editionen. Verschiedene Formen der Textausgabe
-               (Transkriptionen, Übersetzungen, Faksimiles) und Annotationen werden unterstützt.</p>
-            <p>Werkzeuge und Arbeitsumgebung allein reichen jedoch alleine nicht aus. Um den Bedürfnissen der
-               Editorinnen und Editoren bestmöglich zu entsprechen, ist ein konsistenter und
-               effizienter Prozess zur Erstellung und Veröffentlichung digitaler wissenschaftlicher
-               Editionen erforderlich. Dieses Projekt bietet einen solchen Prozess an. Er beinhaltet
-               gute Praxisbeispiele und Workflows und berücksichtigt sowohl die Arbeit wissenschaftlicher
-               Editorinnen und Editoren, als auch die für die
-               technische Seite der Edition verantwortlichen IT-Spezialist:innen.</p>
+         <div type="about" xml:lang="en" n="The project" rend="two-column">
+            <head>Birth of a French artistic language</head>
+            <p>Between the late 16th and mid-17th century, French painting underwent profound transformations. Under the impetus of Henri IV, Louis XIII and Louis XIV, the regents Marie de Medici and Anne of Austria, and ministers Richelieu and Mazarin, major public commissions were launched. A new generation of painters emerged: Vouet, Poussin, Blanchard, Mignard, Le Sueur, Le Brun, Claude, Champaigne.</p>
+            <p>These young artists made their names known throughout Europe. They defended and illustrated the birth of a distinctly French art — still nourished by ancient and Italian models, but increasingly painting, thinking, and speaking in French. The early 17th century saw the emergence of new ways of speaking and writing about painting, asserting the need to debate in French the principles and rules of art.</p>
+            <p>This research project is dedicated to the systematic study of these early French discourses on painting — challenging the received idea that French artistic theories originated in the second half of the 17th century.</p>
+         </div>
+
+         <div type="highlights" xml:lang="fr">
+            <head>Explorer</head>
+            <list>
+               <item n="Le corpus">
+                  <desc>Plus de 300 sources anciennes</desc>
+                  <note>Traités d'art, écrits de philosophes, poètes, théologiens et historiens. Un corpus multilingue transcrit et enrichi d'annotations linguistiques et d'entités nommées.</note>
+                  <ptr type="image" target="resources/images/image-front_2.jpg"/>
+                  <list type="links">
+                     <item><ref target="browse.html">Parcourir</ref></item>
+                  </list>
+               </item>
+               <item n="Les registres">
+                  <desc>Personnes, lieux, organisations</desc>
+                  <note>Index des peintres, philosophes, théologiens, lieux et institutions mentionnés dans le corpus. Explorez les réseaux de références entre les textes.</note>
+                  <ptr type="image" target="resources/images/image-front_3.jpg"/>
+                  <list type="links">
+                     <item><ref target="people">Personnes</ref></item>
+                     <item><ref target="places">Lieux</ref></item>
+                  </list>
+               </item>
+               <item n="La lecture">
+                  <desc>Texte, fac-similé et annotations</desc>
+                  <note>Lisez les sources avec le fac-similé IIIF en regard. Basculez entre graphie originale et modernisée. Filtrez les entités nommées par niveau de confiance.</note>
+                  <ptr type="image" target="resources/images/image-front_4.jpg"/>
+                  <list type="links">
+                     <item><ref target="browse.html">Lire</ref></item>
+                  </list>
+               </item>
+            </list>
          </div>
          <div type="highlights" xml:lang="en">
-            <head>Highlights</head>
+            <head>Explore</head>
             <list>
-               <item n="Corpus">
-                  <desc>Collection of sources encoded with the TEI standard</desc>
-                  <note>Fascinating collection of sources encoded in the TEI standard, comprising records of rulers and individuals belonging to the social elite of European states provide insight into the mechanisms of power, the relationship between the center and the peripheries of a state, and the way of life of different social groups. They reveal the mobility of their representatives, networks of contacts, and their engagement in social, political, and economic life.</note>
-                  <ptr type="image" target="resources/images/books.jpg"/>
+               <item n="The corpus">
+                  <desc>Over 300 ancient sources</desc>
+                  <note>Art treatises, writings by philosophers, poets, theologians and historians. A multilingual corpus transcribed and enriched with linguistic annotations and named entities.</note>
+                  <ptr type="image" target="resources/images/image-front_2.jpg"/>
                   <list type="links">
-                     <item><ref target="#">Explore</ref></item>
+                     <item><ref target="browse.html">Browse</ref></item>
                   </list>
                </item>
-               <item n="Indexes">
-                  <desc>Registers of individuals and places</desc>
-                  <note>Registers of individuals and places mentioned in the corpus offer a point of entry into the intricate social and geographical network of that era.</note>
-                  <ptr type="image" target="resources/images/header-bg.jpg"/>
+               <item n="The registers">
+                  <desc>Persons, places, organizations</desc>
+                  <note>Index of painters, philosophers, theologians, places and institutions mentioned in the corpus. Explore networks of references between texts.</note>
+                  <ptr type="image" target="resources/images/image-front_3.jpg"/>
                   <list type="links">
-                     <item><ref target="places">Explore</ref></item>
+                     <item><ref target="people">People</ref></item>
+                     <item><ref target="places">Places</ref></item>
                   </list>
                </item>
-               <item n="User Guide">
-                  <desc>User guide</desc>
-                  <note>Facets are the fastest way to conduct your searches, simply ticking a box for e.g. the Place, Country or Period that interest you. Current search results will be constrained to show only entries that match exactly all your specified criteria.</note>
-                  <ptr type="image" target="resources/images/typewriter2.jpg"/>
+               <item n="The reader">
+                  <desc>Text, facsimile and annotations</desc>
+                  <note>Read sources alongside IIIF facsimiles. Toggle between original and modernized spelling. Filter named entities by confidence level.</note>
+                  <ptr type="image" target="resources/images/image-front_4.jpg"/>
                   <list type="links">
-                     <item><ref target="places">Explore</ref></item>
+                     <item><ref target="browse.html">Read</ref></item>
                   </list>
                </item>
             </list>
          </div>
-        <div type="section" xml:lang="en" n="More" rend="two-column">
-            <head>Other resources</head>
-            <p>Use this section to provide short descriptions and links to other resources in the
-               collection.</p>
-            <p>The Jinks edition project is brought to life by a dedicated team of historians,
-               digital archivists, and designers passionate about Renaissance history</p>
+
+         <div type="section" xml:lang="fr" n="Axes de recherche" rend="two-column">
+            <head>Trois axes de recherche</head>
+            <p>Notre but est de mettre en évidence l'importance cruciale de la période allant de la fin du XVI<hi rend="sup">e</hi> siècle aux années 1650 dans la construction d'un nouveau langage artistique français.</p>
+            <p>Ce projet débouchera sur une thèse de doctorat, la publication de plusieurs centaines de sources anciennes dont quatre éditions critiques, les actes de journées d'étude et colloques, ainsi que ce site web.</p>
             <div>
-               <head>Collection of sources encoded with the TEI standard</head>
-               <p>Fascinating collection of sources encoded in the TEI standard, comprising records
-                  of rulers and individuals belonging to the social elite of European states provide
-                  insight into the mechanisms of power, the relationship between the center and the
-                  peripheries of a state, and the way of life of different social groups. They
-                  reveal the mobility of their representatives, networks of contacts, and their
-                  engagement in social, political, and economic life.</p>
+               <head>Axe 1 — Pluralité des discours</head>
+               <p>Rendre compte de la pluralité des discours français sur la peinture : écrits d'artistes professionnels, d'amateurs et de curieux — historiens, philosophes, poètes, théologiens. S'appropriant la langue des peintres, ils participent à la diffusion de leurs idées et à la formation du regard des spectateurs.</p>
                <list type="links">
-                  <item><ref target="#" rend="explore-link">Explore</ref></item>
+                  <item><ref target="browse.html" rend="explore-link">Explorer</ref></item>
                </list>
             </div>
             <div>
-               <head>Collection of sources encoded with the TEI standard</head>
-               <p>Fascinating collection of sources encoded in the TEI standard, comprising records
-                  of rulers and individuals belonging to the social elite of European states, which provide
-                  insight into the mechanisms of power, the relationship between the center and the
-                  peripheries of a state, and the way of life of different social groups. They
-                  reveal the mobility of their representatives, networks of contacts, and their
-                  engagement in social, political, and economic life.</p>
+               <head>Axe 2 — Forger de nouvelles pensées</head>
+               <p>Analyser comment se sont forgées ces nouvelles manières de penser la peinture. Situer la place des artistes antiques et modernes dont les œuvres ne cessent d'être décrites, analysées, louées ou critiquées, parfois instrumentalisées pour nourrir de nouvelles théories de l'image.</p>
                <list type="links">
-                  <item><ref target="#" rend="explore-link">Explore</ref></item>
+                  <item><ref target="browse.html" rend="explore-link">Explorer</ref></item>
                </list>
             </div>
          </div>
-        <div type="section" xml:lang="de" n="More" rend="two-column">
-            <head>Weitere Ressourcen</head>
-            <p>Nutzen Sie diesen Abschnitt für kurze Beschreibungen und Links zu weiteren Ressourcen
-               in der Sammlung.</p>
-            <p>Das Jinks-Editionsprojekt wird von einem engagierten Team aus Historiker:innen,
-               digitalen Archivar:innen und Designer:innen entwickelt, die sich für die Geschichte der
-               Renaissance begeistern.</p>
+         <div type="section" xml:lang="en" n="Research axes" rend="two-column">
+            <head>Three research axes</head>
+            <p>Our goal is to highlight the crucial importance of the period from the late 16th century to the 1650s in the construction of a new French artistic language.</p>
+            <p>This project will produce a doctoral thesis, the publication of several hundred ancient sources including four critical editions, conference proceedings, and this website.</p>
             <div>
-               <head>Sammlung von Quellen im TEI-Standard kodiert</head>
-               <p>Faszinierende Sammlung von Quellen nach TEI-Standard, inklusive
-                  Aufzeichnungen von Herrschern und Angehörigen der gesellschaftlichen Elite
-                  europäischer Staaten, die Einblick geben in die Mechanismen von Macht, das
-                  Verhältnis zwischen Zentrum und Peripherie eines Staates und die Lebensweise
-                  verschiedener gesellschaftlicher Gruppen. Die Quellen offenbaren die Mobilität
-                  ihrer Vertreter:innen, die Netzwerke von Kontakten und deren Engagement im
-                  sozialen, politischen und wirtschaftlichen Leben.</p>
-               <p><ref target="#" rend="explore-link">Entdecken</ref></p>
+               <head>Axis 1 — Plurality of discourses</head>
+               <p>Accounting for the plurality of French discourses on painting: writings by professional artists, amateurs and the curious — historians, philosophers, poets, theologians. By appropriating the language of painters, they participated in spreading their ideas and shaping the gaze of spectators.</p>
+               <list type="links">
+                  <item><ref target="browse.html" rend="explore-link">Explore</ref></item>
+               </list>
             </div>
             <div>
-               <head>Sammlung von Quellen im TEI-Standard kodiert</head>
-               <p>Faszinierende Sammlung von Quellen nach TEI-Standard, inklusive
-                  Aufzeichnungen von Herrschern und Angehörigen der gesellschaftlichen Elite
-                  europäischer Staaten, die Einblick geben in die Mechanismen von Macht, das
-                  Verhältnis zwischen Zentrum und Peripherie eines Staates und die Lebensweise
-                  verschiedener gesellschaftlicher Gruppen. Die Quellen offenbaren die Mobilität
-                  ihrer Vertreter:innen, die Netzwerke von Kontakten und deren Engagement im
-                  sozialen, politischen und wirtschaftlichen Leben.</p>
+               <head>Axis 2 — Forging new thought</head>
+               <p>Analyzing how these new ways of thinking about painting were forged. Situating the place of ancient and modern artists whose works were constantly described, analyzed, praised or criticized — sometimes instrumentalized to nourish new theories of the image.</p>
+               <list type="links">
+                  <item><ref target="browse.html" rend="explore-link">Explore</ref></item>
+               </list>
             </div>
          </div>
-         <div type="team" xml:lang="en" n="Core Team">
-            <head>Team</head>
-            <p>The Jinks edition project is brought to life by a dedicated team of historians,
-               digital archivists, and designers passionate about Renaissance history</p>
-            <listPerson>
-               <person n="project managment">
-                  <persName>Coco</persName>
-                  <occupation>System architect</occupation>
-                  <ptr type="avatar" target="resources/images/team/dog.jpg"/>
-                  <note>Happily fetches new features while herding the pack towards technical
-                     excellence.</note>
-               </person>
-            </listPerson>
+
+         <div type="team" xml:lang="fr" n="Équipe">
+            <head>Équipe</head>
+            <p>Le projet Grand Siècle est porté par l'Université de Lausanne.</p>
             <listOrg>
-               <org n="e-editiones">
-                  <orgName>e-editiones</orgName>
-                  <roleName>Scholarly society</roleName>
-                  <ptr type="logo" target="resources/images/e-editiones-logo-color.svg"/>
-                  <ptr type="email" target="mailto:info@e-editiones.org"/>
-                  <note><ref target="https://www.e-editiones.org/">e-editiones</ref> is an
-                     international non profit society bringing together edition projects, cultural
-                     heritage institutions, scholars, and developers to empower digital projects by
-                     promoting open standards and community collaboration – with the ultimate goal
-                     of helping to sustain editions far into the future.</note>
-               </org>
-               <org n="jinntec">
-                  <orgName>Jinntec GmbH</orgName>
-                  <roleName>Software solutions</roleName>
-                  <ptr type="logo" target="resources/images/jinntec.svg"/>
-                  <ptr type="email" target="mailto:info@jinntec.de"/>
-                  <note>Software solutions with a touch of magic: we believe in the importance of
-                     cultural heritage - our tools help to preserve and disseminate it with
-                     sustainable technologies based on Open Source software and Open Standard. From
-                     assisted production workflows and data curation to publishing online or in
-                     print - <ref target="https://www.jinntec.de/">we have you covered</ref>.</note>
+               <org n="unil">
+                  <orgName>Université de Lausanne</orgName>
+                  <roleName>Institution porteuse</roleName>
+                  <ptr type="logo" target="resources/images/image-front_logo_unil.svg"/>
+                  <note>Projet hébergé par la Section d'histoire de l'art de l'Université de Lausanne — UNIL.</note>
                </org>
             </listOrg>
          </div>
-         <div type="team" xml:lang="de" n="Core Team">
+         <div type="team" xml:lang="en" n="Team">
             <head>Team</head>
-            <p>Das Jinks-Editionsprojekt wird von einem engagierten Team aus Historiker:innen,
-               digitalen Archivar:innen und Designer:innen verwirklicht, die für die Geschichte der
-               Renaissance begeistert sind.</p>
-            <listPerson>
-               <person n="project managment">
-                  <persName>Coco</persName>
-                  <occupation>Systemarchitektin</occupation>
-                  <ptr type="avatar" target="resources/images/team/dog.jpg"/>
-                  <note>Fängt mit Begeisterung neue Features und führt das Rudel zu technischer
-                     Exzellenz.</note>
-               </person>
-            </listPerson>
+            <p>The Grand Siècle project is led at the University of Lausanne.</p>
             <listOrg>
-               <org n="e-editiones">
-                  <orgName>e-editiones</orgName>
-                  <roleName>Wissenschaftliche Gesellschaft</roleName>
-                  <ptr type="logo" target="resources/images/e-editiones-logo-color.svg"/>
-                  <ptr type="email" target="mailto:info@e-editiones.org"/>
-                  <note><ref target="https://www.e-editiones.org/">e-editiones</ref> ist eine
-                     internationale, gemeinnützige Gesellschaft, die Editionsprojekte, kulturelle
-                     Institutionen, Wissenschaftler:innen und Entwickler:innen zusammenbringt, um
-                     digitale Projekte zu unterstützen – durch die Förderung offener Standards und
-                     gemeinschaftlicher Zusammenarbeit, mit dem Ziel, Editionen langfristig zu
-                     erhalten.</note>
-               </org>
-               <org n="jinntec">
-                  <orgName>Jinntec GmbH</orgName>
-                  <roleName>Softwarelösungen</roleName>
-                  <ptr type="logo" target="resources/images/jinntec.svg"/>
-                  <ptr type="email" target="mailto:info@jinntec.de"/>
-                  <note>Softwarelösungen mit einem Hauch Magie: Wir glauben an die Bedeutung des
-                     kulturellen Erbes – unsere Werkzeuge helfen, es mithilfe nachhaltiger
-                     Technologien auf Basis von Open Source Software und offenen Standards zu
-                     bewahren und zu verbreiten. Von unterstützten Produktions-Workflows und
-                     Datenkurationsdiensten bis hin zur Online- oder Print-Publikation – <ref target="https://www.jinntec.de/">wir bieten für alles eine
-                     Lösung</ref>.</note>
+               <org n="unil">
+                  <orgName>University of Lausanne</orgName>
+                  <roleName>Host institution</roleName>
+                  <ptr type="logo" target="resources/images/image-front_logo_unil.svg"/>
+                  <note>Hosted by the Art History Department of the University of Lausanne — UNIL.</note>
                </org>
             </listOrg>
          </div>
-         <div type="partners" xml:lang="en" n="Partners">
-            <head>Project Team &amp; Partners</head>
-            <p>The Jinks edition project is brought to life by a dedicated team of historians, digital archivists, and designers passionate about Renaissance history.</p>
+
+         <div type="partners" xml:lang="fr" n="Partenaires">
+            <head>Partenaires</head>
+            <p>Une collaboration avec des partenaires en France, en Suisse et en Belgique pour construire une communauté de chercheurs européens travaillant sur les arts en France au XVII<hi rend="sup">e</hi> siècle.</p>
             <list rend="partner-logos">
                <item>
-                  <ref type="uri" target="https://jinntec.de">
-                     <graphic url="resources/images/jinntec.svg"/>
+                  <ref type="uri" target="https://www.unil.ch">
+                     <graphic url="resources/images/image-front_logo_unil.svg"/>
                   </ref>
                </item>
                <item>
@@ -260,8 +183,24 @@
                   </ref>
                </item>
                <item>
-                  <ref type="uri" target="https://tei-c.org">
-                     <graphic url="resources/images/tei-with-text.svg"/>
+                  <ref type="uri" target="https://teipublisher.org">
+                     <graphic url="resources/images/tei-publisher-logo-color.svg"/>
+                  </ref>
+               </item>
+            </list>
+         </div>
+         <div type="partners" xml:lang="en" n="Partners">
+            <head>Partners</head>
+            <p>Collaboration with partners in France, Switzerland and Belgium to build a community of European researchers working on the arts in 17th-century France.</p>
+            <list rend="partner-logos">
+               <item>
+                  <ref type="uri" target="https://www.unil.ch">
+                     <graphic url="resources/images/image-front_logo_unil.svg"/>
+                  </ref>
+               </item>
+               <item>
+                  <ref type="uri" target="https://e-editiones.org">
+                     <graphic url="resources/images/e-editiones-logo-color.svg"/>
                   </ref>
                </item>
                <item>

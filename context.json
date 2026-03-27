@@ -96,16 +96,16 @@
     "landing" : {
       "hero" : {
         "background-position" : "center",
-        "background-color" : "rgba(0, 0, 0, 0.6)",
+        "background-color" : "rgba(30, 58, 109, 0.55)",
         "class" : "two-column",
         "background-size" : "cover",
-        "background-image" : "../images/typewriter1.jpg",
+        "background-image" : "../images/image-front_1.jpg",
         "background-repeat" : "no-repeat"
       },
       "bottom" : {
-        "background-color" : "rgba(0, 0, 0, 0.4)",
+        "background-color" : "rgba(30, 58, 109, 0.7)",
         "background-size" : "cover",
-        "background-image" : "../images/typewriter3.jpg",
+        "background-image" : "../images/image-front_5.jpg",
         "background-repeat" : "no-repeat"
       }
     },

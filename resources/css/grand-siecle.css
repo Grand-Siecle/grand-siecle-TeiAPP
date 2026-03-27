@@ -1,125 +1,686 @@
-/* Grand Siecle Theme */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+/* ================================================================
+   GRAND SIECLE — Editorial de luxe
+   Inspired by: exhibition catalogues, art history journals,
+   French classicism (order, noble restraint, controlled richness)
 
-/* === Base overrides === */
+   Fonts: EB Garamond (period), Cormorant Garamond (display)
+   Palette: Aged paper, Royal blue, Gilded gold, Sepia, Bordeaux
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+
+:root {
+    --gs-cream: #F5F0E8;
+    --gs-cream-light: #FEFCF7;
+    --gs-cream-warm: #EDE5D8;
+    --gs-sepia: #2C2418;
+    --gs-sepia-medium: #5a4a3a;
+    --gs-blue: #1E3A6D;
+    --gs-blue-light: #2B5B8A;
+    --gs-blue-dark: #0F2340;
+    --gs-gold: #9C7A3C;
+    --gs-gold-light: rgba(156, 122, 60, 0.3);
+    --gs-gold-bright: #C49A4A;
+    --gs-bordeaux: #7A2E2E;
+    --gs-green: #3A6B4A;
+    --gs-purple: #5B3A7A;
+
+    /* Ornamental character — fleur-de-lis / fleuron */
+    --gs-fleuron: '\2766';
+    --gs-ornament: '\2767';
+}
+
+/* === Base typography === */
 body {
-    background-color: #F5F0E8;
-    color: #2C2418;
+    background-color: var(--gs-cream);
+    color: var(--gs-sepia);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #1E3A6D;
+    font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+    color: var(--gs-blue);
+    font-weight: 400;
+}
+
+p, li, td, th {
+    font-family: 'EB Garamond', serif;
 }
 
 pb-view {
     font-family: 'EB Garamond', serif;
     font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--gs-sepia);
+}
+
+a { color: var(--gs-blue); text-decoration: none; }
+a:hover { color: var(--gs-gold); }
+
+/* ================================================================
+   GRAIN TEXTURE overlay for depth
+   ================================================================ */
+.landing-layout::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ================================================================
+   LANDING: HERO — Cinematic, full-bleed
+   ================================================================ */
+.landing-layout .hero {
+    min-height: 80vh;
+    background-blend-mode: multiply;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Gradient vignette at bottom */
+.landing-layout .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(245, 240, 232, 0.3) 50%,
+        var(--gs-cream) 100%);
+    pointer-events: none;
+}
+
+/* Subtle gold line at the very top */
+.landing-layout .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 10%,
+        var(--gs-gold) 30%,
+        var(--gs-gold-bright) 50%,
+        var(--gs-gold) 70%,
+        transparent 90%);
+    z-index: 2;
+}
+
+.landing-layout .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    line-height: 1;
+    margin-bottom: 0.3em;
+    text-transform: uppercase;
+}
+
+.landing-layout .hero h1 strong {
+    color: var(--gs-gold-bright) !important;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.landing-layout .hero p {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.7;
+    max-width: 32em;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+    font-style: italic;
+}
+
+.landing-layout .hero .button-link {
+    background: transparent;
+    border: 1.5px solid var(--gs-gold-bright);
+    color: var(--gs-cream-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.8rem 2.5rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(4px);
+}
+
+.landing-layout .hero .button-link:hover {
+    background: var(--gs-gold);
+    border-color: var(--gs-gold);
+    color: var(--gs-cream-light);
+}
+
+/* ================================================================
+   FLOATING MENUBAR — Dark glass
+   ================================================================ */
+.landing-layout .menubar {
+    background: rgba(15, 35, 64, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(156, 122, 60, 0.15);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+.landing-layout .menubar a {
+    color: rgba(254, 252, 247, 0.85);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+}
+
+.landing-layout .menubar a:hover {
+    color: var(--gs-gold-bright);
+}
+
+/* ================================================================
+   ABOUT SECTION — Elegant two-column with ornamental details
+   ================================================================ */
+.gs-section-about {
+    background: var(--gs-cream);
+    position: relative;
+    padding-block: 5rem;
+}
+
+/* Ornamental fleuron separator */
+.gs-section-about::before {
+    content: var(--gs-ornament) '  ' var(--gs-fleuron) '  ' var(--gs-ornament);
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--gs-gold);
+    padding-bottom: 3rem;
+    letter-spacing: 0.5em;
+}
+
+.gs-section-about .label {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gs-gold);
+    border-color: var(--gs-gold);
+    font-weight: 600;
+}
+
+.gs-section-about h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--gs-blue);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.gs-section-about p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--gs-sepia);
+}
+
+/* First letter of first paragraph — drop cap spirit */
+.gs-section-about .long-desc > *:first-child::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5em;
+    float: left;
+    line-height: 0.8;
+    padding-right: 0.08em;
+    color: var(--gs-blue);
+    font-weight: 600;
+}
+
+/* ================================================================
+   HIGHLIGHTS — Dark panel with rich cards
+   ================================================================ */
+.section-highlight {
+    background-color: var(--gs-blue-dark) !important;
+    position: relative;
+}
+
+/* Gold rule above */
+.section-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 15%; right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gs-gold), transparent);
+}
+
+.section-highlight h2 {
+    color: var(--gs-cream-light) !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.highlight-card {
+    border-radius: 2px;
+    border: 1px solid rgba(156, 122, 60, 0.1);
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.highlight-card .label {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-color: rgba(255,255,255,0.2);
+    color: var(--gs-cream-light);
+    background: rgba(15, 35, 64, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.highlight-card .desc h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--gs-cream-light);
+    letter-spacing: 0.02em;
+}
+
+.highlight-card .desc p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #2C2418;
 }
 
-a { color: #1E3A6D; }
-a:hover { color: #9C7A3C; }
+.highlight-card .button-link {
+    background: transparent;
+    border-color: var(--gs-gold);
+    color: var(--gs-gold-bright);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
 
-/* === Named Entity Highlighting (background tint for accessibility) === */
+.highlight-card .button-link:hover {
+    background: var(--gs-gold);
+    color: var(--gs-cream-light);
+}
+
+/* ================================================================
+   RESEARCH AXES SECTION — Warm dark, editorial feel
+   ================================================================ */
+.gs-section-axes {
+    background: var(--gs-sepia);
+    color: var(--gs-cream-light);
+    position: relative;
+    padding-block: 5rem;
+    --pico-color: var(--gs-cream-light);
+    --pico-h2-color: var(--gs-cream-light);
+    --pico-h3-color: var(--gs-gold);
+}
+
+.gs-section-axes::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 15%; right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gs-gold-light), transparent);
+}
+
+.gs-section-axes .label {
+    color: var(--gs-gold);
+    border-color: var(--gs-gold);
+    background: transparent;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+
+.gs-section-axes h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    color: var(--gs-cream-light);
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.04em;
+}
+
+.gs-section-axes h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--gs-gold-bright);
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(156, 122, 60, 0.2);
+    padding-bottom: 0.6em;
+    letter-spacing: 0.03em;
+}
+
+.gs-section-axes p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(254, 252, 247, 0.8);
+}
+
+.gs-section-axes a:not(.button-link) {
+    color: var(--gs-gold-bright);
+    border-bottom: 1px solid rgba(156, 122, 60, 0.3);
+}
+
+.gs-section-axes .teaser {
+    border-top-color: rgba(156, 122, 60, 0.2);
+}
+
+.gs-section-axes .button-link {
+    background: transparent;
+    border-color: var(--gs-gold);
+    color: var(--gs-gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.gs-section-axes .button-link:hover {
+    background: var(--gs-gold);
+    color: var(--gs-sepia);
+}
+
+/* ================================================================
+   TEAM & PARTNERS — Light, refined
+   ================================================================ */
+.section-light {
+    background-color: var(--gs-cream-light) !important;
+    padding-block: 4rem;
+}
+
+.section-light h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: 0.05em;
+}
+
+.section-light .label {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    color: var(--gs-gold);
+    border-color: var(--gs-gold);
+    background: transparent;
+}
+
+.member-card {
+    border: 1px solid var(--gs-gold-light);
+    background: var(--gs-cream);
+    box-shadow: 0 2px 16px rgba(44, 36, 24, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+    box-shadow: 0 4px 24px rgba(44, 36, 24, 0.1);
+}
+
+.partner-logo {
+    border-color: var(--gs-gold-light);
+    background: var(--gs-cream);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(44, 36, 24, 0.1);
+}
+
+/* ================================================================
+   BOTTOM SECTION
+   ================================================================ */
+.gs-section-bottom {
+    background-color: var(--gs-blue-dark);
+    color: var(--gs-cream-light);
+    padding-block: 3rem;
+    position: relative;
+}
+
+.gs-section-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 15%; right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gs-gold), transparent);
+}
+
+.gs-section-bottom a {
+    color: rgba(254, 252, 247, 0.7);
+    text-decoration: none;
+    font-family: 'EB Garamond', serif;
+    transition: color 0.2s;
+}
+
+.gs-section-bottom a:hover {
+    color: var(--gs-gold-bright);
+}
+
+.gs-section-bottom p {
+    color: rgba(254, 252, 247, 0.5);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* ================================================================
+   FOOTER — Minimal, dark
+   ================================================================ */
+.gs-footer {
+    display: block;
+    padding-block: 1.2rem;
+    margin-block-start: 0;
+    background-color: var(--gs-sepia);
+    color: rgba(254, 252, 247, 0.45);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+}
+
+.gs-footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gs-footer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gs-cream-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.gs-footer-sep {
+    margin: 0 0.8em;
+    color: var(--gs-gold);
+}
+
+.gs-footer .license {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.gs-footer .license svg {
+    height: 1.4rem;
+    width: 1.4rem;
+    fill: rgba(254, 252, 247, 0.35);
+    transition: fill 0.3s ease;
+}
+
+.gs-footer .license:hover svg {
+    fill: var(--gs-gold);
+}
+
+/* ================================================================
+   STAGGERED REVEAL ANIMATION — Page load entrance
+   ================================================================ */
+@keyframes gs-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landing-layout .hero > div {
+    animation: gs-reveal 1s ease-out 0.3s both;
+}
+
+.landing-layout section {
+    animation: gs-reveal 0.8s ease-out both;
+}
+
+.landing-layout #about { animation-delay: 0.1s; }
+.landing-layout #highlights { animation-delay: 0.15s; }
+.landing-layout #axes { animation-delay: 0.2s; }
+.landing-layout #team { animation-delay: 0.25s; }
+
+/* ================================================================
+   DOCUMENT VIEW — ODD rendering styles
+   ================================================================ */
+
+/* Named Entity Highlighting */
 .entity-person {
-    background-color: rgba(43, 91, 138, 0.12);
-    border-left: 2px solid #2B5B8A;
-    padding: 0 2px;
-    border-radius: 2px;
+    background-color: rgba(43, 91, 138, 0.1);
+    border-bottom: 2px solid var(--gs-blue-light);
+    padding: 0 1px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
-.entity-place {
-    background-color: rgba(58, 107, 74, 0.12);
-    border-left: 2px solid #3A6B4A;
-    padding: 0 2px;
-    border-radius: 2px;
-    cursor: pointer;
-}
-.entity-org {
-    background-color: rgba(91, 58, 122, 0.12);
-    border-left: 2px solid #5B3A7A;
-    padding: 0 2px;
-    border-radius: 2px;
-    cursor: pointer;
-}
+.entity-person:hover { background-color: rgba(43, 91, 138, 0.2); }
 
-/* NER confidence states */
+.entity-place {
+    background-color: rgba(58, 107, 74, 0.1);
+    border-bottom: 2px solid var(--gs-green);
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-place:hover { background-color: rgba(58, 107, 74, 0.2); }
+
+.entity-org {
+    background-color: rgba(91, 58, 122, 0.1);
+    border-bottom: 2px solid var(--gs-purple);
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-org:hover { background-color: rgba(91, 58, 122, 0.2); }
+
 .entity-low-confidence {
     opacity: 0.3;
-    border-left-style: dashed;
+    border-bottom-style: dashed;
     transition: opacity 0.2s;
 }
 
-/* === SegmOnto Zone Styling === */
+/* SegmOnto Zones */
 .tei-fw-RunningTitleZone {
     text-align: center;
     font-variant: small-caps;
-    color: #9C7A3C;
+    color: var(--gs-gold);
     font-size: 0.9em;
     margin: 0.5em 0;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
 }
 .tei-fw-QuireMarksZone {
     text-align: center;
     font-size: 0.8em;
-    color: #9C7A3C;
-    opacity: 0.7;
+    color: var(--gs-gold);
+    opacity: 0.6;
 }
 .tei-note-MarginTextZone {
     float: right;
     width: 25%;
     font-size: 0.85em;
-    color: #5a4a3a;
+    color: var(--gs-sepia-medium);
     padding-left: 1em;
-    border-left: 1px solid #9C7A3C;
+    border-left: 1px solid var(--gs-gold);
     margin-left: 1em;
-}
-.tei-ab-MainZone {
-    margin-bottom: 0.5em;
-}
-.tei-foreign {
     font-style: italic;
 }
+.tei-ab-MainZone { margin-bottom: 0.5em; }
+.tei-foreign { font-style: italic; }
 .tei-foreign::after {
     content: ' [' attr(data-lang) ']';
     font-size: 0.75em;
-    color: #9C7A3C;
+    color: var(--gs-gold);
     font-style: normal;
 }
 .tei-pb {
     display: block;
-    margin: 1em 0;
+    margin: 1.5em 0 0.5em;
     text-align: right;
-    color: #9C7A3C;
-    font-size: 0.85em;
-    border-bottom: 1px solid rgba(156, 122, 60, 0.3);
-    padding-bottom: 0.25em;
+    color: var(--gs-gold);
+    font-size: 0.8em;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.tei-pb::before {
+    content: '';
+    display: block;
+    width: 40%;
+    margin-left: auto;
+    border-top: 1px solid var(--gs-gold-light);
+    margin-bottom: 0.3em;
 }
 
-/* === Choice toggle (orig/reg) ===
-   pb-toggle-feature adds/removes class "mode" on pb-page.
-   Default (no class): diplomatic = show orig.
-   With class "mode": modernized = show reg. */
+/* Choice toggle */
 .choice-reg { display: none; }
 .choice-orig { display: inline; }
 .mode .choice-orig { display: none; }
 .mode .choice-reg { display: inline; }
 
-/* === Toolbar controls === */
+/* ================================================================
+   TOOLBAR — Refined controls
+   ================================================================ */
 .gs-toolbar {
     display: flex;
     align-items: center;
-    gap: 1em;
-    padding: 0.5em 1em;
-    background: #FEFCF7;
-    border-bottom: 1px solid rgba(156, 122, 60, 0.3);
+    gap: 1.2em;
+    padding: 0.4em 1em;
     flex-wrap: wrap;
 }
 .gs-toolbar label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85em;
-    color: #2C2418;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9em;
+    color: var(--gs-sepia);
+}
+.gs-toolbar-btn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    background: transparent;
+    border: 1px solid var(--gs-gold-light);
+    color: var(--gs-sepia);
+    padding: 0.3em 1em;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.gs-toolbar-btn:hover,
+.gs-toolbar-btn.active {
+    background: var(--gs-gold);
+    color: var(--gs-cream-light);
+    border-color: var(--gs-gold);
 }
 .ner-slider-container {
     display: flex;
@@ -127,6 +688,45 @@ a:hover { color: #9C7A3C; }
     gap: 0.5em;
 }
 .ner-slider-container input[type="range"] {
-    width: 120px;
-    accent-color: #1E3A6D;
+    width: 100px;
+    accent-color: var(--gs-blue);
+}
+
+/* ================================================================
+   GLOBAL — Non-landing pages
+   ================================================================ */
+.page-header .menubar {
+    background: var(--gs-blue-dark);
+    border-bottom: 1px solid rgba(156, 122, 60, 0.15);
+}
+.page-header .menubar a {
+    color: rgba(254, 252, 247, 0.85);
+    font-family: 'EB Garamond', serif;
+    letter-spacing: 0.02em;
+}
+.page-header .menubar a:hover { color: var(--gs-gold-bright); }
+
+nav[aria-label="breadcrumb"] a { color: var(--gs-blue); }
+
+pb-search input {
+    background: var(--gs-cream-light);
+    border-color: var(--gs-gold-light);
+}
+
+pb-split-list {
+    --pb-split-list-active-color: var(--gs-blue);
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 639px) {
+    .gs-footer div {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    .landing-layout .hero h1 {
+        font-size: 3rem;
+    }
 }
