@@ -784,6 +784,161 @@ a:hover { color: var(--gs-gold); }
 .mode .choice-reg { display: inline; }
 
 /* ================================================================
+   ENTITY PANEL (collapsible sidebar)
+   ================================================================ */
+.gs-doc-layout {
+    display: flex;
+    align-items: flex-start;
+}
+.gs-doc-layout .center { flex: 1; min-width: 0; }
+
+.gs-entity-panel {
+    position: sticky;
+    top: 4rem;
+    width: 2.5rem;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    border-left: 1px solid var(--gs-gold-light);
+    background: var(--gs-cream-light);
+    align-self: stretch;
+    min-height: 300px;
+}
+.gs-entity-panel.open {
+    width: 280px;
+}
+.gs-entity-panel-toggle {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--gs-cream-warm);
+    border: none;
+    border-bottom: 1px solid var(--gs-gold-light);
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--gs-sepia-medium);
+    transition: color 0.2s;
+}
+.gs-entity-panel-toggle:hover { color: var(--gs-gold); }
+
+.gs-entity-panel-content {
+    display: none;
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 8rem);
+}
+.gs-entity-panel.open .gs-entity-panel-content { display: block; }
+
+.gs-entity-panel h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--gs-blue);
+    margin: 0 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--gs-gold-light);
+}
+
+.gs-entity-total {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--gs-sepia-medium);
+    margin-bottom: 0.5rem;
+}
+
+.gs-entity-type-counts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.gs-entity-badge {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.78rem;
+    padding: 0.15em 0.5em;
+    border-radius: 2px;
+    border: 1px solid var(--gs-gold-light);
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+.gs-entity-badge:hover { background: var(--gs-gold-light); }
+.gs-entity-badge-person { border-left: 3px solid var(--gs-blue-light); }
+.gs-entity-badge-place  { border-left: 3px solid var(--gs-green); }
+.gs-entity-badge-org    { border-left: 3px solid var(--gs-purple); }
+.gs-entity-badge-work   { border-left: 3px solid var(--gs-gold); }
+.gs-entity-badge-event  { border-left: 3px solid var(--gs-bordeaux); }
+
+.gs-entity-filter-tag {
+    display: inline-block;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.8rem;
+    padding: 0.1em 0.5em;
+    background: var(--gs-blue);
+    color: var(--gs-cream-light);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.gs-entity-item {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(156, 122, 60, 0.1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.gs-entity-item:hover { background: var(--gs-gold-light); }
+.gs-entity-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--gs-sepia);
+}
+.gs-entity-meta {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--gs-sepia-light);
+}
+.gs-entity-search {
+    width: 100%;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.85rem;
+    padding: 0.35em 0.6em;
+    border: 1px solid var(--gs-gold-light);
+    border-radius: 2px;
+    background: var(--gs-cream);
+    color: var(--gs-sepia);
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+}
+.gs-entity-search:focus {
+    outline: none;
+    border-color: var(--gs-blue-light);
+}
+.gs-entity-badge.active {
+    background: var(--gs-blue);
+    color: var(--gs-cream-light);
+    border-color: var(--gs-blue);
+}
+.gs-entity-empty {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--gs-sepia-light);
+    font-style: italic;
+    padding: 1rem 0;
+}
+
+/* Entity highlight flash when navigating */
+@keyframes gs-entity-flash {
+    0% { background-color: rgba(156, 122, 60, 0.5); }
+    100% { background-color: transparent; }
+}
+.gs-entity-highlight {
+    animation: gs-entity-flash 2s ease-out;
+}
+
+/* ================================================================
    TOOLBAR
    ================================================================ */
 .gs-toolbar {

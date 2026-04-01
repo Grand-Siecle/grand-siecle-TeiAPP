@@ -12,7 +12,8 @@
             "custom": [
                 "resources/scripts/toc.js",
                 "resources/scripts/ner-slider.js",
-                "resources/scripts/lang-toggle.js"
+                "resources/scripts/lang-toggle.js",
+                "resources/scripts/entity-panel.js"
             ]
         },
         "features": {
@@ -49,13 +50,27 @@
     [% endtemplate %]
 
     [% block content %]
-    <div class="center">
-        <pb-view src="document1" view="page"
-            column-separator=".tei-cb"
-            append-footnotes="append-footnotes"
-            subscribe="transcription" emit="transcription"
-            animation=""
-            direction="[[$context?defaults?direction]]"/>
+    <div class="gs-doc-layout">
+        <div class="center">
+            <pb-view src="document1" view="page"
+                column-separator=".tei-cb"
+                append-footnotes="append-footnotes"
+                subscribe="transcription" emit="transcription"
+                animation=""
+                direction="[[$context?defaults?direction]]"/>
+        </div>
+
+        <!-- Entity panel (collapsible sidebar) -->
+        <aside class="gs-entity-panel" id="entity-panel">
+            <button class="gs-entity-panel-toggle" id="entity-panel-toggle"
+                title="Entites">&#9776;</button>
+            <div class="gs-entity-panel-content" id="entity-panel-content">
+                <h3>Entites detectees</h3>
+                <div class="gs-entity-summary" id="entity-summary"></div>
+                <div class="gs-entity-filters" id="entity-filters"></div>
+                <div class="gs-entity-list" id="entity-list"></div>
+            </div>
+        </aside>
     </div>
 
     <div class="page-navigation">
