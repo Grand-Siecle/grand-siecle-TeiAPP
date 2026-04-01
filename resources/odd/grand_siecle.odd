@@ -148,12 +148,33 @@
                 </elementSpec>
 
                 <!-- ============================================================
+                     Sentence: transparent inline wrapper
+                     ============================================================ -->
+                <elementSpec ident="s" mode="change">
+                    <model behaviour="inline" cssClass="tei-s">
+                        <pb:template xmlns="" xml:space="preserve">
+                            <span class="tei-s" data-id="{@xml:id}">[[content]]</span>
+                        </pb:template>
+                    </model>
+                </elementSpec>
+
+                <!-- ============================================================
+                     Punctuation character: inline, joins left when @join="left"
+                     ============================================================ -->
+                <elementSpec ident="pc" mode="change">
+                    <model predicate="@join='left'" behaviour="inline" cssClass="tei-pc join-left">
+                        <pb:template xmlns="" xml:space="preserve"><span class="tei-pc join-left">[[content]]</span></pb:template>
+                    </model>
+                    <model behaviour="inline" cssClass="tei-pc"/>
+                </elementSpec>
+
+                <!-- ============================================================
                      Word-level annotation: transparent, data attributes for tooltip
                      ============================================================ -->
                 <elementSpec ident="w" mode="change">
                     <model predicate="@lemma or @pos" behaviour="pass-through">
                         <pb:template xmlns="" xml:space="preserve">
-                            <span class="tei-w" data-lemma="{@lemma}" data-pos="{@pos}">[[content]]</span>
+                            <span class="tei-w" data-lemma="{@lemma}" data-pos="{@pos}" data-msd="{@msd}" data-norm="{@norm}">[[content]]</span>
                         </pb:template>
                     </model>
                     <model behaviour="inline"/>
