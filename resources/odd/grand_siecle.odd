@@ -153,8 +153,9 @@
                      ============================================================ -->
                 <elementSpec ident="s" mode="change">
                     <model behaviour="inline" cssClass="tei-s">
+                        <param name="sid" value="string((@xml:id, '')[1])"/>
                         <pb:template xmlns="" xml:space="preserve">
-                            <span class="tei-s" data-id="{@xml:id}">[[content]]</span>
+                            <span class="tei-s" data-id="[[sid]]">[[content]]</span>
                         </pb:template>
                     </model>
                 </elementSpec>
@@ -174,8 +175,12 @@
                      ============================================================ -->
                 <elementSpec ident="w" mode="change">
                     <model predicate="@lemma or @pos" behaviour="pass-through">
+                        <param name="lemma" value="string((@lemma, '')[1])"/>
+                        <param name="pos" value="string((@pos, '')[1])"/>
+                        <param name="msd" value="string((@msd, '')[1])"/>
+                        <param name="norm" value="string((@norm, '')[1])"/>
                         <pb:template xmlns="" xml:space="preserve">
-                            <span class="tei-w" data-lemma="{@lemma}" data-pos="{@pos}" data-msd="{@msd}" data-norm="{@norm}">[[content]]</span>
+                            <span class="tei-w" data-lemma="[[lemma]]" data-pos="[[pos]]" data-msd="[[msd]]" data-norm="[[norm]]">[[content]]</span>
                         </pb:template>
                     </model>
                     <model behaviour="inline"/>
