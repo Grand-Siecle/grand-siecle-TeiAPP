@@ -17,6 +17,9 @@
                 <field name="category" expression="nav:get-metadata(ancestor::tei:TEI, 'category')"/>
                 <field name="file" expression="util:document-name(.)"/>
                 <field name="text" expression="."/>
+                <!-- Linguistic fields: lemma and POS from word-level annotations -->
+                <field name="lemma" expression=".//tei:w/@lemma"/>
+                <field name="pos" expression=".//tei:w/@pos"/>
                 <facet dimension="genre" expression="nav:get-metadata(ancestor::tei:TEI, 'genre')" hierarchical="yes"/>
                 <facet dimension="language" expression="nav:get-metadata(ancestor::tei:TEI, 'language')"/>
                 <facet dimension="feature" expression="nav:get-metadata(ancestor::tei:TEI, 'feature')"/>
@@ -26,6 +29,10 @@
                 <facet dimension="person" expression="nav:get-metadata(ancestor::tei:TEI, 'person')"/>
                 <facet dimension="date" expression="nav:get-metadata(ancestor::tei:TEI, 'date') =&gt; tokenize('-')" hierarchical="yes"/>
                 <facet dimension="author-type" expression="nav:get-metadata(ancestor::tei:TEI, 'author-type')"/>
+                <!-- Text language: from xml:lang on text blocks and foreign elements -->
+                <facet dimension="text-lang" expression="distinct-values((.//tei:foreign/@xml:lang, .//*[@xml:lang]/@xml:lang))"/>
+                <!-- NER entity types present in the document body -->
+                <facet dimension="ner-type" expression="distinct-values((if (.//tei:persName[@resp='#ner-auto' or @cert]) then 'person' else (), if (.//tei:placeName[@resp='#ner-auto' or @cert]) then 'place' else (), if (.//tei:orgName[@resp='#ner-auto' or @cert]) then 'org' else ()))"/>
             </text>
             
                 <text qname="tei:div">
