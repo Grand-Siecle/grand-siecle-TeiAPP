@@ -110,8 +110,9 @@
                         <desc>Suppress trailing foreign artifacts from v1 pipeline — these have @corresp pointing to zones</desc>
                     </model>
                     <model behaviour="inline" cssClass="tei-foreign">
+                        <param name="lang" value="string((@xml:lang, '')[1])"/>
                         <pb:template xmlns="" xml:space="preserve">
-                            <span class="tei-foreign" data-lang="{@xml:lang}">[[content]]</span>
+                            <span class="tei-foreign" data-lang="[[lang]]">[[content]]</span>
                         </pb:template>
                     </model>
                 </elementSpec>
