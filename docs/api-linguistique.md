@@ -1,6 +1,6 @@
-# API linguistique Grand Siecle
+# API linguistique & NER Grand Siecle
 
-Endpoints pour interroger les annotations linguistiques (lemmes, POS, morphologie) extraites automatiquement des documents TEI.
+Endpoints pour interroger les annotations linguistiques (lemmes, POS, morphologie) et les entites nommees (NER) extraites automatiquement des documents TEI.
 
 **Base URL :** `http://localhost:8080/exist/apps/GdSiecle`
 
@@ -202,6 +202,80 @@ L'attribut `msd` utilise des paires cle=valeur separees par `|` :
 | `Deg` | Pos, Comp, Sup |
 
 Exemple : `Case=Acc|Numb=Plur|Gend=Fem` = accusatif pluriel feminin.
+
+---
+
+## GET /api/document-entities
+
+Extrait toutes les entites NER d'un document : personnes, lieux, organisations, oeuvres, evenements. Combine les declarations du header (particDesc, settingDesc, standOff) avec les comptages de mentions inline et les niveaux de confiance.
+
+### Parametres
+
+| Parametre | Type | Requis | Description |
+|-----------|------|--------|-------------|
+| `file` | string | oui | Nom du fichier TEI ou ID interne du document |
+
+### Exemple
+
+```
+GET /api/document-entities?file=LIV0326_v2_altos_transcribed_version2.tei.xml
+```
+
+### Reponse
+
+```json
+{
+  "summary": {
+    "document": "Le philosophe indifferent",
+    "file": "LIV0326_v2_altos_transcribed_version2.tei.xml",
+    "total-entities": 125,
+    "by-type": {
+      "person": 88,
+      "place": 12,
+      "org": 17,
+      "work": 5,
+      "event": 3
+    }
+  },
+  "entities": [
+    {
+      "type": "person",
+      "id": "pers-779dff30-...",
+      "label": "Platon",
+      "mentions": 3,
+      "certs": ["high", "mid"],
+      "source": "ner-auto"
+    },
+    {
+      "type": "place",
+      "id": "place-cdecf9db-...",
+      "label": "Athenae",
+      "mentions": 2,
+      "certs": ["high"],
+      "source": "ner-auto"
+    },
+    {
+      "type": "person",
+      "id": "PERS0075",
+      "label": "Antoine de Sommaville",
+      "mentions": 0,
+      "certs": [],
+      "source": "manual"
+    }
+  ]
+}
+```
+
+| Champ | Description |
+|-------|-------------|
+| `type` | Type d'entite : person, place, org, work, event |
+| `id` | Identifiant XML (UUID pour NER-auto, ID projet pour manuels) |
+| `label` | Nom de l'entite |
+| `mentions` | Nombre de mentions inline dans le body du document |
+| `certs` | Niveaux de confiance distincts des mentions (high/mid/low) |
+| `source` | `ner-auto` (pipeline automatique) ou `manual` (curation) |
+
+Les entites sont triees par nombre de mentions decroissant.
 
 ---
 

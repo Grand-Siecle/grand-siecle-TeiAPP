@@ -2,13 +2,24 @@ xquery version "3.1";
 
 (:~
  : Custom API endpoints for the Grand Siècle project.
- : Linguistic search (lemma, POS) and language-filtered queries.
+ : Linguistic search (lemma, POS), language-filtered queries, NER entity extraction.
  :)
 module namespace api="http://teipublisher.com/api/custom";
 
 import module namespace config="http://www.tei-c.org/tei-simple/config" at "config.xqm";
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+
+(:~ Helper: resolve a document by filename in the data collection :)
+declare %private function api:resolve-doc($file as xs:string) as document-node()? {
+    let $collection := collection($config:data-default)
+    return
+        if (doc-available($config:data-default || '/' || $file)) then
+            doc($config:data-default || '/' || $file)
+        else
+            (: try by internal ID :)
+            head($collection//tei:TEI[.//tei:idno[@type='internal'] = $file]/root(.))
+};
 
 (:~
  : Keep this. This function does the actual lookup in the imported modules.
@@ -127,4 +138,129 @@ declare function api:pos-list($request as map(*)) {
         }
     return
         array { $grouped }
+};
+
+(:~
+ : Extract all NER entities from a document: persons, places, orgs, works, events.
+ : Combines header declarations (particDesc, settingDesc, standOff) with
+ : inline mention counts and confidence stats from the body text.
+ :)
+declare function api:document-entities($request as map(*)) {
+    let $file := $request?parameters?file
+    let $doc := api:resolve-doc($file)
+    return
+        if (not($doc)) then
+            map { "error": "Document not found: " || $file }
+        else
+    let $tei := $doc//tei:TEI
+    let $body := $tei/tei:text
+
+    (: --- Persons (NER-auto) --- :)
+    let $persons :=
+        for $p in $tei//tei:particDesc/tei:listPerson[@source='#ner-auto']/tei:person
+        let $id := string($p/@xml:id)
+        let $mentions := $body//tei:persName[@ref = '#' || $id]
+        let $certs := $mentions/@cert/string()
+        return map {
+            "type": "person",
+            "id": $id,
+            "label": normalize-space($p/tei:persName[1]),
+            "mentions": count($mentions),
+            "certs": array { distinct-values($certs) },
+            "source": "ner-auto"
+        }
+
+    (: --- Places --- :)
+    let $places :=
+        for $p in $tei//tei:settingDesc/tei:listPlace[@source='#ner-auto']/tei:place
+        let $id := string($p/@xml:id)
+        let $mentions := $body//tei:placeName[@ref = '#' || $id]
+        let $certs := $mentions/@cert/string()
+        return map {
+            "type": "place",
+            "id": $id,
+            "label": normalize-space($p/tei:placeName[1]),
+            "mentions": count($mentions),
+            "certs": array { distinct-values($certs) },
+            "source": "ner-auto"
+        }
+
+    (: --- Organizations --- :)
+    let $orgs :=
+        for $o in $tei//tei:particDesc/tei:listOrg[@source='#ner-auto']/tei:org
+        let $id := string($o/@xml:id)
+        let $mentions := $body//tei:orgName[@ref = '#' || $id]
+        let $certs := $mentions/@cert/string()
+        return map {
+            "type": "org",
+            "id": $id,
+            "label": normalize-space($o/tei:orgName[1]),
+            "mentions": count($mentions),
+            "certs": array { distinct-values($certs) },
+            "source": "ner-auto"
+        }
+
+    (: --- Works (standOff) --- :)
+    let $works :=
+        for $b in $tei/tei:standOff/tei:listBibl[@source='#ner-auto']/tei:bibl
+        let $id := string($b/@xml:id)
+        return map {
+            "type": "work",
+            "id": $id,
+            "label": normalize-space($b/tei:title[1]),
+            "mentions": 0,
+            "certs": array {},
+            "source": "ner-auto"
+        }
+
+    (: --- Events (standOff) --- :)
+    let $events :=
+        for $e in $tei/tei:standOff/tei:listEvent[@source='#ner-auto']/tei:event
+        let $id := string($e/@xml:id)
+        return map {
+            "type": "event",
+            "id": $id,
+            "label": normalize-space($e/tei:label[1]),
+            "mentions": 0,
+            "certs": array {},
+            "source": "ner-auto"
+        }
+
+    (: --- Manual/curated persons (particDesc without @source on listPerson) --- :)
+    let $manual-persons :=
+        for $p in $tei//tei:particDesc[not(tei:listPerson/@source)]/tei:listPerson/tei:person
+        let $id := string($p/@xml:id)
+        let $mentions := $body//tei:persName[@ref = '#' || $id]
+        return map {
+            "type": "person",
+            "id": $id,
+            "label": normalize-space(string-join(($p/tei:persName/tei:forename, $p/tei:persName/tei:surname), ' ')),
+            "mentions": count($mentions),
+            "certs": array {},
+            "source": "manual"
+        }
+
+    let $all := ($persons, $places, $orgs, $works, $events, $manual-persons)
+
+    let $summary := map {
+        "document": normalize-space($tei//tei:titleStmt/tei:title[1]),
+        "file": util:document-name($doc),
+        "total-entities": count($all),
+        "by-type": map {
+            "person": count($persons) + count($manual-persons),
+            "place": count($places),
+            "org": count($orgs),
+            "work": count($works),
+            "event": count($events)
+        }
+    }
+
+    return map {
+        "summary": $summary,
+        "entities": array {
+            for $e in $all
+            order by $e?mentions descending, $e?label
+            return $e
+        }
+    }
 };

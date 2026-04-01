@@ -3375,6 +3375,33 @@
 				}
 			}
 		},
+		"/api/document-entities": {
+			"get": {
+				"summary": "Extract all NER entities from a document",
+				"description": "Returns persons, places, organizations, works, and events detected by NER, with inline mention counts and confidence levels. Includes both automatic (ner-auto) and manual entities.",
+				"tags": ["search"],
+				"operationId": "cust:document-entities",
+				"parameters": [
+					{
+						"name": "file",
+						"in": "query",
+						"description": "Document filename or internal ID",
+						"required": true,
+						"schema": { "type": "string" }
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Summary and entity list",
+						"content": {
+							"application/json": {
+								"schema": { "type": "object" }
+							}
+						}
+					}
+				}
+			}
+		},
 		"/api/pos-list": {
 			"get": {
 				"summary": "List available POS tags with counts",
