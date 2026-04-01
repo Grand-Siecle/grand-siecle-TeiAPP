@@ -703,6 +703,19 @@ a:hover { color: var(--gs-gold); }
     margin-left: 1em;
     font-style: italic;
 }
+/* Punctuation: suppress space before join-left */
+.tei-pc.join-left { margin-left: -0.25em; }
+
+/* Word-level: subtle hover for linguistic data */
+.tei-w[data-lemma] { cursor: help; }
+.tei-w[data-lemma]:hover {
+    background-color: var(--gs-gold-light);
+    border-radius: 2px;
+}
+
+/* Sentence wrapper: no visual default, hover-highlight for debugging */
+.tei-s { /* transparent by default */ }
+
 .tei-ab-MainZone { margin-bottom: 0.5em; }
 .tei-foreign { font-style: italic; }
 .tei-foreign::after {
