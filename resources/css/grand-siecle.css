@@ -706,15 +706,50 @@ a:hover { color: var(--gs-gold); }
 /* Punctuation: suppress space before join-left */
 .tei-pc.join-left { margin-left: -0.25em; }
 
-/* Word-level: subtle hover for linguistic data */
-.tei-w[data-lemma] { cursor: help; }
+/* ---- Word-level linguistic tooltips ---- */
+.tei-w[data-lemma] {
+    cursor: help;
+    position: relative;
+}
 .tei-w[data-lemma]:hover {
     background-color: var(--gs-gold-light);
     border-radius: 2px;
 }
+.tei-w[data-lemma]:hover::after {
+    content: attr(data-lemma) " (" attr(data-pos) ")";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gs-sepia);
+    color: var(--gs-cream-light);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    line-height: 1.4;
+    padding: 0.3em 0.6em;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(44, 36, 24, 0.25);
+}
 
-/* Sentence wrapper: no visual default, hover-highlight for debugging */
-.tei-s { /* transparent by default */ }
+/* Sentence wrapper: transparent by default */
+.tei-s { /* no visual default */ }
+
+/* ---- NER confidence visualization ---- */
+/* Textual cert values from NER pipeline */
+[data-cert="high"] { border-bottom-style: solid; }
+[data-cert="mid"]  { border-bottom-style: dashed; }
+[data-cert="low"]  {
+    border-bottom-style: dotted;
+    opacity: 0.55;
+}
+
+/* ---- Language highlighting ---- */
+/* Highlight rules are injected dynamically by lang-toggle.js
+   based on languages detected in the rendered page. */
 
 .tei-ab-MainZone { margin-bottom: 0.5em; }
 .tei-foreign { font-style: italic; }
@@ -781,7 +816,8 @@ a:hover { color: var(--gs-gold); }
     color: var(--gs-cream-light);
     border-color: var(--gs-gold);
 }
-.ner-slider-container {
+.ner-slider-container,
+.lang-toggle-container {
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -789,6 +825,11 @@ a:hover { color: var(--gs-gold); }
 .ner-slider-container input[type="range"] {
     width: 100px;
     accent-color: var(--gs-blue);
+}
+.lang-toggle-container .gs-toolbar-btn {
+    font-size: 0.75rem;
+    padding: 0.2em 0.6em;
+    letter-spacing: 0.08em;
 }
 
 /* ================================================================

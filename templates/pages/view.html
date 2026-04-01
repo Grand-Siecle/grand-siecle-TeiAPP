@@ -11,7 +11,8 @@
         "script": {
             "custom": [
                 "resources/scripts/toc.js",
-                "resources/scripts/ner-slider.js"
+                "resources/scripts/ner-slider.js",
+                "resources/scripts/lang-toggle.js"
             ]
         },
         "features": {
@@ -37,6 +38,12 @@
             </label>
             <input type="range" id="ner-threshold" min="0" max="1" step="0.05" value="0.5"/>
             <span id="ner-threshold-value">0.50</span>
+        </div>
+
+        <!-- Language highlight toggles (buttons generated dynamically from page content) -->
+        <div class="lang-toggle-container">
+            <label><pb-i18n key="document.languages">Langues</pb-i18n></label>
+            <span class="lang-toggle-buttons"></span>
         </div>
     </li>
     [% endtemplate %]
