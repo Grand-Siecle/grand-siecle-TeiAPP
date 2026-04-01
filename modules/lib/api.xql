@@ -37,7 +37,7 @@ import module namespace sitemap="http://tei-publisher.org/api/sitemap" at "../si
 
 import module namespace anno="http://teipublisher.com/api/annotations" at "../annotations/annotations.xql";
 
-
+import module namespace cust="http://teipublisher.com/api/custom" at "../custom-api.xql";
 
 declare option output:indent "no";
 

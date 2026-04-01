@@ -3286,6 +3286,120 @@
 					}
 				}
 			}
+		},
+		"/api/lemma-search": {
+			"get": {
+				"summary": "Search by lemma across annotated documents",
+				"description": "Find word occurrences by lemma value, with optional language and document filters. Returns word forms with sentence context.",
+				"tags": ["search"],
+				"operationId": "cust:lemma-search",
+				"parameters": [
+					{
+						"name": "query",
+						"in": "query",
+						"description": "Lemma to search for (regex, case-insensitive)",
+						"required": true,
+						"schema": { "type": "string" }
+					},
+					{
+						"name": "lang",
+						"in": "query",
+						"description": "Filter by text language (e.g. lat, fra, grc)",
+						"schema": { "type": "string" }
+					},
+					{
+						"name": "doc",
+						"in": "query",
+						"description": "Restrict to a document by internal ID",
+						"schema": { "type": "string" }
+					},
+					{
+						"name": "start",
+						"in": "query",
+						"schema": { "type": "integer", "default": 1 }
+					},
+					{
+						"name": "per-page",
+						"in": "query",
+						"schema": { "type": "integer", "default": 20 }
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Array of matching word occurrences",
+						"content": {
+							"application/json": {
+								"schema": { "type": "array" }
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/pos-concordance": {
+			"get": {
+				"summary": "POS concordance: words grouped by lemma for a given POS category",
+				"description": "List all words of a given part-of-speech category, grouped by lemma with occurrence counts and attested forms.",
+				"tags": ["search"],
+				"operationId": "cust:pos-concordance",
+				"parameters": [
+					{
+						"name": "pos",
+						"in": "query",
+						"description": "Part-of-speech tag (e.g. NOMcom, NOMpro, VER, ADJqua, PRE, ADV)",
+						"required": true,
+						"schema": { "type": "string" }
+					},
+					{
+						"name": "doc",
+						"in": "query",
+						"description": "Restrict to a document by internal ID",
+						"schema": { "type": "string" }
+					},
+					{
+						"name": "lang",
+						"in": "query",
+						"description": "Filter by text language",
+						"schema": { "type": "string" }
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Array of lemma groups with counts and forms",
+						"content": {
+							"application/json": {
+								"schema": { "type": "array" }
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/pos-list": {
+			"get": {
+				"summary": "List available POS tags with counts",
+				"description": "Returns distinct part-of-speech tags found in the corpus, with occurrence counts. Useful for populating filter dropdowns.",
+				"tags": ["search"],
+				"operationId": "cust:pos-list",
+				"parameters": [
+					{
+						"name": "doc",
+						"in": "query",
+						"description": "Restrict to a document by internal ID",
+						"schema": { "type": "string" }
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Array of POS tags with counts",
+						"content": {
+							"application/json": {
+								"schema": { "type": "array" }
+							}
+						}
+					}
+				}
+			}
 		}
     },
 	"security": [
