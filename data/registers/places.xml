@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-places">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Registre des lieux — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Authority file for the Grand Siecle project</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from NER pipeline output and manual curation</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listPlace>
+            <place xml:id="place-000001">
+                <placeName type="main">Athenes</placeName>
+                <placeName type="sort">Athenes</placeName>
+                <note>Cite antique, lieu des ecoles philosophiques</note>
+            </place>
+        </listPlace>
+    </standOff>
+</TEI>

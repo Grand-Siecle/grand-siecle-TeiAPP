@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-works">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Registre des oeuvres — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Authority file for the Grand Siecle project</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from NER pipeline output and manual curation</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listBibl type="work">
+        </listBibl>
+    </standOff>
+</TEI>

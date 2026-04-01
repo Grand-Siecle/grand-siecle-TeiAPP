@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-persons">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Registre des personnes — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Authority file for the Grand Siecle project</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Created from NER pipeline output and manual curation</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listPerson>
+            <!-- Manual / curated entries -->
+            <person xml:id="person-000001">
+                <persName type="main">Antoine de Sommaville</persName>
+                <persName type="sort">Sommaville, Antoine de</persName>
+                <birth><date when="1597-11-03"/></birth>
+                <death><date when="1664"/></death>
+                <occupation>Libraire-imprimeur parisien</occupation>
+                <idno type="isni">121394772</idno>
+                <note>Libraire du Philosophe indifferent (1643)</note>
+            </person>
+        </listPerson>
+    </standOff>
+</TEI>
