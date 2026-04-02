@@ -211,16 +211,27 @@
                         <param name="content" value="."/>
                         <param name="ref" value="replace(@ref, '^#', '')"/>
                         <param name="cert" value="string(@cert)"/>
-                        <pb:template xmlns="" xml:space="preserve">
-                            <a href="people/[[ref]]" class="entity-person" data-cert="[[cert]]">[[content]]</a>
-                        </pb:template>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><a href="people/[[ref]]" class="entity-person" data-cert="[[cert]]">[[content]]</a></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge person-badge"><pb-i18n key="entity.person">Personne</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+<a href="people/[[ref]]" class="entity-tooltip-link"><pb-i18n key="entity.view-record">Voir la fiche</pb-i18n> &#x2192;</a>
+</div>
+</template></pb-popover></pb:template>
                     </model>
                     <model predicate="@cert" behaviour="pass-through">
                         <param name="content" value="."/>
                         <param name="cert" value="string(@cert)"/>
-                        <pb:template xmlns="" xml:space="preserve">
-                            <span class="entity-person" data-cert="[[cert]]">[[content]]</span>
-                        </pb:template>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-person" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge person-badge"><pb-i18n key="entity.person">Personne</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
                     </model>
                     <model behaviour="inline"/>
                 </elementSpec>
@@ -248,16 +259,27 @@
                         <param name="content" value="."/>
                         <param name="ref" value="replace(@ref, '^#', '')"/>
                         <param name="cert" value="string(@cert)"/>
-                        <pb:template xmlns="" xml:space="preserve">
-                            <a href="places/[[ref]]" class="entity-place" data-cert="[[cert]]">[[content]]</a>
-                        </pb:template>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><a href="places/[[ref]]" class="entity-place" data-cert="[[cert]]">[[content]]</a></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge place-badge"><pb-i18n key="entity.place">Lieu</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+<a href="places/[[ref]]" class="entity-tooltip-link"><pb-i18n key="entity.view-record">Voir la fiche</pb-i18n> &#x2192;</a>
+</div>
+</template></pb-popover></pb:template>
                     </model>
                     <model predicate="@cert" behaviour="pass-through">
                         <param name="content" value="."/>
                         <param name="cert" value="string(@cert)"/>
-                        <pb:template xmlns="" xml:space="preserve">
-                            <span class="entity-place" data-cert="[[cert]]">[[content]]</span>
-                        </pb:template>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-place" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge place-badge"><pb-i18n key="entity.place">Lieu</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
                     </model>
                     <model behaviour="inline"/>
                 </elementSpec>
@@ -285,16 +307,27 @@
                         <param name="content" value="."/>
                         <param name="ref" value="replace(@ref, '^#', '')"/>
                         <param name="cert" value="string(@cert)"/>
-                        <pb:template xmlns="" xml:space="preserve">
-                            <a href="organizations/[[ref]]" class="entity-org" data-cert="[[cert]]">[[content]]</a>
-                        </pb:template>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><a href="organizations/[[ref]]" class="entity-org" data-cert="[[cert]]">[[content]]</a></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge org-badge"><pb-i18n key="entity.organization">Organisation</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+<a href="organizations/[[ref]]" class="entity-tooltip-link"><pb-i18n key="entity.view-record">Voir la fiche</pb-i18n> &#x2192;</a>
+</div>
+</template></pb-popover></pb:template>
                     </model>
                     <model predicate="@cert" behaviour="pass-through">
                         <param name="content" value="."/>
                         <param name="cert" value="string(@cert)"/>
-                        <pb:template xmlns="" xml:space="preserve">
-                            <span class="entity-org" data-cert="[[cert]]">[[content]]</span>
-                        </pb:template>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-org" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge org-badge"><pb-i18n key="entity.organization">Organisation</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
                     </model>
                     <model behaviour="inline"/>
                 </elementSpec>
