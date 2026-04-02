@@ -26,7 +26,11 @@
     "browse": {
         "category": "Cat\u00e9gorie",
         "author": "Auteur",
-        "title": "Titre"
+        "title": "Titre",
+        "display-mode": "Affichage",
+        "list": "Liste",
+        "compact": "Compact",
+        "grid": "Grille"
     },
     "search": {
         "title": "Titre",
@@ -46,7 +50,11 @@
     },
     "facets": {
         "place": "Lieu",
-        "author": "Auteur"
+        "author": "Auteur",
+        "genre": "Genre",
+        "language": "Langue",
+        "period": "P\u00e9riode",
+        "author-type": "Type d\u2019auteur"
     },
     "toolbar": {
         "next": "Suivant",
@@ -64,5 +72,12 @@
     "navigation": {
         "prev": "Pr\u00e9c\u00e9dent",
         "next": "Suivant"
+    },
+    "entity": {
+        "person": "Personne",
+        "place": "Lieu",
+        "organization": "Organisation",
+        "confidence": "Confiance",
+        "view-record": "Voir la fiche"
     }
 }

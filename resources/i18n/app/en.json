@@ -28,7 +28,11 @@
     "browse": {
         "category": "Category",
         "author": "Author",
-        "title": "Title"
+        "title": "Title",
+        "display-mode": "Display",
+        "list": "List",
+        "compact": "Compact",
+        "grid": "Grid"
     },
     "search": {
         "title": "Title",
@@ -47,7 +51,11 @@
     },
     "facets": {
         "place": "Place",
-        "author": "Author"
+        "author": "Author",
+        "genre": "Genre",
+        "language": "Language",
+        "period": "Period",
+        "author-type": "Author type"
     },
     "toolbar": {
         "next": "Next",
@@ -65,5 +73,12 @@
     "navigation": {
         "prev": "Previous",
         "next": "Next"
+    },
+    "entity": {
+        "person": "Person",
+        "place": "Place",
+        "organization": "Organization",
+        "confidence": "Confidence",
+        "view-record": "View record"
     }
 }
