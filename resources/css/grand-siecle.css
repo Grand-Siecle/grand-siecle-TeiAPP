@@ -644,6 +644,25 @@ a:hover { color: var(--gs-gold); }
 .gs-footer .license:hover svg { fill: var(--gs-gold); }
 
 /* ================================================================
+   BROWSE — Display modes (pb-select-feature)
+   ================================================================ */
+#document-list.browse-list {
+    display: block;
+}
+/* Grid mode: toggled by pb-select-feature (.toggle class) */
+#document-list.browse-list.toggle {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1em;
+}
+#document-list.browse-list.toggle .document-info {
+    padding: 0.8em;
+    border: 1px solid var(--gs-cream-warm);
+    border-radius: 4px;
+    background: var(--gs-cream-light);
+}
+
+/* ================================================================
    DOCUMENT VIEW — ODD rendering
    ================================================================ */
 .entity-person {
@@ -677,6 +696,68 @@ a:hover { color: var(--gs-gold); }
     opacity: 0.3;
     border-bottom-style: dashed;
     transition: opacity 0.2s;
+}
+
+/* Entity tooltips (pb-popover) */
+.entity-tooltip {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+    padding: 0.4em 0.6em;
+    font-family: Inter, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    min-width: 140px;
+}
+.entity-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+    width: fit-content;
+}
+.person-badge {
+    background: rgba(43, 91, 138, 0.15);
+    color: var(--gs-blue-light);
+}
+.place-badge {
+    background: rgba(58, 107, 74, 0.15);
+    color: var(--gs-green);
+}
+.org-badge {
+    background: rgba(91, 58, 122, 0.15);
+    color: var(--gs-purple);
+}
+.entity-cert {
+    color: var(--gs-sepia-medium);
+    font-size: 0.8rem;
+}
+.entity-cert[data-cert=""] { display: none; }
+.entity-resp {
+    color: var(--gs-sepia-light);
+    font-size: 0.75rem;
+    font-style: italic;
+}
+.entity-resp[data-resp=""],
+.entity-resp:empty { display: none; }
+.entity-tooltip-link {
+    color: var(--gs-blue);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0.15em;
+}
+.entity-tooltip-link:hover {
+    text-decoration: underline;
+}
+
+/* pb-popover theme overrides for Grand Siecle */
+pb-popover {
+    --pb-popover-max-width: 280px;
+    --pb-popover-link-decoration: none;
 }
 
 .tei-fw-RunningTitleZone {
