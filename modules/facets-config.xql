@@ -40,5 +40,17 @@ declare variable $facets-config:facets := [
                 case "en" return "English"
                 default return $label
         }
+    },
+    map {
+        "dimension": "period",
+        "heading": "facets.period",
+        "max": 5,
+        "hierarchical": false()
+    },
+    map {
+        "dimension": "author-type",
+        "heading": "facets.author-type",
+        "max": 5,
+        "hierarchical": false()
     }
 ];
