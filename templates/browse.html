@@ -15,6 +15,9 @@
         "templating": {
             "extends": "templates/layouts/content.html"
         },
+        "styles": [
+            "resources/css/grand-siecle.css"
+        ],
         "script": {
             "custom": [
                 "resources/scripts/facets.js",
@@ -112,6 +115,15 @@
             </li>
         </ul>
         <ul>
+            <li>
+                <pb-select-feature name="browse-display" label="browse.display-mode"
+                    emit="search" subscribe="search"
+                    items='[
+                        {"name": "browse.list", "selectors": [{"selector": "#document-list", "state": false}]},
+                        {"name": "browse.grid", "selectors": [{"selector": "#document-list", "state": true}]}
+                    ]'>
+                </pb-select-feature>
+            </li>
             [% block before-document-list %][% endblock %]
             <li>
                 <pb-paginate id="paginate" per-page="10" range="5" subscribe="search" emit="search"/>
@@ -120,7 +132,7 @@
     </nav>
     [% endtemplate %]
 
-    <div id="document-list">
+    <div id="document-list" class="browse-list">
         <pb-load url="api/collection/{collection}" expand="" emit="search"/>
     </div>
 </template>
