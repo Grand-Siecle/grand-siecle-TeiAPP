@@ -4,10 +4,19 @@
 (function() {
     'use strict';
 
+    var certLevels = { 'high': 0.9, 'mid': 0.6, 'low': 0.3 };
+
+    function parseCert(raw) {
+        if (!raw) return NaN;
+        var num = parseFloat(raw);
+        if (!isNaN(num)) return num;
+        return certLevels[raw.toLowerCase()] || NaN;
+    }
+
     function applyThreshold(threshold) {
         var entities = document.querySelectorAll('[data-cert]');
         entities.forEach(function(el) {
-            var cert = parseFloat(el.getAttribute('data-cert'));
+            var cert = parseCert(el.getAttribute('data-cert'));
             if (isNaN(cert)) return;
             el.classList.toggle('entity-low-confidence', cert < threshold);
         });
