@@ -859,10 +859,50 @@ pb-popover {
     margin-bottom: 0.3em;
 }
 
-.choice-reg { display: none; }
+/* Diplomatic / modernized toggle (light-DOM copy; real rules live in
+   components.css for the pb-view shadow DOM). Driven by pb-toggle-feature
+   adding ".toggled" to .choice-orig / .choice-reg spans. */
 .choice-orig { display: inline; }
-.mode .choice-orig { display: none; }
-.mode .choice-reg { display: inline; }
+.choice-reg { display: none; }
+.choice-orig.toggled { display: none; }
+.choice-reg.toggled { display: inline; }
+
+.gs-local-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5em;
+    padding: 0.5em 1em;
+    margin-bottom: 0.75em;
+    border-bottom: 1px solid var(--gs-gold-light, #d4b870);
+    background: var(--gs-cream, #faf6ec);
+    font-size: 0.9em;
+}
+.gs-local-toolbar .ner-slider-container,
+.gs-local-toolbar .lang-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+/* Parallel diplomatic / modernized layout. The modernized pane is hidden by
+   default; <pb-toggle-feature name="parallel-modernized" selector=".gs-pane-modernized">
+   adds the .toggle class on click (NOT .toggled), which reveals the pane. */
+.gs-pane-modernized { display: none; }
+.gs-pane-modernized.toggle { display: block; }
+.gs-pane-modernized .gs-pane-label {
+    margin: 0 0 0.5em;
+    padding-bottom: 0.25em;
+    font-style: italic;
+    color: var(--gs-gold, #b08d3a);
+    border-bottom: 1px dashed var(--gs-gold-light, #d4b870);
+    font-size: 0.95em;
+}
+.gs-pane-modernized {
+    border-left: 1px solid var(--gs-gold-light, #d4b870);
+    padding-left: 1em;
+    margin-left: 0.5em;
+}
 
 /* ================================================================
    ENTITY PANEL (collapsible sidebar)

@@ -1003,3 +1003,13 @@ h4 {
     font-weight: normal;
     margin-bottom: 0;
 }
+
+/* Diplomatic / modernized toggle for <choice><orig/><reg/></choice>.
+   Loaded into pb-view shadow DOM via theme=. The toggle is driven by
+   <pb-toggle-feature name="mode" selector=".choice-orig,.choice-reg" global>
+   which adds/removes the ".toggled" class on each matching span,
+   including spans inside pb-view's shadow DOM (global=). */
+.choice-orig { display: inline; }
+.choice-reg { display: none; }
+.choice-orig.toggled { display: none; }
+.choice-reg.toggled { display: inline; }

@@ -118,19 +118,12 @@
                 </elementSpec>
 
                 <!-- ============================================================
-                     Choice: output both orig and reg, CSS controls visibility
-                     pb-toggle-feature toggles class "mode" on pb-page:
-                       - no class = diplomatic (show orig)
-                       - class "mode" = modernized (show reg)
+                     Choice / orig / reg: both versions are emitted; CSS toggles
+                     visibility via :host-context(.mode) inside pb-view shadow DOM.
+                     pb-toggle-feature name="mode" sets/removes class .mode on pb-page.
                      ============================================================ -->
                 <elementSpec ident="choice" mode="change">
-                    <model predicate="orig and reg" behaviour="pass-through">
-                        <param name="orig" value="orig"/>
-                        <param name="reg" value="reg"/>
-                        <pb:template xmlns="" xml:space="preserve">
-                            <span class="choice-orig">[[orig]]</span><span class="choice-reg">[[reg]]</span>
-                        </pb:template>
-                    </model>
+                    <model predicate="orig and reg" behaviour="inline" cssClass="tei-choice"/>
                     <model predicate="sic and corr" behaviour="alternate">
                         <param name="default" value="corr[1]"/>
                         <param name="alternate" value="sic[1]"/>
@@ -142,11 +135,11 @@
                 </elementSpec>
 
                 <elementSpec ident="orig" mode="change">
-                    <model behaviour="inline"/>
+                    <model behaviour="inline" cssClass="choice-orig"/>
                 </elementSpec>
 
                 <elementSpec ident="reg" mode="change">
-                    <model behaviour="inline"/>
+                    <model behaviour="inline" cssClass="choice-reg"/>
                 </elementSpec>
 
                 <!-- ============================================================

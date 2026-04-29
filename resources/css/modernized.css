@@ -1,0 +1,5 @@
+/* Loaded into the parallel modernized pb-view's shadow DOM via load-css.
+   Flips choice visibility: hide <orig>, show <reg>. Content without
+   <choice> (e.g., Latin/Greek passages) renders unchanged. */
+.choice-orig { display: none; }
+.choice-reg { display: inline; }
