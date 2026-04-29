@@ -1,0 +1,10 @@
+{
+    "menu": {
+        "people": "Personnes",
+        "places": "Lieux",
+        "bibliography": "Bibliographie"
+    },
+    "form": {
+        "description": "Afficher les descriptions"
+    }
+}
