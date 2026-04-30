@@ -100,11 +100,13 @@ a:hover { color: var(--gs-gold); }
     min-height: 100vh;
     background: linear-gradient(135deg, var(--gs-cream) 0%, var(--gs-cream-warm) 50%, var(--gs-cream) 100%);
     position: relative;
+    z-index: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0;
+    isolation: isolate;
 }
 
 /* Subtle paper texture */
@@ -1111,9 +1113,23 @@ pb-popover {
 /* ================================================================
    GLOBAL — Non-landing pages
    ================================================================ */
+.page-header {
+    position: relative;
+    z-index: 9999;
+}
 .page-header .menubar {
     background: var(--gs-blue-dark);
     border-bottom: 1px solid rgba(196, 154, 74, 0.12);
+    position: relative;
+    z-index: 9999;
+}
+.page-header .menubar details.dropdown {
+    position: relative;
+}
+.page-header .menubar details.dropdown[open] > ul,
+.page-header .menubar details.dropdown > ul {
+    position: absolute;
+    z-index: 9999;
 }
 .page-header .menubar a {
     color: rgba(254, 252, 247, 0.85);
@@ -1136,11 +1152,21 @@ pb-split-list {
 /* ================================================================
    LANDING MENUBAR — Floating glass on hero
    ================================================================ */
+.landing-layout .page-header {
+    position: relative;
+    z-index: 9999;
+}
 .landing-layout .page-header .menubar {
     background: rgba(15, 35, 64, 0.88);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(196, 154, 74, 0.12);
     box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 9999;
+    overflow: visible;
+}
+.landing-layout .page-header .menubar details.dropdown[open] > ul {
+    z-index: 9999;
 }
 .landing-layout .menubar a {
     font-family: 'EB Garamond', serif;
