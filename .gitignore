@@ -20,3 +20,5 @@ TODO.log
 *.Identifier
 *:Zone.Identifier                                                             
 **/*:Zone.Identifier 
+docs/superpowers/
+TODO.md
