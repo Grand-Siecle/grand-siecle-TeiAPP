@@ -90,6 +90,10 @@
                      Notes: marginal notes + register-overview support from base ODD
                      ============================================================ -->
                 <elementSpec ident="note" mode="change">
+                    <model predicate="$parameters?view='notes' and @type='MarginTextZone'" behaviour="listItem" cssClass="gs-note-item">
+                        <param name="n" value="@n"/>
+                    </model>
+                    <model predicate="$parameters?view='notes'" behaviour="omit"/>
                     <model predicate="$parameters?mode='register-overview' and $parameters?show-notes and text()" behaviour="block"/>
                     <model predicate="$parameters?mode='register-overview' and not($parameters?show-notes)" behaviour="omit"/>
                     <model predicate="@type='MarginTextZone'" behaviour="block" cssClass="tei-note-MarginTextZone"/>
@@ -323,6 +327,281 @@
 </template></pb-popover></pb:template>
                     </model>
                     <model behaviour="inline"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     Title (work): highlighted only when @ref starts with #work-
+                     Otherwise behaves as a regular title (inline).
+                     ============================================================ -->
+                <elementSpec ident="title" mode="change">
+                    <model output="print" behaviour="inline"/>
+                    <model predicate="$parameters?display='browse' or $parameters?mode='breadcrumb' or $parameters?mode='toc'" behaviour="inline"/>
+                    <model predicate="$parameters?mode='register-overview'" behaviour="inline"/>
+                    <model predicate="starts-with(@ref, '#work-')" behaviour="pass-through" cssClass="entity-work">
+                        <param name="content" value="."/>
+                        <param name="ref" value="replace(@ref, '^#', '')"/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-work" data-cert="[[cert]]" data-ref="[[ref]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge work-badge"><pb-i18n key="entity.work">Œuvre</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model behaviour="inline"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     rs: typed referencing string (event, technique, ...)
+                     ============================================================ -->
+                <elementSpec ident="rs" mode="change">
+                    <model output="print" behaviour="inline"/>
+                    <model predicate="$parameters?display='browse' or $parameters?mode='breadcrumb' or $parameters?mode='toc'" behaviour="inline"/>
+                    <model predicate="@type='event' and @ref" behaviour="pass-through" cssClass="entity-event">
+                        <param name="content" value="."/>
+                        <param name="ref" value="replace(@ref, '^#', '')"/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-event" data-cert="[[cert]]" data-ref="[[ref]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge event-badge"><pb-i18n key="entity.event">Événement</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model predicate="@type='event' and @cert" behaviour="pass-through">
+                        <param name="content" value="."/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-event" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge event-badge"><pb-i18n key="entity.event">Événement</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model predicate="@type='event'" behaviour="inline" cssClass="entity-event"/>
+                    <model predicate="@type='technique' and @ref" behaviour="pass-through" cssClass="entity-technique">
+                        <param name="content" value="."/>
+                        <param name="ref" value="replace(@ref, '^#', '')"/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-technique" data-cert="[[cert]]" data-ref="[[ref]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge technique-badge"><pb-i18n key="entity.technique">Technique</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model predicate="@type='technique' and @cert" behaviour="pass-through">
+                        <param name="content" value="."/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-technique" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge technique-badge"><pb-i18n key="entity.technique">Technique</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model predicate="@type='technique'" behaviour="inline" cssClass="entity-technique"/>
+                    <model predicate="@type and @cert" behaviour="pass-through" cssClass="entity-rs">
+                        <param name="content" value="."/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-rs" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model behaviour="inline"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     date: highlighted only when @ref or @cert is set (NER/linked).
+                     Plain <date when="..."/> in the header keeps default rendering.
+                     ============================================================ -->
+                <elementSpec ident="date" mode="change">
+                    <model output="print" behaviour="inline"/>
+                    <model predicate="$parameters?display='browse' or $parameters?mode='breadcrumb' or $parameters?mode='toc'" behaviour="inline"/>
+                    <model predicate="@ref" behaviour="pass-through" cssClass="entity-date">
+                        <param name="content" value="."/>
+                        <param name="ref" value="replace(@ref, '^#', '')"/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-date" data-cert="[[cert]]" data-ref="[[ref]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge date-badge"><pb-i18n key="entity.date">Date</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model predicate="@cert" behaviour="pass-through">
+                        <param name="content" value="."/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-date" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge date-badge"><pb-i18n key="entity.date">Date</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model behaviour="inline"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     objectName: highlighted, NER-tagged objects
+                     ============================================================ -->
+                <elementSpec ident="objectName" mode="change">
+                    <model output="print" behaviour="inline"/>
+                    <model predicate="$parameters?display='browse' or $parameters?mode='breadcrumb' or $parameters?mode='toc'" behaviour="inline"/>
+                    <model predicate="@ref" behaviour="pass-through" cssClass="entity-object">
+                        <param name="content" value="."/>
+                        <param name="ref" value="replace(@ref, '^#', '')"/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-object" data-cert="[[cert]]" data-ref="[[ref]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge object-badge"><pb-i18n key="entity.object">Objet</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model predicate="@cert" behaviour="pass-through">
+                        <param name="content" value="."/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-object" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge object-badge"><pb-i18n key="entity.object">Objet</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model behaviour="inline" cssClass="entity-object"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     material: highlighted, NER-tagged materials (peinture, pigments, supports, etc.)
+                     ============================================================ -->
+                <elementSpec ident="material" mode="change">
+                    <model output="print" behaviour="inline"/>
+                    <model predicate="$parameters?display='browse' or $parameters?mode='breadcrumb' or $parameters?mode='toc'" behaviour="inline"/>
+                    <model predicate="@ref" behaviour="pass-through" cssClass="entity-material">
+                        <param name="content" value="."/>
+                        <param name="ref" value="replace(@ref, '^#', '')"/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-material" data-cert="[[cert]]" data-ref="[[ref]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge material-badge"><pb-i18n key="entity.material">Matériau</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model predicate="@cert" behaviour="pass-through">
+                        <param name="content" value="."/>
+                        <param name="cert" value="string(@cert)"/>
+                        <param name="resp" value="replace(string(@resp), '^#', '')"/>
+                        <pb:template xmlns="" xml:space="preserve"><pb-popover theme="light-border"><span slot="default"><span class="entity-material" data-cert="[[cert]]">[[content]]</span></span><template slot="alternate">
+<div class="entity-tooltip">
+<span class="entity-badge material-badge"><pb-i18n key="entity.material">Matériau</pb-i18n></span>
+<span class="entity-cert" data-cert="[[cert]]"><pb-i18n key="entity.confidence">Confiance</pb-i18n> : [[cert]]</span>
+<span class="entity-resp" data-resp="[[resp]]">[[resp]]</span>
+</div>
+</template></pb-popover></pb:template>
+                    </model>
+                    <model behaviour="inline" cssClass="entity-material"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     teiHeader: clean metadata rendering for right aside
+                     ============================================================ -->
+                <elementSpec ident="teiHeader" mode="change">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-metadata">
+                        <param name="content" value="(fileDesc/titleStmt, fileDesc/sourceDesc, profileDesc/langUsage, encodingDesc/appInfo)"/>
+                    </model>
+                    <!-- Browse cards: source title + source author + source date, wrapped in a clickable link to open the document -->
+                    <model predicate="$parameters?display='browse'" behaviour="block" cssClass="gs-browse-card">
+                        <param name="title" value="normalize-space(string-join(fileDesc/sourceDesc/bibl/title//text(), ' '))"/>
+                        <param name="author" value="normalize-space(string-join(fileDesc/sourceDesc/bibl/author//text(), ' '))"/>
+                        <param name="date" value="normalize-space(string-join(fileDesc/sourceDesc/bibl/date//text(), ' '))"/>
+                        <param name="uri" value="$parameters?doc"/>
+                        <pb:template xmlns="" xml:space="preserve"><a href="[[uri]]" class="gs-browse-card-link">
+<h3 class="gs-browse-title">[[title]]</h3>
+<div class="gs-browse-meta">
+<span class="gs-browse-author">[[author]]</span>
+<span class="gs-browse-date">[[date]]</span>
+</div>
+</a></pb:template>
+                    </model>
+                    <model predicate="$parameters?mode='breadcrumb'" behaviour="inline">
+                        <param name="content" value="fileDesc/titleStmt"/>
+                    </model>
+                </elementSpec>
+
+                <!-- ============================================================
+                     titleStmt: metadata heading + author list
+                     ============================================================ -->
+                <elementSpec ident="titleStmt" mode="change">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-title">
+                        <param name="content" value="(title, author)"/>
+                    </model>
+                    <model predicate="$parameters?mode='breadcrumb'" behaviour="inline">
+                        <param name="content" value="title[1]"/>
+                    </model>
+                    <!-- Default (browse cards, search results, etc.): render as block so title/author appear -->
+                    <model behaviour="block"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     sourceDesc: source description (BnF, IIIF link)
+                     ============================================================ -->
+                <elementSpec ident="sourceDesc" mode="change">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-source"/>
+                    <model behaviour="block"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     langUsage: declared languages of the source
+                     ============================================================ -->
+                <elementSpec ident="langUsage" mode="change">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-langs"/>
+                    <model behaviour="block"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     appInfo: NER pipeline / OCR provenance
+                     ============================================================ -->
+                <elementSpec ident="appInfo" mode="change">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-pipeline"/>
+                    <model behaviour="block"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     body: when view=notes, render as a list of marginal notes
+                     for the current page; otherwise transparent block
+                     ============================================================ -->
+                <elementSpec ident="body" mode="change">
+                    <model predicate="$parameters?view='notes'" behaviour="list" cssClass="gs-notes-list">
+                        <param name="content" value=".//note[@type='MarginTextZone']"/>
+                        <param name="type" value="'unordered'"/>
+                    </model>
+                    <model behaviour="block"/>
                 </elementSpec>
 
             </schemaSpec>
