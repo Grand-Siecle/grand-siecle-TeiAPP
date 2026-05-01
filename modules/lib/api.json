@@ -3378,7 +3378,7 @@
 		"/api/document-entities": {
 			"get": {
 				"summary": "Extract all NER entities from a document",
-				"description": "Returns persons, places, organizations, works, and events detected by NER, with inline mention counts and confidence levels. Includes both automatic (ner-auto) and manual entities.",
+				"description": "Returns persons, places, organizations, works, events, objects, techniques, dates, and materials detected by NER, with inline mention counts and confidence levels. Includes both automatic (ner-auto) and manual entities. Optional scope parameter restricts mention counts to a specific reading layer (original/modernized/notes).",
 				"tags": ["search"],
 				"operationId": "cust:document-entities",
 				"parameters": [
@@ -3388,6 +3388,13 @@
 						"description": "Document filename or internal ID",
 						"required": true,
 						"schema": { "type": "string" }
+					},
+					{
+						"name": "scope",
+						"in": "query",
+						"description": "Reading layer to scope mention counts: 'original' (excludes <reg> and notes), 'modernized' (excludes <orig> and notes), 'notes' (only marginal notes), or 'all' (default).",
+						"required": false,
+						"schema": { "type": "string", "enum": ["all", "original", "modernized", "notes"] }
 					}
 				],
 				"responses": {

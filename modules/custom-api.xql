@@ -141,12 +141,17 @@ declare function api:pos-list($request as map(*)) {
 };
 
 (:~
- : Extract all NER entities from a document: persons, places, orgs, works, events.
- : Combines header declarations (particDesc, settingDesc, standOff) with
- : inline mention counts and confidence stats from the body text.
+ : Extract all NER entities from a document.
+ : Optional scope parameter filters mention counts to a specific reading layer:
+ :   - 'original'   : mentions outside <reg> and outside marginal notes
+ :   - 'modernized' : mentions outside <orig> and outside marginal notes
+ :   - 'notes'      : mentions only inside <note type="MarginTextZone">
+ :   - 'all' or absent : whole body (default)
+ : Returns persons, places, orgs, works, events, techniques, dates, objects, materials.
  :)
 declare function api:document-entities($request as map(*)) {
     let $file := $request?parameters?file
+    let $scope := lower-case(($request?parameters?scope, 'all')[1])
     let $doc := api:resolve-doc($file)
     return
         if (not($doc)) then
@@ -155,11 +160,31 @@ declare function api:document-entities($request as map(*)) {
     let $tei := $doc//tei:TEI
     let $body := $tei/tei:text
 
+    (: Filter a sequence of mention elements by reading-layer scope.
+       Note: detect whether <reg> blocks actually contain NER mentions.
+       - If yes (e.g. GLiNER has tagged entities on the modernized layer),
+         'modernized' scope strictly excludes <orig> ancestors.
+       - If no (typical v3 state: <reg> contains plain modernized text only),
+         'modernized' shows the same entity set as 'original' so the panel
+         isn't empty. :)
+    let $regHasNER := exists($body//tei:reg//(tei:persName | tei:placeName | tei:orgName | tei:title[@ref] | tei:rs[@type] | tei:date[@ref] | tei:objectName | tei:material))
+    let $filter-by-scope := function($mentions as element()*) as element()* {
+        switch ($scope)
+            case 'original' return
+                $mentions[not(ancestor::tei:reg)][not(ancestor::tei:note[@type='MarginTextZone'])]
+            case 'modernized' return
+                (if ($regHasNER) then $mentions[not(ancestor::tei:orig)] else $mentions[not(ancestor::tei:reg)])
+                    [not(ancestor::tei:note[@type='MarginTextZone'])]
+            case 'notes' return
+                $mentions[ancestor::tei:note[@type='MarginTextZone']]
+            default return $mentions
+    }
+
     (: --- Persons (NER-auto) --- :)
     let $persons :=
         for $p in $tei//tei:particDesc/tei:listPerson[@source='#ner-auto']/tei:person
         let $id := string($p/@xml:id)
-        let $mentions := $body//tei:persName[@ref = '#' || $id]
+        let $mentions := $filter-by-scope($body//tei:persName[@ref = '#' || $id])
         let $certs := $mentions/@cert/string()
         return map {
             "type": "person",
@@ -174,7 +199,7 @@ declare function api:document-entities($request as map(*)) {
     let $places :=
         for $p in $tei//tei:settingDesc/tei:listPlace[@source='#ner-auto']/tei:place
         let $id := string($p/@xml:id)
-        let $mentions := $body//tei:placeName[@ref = '#' || $id]
+        let $mentions := $filter-by-scope($body//tei:placeName[@ref = '#' || $id])
         let $certs := $mentions/@cert/string()
         return map {
             "type": "place",
@@ -189,7 +214,7 @@ declare function api:document-entities($request as map(*)) {
     let $orgs :=
         for $o in $tei//tei:particDesc/tei:listOrg[@source='#ner-auto']/tei:org
         let $id := string($o/@xml:id)
-        let $mentions := $body//tei:orgName[@ref = '#' || $id]
+        let $mentions := $filter-by-scope($body//tei:orgName[@ref = '#' || $id])
         let $certs := $mentions/@cert/string()
         return map {
             "type": "org",
@@ -200,29 +225,95 @@ declare function api:document-entities($request as map(*)) {
             "source": "ner-auto"
         }
 
-    (: --- Works (standOff) --- :)
+    (: --- Works (declared in standOff/listBibl, mentioned inline as <title ref="#work-..."/>) --- :)
     let $works :=
         for $b in $tei/tei:standOff/tei:listBibl[@source='#ner-auto']/tei:bibl
         let $id := string($b/@xml:id)
+        let $mentions := $filter-by-scope($body//tei:title[@ref = '#' || $id])
+        let $certs := $mentions/@cert/string()
         return map {
             "type": "work",
             "id": $id,
             "label": normalize-space($b/tei:title[1]),
-            "mentions": 0,
-            "certs": array {},
+            "mentions": count($mentions),
+            "certs": array { distinct-values($certs) },
             "source": "ner-auto"
         }
 
-    (: --- Events (standOff) --- :)
+    (: --- Events (declared in standOff/listEvent, mentioned inline as <rs type="event" ref="#event-..."/>) --- :)
     let $events :=
         for $e in $tei/tei:standOff/tei:listEvent[@source='#ner-auto']/tei:event
         let $id := string($e/@xml:id)
+        let $mentions := $filter-by-scope($body//tei:rs[@type='event'][@ref = '#' || $id])
+        let $certs := $mentions/@cert/string()
         return map {
             "type": "event",
             "id": $id,
             "label": normalize-space($e/tei:label[1]),
-            "mentions": 0,
-            "certs": array {},
+            "mentions": count($mentions),
+            "certs": array { distinct-values($certs) },
+            "source": "ner-auto"
+        }
+
+    (: --- Objects (declared in standOff/listObject, mentioned inline as <objectName ref="#..."/>) --- :)
+    let $objects :=
+        for $o in $tei/tei:standOff/tei:listObject[@source='#ner-auto']/tei:object
+        let $id := string($o/@xml:id)
+        let $mentions := $filter-by-scope($body//tei:objectName[@ref = '#' || $id])
+        let $certs := $mentions/@cert/string()
+        return map {
+            "type": "object",
+            "id": $id,
+            "label": normalize-space(($o/tei:objectIdentifier/tei:objectName, $o/tei:objectName, $o/tei:label)[1]),
+            "mentions": count($mentions),
+            "certs": array { distinct-values($certs) },
+            "source": "ner-auto"
+        }
+
+    (: --- Techniques (inline-only via <rs type='technique'>; group by lowercased text) --- :)
+    let $tech-mentions := $filter-by-scope($body//tei:rs[@type='technique'])
+    let $techniques :=
+        for $label in distinct-values(for $r in $tech-mentions return lower-case(normalize-space($r)))
+        let $matches := $tech-mentions[lower-case(normalize-space(.)) = $label]
+        let $certs := $matches/@cert/string()
+        return map {
+            "type": "technique",
+            "id": $label,
+            "label": $label,
+            "mentions": count($matches),
+            "certs": array { distinct-values($certs) },
+            "source": "ner-auto"
+        }
+
+    (: --- Dates (inline via <date @ref or @cert>; group by @ref or by text) --- :)
+    let $date-mentions := $filter-by-scope($body//tei:date[@ref or @cert])
+    let $dates :=
+        for $key in distinct-values(for $d in $date-mentions return string(($d/@ref, normalize-space($d))[1]))
+        let $matches := $date-mentions[string((@ref, normalize-space(.))[1]) = $key]
+        let $certs := $matches/@cert/string()
+        let $label := normalize-space($matches[1])
+        return map {
+            "type": "date",
+            "id": replace($key, '^#', ''),
+            "label": if (string-length($label) gt 0) then $label else replace($key, '^#', ''),
+            "mentions": count($matches),
+            "certs": array { distinct-values($certs) },
+            "source": "ner-auto"
+        }
+
+    (: --- Materials (inline via <material @ref>; group by @ref) --- :)
+    let $mat-mentions := $filter-by-scope($body//tei:material[@ref])
+    let $materials :=
+        for $key in distinct-values($mat-mentions/@ref/string())
+        let $matches := $mat-mentions[@ref = $key]
+        let $certs := $matches/@cert/string()
+        let $label := normalize-space($matches[1])
+        return map {
+            "type": "material",
+            "id": replace($key, '^#', ''),
+            "label": if (string-length($label) gt 0) then $label else replace($key, '^#', ''),
+            "mentions": count($matches),
+            "certs": array { distinct-values($certs) },
             "source": "ner-auto"
         }
 
@@ -230,7 +321,7 @@ declare function api:document-entities($request as map(*)) {
     let $manual-persons :=
         for $p in $tei//tei:particDesc[not(tei:listPerson/@source)]/tei:listPerson/tei:person
         let $id := string($p/@xml:id)
-        let $mentions := $body//tei:persName[@ref = '#' || $id]
+        let $mentions := $filter-by-scope($body//tei:persName[@ref = '#' || $id])
         return map {
             "type": "person",
             "id": $id,
@@ -240,18 +331,25 @@ declare function api:document-entities($request as map(*)) {
             "source": "manual"
         }
 
-    let $all := ($persons, $places, $orgs, $works, $events, $manual-persons)
+    let $all-with-mentions := ($persons, $places, $orgs, $works, $events, $objects, $techniques, $dates, $materials, $manual-persons)
+    (: Drop entities with zero mentions in the requested scope so the panel stays scoped :)
+    let $all := if ($scope = 'all') then $all-with-mentions else $all-with-mentions[?mentions gt 0]
 
     let $summary := map {
         "document": normalize-space($tei//tei:titleStmt/tei:title[1]),
         "file": util:document-name($doc),
+        "scope": $scope,
         "total-entities": count($all),
         "by-type": map {
-            "person": count($persons) + count($manual-persons),
-            "place": count($places),
-            "org": count($orgs),
-            "work": count($works),
-            "event": count($events)
+            "person":    count($all[?type='person']),
+            "place":     count($all[?type='place']),
+            "org":       count($all[?type='org']),
+            "work":      count($all[?type='work']),
+            "event":     count($all[?type='event']),
+            "object":    count($all[?type='object']),
+            "technique": count($all[?type='technique']),
+            "date":      count($all[?type='date']),
+            "material":  count($all[?type='material'])
         }
     }
 
