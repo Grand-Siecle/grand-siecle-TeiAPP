@@ -694,6 +694,66 @@ a:hover { color: var(--gs-gold); }
 }
 .entity-org:hover { background-color: rgba(91, 58, 122, 0.18); }
 
+.entity-work {
+    background-color: rgba(168, 88, 49, 0.08);
+    border-bottom: 2px solid #A85831;
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-work:hover { background-color: rgba(168, 88, 49, 0.18); }
+
+.entity-event {
+    background-color: rgba(92, 75, 140, 0.08);
+    border-bottom: 2px solid #5C4B8C;
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-event:hover { background-color: rgba(92, 75, 140, 0.18); }
+
+.entity-technique {
+    background-color: rgba(107, 122, 58, 0.08);
+    border-bottom: 2px solid #6B7A3A;
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-technique:hover { background-color: rgba(107, 122, 58, 0.18); }
+
+.entity-date {
+    background-color: rgba(122, 90, 58, 0.08);
+    border-bottom: 2px solid #7A5A3A;
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-date:hover { background-color: rgba(122, 90, 58, 0.18); }
+
+.entity-object {
+    background-color: rgba(139, 69, 19, 0.08);
+    border-bottom: 2px solid #8B4513;
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-object:hover { background-color: rgba(139, 69, 19, 0.18); }
+
+.entity-material {
+    background-color: rgba(90, 95, 106, 0.08);
+    border-bottom: 2px solid #5A5F6A;
+    padding: 0 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.entity-material:hover { background-color: rgba(90, 95, 106, 0.18); }
+
+.entity-rs {
+    background-color: rgba(120, 120, 120, 0.06);
+    border-bottom: 1px dotted #888;
+    padding: 0 1px;
+}
+
 .entity-low-confidence {
     opacity: 0.3;
     border-bottom-style: dashed;
@@ -887,80 +947,9 @@ pb-popover {
     gap: 0.4em;
 }
 
-/* Parallel diplomatic / modernized layout. The modernized pane is hidden by
-   default; <pb-toggle-feature name="parallel-modernized" selector=".gs-pane-modernized">
-   adds the .toggle class on click (NOT .toggled), which reveals the pane. */
-.gs-pane-modernized { display: none; }
-.gs-pane-modernized.toggle { display: block; }
-.gs-pane-modernized .gs-pane-label {
-    margin: 0 0 0.5em;
-    padding-bottom: 0.25em;
-    font-style: italic;
-    color: var(--gs-gold, #b08d3a);
-    border-bottom: 1px dashed var(--gs-gold-light, #d4b870);
-    font-size: 0.95em;
-}
-.gs-pane-modernized {
-    border-left: 1px solid var(--gs-gold-light, #d4b870);
-    padding-left: 1em;
-    margin-left: 0.5em;
-}
-
 /* ================================================================
-   ENTITY PANEL (collapsible sidebar)
+   ENTITY PANEL CONTENT (rendered by entity-panel.js)
    ================================================================ */
-.gs-doc-layout {
-    display: flex;
-    align-items: flex-start;
-}
-.gs-doc-layout .center { flex: 1; min-width: 0; }
-
-.gs-entity-panel {
-    position: sticky;
-    top: 4rem;
-    width: 2.5rem;
-    transition: width 0.3s ease;
-    overflow: hidden;
-    border-left: 1px solid var(--gs-gold-light);
-    background: var(--gs-cream-light);
-    align-self: stretch;
-    min-height: 300px;
-}
-.gs-entity-panel.open {
-    width: 280px;
-}
-.gs-entity-panel-toggle {
-    display: block;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: var(--gs-cream-warm);
-    border: none;
-    border-bottom: 1px solid var(--gs-gold-light);
-    cursor: pointer;
-    font-size: 1.1rem;
-    color: var(--gs-sepia-medium);
-    transition: color 0.2s;
-}
-.gs-entity-panel-toggle:hover { color: var(--gs-gold); }
-
-.gs-entity-panel-content {
-    display: none;
-    padding: 1rem;
-    overflow-y: auto;
-    max-height: calc(100vh - 8rem);
-}
-.gs-entity-panel.open .gs-entity-panel-content { display: block; }
-
-.gs-entity-panel h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--gs-blue);
-    margin: 0 0 0.8rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--gs-gold-light);
-}
-
 .gs-entity-total {
     font-family: 'EB Garamond', serif;
     font-size: 0.95rem;
@@ -1223,4 +1212,257 @@ pb-split-list {
     .gs-hero-title-siecle { font-size: 4rem; }
     .gs-hero-cta { flex-direction: column; }
     .gs-hero-stats { flex-wrap: wrap; }
+}
+
+/* ============================================================
+   Browse cards (2026-04-30) — clickable card with source metadata
+   ============================================================ */
+.gs-browse-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+.gs-browse-card-link:hover .gs-browse-title {
+    color: var(--gs-accent-primary, #1E3A6D);
+    text-decoration: underline;
+}
+.gs-browse-title {
+    font-family: 'EB Garamond', Garamond, serif;
+    font-size: 1.15rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--gs-text-primary, #2C2418);
+    font-weight: 600;
+}
+.gs-browse-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--gs-text-secondary, #6F5C3F);
+    font-style: italic;
+}
+.gs-browse-meta > span:empty {
+    display: none;
+}
+.gs-browse-author::after {
+    content: '';
+}
+.gs-browse-date {
+    color: var(--gs-accent-secondary, #9C7A3C);
+    font-style: normal;
+}
+
+/* ============================================================
+   Document view redesign (2026-04-30) — pb-grid layout
+   ============================================================ */
+
+/* Page-level toolbar above the grid */
+.gs-page-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--gs-bg-secondary, #FEFCF7);
+    border-top: 1px solid #E0D5BC;
+    border-bottom: 1px solid #9C7A3C;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+.gs-page-toolbar .ner-slider-container,
+.gs-page-toolbar .lang-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.gs-page-toolbar label {
+    color: var(--gs-text-primary, #2C2418);
+    font-weight: 500;
+}
+.gs-page-toolbar input[type="range"] {
+    accent-color: var(--gs-accent-primary, #1E3A6D);
+}
+
+/* Add-view button accent */
+.grid-add button.accent {
+    background: var(--gs-accent-primary, #1E3A6D);
+    color: #FEFCF7;
+    border: 1px solid var(--gs-accent-secondary, #9C7A3C);
+}
+.grid-add button.accent:hover {
+    background: var(--gs-accent-secondary, #9C7A3C);
+}
+
+/* pb-grid: horizontal flow, panels side by side on the X axis */
+pb-grid#grid {
+    --pb-panel-max-height: calc(100vh - 200px);
+    min-height: 60vh;
+}
+
+/* pb-grid panels (each cloned panel) */
+.gs-panel {
+    border: 1px solid #D9CFB8;
+    background: var(--gs-bg-secondary, #FEFCF7);
+    border-radius: 2px;
+    position: relative;
+    min-height: 60vh;
+    display: block;
+    overflow: hidden;
+}
+/* Active sub-view container (._pb_panel) auto-injected by pb-panel */
+.gs-panel ._pb_panel {
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+    padding: 0.5rem 1rem;
+}
+.gs-panel-original,
+.gs-panel-modernized,
+.gs-panel-notes {
+    font-family: 'EB Garamond', Garamond, serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--gs-text-primary, #2C2418);
+    display: block;
+}
+.gs-panel-modernized {
+    background: linear-gradient(180deg, #FEFCF7 0%, #FBF5E8 100%);
+}
+.gs-panel-notes {
+    font-size: 0.95rem;
+}
+.gs-panel-notes .gs-notes-list {
+    list-style: none;
+    padding-left: 0;
+}
+.gs-panel-notes .gs-note-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #D9CFB8;
+}
+
+/* Right metadata aside */
+.gs-metadata-heading {
+    font-family: 'EB Garamond', Garamond, serif;
+    color: var(--gs-accent-primary, #1E3A6D);
+    border-bottom: 1px solid var(--gs-accent-secondary, #9C7A3C);
+    padding-bottom: 0.25rem;
+    margin: 0 0 1rem 0;
+}
+.gs-metadata-aside,
+.gs-metadata {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--gs-text-primary, #2C2418);
+}
+.gs-metadata .gs-meta-title {
+    font-family: 'EB Garamond', Garamond, serif;
+    font-size: 1.1rem;
+    color: var(--gs-accent-primary, #1E3A6D);
+    margin-bottom: 0.5rem;
+}
+.gs-metadata .gs-meta-source,
+.gs-metadata .gs-meta-langs,
+.gs-metadata .gs-meta-pipeline {
+    margin: 0.5rem 0;
+    padding-top: 0.5rem;
+    border-top: 1px dotted #D9CFB8;
+}
+
+/* Per-panel entity aside: shares horizontal space with the pb-view inside its panel.
+   When closed: width=0, hidden. When open: 250px wide, pb-view shrinks to make room. */
+.gs-panel.has-entity-aside-open ._pb_panel {
+    width: calc(100% - 260px);
+    float: left;
+}
+.gs-panel-entity-aside {
+    width: 0;
+    height: calc(100vh - 200px);
+    overflow: hidden;
+    background: var(--gs-bg-primary, #F5F0E8);
+    border-left: 2px solid var(--gs-accent-secondary, #9C7A3C);
+    transition: width 0.25s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    float: right;
+}
+.gs-panel-entity-aside.open {
+    width: 250px;
+    overflow-y: auto;
+    padding: 0.75rem;
+}
+.gs-panel-entity-aside .gs-entity-total {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--gs-accent-primary, #1E3A6D);
+}
+.gs-panel-entity-aside .gs-entity-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    margin: 0.15rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    background: #FEFCF7;
+    border: 1px solid #D9CFB8;
+}
+.gs-panel-entity-aside .gs-entity-badge.active {
+    background: var(--gs-accent-primary, #1E3A6D);
+    color: #FEFCF7;
+}
+.gs-panel-entity-aside .gs-entity-badge-person    { border-color: #2B5B8A; }
+.gs-panel-entity-aside .gs-entity-badge-place     { border-color: #3A6B4A; }
+.gs-panel-entity-aside .gs-entity-badge-org       { border-color: #5B3A7A; }
+.gs-panel-entity-aside .gs-entity-badge-work      { border-color: #A85831; }
+.gs-panel-entity-aside .gs-entity-badge-event     { border-color: #5C4B8C; }
+.gs-panel-entity-aside .gs-entity-badge-technique { border-color: #6B7A3A; }
+.gs-panel-entity-aside .gs-entity-badge-date      { border-color: #7A5A3A; }
+.gs-panel-entity-aside .gs-entity-badge-object    { border-color: #8B4513; }
+.gs-panel-entity-aside .gs-entity-badge-material  { border-color: #5A5F6A; }
+.gs-panel-entity-aside .gs-entity-search {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #D9CFB8;
+    background: #FEFCF7;
+}
+.gs-panel-entity-aside .gs-entity-item {
+    display: block;
+    padding: 0.4rem 0.25rem;
+    border-bottom: 1px solid #E8DEC7;
+    cursor: pointer;
+}
+.gs-panel-entity-aside .gs-entity-item:hover {
+    background: #FBF5E8;
+}
+.gs-panel-entity-aside .gs-entity-label {
+    display: block;
+    color: var(--gs-text-primary, #2C2418);
+}
+.gs-panel-entity-aside .gs-entity-meta {
+    display: block;
+    font-size: 0.75rem;
+    color: #6F5C3F;
+    margin-top: 0.15rem;
+}
+.gs-panel-entity-aside .gs-entity-empty {
+    color: #6F5C3F;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem 0;
+}
+.gs-entity-highlight {
+    animation: gs-entity-pulse 2s ease;
+    background: rgba(156, 122, 60, 0.25);
+}
+@keyframes gs-entity-pulse {
+    0%, 100% { background: transparent; }
+    50% { background: rgba(156, 122, 60, 0.4); }
+}
+
+/* Hide the "Fac-similé" sub-view option on PDF-sourced documents.
+   The exact selector depends on pb-panel internals — see
+   node_modules/@teipublisher/pb-components/src/pb-panel.js
+   if this needs adjustment. */
+body.gs-no-iiif pb-panel [data-i18n*="facsimile"],
+body.gs-no-iiif pb-panel option[value*="Fac"] {
+    display: none !important;
 }
