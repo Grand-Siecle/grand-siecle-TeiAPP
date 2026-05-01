@@ -64,7 +64,16 @@
         "diplomatic": "Original",
         "modernized": "Modernis\u00e9",
         "facsimile": "Fac-simil\u00e9",
-        "ner-threshold": "Confiance NER"
+        "ner-threshold": "Confiance NER",
+        "add-panel": "Ajouter une vue",
+        "languages": "Langues",
+        "original": "Original",
+        "notes": "Notes marginales",
+        "entities": "Entit\u00e9s d\u00e9tect\u00e9es",
+        "contents": "Sommaire",
+        "metadata-title": "M\u00e9tadonn\u00e9es du document",
+        "no-iiif": "Pas de fac-simil\u00e9 disponible pour ce document",
+        "toggle-entities": "Afficher / masquer les entit\u00e9s"
     },
     "register": {
         "organizations": "Organisations"
@@ -77,6 +86,12 @@
         "person": "Personne",
         "place": "Lieu",
         "organization": "Organisation",
+        "work": "Œuvre",
+        "event": "Événement",
+        "technique": "Technique",
+        "date": "Date",
+        "object": "Objet",
+        "material": "Matériau",
         "confidence": "Confiance",
         "view-record": "Voir la fiche"
     }

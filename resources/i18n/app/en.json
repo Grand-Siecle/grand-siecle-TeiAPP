@@ -65,7 +65,16 @@
         "diplomatic": "Original",
         "modernized": "Modernized",
         "facsimile": "Facsimile",
-        "ner-threshold": "NER confidence"
+        "ner-threshold": "NER confidence",
+        "add-panel": "Add view",
+        "languages": "Languages",
+        "original": "Original",
+        "notes": "Marginal notes",
+        "entities": "Detected entities",
+        "contents": "Contents",
+        "metadata-title": "Document metadata",
+        "no-iiif": "No facsimile available for this document",
+        "toggle-entities": "Show / hide entities"
     },
     "register": {
         "organizations": "Organizations"
@@ -78,6 +87,12 @@
         "person": "Person",
         "place": "Place",
         "organization": "Organization",
+        "work": "Work",
+        "event": "Event",
+        "technique": "Technique",
+        "date": "Date",
+        "object": "Object",
+        "material": "Material",
         "confidence": "Confidence",
         "view-record": "View record"
     }
