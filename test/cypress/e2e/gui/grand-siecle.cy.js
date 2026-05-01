@@ -29,14 +29,19 @@ describe('Grand Siecle V1', () => {
         cy.get('#ner-threshold').should('exist');
     });
 
-    it('document view has IIIF toggle button', () => {
+    it('document view has the Add-view button', () => {
         cy.visit('/LIV0326_v2_altos_transcribed.tei.xml');
-        cy.get('#iiif-toggle').should('exist');
+        cy.get('pb-grid-action[action="add"]').should('exist');
     });
 
-    it('document view has orig/reg toggle', () => {
+    it('document view has a pb-grid with at least one panel', () => {
         cy.visit('/LIV0326_v2_altos_transcribed.tei.xml');
-        cy.get('pb-toggle-feature[name="mode"]').should('exist');
+        cy.get('pb-grid#grid pb-panel').should('have.length.at.least', 1);
+    });
+
+    it('document view has the metadata aside', () => {
+        cy.visit('/LIV0326_v2_altos_transcribed.tei.xml');
+        cy.get('.gs-metadata-aside').should('exist');
     });
 
     it('loads the people register', () => {
