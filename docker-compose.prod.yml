@@ -1,0 +1,11 @@
+# docker-compose.prod.yml — override appliqué au-dessus du compose de base.
+# Usage:
+#   ant   # produit ./build/*.xar (requis par le stage prod)
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
+services:
+  app:
+    build:
+      target: prod
+    image: gdsiecle:prod
+    restart: always

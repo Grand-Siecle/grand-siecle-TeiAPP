@@ -1,0 +1,24 @@
+# docker-compose.yml — DEV par défaut
+# Usage:
+#   docker compose up                       (dev)
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up   (prod)
+#
+# Le service `app` cible le stage `dev` du Dockerfile (build in-container,
+# proxy-caching OFF). Le ficher prod override la cible et le mode de redémarrage.
+
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    image: gdsiecle:dev
+    container_name: gdsiecle
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/exist/apps/GdSiecle/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
