@@ -120,7 +120,11 @@
                              class="gs-panel-modernized"/>
                 </template>
                 <template title="Fac-similé">
-                    <pb-facsimile subscribe="transcription" type="image"/>
+                    <pb-facsimile subscribe="transcription" type="iiif"
+                                  show-navigation-control="show-navigation-control"
+                                  show-navigator="show-navigator"
+                                  default-zoom-level="0"
+                                  style="height: 100%"/>
                 </template>
                 <template title="Notes">
                     <pb-view src="document1" view="page"
