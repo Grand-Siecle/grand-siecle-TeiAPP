@@ -533,7 +533,7 @@
                      ============================================================ -->
                 <elementSpec ident="teiHeader" mode="change">
                     <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-metadata">
-                        <param name="content" value="(fileDesc/titleStmt, fileDesc/sourceDesc, profileDesc/langUsage, encodingDesc/appInfo)"/>
+                        <param name="content" value="(fileDesc/sourceDesc, fileDesc/titleStmt, fileDesc/publicationStmt, fileDesc/extent, profileDesc/langUsage, encodingDesc/appInfo)"/>
                     </model>
                     <!-- Browse cards: titleStmt title + titleStmt author + sourceDesc date + sourceDesc pubPlace, wrapped in a clickable link to open the document -->
                     <model predicate="$parameters?display='browse'" behaviour="block" cssClass="gs-browse-card">
@@ -579,11 +579,37 @@
                 </elementSpec>
 
                 <!-- ============================================================
+                     publicationStmt: digital publication (publisher, licence, date)
+                     ============================================================ -->
+                <elementSpec ident="publicationStmt" mode="change">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-publication"/>
+                    <model behaviour="block"/>
+                </elementSpec>
+
+                <!-- ============================================================
+                     extent: physical/digital extent (e.g. number of images)
+                     ============================================================ -->
+                <elementSpec ident="extent" mode="add">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-extent"/>
+                    <model behaviour="block"/>
+                </elementSpec>
+                <elementSpec ident="measure" mode="add">
+                    <model predicate="$parameters?view='metadata'" behaviour="inline" cssClass="gs-meta-measure">
+                        <param name="content" value="(string(@n), ' ', string(@unit))"/>
+                    </model>
+                    <model behaviour="inline"/>
+                </elementSpec>
+
+                <!-- ============================================================
                      langUsage: declared languages of the source
                      ============================================================ -->
                 <elementSpec ident="langUsage" mode="change">
                     <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-langs"/>
                     <model behaviour="block"/>
+                </elementSpec>
+                <elementSpec ident="language" mode="add">
+                    <model predicate="$parameters?view='metadata'" behaviour="inline" cssClass="gs-meta-lang"/>
+                    <model behaviour="inline"/>
                 </elementSpec>
 
                 <!-- ============================================================
@@ -592,6 +618,10 @@
                 <elementSpec ident="appInfo" mode="change">
                     <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-pipeline"/>
                     <model behaviour="block"/>
+                </elementSpec>
+                <elementSpec ident="application" mode="add">
+                    <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-meta-app"/>
+                    <model behaviour="inline"/>
                 </elementSpec>
 
                 <!-- ============================================================

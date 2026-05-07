@@ -72,7 +72,7 @@
         "notes": "Marginal notes",
         "entities": "Detected entities",
         "contents": "Contents",
-        "metadata-title": "Document metadata",
+        "metadata-title": "Notice",
         "no-iiif": "No facsimile available for this document",
         "toggle-entities": "Show / hide entities"
     },

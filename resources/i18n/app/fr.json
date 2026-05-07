@@ -71,7 +71,7 @@
         "notes": "Notes marginales",
         "entities": "Entit\u00e9s d\u00e9tect\u00e9es",
         "contents": "Sommaire",
-        "metadata-title": "M\u00e9tadonn\u00e9es du document",
+        "metadata-title": "Notice",
         "no-iiif": "Pas de fac-simil\u00e9 disponible pour ce document",
         "toggle-entities": "Afficher / masquer les entit\u00e9s"
     },
