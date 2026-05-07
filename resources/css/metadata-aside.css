@@ -1,0 +1,159 @@
+/* ============================================================
+   Notice (right metadata aside) — loaded into the pb-view
+   shadow DOM via load-css. CSS custom properties (--gs-*) cascade
+   from :root through the shadow boundary, so the Grand Siècle
+   palette stays consistent without redefinition.
+   ============================================================ */
+
+.gs-metadata {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--gs-text-primary, #2C2418);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+/* Each section: bordered card with small-caps header label */
+.gs-metadata > .gs-meta-title,
+.gs-metadata > .gs-meta-source,
+.gs-metadata > .gs-meta-publication,
+.gs-metadata > .gs-meta-extent,
+.gs-metadata > .gs-meta-langs,
+.gs-metadata > .gs-meta-pipeline {
+    position: relative;
+    padding: 0.65rem 0.85rem 0.7rem;
+    background: rgba(254, 252, 247, 0.55);
+    border-left: 3px solid var(--gs-accent-secondary, #9C7A3C);
+    border-radius: 0 4px 4px 0;
+    margin: 0;
+}
+.gs-metadata > .gs-meta-title::before,
+.gs-metadata > .gs-meta-source::before,
+.gs-metadata > .gs-meta-publication::before,
+.gs-metadata > .gs-meta-extent::before,
+.gs-metadata > .gs-meta-langs::before,
+.gs-metadata > .gs-meta-pipeline::before {
+    display: block;
+    font-family: 'EB Garamond', Garamond, serif;
+    font-variant: small-caps;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    color: var(--gs-accent-secondary, #9C7A3C);
+    margin-bottom: 0.35rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(156, 122, 60, 0.18);
+}
+.gs-metadata > .gs-meta-source::before      { content: 'Source'; }
+.gs-metadata > .gs-meta-title::before       { content: 'Édition numérique'; }
+.gs-metadata > .gs-meta-publication::before { content: 'Publication'; }
+.gs-metadata > .gs-meta-extent::before      { content: 'Étendue'; }
+.gs-metadata > .gs-meta-langs::before       { content: 'Langues'; }
+.gs-metadata > .gs-meta-pipeline::before    { content: 'Pipeline / OCR'; }
+
+/* --- Édition numérique : sober Garamond italic --- */
+.gs-meta-title .tei-title {
+    display: block;
+    font-family: 'EB Garamond', Garamond, serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gs-text-primary, #2C2418);
+    line-height: 1.4;
+}
+.gs-meta-title .tei-author {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    color: var(--gs-text-secondary, #6F5C3F);
+}
+.gs-meta-title .tei-author .tei-ptr {
+    text-decoration: none;
+    color: var(--gs-accent-secondary, #9C7A3C);
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.7rem;
+}
+
+/* --- Source section --- */
+.gs-meta-source .tei-author { display: none; }
+.gs-meta-source .tei-country { display: none; }
+.gs-meta-source .tei-title {
+    display: inline;
+    font-style: italic;
+    color: var(--gs-text-primary, #2C2418);
+}
+.gs-meta-source .tei-date {
+    display: inline;
+    font-weight: 600;
+    color: var(--gs-accent-secondary, #9C7A3C);
+    margin-left: 0.3rem;
+}
+.gs-meta-source pb-popover { font-size: 0.85rem; }
+.gs-meta-source .tei-idno {
+    display: block;
+    margin-top: 0.2rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.72rem;
+    color: var(--gs-text-secondary, #6F5C3F);
+    word-break: break-all;
+    line-height: 1.35;
+}
+
+/* --- Publication section --- */
+.gs-meta-publication {
+    font-size: 0.8rem;
+    color: var(--gs-text-secondary, #6F5C3F);
+}
+.gs-meta-publication .tei-publisher,
+.gs-meta-publication .tei-authority,
+.gs-meta-publication .tei-availability,
+.gs-meta-publication .tei-date {
+    display: block;
+    line-height: 1.5;
+}
+.gs-meta-publication .tei-licence {
+    display: block;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.7rem;
+    word-break: break-all;
+    margin-top: 0.15rem;
+}
+
+/* --- Extent section --- */
+.gs-meta-extent {
+    font-size: 0.85rem;
+    color: var(--gs-text-secondary, #6F5C3F);
+    font-style: italic;
+}
+
+/* --- Languages section : inline list with bullet separator --- */
+.gs-meta-langs {
+    font-style: italic;
+    color: var(--gs-text-secondary, #6F5C3F);
+}
+.gs-meta-lang + .gs-meta-lang::before {
+    content: ' · ';
+    color: var(--gs-accent-secondary, #9C7A3C);
+    font-style: normal;
+    margin: 0 0.15rem;
+}
+
+/* --- Pipeline section : one app per line --- */
+.gs-meta-pipeline {
+    font-size: 0.8rem;
+}
+.gs-meta-app {
+    display: block;
+    line-height: 1.5;
+}
+.gs-meta-pipeline a.tei-ptr {
+    text-decoration: none;
+    color: var(--gs-accent-primary, #1E3A6D);
+    margin-left: 0.3rem;
+}
+.gs-meta-pipeline a.tei-ptr::before {
+    content: '↗';
+    font-size: 0.85rem;
+}

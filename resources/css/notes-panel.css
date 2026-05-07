@@ -1,0 +1,20 @@
+/* ============================================================
+   Notes panel — content rendered inside <pb-view> shadow DOM
+   for view='notes' (list of marginal SegmOnto notes). Loaded
+   via load-css attribute on the Notes pb-view template.
+   CSS custom properties (--gs-*) cascade through the shadow
+   boundary from :root, so the Grand Siècle palette is inherited.
+   ============================================================ */
+
+.gs-notes-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.gs-note-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #D9CFB8;
+}
+.gs-note-item:last-child {
+    border-bottom: none;
+}

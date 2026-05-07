@@ -6,6 +6,8 @@
         },
         "styles": [
             "resources/css/grand-siecle.css",
+            "resources/css/document-view.css",
+            "resources/css/entity-aside.css",
             "transform/grand_siecle.css"
         ],
         "script": {
@@ -69,7 +71,7 @@
     </h5>
     <pb-view src="document1" xpath="//teiHeader" view="single"
              class="metadata gs-metadata-aside"
-             load-css="resources/css/grand-siecle.css"
+             load-css="resources/css/metadata-aside.css"
              subscribe="transcription" emit="transcription">
         <pb-param name="view" value="metadata"/>
     </pb-view>
@@ -122,6 +124,7 @@
                 </template>
                 <template title="Notes">
                     <pb-view src="document1" view="page"
+                             load-css="resources/css/notes-panel.css"
                              subscribe="transcription" emit="transcription"
                              class="gs-panel-notes">
                         <pb-param name="view" value="notes"/>

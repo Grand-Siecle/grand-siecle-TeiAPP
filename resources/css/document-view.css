@@ -1,0 +1,87 @@
+/* ============================================================
+   Document view — pb-grid layout (page toolbar + panels)
+   Light DOM only. Loaded in <head> of view.html.
+   ============================================================ */
+
+/* Page-level toolbar above the grid */
+.gs-page-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--gs-bg-secondary, #FEFCF7);
+    border-top: 1px solid #E0D5BC;
+    border-bottom: 1px solid #9C7A3C;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+.gs-page-toolbar .ner-slider-container,
+.gs-page-toolbar .lang-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.gs-page-toolbar label {
+    color: var(--gs-text-primary, #2C2418);
+    font-weight: 500;
+}
+.gs-page-toolbar input[type="range"] {
+    accent-color: var(--gs-accent-primary, #1E3A6D);
+}
+
+/* Add-view button accent */
+.grid-add button.accent {
+    background: var(--gs-accent-primary, #1E3A6D);
+    color: #FEFCF7;
+    border: 1px solid var(--gs-accent-secondary, #9C7A3C);
+}
+.grid-add button.accent:hover {
+    background: var(--gs-accent-secondary, #9C7A3C);
+}
+
+/* pb-grid: panels side by side */
+pb-grid#grid {
+    --pb-panel-max-height: calc(100vh - 200px);
+    min-height: 60vh;
+}
+
+/* Each cloned panel */
+.gs-panel {
+    border: 1px solid #D9CFB8;
+    background: var(--gs-bg-secondary, #FEFCF7);
+    border-radius: 2px;
+    position: relative;
+    min-height: 60vh;
+    display: block;
+    overflow: hidden;
+}
+/* Active sub-view container injected by pb-panel */
+.gs-panel ._pb_panel {
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+    padding: 0.5rem 1rem;
+}
+.gs-panel-original,
+.gs-panel-modernized,
+.gs-panel-notes {
+    font-family: 'EB Garamond', Garamond, serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--gs-text-primary, #2C2418);
+    display: block;
+}
+.gs-panel-modernized {
+    background: linear-gradient(180deg, #FEFCF7 0%, #FBF5E8 100%);
+}
+.gs-panel-notes {
+    font-size: 0.95rem;
+}
+
+/* Hide the "Fac-similé" sub-view option on PDF-sourced documents.
+   The exact selector depends on pb-panel internals — see
+   node_modules/@teipublisher/pb-components/src/pb-panel.js
+   if this needs adjustment. */
+body.gs-no-iiif pb-panel [data-i18n*="facsimile"],
+body.gs-no-iiif pb-panel option[value*="Fac"] {
+    display: none !important;
+}
