@@ -1,3 +1,10 @@
+/* Choice (orig/reg) default visibility — applied to every pb-view shadow root
+   via the theme= attribute on <pb-page>. Default = diplomatic transcription
+   (orig visible, reg hidden). The Modernisé panel loads modernized.css which
+   inverts these rules locally in its own shadow root. */
+.choice-orig { display: inline; }
+.choice-reg  { display: none; }
+
 :root {
     --jinks-colors-700: #324234;
     --jinks-colors-600: #4C5F41;
