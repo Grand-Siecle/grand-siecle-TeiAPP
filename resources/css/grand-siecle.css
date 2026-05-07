@@ -894,13 +894,61 @@ pb-popover {
    based on languages detected in the rendered page. */
 
 .tei-ab-MainZone { margin-bottom: 0.5em; }
-.tei-foreign { font-style: italic; }
-.tei-foreign::after {
-    content: ' [' attr(data-lang) ']';
-    font-size: 0.75em;
-    color: var(--gs-gold);
-    font-style: normal;
+/* Foreign-language inline: italic + soft underline + hover tooltip with full language name */
+.tei-foreign {
+    font-style: italic;
+    text-decoration: underline dotted rgba(156, 122, 60, 0.4);
+    text-underline-offset: 2px;
+    cursor: help;
+    position: relative;
 }
+.tei-foreign:hover {
+    background-color: rgba(156, 122, 60, 0.08);
+    border-radius: 2px;
+}
+.tei-foreign:hover::after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gs-sepia);
+    color: var(--gs-cream-light);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    line-height: 1.4;
+    padding: 0.25em 0.6em;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    margin-bottom: 0.25em;
+    box-shadow: 0 2px 6px rgba(44, 36, 24, 0.25);
+}
+/* Default fallback first (low specificity baseline), then specific overrides */
+.tei-foreign[data-lang=""]:hover::after,
+.tei-foreign:not([data-lang]):hover::after { content: 'Langue étrangère'; }
+.tei-foreign[data-lang]:hover::after { content: attr(data-lang); }
+/* ISO-639 code → friendly French label */
+.tei-foreign[data-lang="lat"]:hover::after { content: 'Latin'; }
+.tei-foreign[data-lang="grc"]:hover::after { content: 'Grec ancien'; }
+.tei-foreign[data-lang="el"]:hover::after,
+.tei-foreign[data-lang="ell"]:hover::after  { content: 'Grec'; }
+.tei-foreign[data-lang="fr"]:hover::after,
+.tei-foreign[data-lang="fra"]:hover::after  { content: 'Français'; }
+.tei-foreign[data-lang="ita"]:hover::after,
+.tei-foreign[data-lang="it"]:hover::after   { content: 'Italien'; }
+.tei-foreign[data-lang="spa"]:hover::after,
+.tei-foreign[data-lang="es"]:hover::after   { content: 'Espagnol'; }
+.tei-foreign[data-lang="eng"]:hover::after,
+.tei-foreign[data-lang="en"]:hover::after   { content: 'Anglais'; }
+.tei-foreign[data-lang="deu"]:hover::after,
+.tei-foreign[data-lang="ger"]:hover::after,
+.tei-foreign[data-lang="de"]:hover::after   { content: 'Allemand'; }
+.tei-foreign[data-lang="heb"]:hover::after,
+.tei-foreign[data-lang="he"]:hover::after   { content: 'Hébreu'; }
+.tei-foreign[data-lang="ara"]:hover::after,
+.tei-foreign[data-lang="ar"]:hover::after   { content: 'Arabe'; }
 .tei-pb {
     display: block;
     margin: 1.5em 0 0.5em;
