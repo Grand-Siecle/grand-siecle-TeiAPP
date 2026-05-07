@@ -535,16 +535,18 @@
                     <model predicate="$parameters?view='metadata'" behaviour="block" cssClass="gs-metadata">
                         <param name="content" value="(fileDesc/titleStmt, fileDesc/sourceDesc, profileDesc/langUsage, encodingDesc/appInfo)"/>
                     </model>
-                    <!-- Browse cards: source title + source author + source date, wrapped in a clickable link to open the document -->
+                    <!-- Browse cards: titleStmt title + titleStmt author + sourceDesc date + sourceDesc pubPlace, wrapped in a clickable link to open the document -->
                     <model predicate="$parameters?display='browse'" behaviour="block" cssClass="gs-browse-card">
-                        <param name="title" value="normalize-space(string-join(fileDesc/sourceDesc/bibl/title//text(), ' '))"/>
-                        <param name="author" value="normalize-space(string-join(fileDesc/sourceDesc/bibl/author//text(), ' '))"/>
+                        <param name="title" value="normalize-space(string-join(fileDesc/titleStmt/title//text(), ' '))"/>
+                        <param name="author" value="normalize-space(string-join(fileDesc/titleStmt/author//text(), ' '))"/>
                         <param name="date" value="normalize-space(string-join(fileDesc/sourceDesc/bibl/date//text(), ' '))"/>
+                        <param name="place" value="normalize-space(string-join(fileDesc/sourceDesc/bibl/pubPlace//text(), ' '))"/>
                         <param name="uri" value="$parameters?doc"/>
                         <pb:template xmlns="" xml:space="preserve"><a href="[[uri]]" class="gs-browse-card-link">
 <h3 class="gs-browse-title">[[title]]</h3>
 <div class="gs-browse-meta">
 <span class="gs-browse-author">[[author]]</span>
+<span class="gs-browse-place">[[place]]</span>
 <span class="gs-browse-date">[[date]]</span>
 </div>
 </a></pb:template>

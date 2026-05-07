@@ -1248,6 +1248,10 @@ pb-split-list {
 .gs-browse-author::after {
     content: '';
 }
+.gs-browse-place {
+    color: var(--gs-text-secondary, #6F5C3F);
+    font-style: italic;
+}
 .gs-browse-date {
     color: var(--gs-accent-secondary, #9C7A3C);
     font-style: normal;
