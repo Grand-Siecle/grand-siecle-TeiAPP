@@ -58,13 +58,19 @@ declare variable $config:origin-whitelist := (
 (:~
  : Set to true to allow caching: if the browser sends an If-Modified-Since header,
  : TEI Publisher will respond with a 304 if the resource has not changed since last
- : access. However, this does *not* take into account changes to ODD or other auxiliary 
- : files, so don't use it during development.
+ : access. NOTE: this does *not* track changes to ODD or other auxiliary files;
+ : after an ODD recompile, force-reload (Ctrl+Shift+R) to bypass the cache.
+ : Default ON to make pb-grid panel sync (which triggers pb-refresh on add) cheap:
+ : every refetch now resolves to a 304 instead of a full XSLT transform.
+ : Override at JVM-level via system property: -Dteipublisher.proxy-caching=false
  :)
 declare variable $config:enable-proxy-caching :=
     let $prop := util:system-property("teipublisher.proxy-caching")
     return
-        exists($prop) and lower-case($prop) = 'true'
+        if (exists($prop) and string-length($prop) > 0) then
+            lower-case($prop) = 'true'
+        else
+            true()
 ;
 
 (:~
