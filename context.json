@@ -373,16 +373,20 @@
     "use" : [ "templates/iiif-blocks.html", "templates/register-blocks.html", "templates/toggle-blocks.html", "templates/metadata-blocks.html", "templates/edition-navigation-blocks.html", "templates/timeline-blocks.html", "templates/upload-blocks.html", "templates/metadata-editor.html", "templates/editor-blocks.html", "templates/annotation-blocks.html" ],
     "modules" : {
       "http://teipublisher.com/ns/templates/browse" : {
-        "at" : "modules/templates/browse.xqm",
+        "at" : "xmldb:exist:///db/apps/GdSiecle/modules/templates/browse.xqm",
         "prefix" : "browse"
       },
       "http://teipublisher.com/ns/templates/landing-page" : {
-        "at" : "modules/templates/landing-page.xqm",
+        "at" : "xmldb:exist:///db/apps/GdSiecle/modules/templates/landing-page.xqm",
         "prefix" : "landing"
       },
       "http://teipublisher.com/ns/templates/page" : {
-        "at" : "modules/templates/page.xqm",
+        "at" : "xmldb:exist:///db/apps/GdSiecle/modules/templates/page.xqm",
         "prefix" : "page"
+      },
+      "http://www.tei-c.org/tei-simple/config" : {
+        "at" : "xmldb:exist:///db/apps/GdSiecle/modules/config.xqm",
+        "prefix" : "config"
       }
     }
   },
@@ -421,5 +425,41 @@
     "prefix" : "anno",
     "id" : "http://teipublisher.com/api/annotations",
     "path" : "annotations/annotations.xql"
-  } ]
+  } ],
+  "static" : {
+    "collections" : {
+      "" : {
+        "path-prefix" : "data",
+        "template" : "templates/pages/view.html",
+        "view" : "page",
+        "xpath" : "//tei:body//tei:pb",
+        "index" : false,
+        "paginate" : {
+          "template" : "templates/pages/view.html",
+          "parts" : [
+            {
+              "odd" : "grand_siecle.odd",
+              "view" : "page",
+              "user.static" : true
+            }
+          ]
+        }
+      }
+    },
+    "fields" : [
+      { "name" : "title",     "xpath" : "//tei:fileDesc/tei:titleStmt/tei:title[1]" },
+      { "name" : "author",    "xpath" : "//tei:fileDesc/tei:titleStmt/tei:author" },
+      { "name" : "date",      "xpath" : "//tei:fileDesc/tei:sourceDesc/tei:bibl/tei:date" },
+      { "name" : "pubPlace",  "xpath" : "//tei:fileDesc/tei:sourceDesc/tei:bibl/tei:pubPlace" },
+      { "name" : "publisher", "xpath" : "//tei:fileDesc/tei:sourceDesc/tei:bibl/tei:publisher" },
+      { "name" : "language",  "xpath" : "//tei:profileDesc/tei:langUsage/tei:language/@ident" }
+    ],
+    "facets" : [ "author", "date", "pubPlace", "language" ],
+    "copy" : [
+      { "source" : "resources/images",  "target" : "resources/images" },
+      { "source" : "resources/css",     "target" : "resources/css" },
+      { "source" : "resources/scripts", "target" : "resources/scripts" },
+      { "source" : "resources/fonts",   "target" : "resources/fonts" }
+    ]
+  }
 }
