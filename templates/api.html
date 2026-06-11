@@ -20,62 +20,42 @@
         <div id="anno"/>
         
         <script>
-            window.onload = function() {
-                SwaggerUIBundle({
-                    url: "modules/lib/api.json",
-                    dom_id: '#swagger',
-                    displayOperationId: true,
-                    displayRequestDuration: true,
-                    showExtensions: true,
-                    withCredentials: true
-                });
+            // Les specs OpenAPI contiennent un `servers[].url` codé en dur
+            // ("/exist/apps/GdSiecle"). Servies statiquement par le controller,
+            // elles ne sont pas patchées côté serveur. On dérive donc le préfixe
+            // réel du chemin où cette page est chargée (api.html), pour que
+            // « Try it out » tape la bonne URL quel que soit le déploiement :
+            // URL classique /exist/apps/GdSiecle OU reverse-proxy /grand-siecle.
+            const deployPrefix =
+                window.location.pathname.replace(/\/api\.html\/?$/, "") || "";
 
-                
-                SwaggerUIBundle({
-                    url: "modules/iiif-api.json",
-                    dom_id: '#iiif',
-                    displayOperationId: true,
-                    displayRequestDuration: true,
-                    showExtensions: true,
-                    withCredentials: true
-                });
-                 
-                SwaggerUIBundle({
-                    url: "modules/registers-api.json",
-                    dom_id: '#rview',
-                    displayOperationId: true,
-                    displayRequestDuration: true,
-                    showExtensions: true,
-                    withCredentials: true
-                });
-                 
-                SwaggerUIBundle({
-                    url: "modules/timeline-api.json",
-                    dom_id: '#timeline',
-                    displayOperationId: true,
-                    displayRequestDuration: true,
-                    showExtensions: true,
-                    withCredentials: true
-                });
-                 
-                SwaggerUIBundle({
-                    url: "modules/sitemap-api.json",
-                    dom_id: '#sitemap',
-                    displayOperationId: true,
-                    displayRequestDuration: true,
-                    showExtensions: true,
-                    withCredentials: true
-                });
-                 
-                SwaggerUIBundle({
-                    url: "modules/annotations/api.json",
-                    dom_id: '#anno',
-                    displayOperationId: true,
-                    displayRequestDuration: true,
-                    showExtensions: true,
-                    withCredentials: true
-                });
-                
+            function mountSpec(url, dom_id) {
+                fetch(url, { credentials: "include" })
+                    .then(function(r) { return r.json(); })
+                    .then(function(spec) {
+                        // Aligne le serveur sur le préfixe de déploiement courant
+                        spec.servers = [{
+                            url: deployPrefix,
+                            description: "Déploiement courant"
+                        }];
+                        SwaggerUIBundle({
+                            spec: spec,
+                            dom_id: dom_id,
+                            displayOperationId: true,
+                            displayRequestDuration: true,
+                            showExtensions: true,
+                            withCredentials: true
+                        });
+                    });
+            }
+
+            window.onload = function() {
+                mountSpec("modules/lib/api.json", "#swagger");
+                mountSpec("modules/iiif-api.json", "#iiif");
+                mountSpec("modules/registers-api.json", "#rview");
+                mountSpec("modules/timeline-api.json", "#timeline");
+                mountSpec("modules/sitemap-api.json", "#sitemap");
+                mountSpec("modules/annotations/api.json", "#anno");
             }
         </script>
     </body>
