@@ -25,7 +25,9 @@
             "build/**",
             "webtest/**",
             "*:Zone.Identifier",
-            "**/*:Zone.Identifier"
+            "**/*:Zone.Identifier",
+            "*.md",
+            "*.log"
         ]
     }
 }
