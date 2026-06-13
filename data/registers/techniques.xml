@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-techniques">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Registre des techniques — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Projet Grand Siecle — UNIL</publisher>
+                <availability status="restricted"><licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence></availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Pipeline NER (CamemBERT + GLiNER) + reconciliation Wikidata</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2026-06-12">Generation automatique depuis les entites NER reconciliees (scripts/build_registers.py)</change>
+        </revisionDesc>
+    </teiHeader>
+  <encodingDesc>
+    <classDecl>
+      <taxonomy xml:id="techniques">
+      <desc>Techniques et arts mentionnes dans le corpus</desc>
+      <category xml:id="technique-000001" n="20">
+        <catDesc>
+          <term type="main">style</term>
+          <term type="standard">style</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q1292119</idno>
+        <idno type="aat">300055835</idno>
+        <note type="description">aspect caractéristique prononcée des objets, de l'art et de la culture</note>
+        <note type="mentions">20</note>
+        <note type="sources">LIV0012|LIV0015|LIV0017|LIV0019|LIV0020|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37552559|Q18786715|Q2313235</note>
+      </category>
+      <category xml:id="technique-000002" n="10">
+        <catDesc>
+          <term type="main">peinture</term>
+          <term type="standard">peinture</term>
+          <term type="variant">peintre</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q11629</idno>
+        <idno type="aat">300054216</idno>
+        <note type="description">pratique artistique</note>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0002b|LIV0014|LIV0025a|LIV0025b|LIV0026a|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3305213|Q174219|Q296955</note>
+      </category>
+      <category xml:id="technique-000003" n="6">
+        <catDesc>
+          <term type="main">pinceau</term>
+          <term type="standard">pinceau</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q193897</idno>
+        <idno type="aat">300022385</idno>
+        <note type="description">instrument de peinture, de dessin et d'écriture constitué d'un faisceau de poils ou de fibres</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0007|LIV0012|LIV0025a|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3004693|Q2688969|Q494618</note>
+      </category>
+      <category xml:id="technique-000004" n="6">
+        <catDesc>
+          <term type="main">prose</term>
+        </catDesc>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0015|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37004182|Q1416480|Q507027</note>
+      </category>
+      <category xml:id="technique-000005" n="4">
+        <catDesc>
+          <term type="main">artifice</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025a|LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3545649|Q1762471|Q135031913</note>
+      </category>
+      <category xml:id="technique-000006" n="4">
+        <catDesc>
+          <term type="main">artificio</term>
+          <term type="variant">artificióque</term>
+          <term type="variant">artificiis</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q63967292|Q2551269|Q841154</note>
+      </category>
+      <category xml:id="technique-000007" n="4">
+        <catDesc>
+          <term type="main">Deuinaillerie</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="technique-000008" n="4">
+        <catDesc>
+          <term type="main">Magie</term>
+          <term type="standard">magie</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q81741</idno>
+        <idno type="aat">300054590</idno>
+        <note type="description">rituels ou actions employés pour manipuler des êtres et des forces naturels ou surnaturels</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37132398|Q3276947|Q148442</note>
+      </category>
+      <category xml:id="technique-000009" n="3">
+        <catDesc>
+          <term type="main">Alchimie</term>
+          <term type="standard">alchimie</term>
+          <term type="variant">L’Alchimie</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q39689</idno>
+        <idno type="aat">300054588</idno>
+        <note type="description">discipline qui recouvre un ensemble de pratiques et de spéculations en rapport avec la transmutation des métaux</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q59569649|Q1048076|Q29948263</note>
+      </category>
+      <category xml:id="technique-000010" n="3">
+        <catDesc>
+          <term type="main">art</term>
+          <term type="standard">art</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q735</idno>
+        <idno type="aat">300054138</idno>
+        <note type="description">activité et concept</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0002b|LIV0014|LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q8227356|Q17512080|Q1778168</note>
+      </category>
+      <category xml:id="technique-000011" n="3">
+        <catDesc>
+          <term type="main">Exercice</term>
+          <term type="standard">exercice</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q29051769</idno>
+        <idno type="aat">300081106</idno>
+        <note type="description">performance of activities in order to develop or maintain readiness or competence in various forms of endeavors</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q219067|Q191891|Q1451563</note>
+      </category>
+      <category xml:id="technique-000012" n="3">
+        <catDesc>
+          <term type="main">Metoposcopie</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0027</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3333753</note>
+      </category>
+      <category xml:id="technique-000013" n="3">
+        <catDesc>
+          <term type="main">moulding</term>
+          <term type="standard">moulage</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q1055732</idno>
+        <idno type="aat">300053134</idno>
+        <note type="description">ajout d'un matériau dans un moule afin d’en obtenir une forme d’après le moule</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1770806|Q3077692|Q2262727</note>
+      </category>
+      <category xml:id="technique-000014" n="3">
+        <catDesc>
+          <term type="main">méthode</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026a|LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q122224|Q8366|Q332126</note>
+      </category>
+      <category xml:id="technique-000015" n="3">
+        <catDesc>
+          <term type="main">Sculpteurs</term>
+          <term type="standard">sculpteur ou sculptrice</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q1281618</idno>
+        <idno type="aat">300025181</idno>
+        <note type="description">artiste pratiquant la sculpture</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1458549|Q67265791|Q95370110</note>
+      </category>
+      <category xml:id="technique-000016" n="3">
+        <catDesc>
+          <term type="main">Â-t Sculpteurs</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="technique-000017" n="2">
+        <catDesc>
+          <term type="main">aspiration</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0018</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q19750554|Q677449|Q18354722</note>
+      </category>
+      <category xml:id="technique-000018" n="2">
+        <catDesc>
+          <term type="main">beau style</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </category>
+      <category xml:id="technique-000019" n="2">
+        <catDesc>
+          <term type="main">bouffonnerie</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">low</note>
+      </category>
+      <category xml:id="technique-000020" n="2">
+        <catDesc>
+          <term type="main">cacochimie</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+      </category>
+      <category xml:id="technique-000021" n="2">
+        <catDesc>
+          <term type="main">Cosmographie</term>
+          <term type="standard">cosmographie</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q631942</idno>
+        <idno type="aat">300054287</idno>
+        <note type="description">science that maps the general features of the cosmos or universe</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023|LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q33245321|Q56451825|Q982671</note>
+      </category>
+      <category xml:id="technique-000022" n="2">
+        <catDesc>
+          <term type="main">exquisito artificio</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000023" n="2">
+        <catDesc>
+          <term type="main">l’aduancement</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0005</note>
+      </category>
+      <category xml:id="technique-000024" n="2">
+        <catDesc>
+          <term type="main">Marhématique</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="technique-000025" n="2">
+        <catDesc>
+          <term type="main">metaphore</term>
+          <term type="standard">métaphore</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q18534</idno>
+        <idno type="aat">300055901</idno>
+        <note type="description">figure de style</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3333480|Q7968585|Q1763329</note>
+      </category>
+      <category xml:id="technique-000026" n="2">
+        <catDesc>
+          <term type="main">parole</term>
+          <term type="standard">langage</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q315</idno>
+        <idno type="aat">300055193</idno>
+        <note type="description">capacité à communiquer par signes tels que les mots ou les gestes, en apprenant, choisissant ou adaptant une langue conventionnelle à ses interlocuteurs pour un usage effectif</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q52946|Q10485156|Q749977</note>
+      </category>
+      <category xml:id="technique-000027" n="2">
+        <catDesc>
+          <term type="main">Phisionomie</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0026c</note>
+      </category>
+      <category xml:id="technique-000028" n="2">
+        <catDesc>
+          <term type="main">Tapistrie</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="technique-000029" n="2">
+        <catDesc>
+          <term type="main">théctre</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </category>
+      <category xml:id="technique-000030" n="2">
+        <catDesc>
+          <term type="main">Émbellissage</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="technique-000031" n="1">
+        <catDesc>
+          <term type="main">amplisication</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </category>
+      <category xml:id="technique-000032" n="1">
+        <catDesc>
+          <term type="main">Ars bellandi</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000033" n="1">
+        <catDesc>
+          <term type="main">Art des Arts</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </category>
+      <category xml:id="technique-000034" n="1">
+        <catDesc>
+          <term type="main">art oratoire</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="technique-000035" n="1">
+        <catDesc>
+          <term type="main">artificio Comico</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000036" n="1">
+        <catDesc>
+          <term type="main">artificio nõ vulgari</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000037" n="1">
+        <catDesc>
+          <term type="main">arts magiques</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="technique-000038" n="1">
+        <catDesc>
+          <term type="main">arts mecaniques</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </category>
+      <category xml:id="technique-000039" n="1">
+        <catDesc>
+          <term type="main">Astrologie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </category>
+      <category xml:id="technique-000040" n="1">
+        <catDesc>
+          <term type="main">Blanchiſſage</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="technique-000041" n="1">
+        <catDesc>
+          <term type="main">broderie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="technique-000042" n="1">
+        <catDesc>
+          <term type="main">composition</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      </category>
+      <category xml:id="technique-000043" n="1">
+        <catDesc>
+          <term type="main">contexture</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="technique-000044" n="1">
+        <catDesc>
+          <term type="main">Courte-pointe</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </category>
+      <category xml:id="technique-000045" n="1">
+        <catDesc>
+          <term type="main">dicendi artificium</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000046" n="1">
+        <catDesc>
+          <term type="main">faire pièce</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </category>
+      <category xml:id="technique-000047" n="1">
+        <catDesc>
+          <term type="main">flair</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="technique-000048" n="1">
+        <catDesc>
+          <term type="main">fonte</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="technique-000049" n="1">
+        <catDesc>
+          <term type="main">Meroposcopie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="technique-000050" n="1">
+        <catDesc>
+          <term type="main">mirabili artificio</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000051" n="1">
+        <catDesc>
+          <term type="main">Optique</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="technique-000052" n="1">
+        <catDesc>
+          <term type="main">orthographe</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </category>
+      <category xml:id="technique-000053" n="1">
+        <catDesc>
+          <term type="main">Painting</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="technique-000054" n="1">
+        <catDesc>
+          <term type="main">peintures</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="technique-000055" n="1">
+        <catDesc>
+          <term type="main">Phonascorum artificium</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000056" n="1">
+        <catDesc>
+          <term type="main">Physiognomie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="technique-000057" n="1">
+        <catDesc>
+          <term type="main">poterie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </category>
+      <category xml:id="technique-000058" n="1">
+        <catDesc>
+          <term type="main">Rhetorici artificij</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000059" n="1">
+        <catDesc>
+          <term type="main">Rhétorisme</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </category>
+      <category xml:id="technique-000060" n="1">
+        <catDesc>
+          <term type="main">sculpturè</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="technique-000061" n="1">
+        <catDesc>
+          <term type="main">sophistico artificio</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000062" n="1">
+        <catDesc>
+          <term type="main">Sophistiquerie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </category>
+      <category xml:id="technique-000063" n="1">
+        <catDesc>
+          <term type="main">summo artificio</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000064" n="1">
+        <catDesc>
+          <term type="main">symphonia</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="technique-000065" n="1">
+        <catDesc>
+          <term type="main">symétrie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </category>
+      <category xml:id="technique-000066" n="1">
+        <catDesc>
+          <term type="main">tracé</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="technique-000067" n="1">
+        <catDesc>
+          <term type="main">travail et artifice</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="technique-000068" n="1">
+        <catDesc>
+          <term type="main">Tumbling</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="technique-000069" n="1">
+        <catDesc>
+          <term type="main">vrayement</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      </taxonomy>
+    </classDecl>
+  </encodingDesc>
+</TEI>

@@ -1,0 +1,2391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-materials">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Registre des materiaux — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Projet Grand Siecle — UNIL</publisher>
+                <availability status="restricted"><licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence></availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Pipeline NER (CamemBERT + GLiNER) + reconciliation Wikidata</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2026-06-12">Generation automatique depuis les entites NER reconciliees (scripts/build_registers.py)</change>
+        </revisionDesc>
+    </teiHeader>
+  <encodingDesc>
+    <classDecl>
+      <taxonomy xml:id="materials">
+      <desc>Materiaux mentionnes dans le corpus</desc>
+      <category xml:id="material-000001" n="136">
+        <catDesc>
+          <term type="main">matière</term>
+          <term type="variant">matières</term>
+          <term type="variant">matière solide</term>
+        </catDesc>
+        <note type="mentions">136</note>
+        <note type="sources">LIV0002b|LIV0004a|LIV0006|LIV0007|LIV0008|LIV0011|LIV0012|LIV0015|LIV0017|LIV0018|LIV0020|LIV0021|LIV0025a|LIV0025b|LIV0026a|LIV0026b|LIV0026c|LIV0027|LIV0028|LIV0031_t1|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q496|Q41872|Q35758</note>
+      </category>
+      <category xml:id="material-000002" n="77">
+        <catDesc>
+          <term type="main">marbre</term>
+          <term type="standard">marbre</term>
+          <term type="variant">marbre blanc</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q40861</idno>
+        <idno type="aat">300011443</idno>
+        <note type="description">roche dérivée du calcaire</note>
+        <note type="mentions">77</note>
+        <note type="sources">LIV0007|LIV0008|LIV0009|LIV0011|LIV0012|LIV0017|LIV0021|LIV0025a|LIV0025b|LIV0026b|LIV0027</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q40088|Q2016506|Q2052367</note>
+      </category>
+      <category xml:id="material-000003" n="42">
+        <catDesc>
+          <term type="main">terre</term>
+          <term type="variant">verre</term>
+          <term type="variant">de la terre</term>
+          <term type="variant">pain de la terre</term>
+          <term type="variant">la terre</term>
+        </catDesc>
+        <note type="mentions">42</note>
+        <note type="sources">LIV0003|LIV0007|LIV0013|LIV0014|LIV0025a|LIV0026a|LIV0026b|LIV0028|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q11081619|Q2003|Q36133</note>
+      </category>
+      <category xml:id="material-000004" n="38">
+        <catDesc>
+          <term type="main">fer</term>
+          <term type="standard">fer</term>
+          <term type="variant">fers</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q677</idno>
+        <idno type="aat">300011002</idno>
+        <note type="description">élément chimique de numéro atomique 26 et de symbole Fe</note>
+        <note type="mentions">38</note>
+        <note type="sources">LIV0007|LIV0011|LIV0014|LIV0025a|LIV0025b|LIV0026a|LIV0026c|LIV0028|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q10494697|Q13362|Q18115751</note>
+      </category>
+      <category xml:id="material-000005" n="31">
+        <catDesc>
+          <term type="main">bois</term>
+          <term type="standard">bois</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q287</idno>
+        <idno type="aat">300011914</idno>
+        <note type="description">matériau naturel issu d'arbres ou de plantes ligneuses</note>
+        <note type="mentions">31</note>
+        <note type="sources">LIV0003|LIV0005|LIV0007|LIV0013|LIV0014|LIV0025b|LIV0026a|LIV0026b|LIV0026c|LIV0028|LIV0031_t1|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2908924|Q1349674|Q271959</note>
+      </category>
+      <category xml:id="material-000006" n="25">
+        <catDesc>
+          <term type="main">argent</term>
+          <term type="standard">argent</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q1090</idno>
+        <idno type="aat">300011029</idno>
+        <note type="description">élément chimique de numéro atomique 47 et de symbole Ag</note>
+        <note type="mentions">25</note>
+        <note type="sources">LIV0007|LIV0009|LIV0011|LIV0012|LIV0015|LIV0025b|LIV0026c|LIV0031_t1|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q936472|Q16479491|Q547431</note>
+      </category>
+      <category xml:id="material-000007" n="25">
+        <catDesc>
+          <term type="main">marbre blanc</term>
+        </catDesc>
+        <note type="mentions">25</note>
+        <note type="sources">LIV0008|LIV0009|LIV0011|LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q27615944|Q40088</note>
+      </category>
+      <category xml:id="material-000008" n="18">
+        <catDesc>
+          <term type="main">paille</term>
+          <term type="standard">paille</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q160066</idno>
+        <idno type="aat">300011908</idno>
+        <note type="description">tige de certaines graminées</note>
+        <note type="mentions">18</note>
+        <note type="sources">LIV0002b|LIV0007|LIV0013|LIV0025a|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1439090|Q63139376|Q37508899</note>
+      </category>
+      <category xml:id="material-000009" n="17">
+        <catDesc>
+          <term type="main">metaux</term>
+          <term type="standard">terre rare</term>
+          <term type="variant">métal</term>
+        </catDesc>
+        <idno type="wikidata" cert="medium">Q190444</idno>
+        <idno type="aat">300380215</idno>
+        <note type="description">groupe de métaux aux propriétés voisines</note>
+        <note type="mentions">17</note>
+        <note type="sources">LIV0007|LIV0025a|LIV0025b|LIV0026a|LIV0026c|LIV0031_t1</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q19588|Q105789|Q271449</note>
+      </category>
+      <category xml:id="material-000010" n="16">
+        <catDesc>
+          <term type="main">pierre</term>
+          <term type="standard">pierre</term>
+          <term type="variant">lierre</term>
+          <term type="variant">pierres</term>
+          <term type="variant">les pierres</term>
+          <term type="variant">pierreries</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q22731</idno>
+        <idno type="aat">300011176</idno>
+        <note type="description">type de matériau</note>
+        <note type="mentions">16</note>
+        <note type="sources">LIV0009|LIV0014|LIV0026a|LIV0026b|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2093070|Q18070772|Q2593213</note>
+      </category>
+      <category xml:id="material-000011" n="15">
+        <catDesc>
+          <term type="main">papier</term>
+          <term type="standard">papier</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q11472</idno>
+        <idno type="aat">300014109</idno>
+        <note type="description">matière fabriquée à partir de fibres cellulosiques végétales et animales</note>
+        <note type="mentions">15</note>
+        <note type="sources">LIV0018|LIV0019|LIV0020|LIV0025a|LIV0025b|LIV0026a|LIV0026b|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37266561|Q21279007|Q1513685</note>
+      </category>
+      <category xml:id="material-000012" n="13">
+        <catDesc>
+          <term type="main">sel</term>
+          <term type="standard">sel alimentaire</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q11254</idno>
+        <idno type="aat">300386506</idno>
+        <note type="description">minéral cristallin utilisé comme condiment ou comme conservateur alimentaire, principalement composé de chlorure de sodium</note>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0007|LIV0015|LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q16291019|Q507499|Q189710</note>
+      </category>
+      <category xml:id="material-000013" n="12">
+        <catDesc>
+          <term type="main">Laine</term>
+          <term type="standard">laine</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q42329</idno>
+        <idno type="aat">300014074</idno>
+        <note type="description">fibres d'origine animale utilisées dans la production textile</note>
+        <note type="mentions">12</note>
+        <note type="sources">LIV0013|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q20379143|Q31280102|Q19728213</note>
+      </category>
+      <category xml:id="material-000014" n="12">
+        <catDesc>
+          <term type="main">substance</term>
+          <term type="standard">matériau</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q214609</idno>
+        <idno type="aat">300010358</idno>
+        <note type="description">matière utilisée pour réaliser un objet au sens large</note>
+        <note type="mentions">12</note>
+        <note type="sources">LIV0005|LIV0022|LIV0025b|LIV0026a|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1930192|Q11173|Q378078</note>
+      </category>
+      <category xml:id="material-000015" n="11">
+        <catDesc>
+          <term type="main">soie</term>
+          <term type="standard">soie</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q37681</idno>
+        <idno type="aat">300014072</idno>
+        <note type="description">fibre textile d'origine animale</note>
+        <note type="mentions">11</note>
+        <note type="sources">LIV0007|LIV0008|LIV0025b|LIV0026a|LIV0026b|LIV0027|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q27991870|Q2740926|Q10475001</note>
+      </category>
+      <category xml:id="material-000016" n="10">
+        <catDesc>
+          <term type="main">Myrrhe</term>
+          <term type="standard">myrrhe</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q203635</idno>
+        <idno type="aat">300380203</idno>
+        <note type="description">gomme-résine de l'arbre de Myrrhe</note>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0007|LIV0008|LIV0025b|LIV0028|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q164609|Q1137175|Q55448257</note>
+      </category>
+      <category xml:id="material-000017" n="9">
+        <catDesc>
+          <term type="main">cendre</term>
+          <term type="standard">cendre</term>
+          <term type="variant">cendres</term>
+          <term type="variant">la cendre</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q152079</idno>
+        <idno type="aat">300011786</idno>
+        <note type="description">résidu de combustion ou incinération de matières organiques</note>
+        <note type="mentions">9</note>
+        <note type="sources">LIV0003|LIV0025b|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q98222806|Q834655|Q5058815</note>
+      </category>
+      <category xml:id="material-000018" n="8">
+        <catDesc>
+          <term type="main">cire</term>
+          <term type="standard">cire</term>
+          <term type="variant">cuiure</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q124695</idno>
+        <idno type="aat">300014585</idno>
+        <note type="description">substance chimique dont les propriétés sont similaires à celles de la cire d'abeille</note>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0025a|LIV0026b|LIV0028|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q852772|Q10395|Q1096963</note>
+      </category>
+      <category xml:id="material-000019" n="8">
+        <catDesc>
+          <term type="main">Glaſſe</term>
+        </catDesc>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37501|Q21229490|Q37280410</note>
+      </category>
+      <category xml:id="material-000020" n="7">
+        <catDesc>
+          <term type="main">bronze doré</term>
+          <term type="standard">bronze doré</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q10748318</idno>
+        <idno type="aat">300011048</idno>
+        <note type="description">matériau</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0008|LIV0009</note>
+        <note type="reconciliation-confidence">high</note>
+      </category>
+      <category xml:id="material-000021" n="7">
+        <catDesc>
+          <term type="main">chaux</term>
+          <term type="variant">la chaux</term>
+        </catDesc>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0009|LIV0014|LIV0019|LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q694575|Q837466|Q845587</note>
+      </category>
+      <category xml:id="material-000022" n="7">
+        <catDesc>
+          <term type="main">marble</term>
+          <term type="variant">marbre</term>
+        </catDesc>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37562195|Q40861|Q307218</note>
+      </category>
+      <category xml:id="material-000023" n="7">
+        <catDesc>
+          <term type="main">Marbre noir</term>
+          <term type="variant">Marbre poly</term>
+        </catDesc>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0009|LIV0011</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3342723|Q1755493|Q3287569</note>
+      </category>
+      <category xml:id="material-000024" n="7">
+        <catDesc>
+          <term type="main">pierres</term>
+          <term type="variant">pierre</term>
+        </catDesc>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0007|LIV0025b|LIV0027</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q741029|Q105818035|Q173387</note>
+      </category>
+      <category xml:id="material-000025" n="7">
+        <catDesc>
+          <term type="main">verre</term>
+          <term type="standard">verre</term>
+          <term type="variant">terre</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q11469</idno>
+        <idno type="aat">300010797</idno>
+        <note type="description">matériau solide, amorphe, transparent, dur et fragile, élaboré à l’aide de sable siliceux</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0012|LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37549890|Q21167379|Q35550</note>
+      </category>
+      <category xml:id="material-000026" n="6">
+        <catDesc>
+          <term type="main">bronze</term>
+          <term type="standard">bronze</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q34095</idno>
+        <idno type="aat">300010957</idno>
+        <note type="description">alliage de cuivre et d'étain</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0008|LIV0009|LIV0012|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q15889643|Q64224578|Q4390114</note>
+      </category>
+      <category xml:id="material-000027" n="6">
+        <catDesc>
+          <term type="main">plomb</term>
+          <term type="standard">plomb</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q708</idno>
+        <idno type="aat">300011022</idno>
+        <note type="description">élément chimique de numéro atomique 82 et de symbole Pb</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0006|LIV0007|LIV0008|LIV0013|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q686994|Q632969|Q25235</note>
+      </category>
+      <category xml:id="material-000028" n="6">
+        <catDesc>
+          <term type="main">porphyre</term>
+          <term type="standard">porphyre</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q337238</idno>
+        <idno type="aat">300011232</idno>
+        <note type="description">roche magmatique filonienne</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0008|LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q110977226|Q2668550|Q1187583</note>
+      </category>
+      <category xml:id="material-000029" n="5">
+        <catDesc>
+          <term type="main">argile</term>
+          <term type="standard">argile</term>
+          <term type="variant">argille molle</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q42302</idno>
+        <idno type="aat">300010439</idno>
+        <note type="description">matière rocheuse naturelle</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0007|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2861008|Q646939|Q105397</note>
+      </category>
+      <category xml:id="material-000030" n="5">
+        <catDesc>
+          <term type="main">clay</term>
+        </catDesc>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q12787061|Q18016323|Q684627</note>
+      </category>
+      <category xml:id="material-000031" n="5">
+        <catDesc>
+          <term type="main">grain</term>
+        </catDesc>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0005|LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37308771|Q693944|Q362409</note>
+      </category>
+      <category xml:id="material-000032" n="5">
+        <catDesc>
+          <term type="main">parchemin</term>
+          <term type="standard">parchemin</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q226697</idno>
+        <idno type="aat">300011851</idno>
+        <note type="description">peau d'animal travaillée pour devenir un support écrit</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0025a|LIV0026b|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q217577|Q65111771|Q798500</note>
+      </category>
+      <category xml:id="material-000033" n="5">
+        <catDesc>
+          <term type="main">sable</term>
+          <term type="standard">sable</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q34679</idno>
+        <idno type="aat">300014341</idno>
+        <note type="description">matériau granulaire constitué de petites particules provenant de la désagrégation d'autres roches</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0019|LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q936496|Q37133498|Q97657833</note>
+      </category>
+      <category xml:id="material-000034" n="4">
+        <catDesc>
+          <term type="main">brique</term>
+          <term type="standard">brique</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q40089</idno>
+        <idno type="aat">300010463</idno>
+        <note type="description">matériau de construction</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0007|LIV0009|LIV0015</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q98216408|Q2925617|Q649224</note>
+      </category>
+      <category xml:id="material-000035" n="4">
+        <catDesc>
+          <term type="main">cedre</term>
+          <term type="standard">cèdre</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q128550</idno>
+        <idno type="aat">300343639</idno>
+        <note type="description">genre de plantes</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0007|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q163004|Q162792|Q1052593</note>
+      </category>
+      <category xml:id="material-000036" n="4">
+        <catDesc>
+          <term type="main">cotton</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0007|LIV0008|LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q19607236|Q734707|Q5790239</note>
+      </category>
+      <category xml:id="material-000037" n="4">
+        <catDesc>
+          <term type="main">fange</term>
+          <term type="standard">boue</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q170449</idno>
+        <idno type="aat">300014337</idno>
+        <note type="description">mélange d'eau et de matériaux issus du sol</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q111536933|Q21509784|Q40357</note>
+      </category>
+      <category xml:id="material-000038" n="4">
+        <catDesc>
+          <term type="main">foin</term>
+          <term type="standard">foin</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q336989</idno>
+        <idno type="aat">300266414</idno>
+        <note type="description">fourrage constitué d'herbe séchée</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0013|LIV0026c</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q65104038|Q1931185|Q7376362</note>
+      </category>
+      <category xml:id="material-000039" n="4">
+        <catDesc>
+          <term type="main">fumier</term>
+          <term type="standard">fumier</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q185716</idno>
+        <idno type="aat">300255447</idno>
+        <note type="description">matière organique, principalement dérivée d’excréments animaux, utilisée comme fertilisant agricole</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0026a|LIV0026b|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q21647235|Q921955|Q2869587</note>
+      </category>
+      <category xml:id="material-000040" n="4">
+        <catDesc>
+          <term type="main">lard</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q6488821|Q500290|Q1365133</note>
+      </category>
+      <category xml:id="material-000041" n="4">
+        <catDesc>
+          <term type="main">liège</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0007|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q21765571|Q1866688|Q94000</note>
+      </category>
+      <category xml:id="material-000042" n="4">
+        <catDesc>
+          <term type="main">marmore</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0010|LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3294512|Q40861|Q17637371</note>
+      </category>
+      <category xml:id="material-000043" n="4">
+        <catDesc>
+          <term type="main">Pain du</term>
+          <term type="variant">pain</term>
+          <term type="variant">Pain du Ciel</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3064828|Q3360596|Q161755</note>
+      </category>
+      <category xml:id="material-000044" n="4">
+        <catDesc>
+          <term type="main">peinture</term>
+          <term type="standard">peinture</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q11629</idno>
+        <idno type="aat">300054216</idno>
+        <note type="description">pratique artistique</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0027|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3305213|Q174219|Q296955</note>
+      </category>
+      <category xml:id="material-000045" n="4">
+        <catDesc>
+          <term type="main">plâtre</term>
+          <term type="standard">plâtre</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q274988</idno>
+        <idno type="aat">300014922</idno>
+        <note type="description">matériau de construction ignifuge et de sculptures</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025b|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1526584|Q12883498|Q75520</note>
+      </category>
+      <category xml:id="material-000046" n="4">
+        <catDesc>
+          <term type="main">tiles</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q15559415|Q6146910|Q100319373</note>
+      </category>
+      <category xml:id="material-000047" n="4">
+        <catDesc>
+          <term type="main">ſtubble</term>
+        </catDesc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37313594|Q1258184|Q3122835</note>
+      </category>
+      <category xml:id="material-000048" n="3">
+        <catDesc>
+          <term type="main">bled</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0005</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q107434719|Q133069|Q883411</note>
+      </category>
+      <category xml:id="material-000049" n="3">
+        <catDesc>
+          <term type="main">cemetière</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0024</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q66225590</note>
+      </category>
+      <category xml:id="material-000050" n="3">
+        <catDesc>
+          <term type="main">charbon</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026a|LIV0028|LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q24489|Q190878|Q177463</note>
+      </category>
+      <category xml:id="material-000051" n="3">
+        <catDesc>
+          <term type="main">copper</term>
+          <term type="standard">policier ou policière</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q384593</idno>
+        <idno type="aat">300264351</idno>
+        <note type="description">membre de la police responsable de faire respecter la loi</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q26736230|Q753|Q2084232</note>
+      </category>
+      <category xml:id="material-000052" n="3">
+        <catDesc>
+          <term type="main">cristal</term>
+          <term type="standard">cristal</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q43533</idno>
+        <idno type="aat">300221157</idno>
+        <note type="description">solide dont les constituants sont assemblés de manière régulière par empilement périodique</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025b|LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2662293|Q392551|Q900150</note>
+      </category>
+      <category xml:id="material-000053" n="3">
+        <catDesc>
+          <term type="main">Diamant</term>
+          <term type="standard">diamant</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q5283</idno>
+        <idno type="aat">300011084</idno>
+        <note type="description">forme cristalline précieuse de carbone</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0018</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q49568|Q36979085|Q34028</note>
+      </category>
+      <category xml:id="material-000054" n="3">
+        <catDesc>
+          <term type="main">dung</term>
+          <term type="standard">matière fécale</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q496</idno>
+        <idno type="aat">300191600</idno>
+        <note type="description">résidus de la digestion animale</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q905018|Q100363753|Q1375</note>
+      </category>
+      <category xml:id="material-000055" n="3">
+        <catDesc>
+          <term type="main">earth</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q5327042|Q5327043|Q115178805</note>
+      </category>
+      <category xml:id="material-000056" n="3">
+        <catDesc>
+          <term type="main">fonte</term>
+          <term type="standard">fonte</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q483269</idno>
+        <idno type="aat">300011004</idno>
+        <note type="description">alliage de fer et de carbone</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3747481|Q193899|Q46752</note>
+      </category>
+      <category xml:id="material-000057" n="3">
+        <catDesc>
+          <term type="main">grasse</term>
+          <term type="variant">grease</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37294823|Q592781|Q43238</note>
+      </category>
+      <category xml:id="material-000058" n="3">
+        <catDesc>
+          <term type="main">lime</term>
+          <term type="standard">lime</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q13195</idno>
+        <idno type="aat">300266424</idno>
+        <note type="description">fruit d'agrume vert et acide de diverses espèces du genre Citrus</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q517873|Q10562006|Q37478444</note>
+      </category>
+      <category xml:id="material-000059" n="3">
+        <catDesc>
+          <term type="main">mater</term>
+          <term type="variant">matter</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37528875|Q13616|Q6786584</note>
+      </category>
+      <category xml:id="material-000060" n="3">
+        <catDesc>
+          <term type="main">minéraux</term>
+          <term type="standard">minéralogie</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q83353</idno>
+        <idno type="aat">300054552</idno>
+        <note type="description">science qui étudie les minéraux</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0007|LIV0025a|LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q764802|Q729283|Q4335792</note>
+      </category>
+      <category xml:id="material-000061" n="3">
+        <catDesc>
+          <term type="main">mortier</term>
+          <term type="standard">mortier</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q189566</idno>
+        <idno type="aat">300014741</idno>
+        <note type="description">élément de liaison, de scellement ou enduit en maçonnerie</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0009|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q21510334|Q11785639|Q2805664</note>
+      </category>
+      <category xml:id="material-000062" n="3">
+        <catDesc>
+          <term type="main">métal</term>
+          <term type="standard">métal</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q11426</idno>
+        <idno type="aat">300010900</idno>
+        <note type="description">classe de matériaux dont les atomes sont unis par des liaisons métalliques</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0012|LIV0026b|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q909212|Q15920|Q11467</note>
+      </category>
+      <category xml:id="material-000063" n="3">
+        <catDesc>
+          <term type="main">pain</term>
+          <term type="standard">pain</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q7802</idno>
+        <idno type="aat">300262820</idno>
+        <note type="description">aliment de base fabriqué à partir de farine, de levure, de sel et d'eau</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0003|LIV0023|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2317902|Q37486727|Q206378</note>
+      </category>
+      <category xml:id="material-000064" n="3">
+        <catDesc>
+          <term type="main">perles</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026b|LIV0028</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37178383|Q503831|Q67151341</note>
+      </category>
+      <category xml:id="material-000065" n="3">
+        <catDesc>
+          <term type="main">pierreries</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t1|LIV0031_t2</note>
+      </category>
+      <category xml:id="material-000066" n="3">
+        <catDesc>
+          <term type="main">roches diamantines</term>
+          <term type="variant">diamantines</term>
+        </catDesc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000067" n="3">
+        <catDesc>
+          <term type="main">toile</term>
+          <term type="standard">toile</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q12321255</idno>
+        <idno type="aat">300014078</idno>
+        <note type="description">tissu sur lequel on peint</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0019|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q4259259|Q813966|Q1153946</note>
+      </category>
+      <category xml:id="material-000068" n="2">
+        <catDesc>
+          <term type="main">agate</term>
+          <term type="standard">agate</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q123314</idno>
+        <idno type="aat">300011135</idno>
+        <note type="description">pierre fine variété de calcédoine</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q18638498|Q37107204|Q4691517</note>
+      </category>
+      <category xml:id="material-000069" n="2">
+        <catDesc>
+          <term type="main">aurum</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q70092417|Q24940709|Q115921069</note>
+      </category>
+      <category xml:id="material-000070" n="2">
+        <catDesc>
+          <term type="main">blanc marquetté</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000071" n="2">
+        <catDesc>
+          <term type="main">chaume</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q24950|Q874531|Q767562</note>
+      </category>
+      <category xml:id="material-000072" n="2">
+        <catDesc>
+          <term type="main">ciment</term>
+          <term type="standard">ciment</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q45190</idno>
+        <idno type="aat">300010362</idno>
+        <note type="description">liant hydraulique entrant dans la composition des mortiers et des bétons</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009|LIV0027</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37557053|Q90728046|Q193825</note>
+      </category>
+      <category xml:id="material-000073" n="2">
+        <catDesc>
+          <term type="main">Coral</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3693328|Q37135483|Q1131870</note>
+      </category>
+      <category xml:id="material-000074" n="2">
+        <catDesc>
+          <term type="main">Crystallin</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q895901|Q146701|Q23392</note>
+      </category>
+      <category xml:id="material-000075" n="2">
+        <catDesc>
+          <term type="main">diamants</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009|LIV0012</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q12892|Q107914|Q106067787</note>
+      </category>
+      <category xml:id="material-000076" n="2">
+        <catDesc>
+          <term type="main">drap d’or</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q5135545|Q28094230|Q41776510</note>
+      </category>
+      <category xml:id="material-000077" n="2">
+        <catDesc>
+          <term type="main">feu</term>
+          <term type="standard">incendie</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q168983</idno>
+        <idno type="aat">300068986</idno>
+        <note type="description">feu violent et destructeur</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a|LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q11472|Q3196|Q420646</note>
+      </category>
+      <category xml:id="material-000078" n="2">
+        <catDesc>
+          <term type="main">froment</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007|LIV0028</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q26985935|Q378204|Q202157</note>
+      </category>
+      <category xml:id="material-000079" n="2">
+        <catDesc>
+          <term type="main">fréle</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0027</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q108894563|Q41491126|Q1455025</note>
+      </category>
+      <category xml:id="material-000080" n="2">
+        <catDesc>
+          <term type="main">glace</term>
+          <term type="standard">glace</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q23392</idno>
+        <idno type="aat">300011781</idno>
+        <note type="description">eau à l'état solide</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q13233|Q213926|Q12313384</note>
+      </category>
+      <category xml:id="material-000081" n="2">
+        <catDesc>
+          <term type="main">jaspe</term>
+          <term type="standard">jaspe</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q201175</idno>
+        <idno type="aat">300011151</idno>
+        <note type="description">minéral</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q155057|Q101805510|Q1665973</note>
+      </category>
+      <category xml:id="material-000082" n="2">
+        <catDesc>
+          <term type="main">la pourpre</term>
+          <term type="variant">pourpre</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t2</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q18087859|Q121157295</note>
+      </category>
+      <category xml:id="material-000083" n="2">
+        <catDesc>
+          <term type="main">Lame de</term>
+          <term type="standard">lame</term>
+        </catDesc>
+        <idno type="wikidata" cert="medium">Q330946</idno>
+        <idno type="aat">300024917</idno>
+        <note type="description">partie coupante d'outils et armes divers</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q912313|Q960936|Q4683254</note>
+      </category>
+      <category xml:id="material-000084" n="2">
+        <catDesc>
+          <term type="main">Lapis Lazuli</term>
+          <term type="standard">lapis-lazuli</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q216798</idno>
+        <idno type="aat">300011122</idno>
+        <note type="description">roche métamorphique, contenant des silicates du groupe des feldspathoïdes</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q17212578|Q10316283|Q10914750</note>
+      </category>
+      <category xml:id="material-000085" n="2">
+        <catDesc>
+          <term type="main">lead</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q307462|Q708|Q871232</note>
+      </category>
+      <category xml:id="material-000086" n="2">
+        <catDesc>
+          <term type="main">lierre</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c|LIV0031_t2</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q12460|Q26771|Q157979</note>
+      </category>
+      <category xml:id="material-000087" n="2">
+        <catDesc>
+          <term type="main">luto</term>
+          <term type="standard">luto</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q6705910</idno>
+        <idno type="aat">300388750</idno>
+        <note type="description">langue soudanique centrale</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q18520|Q203889|Q821399</note>
+      </category>
+      <category xml:id="material-000088" n="2">
+        <catDesc>
+          <term type="main">materia</term>
+          <term type="variant">materiáque</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q6786584|Q15763790|Q214609</note>
+      </category>
+      <category xml:id="material-000089" n="2">
+        <catDesc>
+          <term type="main">matière premiere</term>
+          <term type="standard">matériau brut</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q192355</idno>
+        <idno type="aat">300015351</idno>
+        <note type="description">matériel à la base de la fabrication de produits finis</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2267412|Q113733330|Q139323966</note>
+      </category>
+      <category xml:id="material-000090" n="2">
+        <catDesc>
+          <term type="main">matières</term>
+          <term type="standard">matériau brut</term>
+          <term type="variant">matière</term>
+        </catDesc>
+        <idno type="wikidata" cert="medium">Q192355</idno>
+        <idno type="aat">300015351</idno>
+        <note type="description">matériel à la base de la fabrication de produits finis</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q757138|Q192900|Q1783121</note>
+      </category>
+      <category xml:id="material-000091" n="2">
+        <catDesc>
+          <term type="main">mousse</term>
+          <term type="standard">mousse</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q215414</idno>
+        <idno type="aat">300014639</idno>
+        <note type="description">forme de la matière</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q19968229|Q1074826|Q624004</note>
+      </category>
+      <category xml:id="material-000092" n="2">
+        <catDesc>
+          <term type="main">noyau</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q46587|Q1476178|Q170434</note>
+      </category>
+      <category xml:id="material-000093" n="2">
+        <catDesc>
+          <term type="main">oleo</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3351767|Q274515|Q139347</note>
+      </category>
+      <category xml:id="material-000094" n="2">
+        <catDesc>
+          <term type="main">paille de</term>
+          <term type="standard">paille de fer</term>
+        </catDesc>
+        <idno type="wikidata" cert="medium">Q925477</idno>
+        <idno type="aat">300011062</idno>
+        <note type="description">paille utilisée pour son pouvoir abrasif</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q50809369|Q111146302|Q132036659</note>
+      </category>
+      <category xml:id="material-000095" n="2">
+        <catDesc>
+          <term type="main">pièces de</term>
+          <term type="standard">pièce de théâtre</term>
+        </catDesc>
+        <idno type="wikidata" cert="medium">Q25379</idno>
+        <idno type="aat">300201028</idno>
+        <note type="description">forme littéraire destinée à être représentée au théâtre</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q41207|Q2995263|Q2493988</note>
+      </category>
+      <category xml:id="material-000096" n="2">
+        <catDesc>
+          <term type="main">Polylate</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="material-000097" n="2">
+        <catDesc>
+          <term type="main">poussière</term>
+          <term type="standard">poussière</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q165632</idno>
+        <idno type="aat">300014646</idno>
+        <note type="description">ensemble de particules fines de matières réduites en poudre</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1778575|Q20963647|Q193384</note>
+      </category>
+      <category xml:id="material-000098" n="2">
+        <catDesc>
+          <term type="main">Purgatoire</term>
+          <term type="standard">purgatoire</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q566</idno>
+        <idno type="aat">300379822</idno>
+        <note type="description">dans la religion catholique, période de purification précédant l'accès de l'âme au Paradis</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q605018|Q51051158|Q20540151</note>
+      </category>
+      <category xml:id="material-000099" n="2">
+        <catDesc>
+          <term type="main">roche</term>
+          <term type="standard">pierre</term>
+          <term type="variant">roAche</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q22731</idno>
+        <idno type="aat">300011176</idno>
+        <note type="description">type de matériau</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2160221|Q212646|Q2160232</note>
+      </category>
+      <category xml:id="material-000100" n="2">
+        <catDesc>
+          <term type="main">rouille</term>
+          <term type="standard">rouille</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q184197</idno>
+        <idno type="aat">300213355</idno>
+        <note type="description">oxydation du fer</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1437611|Q98889930|Q1937652</note>
+      </category>
+      <category xml:id="material-000101" n="2">
+        <catDesc>
+          <term type="main">satin</term>
+          <term type="standard">satin</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q14298</idno>
+        <idno type="aat">300132902</idno>
+        <note type="description">type de tissage des tissus</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015|LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q655886|Q37077561|Q311471</note>
+      </category>
+      <category xml:id="material-000102" n="2">
+        <catDesc>
+          <term type="main">talc</term>
+          <term type="standard">talc</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q134583</idno>
+        <idno type="aat">300011159</idno>
+        <note type="description">minéral</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q4469|Q41997|Q832378</note>
+      </category>
+      <category xml:id="material-000103" n="2">
+        <catDesc>
+          <term type="main">tapisseries</term>
+          <term type="standard">tapisserie</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q184296</idno>
+        <idno type="aat">300205002</idno>
+        <note type="description">forme d'art textile, traditionnellement tissé sur un métier vertical</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q5759186|Q76844726|Q3515524</note>
+      </category>
+      <category xml:id="material-000104" n="2">
+        <catDesc>
+          <term type="main">terroir</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q105818075|Q627003|Q39074131</note>
+      </category>
+      <category xml:id="material-000105" n="2">
+        <catDesc>
+          <term type="main">tiliæ</term>
+          <term type="variant">tilia</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1826068|Q21569169|Q113871305</note>
+      </category>
+      <category xml:id="material-000106" n="2">
+        <catDesc>
+          <term type="main">timber</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37238222|Q110373985|Q505476</note>
+      </category>
+      <category xml:id="material-000107" n="2">
+        <catDesc>
+          <term type="main">Velours</term>
+          <term type="standard">velours</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q243519</idno>
+        <idno type="aat">300133711</idno>
+        <note type="description">étoffe rase d'un côté et couverte de l'autre de poils dressés</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q4078749|Q4344358|Q1132110</note>
+      </category>
+      <category xml:id="material-000108" n="2">
+        <catDesc>
+          <term type="main">veulours cramoisi</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000109" n="2">
+        <catDesc>
+          <term type="main">viandes</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q56274178|Q132048796|Q131787358</note>
+      </category>
+      <category xml:id="material-000110" n="2">
+        <catDesc>
+          <term type="main">écorce</term>
+          <term type="standard">écorce</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q184453</idno>
+        <idno type="aat">300011860</idno>
+        <note type="description">partie superficielle des tiges et des racines d'une plante</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q976906|Q189522|Q15316</note>
+      </category>
+      <category xml:id="material-000111" n="2">
+        <catDesc>
+          <term type="main">ÉLÉMENS</term>
+          <term type="variant">éléments</term>
+        </catDesc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q115185996|Q51387294|Q136438380</note>
+      </category>
+      <category xml:id="material-000112" n="2">
+        <catDesc>
+          <term type="main">Étain</term>
+          <term type="standard">étain</term>
+        </catDesc>
+        <idno type="wikidata" cert="high">Q1096</idno>
+        <idno type="aat">300133748</idno>
+        <note type="description">élément chimique de numéro atomique 50 et de symbole Sn</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007|LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q59724|Q8078438|Q98214216</note>
+      </category>
+      <category xml:id="material-000113" n="1">
+        <catDesc>
+          <term type="main">aimaant</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000114" n="1">
+        <catDesc>
+          <term type="main">airain</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000115" n="1">
+        <catDesc>
+          <term type="main">alloy</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000116" n="1">
+        <catDesc>
+          <term type="main">Aloe</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000117" n="1">
+        <catDesc>
+          <term type="main">Alum de roche</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000118" n="1">
+        <catDesc>
+          <term type="main">arenam</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000119" n="1">
+        <catDesc>
+          <term type="main">argento</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </category>
+      <category xml:id="material-000120" n="1">
+        <catDesc>
+          <term type="main">argentum</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000121" n="1">
+        <catDesc>
+          <term type="main">aréine</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000122" n="1">
+        <catDesc>
+          <term type="main">auro</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </category>
+      <category xml:id="material-000123" n="1">
+        <catDesc>
+          <term type="main">Baume</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000124" n="1">
+        <catDesc>
+          <term type="main">Billets</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000125" n="1">
+        <catDesc>
+          <term type="main">Bitumen</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000126" n="1">
+        <catDesc>
+          <term type="main">blandice</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </category>
+      <category xml:id="material-000127" n="1">
+        <catDesc>
+          <term type="main">blé</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </category>
+      <category xml:id="material-000128" n="1">
+        <catDesc>
+          <term type="main">bois de chaîne</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000129" n="1">
+        <catDesc>
+          <term type="main">bois odoriferants</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="material-000130" n="1">
+        <catDesc>
+          <term type="main">bois quarré</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="material-000131" n="1">
+        <catDesc>
+          <term type="main">bois quarrérez</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </category>
+      <category xml:id="material-000132" n="1">
+        <catDesc>
+          <term type="main">bonne matière</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </category>
+      <category xml:id="material-000133" n="1">
+        <catDesc>
+          <term type="main">boue</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="material-000134" n="1">
+        <catDesc>
+          <term type="main">bricques</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </category>
+      <category xml:id="material-000135" n="1">
+        <catDesc>
+          <term type="main">Brionie roots</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000136" n="1">
+        <catDesc>
+          <term type="main">briques</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000137" n="1">
+        <catDesc>
+          <term type="main">buis</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000138" n="1">
+        <catDesc>
+          <term type="main">calcedoines</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000139" n="1">
+        <catDesc>
+          <term type="main">chaudières de plomb</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000140" n="1">
+        <catDesc>
+          <term type="main">chrysolithes</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000141" n="1">
+        <catDesc>
+          <term type="main">Ciel</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000142" n="1">
+        <catDesc>
+          <term type="main">cizeau</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="material-000143" n="1">
+        <catDesc>
+          <term type="main">cloth</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000144" n="1">
+        <catDesc>
+          <term type="main">coales</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000145" n="1">
+        <catDesc>
+          <term type="main">comépines</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000146" n="1">
+        <catDesc>
+          <term type="main">corail</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="material-000147" n="1">
+        <catDesc>
+          <term type="main">cordons de soie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000148" n="1">
+        <catDesc>
+          <term type="main">Corn</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000149" n="1">
+        <catDesc>
+          <term type="main">coticulæ</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000150" n="1">
+        <catDesc>
+          <term type="main">crystal</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="material-000151" n="1">
+        <catDesc>
+          <term type="main">cuir de loup</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="material-000152" n="1">
+        <catDesc>
+          <term type="main">cyprès</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </category>
+      <category xml:id="material-000153" n="1">
+        <catDesc>
+          <term type="main">damas</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000154" n="1">
+        <catDesc>
+          <term type="main">diamanr</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000155" n="1">
+        <catDesc>
+          <term type="main">diverses matières</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000156" n="1">
+        <catDesc>
+          <term type="main">faix de plomb</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </category>
+      <category xml:id="material-000157" n="1">
+        <catDesc>
+          <term type="main">farine</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </category>
+      <category xml:id="material-000158" n="1">
+        <catDesc>
+          <term type="main">FERRO</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </category>
+      <category xml:id="material-000159" n="1">
+        <catDesc>
+          <term type="main">fers</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      </category>
+      <category xml:id="material-000160" n="1">
+        <catDesc>
+          <term type="main">fers dorés</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000161" n="1">
+        <catDesc>
+          <term type="main">fiel</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </category>
+      <category xml:id="material-000162" n="1">
+        <catDesc>
+          <term type="main">fin acier</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </category>
+      <category xml:id="material-000163" n="1">
+        <catDesc>
+          <term type="main">fin lin</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </category>
+      <category xml:id="material-000164" n="1">
+        <catDesc>
+          <term type="main">fiſtuloſi tophi</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000165" n="1">
+        <catDesc>
+          <term type="main">fondants</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0018</note>
+      </category>
+      <category xml:id="material-000166" n="1">
+        <catDesc>
+          <term type="main">foraminulenta ſpongia</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000167" n="1">
+        <catDesc>
+          <term type="main">glaire</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000168" n="1">
+        <catDesc>
+          <term type="main">gossypio</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000169" n="1">
+        <catDesc>
+          <term type="main">graisse</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000170" n="1">
+        <catDesc>
+          <term type="main">grandes matières</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </category>
+      <category xml:id="material-000171" n="1">
+        <catDesc>
+          <term type="main">gros bois</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </category>
+      <category xml:id="material-000172" n="1">
+        <catDesc>
+          <term type="main">Gummes</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000173" n="1">
+        <catDesc>
+          <term type="main">gummi</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000174" n="1">
+        <catDesc>
+          <term type="main">halliers</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000175" n="1">
+        <catDesc>
+          <term type="main">Iatite</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000176" n="1">
+        <catDesc>
+          <term type="main">JeAlum de roche</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000177" n="1">
+        <catDesc>
+          <term type="main">lames de rebut</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="material-000178" n="1">
+        <catDesc>
+          <term type="main">laq</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000179" n="1">
+        <catDesc>
+          <term type="main">laton</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </category>
+      <category xml:id="material-000180" n="1">
+        <catDesc>
+          <term type="main">laurier</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </category>
+      <category xml:id="material-000181" n="1">
+        <catDesc>
+          <term type="main">Lentifque</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000182" n="1">
+        <catDesc>
+          <term type="main">limon</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </category>
+      <category xml:id="material-000183" n="1">
+        <catDesc>
+          <term type="main">lin</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000184" n="1">
+        <catDesc>
+          <term type="main">l’Alum</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000185" n="1">
+        <catDesc>
+          <term type="main">marbre et autre matière</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000186" n="1">
+        <catDesc>
+          <term type="main">marbre et de bronze</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </category>
+      <category xml:id="material-000187" n="1">
+        <catDesc>
+          <term type="main">marbre gris</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000188" n="1">
+        <catDesc>
+          <term type="main">marbre gris et noir</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000189" n="1">
+        <catDesc>
+          <term type="main">Marbre jaspé</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </category>
+      <category xml:id="material-000190" n="1">
+        <catDesc>
+          <term type="main">marbre jaune Oriental</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000191" n="1">
+        <catDesc>
+          <term type="main">marbre noir et blanc</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000192" n="1">
+        <catDesc>
+          <term type="main">Marbre Parien</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000193" n="1">
+        <catDesc>
+          <term type="main">Marbre rouge</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </category>
+      <category xml:id="material-000194" n="1">
+        <catDesc>
+          <term type="main">Marbre Thébaique</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000195" n="1">
+        <catDesc>
+          <term type="main">marqueterie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000196" n="1">
+        <catDesc>
+          <term type="main">matelats</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </category>
+      <category xml:id="material-000197" n="1">
+        <catDesc>
+          <term type="main">matière diverse</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000198" n="1">
+        <catDesc>
+          <term type="main">matière forte</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000199" n="1">
+        <catDesc>
+          <term type="main">matières sublimes</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </category>
+      <category xml:id="material-000200" n="1">
+        <catDesc>
+          <term type="main">mine</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000201" n="1">
+        <catDesc>
+          <term type="main">monde</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </category>
+      <category xml:id="material-000202" n="1">
+        <catDesc>
+          <term type="main">monnaie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000203" n="1">
+        <catDesc>
+          <term type="main">mouelle</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000204" n="1">
+        <catDesc>
+          <term type="main">nard</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000205" n="1">
+        <catDesc>
+          <term type="main">ocre</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="material-000206" n="1">
+        <catDesc>
+          <term type="main">papier blan</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </category>
+      <category xml:id="material-000207" n="1">
+        <catDesc>
+          <term type="main">papier marqué</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </category>
+      <category xml:id="material-000208" n="1">
+        <catDesc>
+          <term type="main">parcille toile</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000209" n="1">
+        <catDesc>
+          <term type="main">passo Cretico</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000210" n="1">
+        <catDesc>
+          <term type="main">paste</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000211" n="1">
+        <catDesc>
+          <term type="main">pierre de saphirs</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </category>
+      <category xml:id="material-000212" n="1">
+        <catDesc>
+          <term type="main">pierre philosophale</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0006</note>
+      </category>
+      <category xml:id="material-000213" n="1">
+        <catDesc>
+          <term type="main">pierre ponce</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000214" n="1">
+        <catDesc>
+          <term type="main">pierres de taille</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000215" n="1">
+        <catDesc>
+          <term type="main">PiSnets</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000216" n="1">
+        <catDesc>
+          <term type="main">pièces</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </category>
+      <category xml:id="material-000217" n="1">
+        <catDesc>
+          <term type="main">plantes</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="material-000218" n="1">
+        <catDesc>
+          <term type="main">Plombagine</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000219" n="1">
+        <catDesc>
+          <term type="main">plonb</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </category>
+      <category xml:id="material-000220" n="1">
+        <catDesc>
+          <term type="main">poliflure</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000221" n="1">
+        <catDesc>
+          <term type="main">Poplar</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000222" n="1">
+        <catDesc>
+          <term type="main">porcelaine</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="material-000223" n="1">
+        <catDesc>
+          <term type="main">porchire</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </category>
+      <category xml:id="material-000224" n="1">
+        <catDesc>
+          <term type="main">porphyre et marbre</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </category>
+      <category xml:id="material-000225" n="1">
+        <catDesc>
+          <term type="main">poudre de marbre</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </category>
+      <category xml:id="material-000226" n="1">
+        <catDesc>
+          <term type="main">poussier</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000227" n="1">
+        <catDesc>
+          <term type="main">pulpa</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000228" n="1">
+        <catDesc>
+          <term type="main">pulpi</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000229" n="1">
+        <catDesc>
+          <term type="main">pumices</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000230" n="1">
+        <catDesc>
+          <term type="main">ronces</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000231" n="1">
+        <catDesc>
+          <term type="main">rouleau de velin</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </category>
+      <category xml:id="material-000232" n="1">
+        <catDesc>
+          <term type="main">rust</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000233" n="1">
+        <catDesc>
+          <term type="main">sablon</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000234" n="1">
+        <catDesc>
+          <term type="main">Safftan</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000235" n="1">
+        <catDesc>
+          <term type="main">sand</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000236" n="1">
+        <catDesc>
+          <term type="main">sanguinem</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </category>
+      <category xml:id="material-000237" n="1">
+        <catDesc>
+          <term type="main">saphirs</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000238" n="1">
+        <catDesc>
+          <term type="main">Sapins</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000239" n="1">
+        <catDesc>
+          <term type="main">Scordium</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000240" n="1">
+        <catDesc>
+          <term type="main">Sel marin</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000241" n="1">
+        <catDesc>
+          <term type="main">Sicomore</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000242" n="1">
+        <catDesc>
+          <term type="main">soing</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </category>
+      <category xml:id="material-000243" n="1">
+        <catDesc>
+          <term type="main">sous</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000244" n="1">
+        <catDesc>
+          <term type="main">stuc ou plâtre</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </category>
+      <category xml:id="material-000245" n="1">
+        <catDesc>
+          <term type="main">style</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="material-000246" n="1">
+        <catDesc>
+          <term type="main">Styrax</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000247" n="1">
+        <catDesc>
+          <term type="main">tenps</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000248" n="1">
+        <catDesc>
+          <term type="main">terre cuite</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="material-000249" n="1">
+        <catDesc>
+          <term type="main">terre rousse</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000250" n="1">
+        <catDesc>
+          <term type="main">tissu</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </category>
+      <category xml:id="material-000251" n="1">
+        <catDesc>
+          <term type="main">toille cirée</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000252" n="1">
+        <catDesc>
+          <term type="main">tourbe</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </category>
+      <category xml:id="material-000253" n="1">
+        <catDesc>
+          <term type="main">tragacantha</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000254" n="1">
+        <catDesc>
+          <term type="main">tuf et moèlon</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </category>
+      <category xml:id="material-000255" n="1">
+        <catDesc>
+          <term type="main">tuiles</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="material-000256" n="1">
+        <catDesc>
+          <term type="main">vaissellé de terre</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000257" n="1">
+        <catDesc>
+          <term type="main">vernecdum</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="material-000258" n="1">
+        <catDesc>
+          <term type="main">wood</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000259" n="1">
+        <catDesc>
+          <term type="main">wooll</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      <category xml:id="material-000260" n="1">
+        <catDesc>
+          <term type="main">yvoire</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </category>
+      <category xml:id="material-000261" n="1">
+        <catDesc>
+          <term type="main">Écriture</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </category>
+      <category xml:id="material-000262" n="1">
+        <catDesc>
+          <term type="main">Éléments</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </category>
+      <category xml:id="material-000263" n="1">
+        <catDesc>
+          <term type="main">émail des couleurs</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </category>
+      <category xml:id="material-000264" n="1">
+        <catDesc>
+          <term type="main">éoffes de soie</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </category>
+      <category xml:id="material-000265" n="1">
+        <catDesc>
+          <term type="main">ſcutulæ vitreæ</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </category>
+      <category xml:id="material-000266" n="1">
+        <catDesc>
+          <term type="main">ſlate</term>
+        </catDesc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </category>
+      </taxonomy>
+    </classDecl>
+  </encodingDesc>
+</TEI>

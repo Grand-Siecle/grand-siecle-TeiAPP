@@ -6,15 +6,2458 @@
                 <title>Registre des oeuvres — Grand Siecle</title>
             </titleStmt>
             <publicationStmt>
-                <p>Authority file for the Grand Siecle project</p>
+                <publisher>Projet Grand Siecle — UNIL</publisher>
+                <availability status="restricted"><licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence></availability>
             </publicationStmt>
             <sourceDesc>
-                <p>Created from NER pipeline output and manual curation</p>
+                <p>Pipeline NER (CamemBERT + GLiNER) + reconciliation Wikidata</p>
             </sourceDesc>
         </fileDesc>
+        <revisionDesc>
+            <change when="2026-06-12">Generation automatique depuis les entites NER reconciliees (scripts/build_registers.py)</change>
+        </revisionDesc>
     </teiHeader>
-    <standOff>
-        <listBibl type="work">
-        </listBibl>
-    </standOff>
+  <standOff>
+    <listBibl type="work">
+      <bibl xml:id="work-000001" n="72">
+        <title type="main">Remarque</title>
+        <title type="standard">Notes critiques sur la question nationale</title>
+        <title type="variant">Remarques</title>
+        <title type="variant">RemarLque</title>
+        <title type="variant">RemarTque</title>
+        <title type="variant">RemarIque</title>
+        <author key="Q1394">Lénine</author>
+        <textLang key="Q7737">russe</textLang>
+        <idno type="wikidata" cert="medium">Q6045549</idno>
+        <note type="description">livre de Vladimir Lenin</note>
+        <note type="mentions">72</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q19227288|Q64706686|Q64706617</note>
+      </bibl>
+      <bibl xml:id="work-000002" n="37">
+        <title type="main">Écriture</title>
+        <title type="standard">sinogrammes traditionnels</title>
+        <title type="variant">l’Écriture</title>
+        <title type="variant">sainte Écriture</title>
+        <title type="variant">Écritures</title>
+        <title type="variant">La sainte Écriture</title>
+        <title type="variant">L’EsCriture</title>
+        <title type="variant">le saint écriture</title>
+        <title type="variant">saint écriture</title>
+        <textLang key="Q7850">chinois</textLang>
+        <idno type="wikidata" cert="medium">Q178528</idno>
+        <note type="description">caractères chinois utilisés dans le monde chinois en dehors de leur version simplifiée</note>
+        <note type="mentions">37</note>
+        <note type="sources">LIV0009|LIV0012|LIV0018|LIV0022|LIV0024|LIV0025a|LIV0025b|LIV0026a|LIV0026b|LIV0031_t1|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q8222|Q187659|Q8201</note>
+      </bibl>
+      <bibl xml:id="work-000003" n="27">
+        <title type="main">Rhétorique</title>
+        <title type="standard">Rhétorique</title>
+        <title type="variant">Rlétorique</title>
+        <title type="variant">Rhétoriques</title>
+        <title type="variant">Rhhétorique</title>
+        <title type="variant">harRhétorique</title>
+        <author key="Q868">Aristote</author>
+        <textLang key="Q35497">grec ancien</textLang>
+        <note type="genre" key="Q384515">traité</note>
+        <idno type="wikidata" cert="high">Q1896045</idno>
+        <note type="description">œuvre d'Aristote</note>
+        <note type="mentions">27</note>
+        <note type="sources">LIV0012|LIV0020|LIV0026a|LIV0027|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q104730361|Q1973998|Q3302759</note>
+      </bibl>
+      <bibl xml:id="work-000004" n="14">
+        <title type="main">Grammaire</title>
+        <note type="mentions">14</note>
+        <note type="sources">LIV0012|LIV0015|LIV0017|LIV0019|LIV0020|LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000005" n="13">
+        <title type="main">livre</title>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0005|LIV0007|LIV0012|LIV0015|LIV0028</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q571|Q100995|Q950076</note>
+      </bibl>
+      <bibl xml:id="work-000006" n="13">
+        <title type="main">Oraison</title>
+        <title type="standard">Oraison</title>
+        <title type="variant">L’oraison</title>
+        <note type="genre" key="Q40953">prière</note>
+        <idno type="wikidata" cert="high">Q3355021</idno>
+        <note type="description">call to prayer</note>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0002b|LIV0006|LIV0015|LIV0020</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q501501|Q125407141|Q5110313</note>
+      </bibl>
+      <bibl xml:id="work-000007" n="11">
+        <title type="main">livres</title>
+        <title type="standard">texte sacré</title>
+        <title type="variant">livre</title>
+        <note type="genre" key="Q12617225">littérature religieuse</note>
+        <idno type="wikidata" cert="medium">Q179461</idno>
+        <note type="description">livre ou ensembles de textes qui selon certaines croyances ont été rédigés en relation avec une divinité</note>
+        <note type="mentions">11</note>
+        <note type="sources">LIV0004a|LIV0006|LIV0026b|LIV0033</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q131539|Q1233720|Q223729</note>
+      </bibl>
+      <bibl xml:id="work-000008" n="10">
+        <title type="main">lettres</title>
+        <title type="standard">Lettres persanes</title>
+        <title type="variant">sainte lettres</title>
+        <title type="variant">lettre</title>
+        <author key="Q15975">Montesquieu</author>
+        <date type="publication" when="1721"/>
+        <textLang key="Q150">français</textLang>
+        <note type="genre" key="Q128758">satire</note>
+        <note type="genre" key="Q465821">roman épistolaire</note>
+        <idno type="wikidata" cert="medium">Q1050479</idno>
+        <note type="description">roman épistolaire de Montesquieu</note>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0022|LIV0025a|LIV0025b|LIV0026a|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q208217|Q80083|Q1277575</note>
+      </bibl>
+      <bibl xml:id="work-000009" n="10">
+        <title type="main">Métaphores</title>
+        <title type="variant">la Métaphore</title>
+        <title type="variant">métaphore</title>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0012</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q340113|Q132078493|Q53209831</note>
+      </bibl>
+      <bibl xml:id="work-000010" n="9">
+        <title type="main">Romans</title>
+        <title type="standard">Épître aux Romains</title>
+        <title type="variant">roman</title>
+        <author key="Q9200">Paul de Tarse</author>
+        <note type="genre" key="Q215495">épître</note>
+        <idno type="wikidata" cert="high">Q48203</idno>
+        <note type="description">livre du Nouveau Testament</note>
+        <note type="mentions">9</note>
+        <note type="sources">LIV0009|LIV0015|LIV0020|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q613120|Q1344108|Q239078</note>
+      </bibl>
+      <bibl xml:id="work-000011" n="7">
+        <title type="main">Alcoran</title>
+        <title type="standard">Coran</title>
+        <textLang key="Q109016888">arabe coranique</textLang>
+        <note type="genre" key="Q12617225">littérature religieuse</note>
+        <idno type="wikidata" cert="high">Q428</idno>
+        <note type="description">livre sacré de l'Islam</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0008|LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37260835|Q134506106|Q29366026</note>
+      </bibl>
+      <bibl xml:id="work-000012" n="7">
+        <title type="main">Apocalypse</title>
+        <title type="standard">Apocalypse</title>
+        <author key="Q2733634">Jean de Patmos</author>
+        <textLang key="Q26912310">koinè biblique</textLang>
+        <note type="genre" key="Q3199667">littérature apocalyptique</note>
+        <note type="genre" key="Q215495">épître</note>
+        <note type="genre" key="Q214267">prophétie</note>
+        <idno type="wikidata" cert="high">Q42040</idno>
+        <note type="description">dernier livre du Nouveau Testament</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0022|LIV0025b|LIV0026a|LIV0026c|LIV0028|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q618759|Q16242464|Q696203</note>
+      </bibl>
+      <bibl xml:id="work-000013" n="7">
+        <title type="main">Poésie</title>
+        <title type="standard">poésie lyrique</title>
+        <title type="variant">La Poesie</title>
+        <title type="variant">poestique</title>
+        <title type="variant">poéèsie</title>
+        <title type="variant">poessie</title>
+        <note type="genre" key="Q3326349">lyrisme</note>
+        <idno type="wikidata" cert="medium">Q182357</idno>
+        <note type="description">genre littéraire</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0015|LIV0017|LIV0019|LIV0025a|LIV0026a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q482|Q3236984|Q19530246</note>
+      </bibl>
+      <bibl xml:id="work-000014" n="7">
+        <title type="main">Talmud</title>
+        <title type="standard">Talmud</title>
+        <idno type="wikidata" cert="high">Q43290</idno>
+        <note type="description">texte sacré du judaïsme rabbinique</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0025b|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q13173307|Q2747862|Q21584816</note>
+      </bibl>
+      <bibl xml:id="work-000015" n="6">
+        <title type="main">Cantiques</title>
+        <title type="standard">Cantiques</title>
+        <title type="variant">Cantique</title>
+        <title type="variant">cartique</title>
+        <date type="publication" when="1947-01-01"/>
+        <idno type="wikidata" cert="high">Q5455847</idno>
+        <note type="description">compositions (5) de Benjamin Britten</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0001|LIV0026b|LIV0026c|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q2509255|Q6176502|Q1705521</note>
+      </bibl>
+      <bibl xml:id="work-000016" n="6">
+        <title type="main">Déuteronome</title>
+        <title type="standard">Deutéronome</title>
+        <author key="Q9077">Moïse</author>
+        <author key="Q475346">tradition deutéronomiste</author>
+        <textLang key="Q1982248">hébreu biblique</textLang>
+        <note type="genre" key="Q179461">texte sacré</note>
+        <idno type="wikidata" cert="high">Q42614</idno>
+        <note type="description">cinquième livre de la Bible</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0024|LIV0025b|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q25689948|Q12523092|Q12523099</note>
+      </bibl>
+      <bibl xml:id="work-000017" n="6">
+        <title type="main">Le Chrétien</title>
+        <title type="standard">Le Chrétien</title>
+        <title type="variant">Le Chrétien Juterieur</title>
+        <title type="variant">Le Chrétien Interieur</title>
+        <title type="variant">Le</title>
+        <author key="Q1310633">Francesc Eiximenis</author>
+        <date type="publication" when="1386"/>
+        <textLang key="Q15478520">ancien catalan</textLang>
+        <idno type="wikidata" cert="high">Q1867004</idno>
+        <note type="description">livre de Francesc Eiximenis</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0006</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q20965558|Q104724539|Q118826668</note>
+      </bibl>
+      <bibl xml:id="work-000018" n="6">
+        <title type="main">Nicjas</title>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000019" n="6">
+        <title type="main">Poète</title>
+        <title type="standard">Poetelii</title>
+        <textLang key="Q397">latin</textLang>
+        <idno type="wikidata" cert="medium">Q12290218</idno>
+        <note type="description">gens romaine</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0025a|LIV0025b|LIV0026a|LIV0028</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q49757|Q58413595|Q11122954</note>
+      </bibl>
+      <bibl xml:id="work-000020" n="6">
+        <title type="main">Poètes</title>
+        <title type="variant">poeètes</title>
+        <title type="variant">poeète</title>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0025b|LIV0026a|LIV0026c|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q49757|Q58413595|Q107230508</note>
+      </bibl>
+      <bibl xml:id="work-000021" n="6">
+        <title type="main">Proverbes</title>
+        <title type="standard">Livre des Proverbes</title>
+        <title type="variant">prouerbe</title>
+        <author key="Q37085">Salomon</author>
+        <textLang key="Q1982248">hébreu biblique</textLang>
+        <note type="genre" key="Q546729">littérature sapientiale</note>
+        <idno type="wikidata" cert="high">Q4579</idno>
+        <note type="description">livre de la Bible hébraïque et de l'Ancien Testament</note>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q35102|Q16333391|Q87248</note>
+      </bibl>
+      <bibl xml:id="work-000022" n="6">
+        <title type="main">vers</title>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0004a|LIV0015|LIV0017</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1625766|Q781817|Q621</note>
+      </bibl>
+      <bibl xml:id="work-000023" n="5">
+        <title type="main">Cabale</title>
+        <title type="standard">Cabale et Amour</title>
+        <author key="Q22670">Friedrich Schiller</author>
+        <date type="publication" when="1784-01-01"/>
+        <textLang key="Q188">allemand</textLang>
+        <note type="genre" key="Q80930">tragédie</note>
+        <note type="genre" key="Q961849">drame bourgeois</note>
+        <idno type="wikidata" cert="medium">Q263150</idno>
+        <note type="description">1784 play by Friedrich Schiller</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0025a|LIV0025b</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1416414|Q124614255|Q10855271</note>
+      </bibl>
+      <bibl xml:id="work-000024" n="5">
+        <title type="main">Essais</title>
+        <title type="standard">Essais</title>
+        <title type="variant">essai</title>
+        <author key="Q41568">Michel de Montaigne</author>
+        <textLang key="Q1473289">moyen français</textLang>
+        <note type="genre" key="Q4184">autobiographie</note>
+        <note type="genre" key="Q35760">essai</note>
+        <idno type="wikidata" cert="high">Q624852</idno>
+        <note type="description">œuvre de Montaigne</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q210112|Q96699648|Q11774202</note>
+      </bibl>
+      <bibl xml:id="work-000025" n="5">
+        <title type="main">Fable</title>
+        <title type="standard">Fable</title>
+        <title type="variant">La Fable</title>
+        <title type="variant">le fable</title>
+        <date type="publication" when="2007-12-04"/>
+        <note type="genre" key="Q1422746">action-RPG</note>
+        <note type="genre" key="Q85422949">jeu vidéo avec des personnages LGBT</note>
+        <note type="genre" key="Q42409239">jeu vidéo de fantasy</note>
+        <idno type="wikidata" cert="high">Q944752</idno>
+        <note type="description">jeu vidéo de 2004</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0025b|LIV0027|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q693|Q37449164|Q4038565</note>
+      </bibl>
+      <bibl xml:id="work-000026" n="5">
+        <title type="main">Pentateuque</title>
+        <title type="standard">Pentateuque</title>
+        <note type="genre" key="Q2864737">art religieux</note>
+        <idno type="wikidata" cert="high">Q162062</idno>
+        <note type="description">cinq premiers livres de la Bible</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0025b|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q149441|Q4494220|Q724893</note>
+      </bibl>
+      <bibl xml:id="work-000027" n="5">
+        <title type="main">Poëra</title>
+        <title type="variant">Poëta</title>
+        <title type="variant">Poëtam</title>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000028" n="5">
+        <title type="main">Poison</title>
+        <title type="standard">Poison</title>
+        <note type="genre" key="Q188539">glam metal</note>
+        <note type="genre" key="Q83270">hard rock</note>
+        <idno type="wikidata" cert="high">Q550602</idno>
+        <note type="description">groupe de musique américain</note>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q40867|Q508899|Q2322357</note>
+      </bibl>
+      <bibl xml:id="work-000029" n="5">
+        <title type="main">Satyrique</title>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0015|LIV0025b|LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000030" n="5">
+        <title type="main">Écriture sainte</title>
+        <title type="variant">L’Écriture sainte</title>
+        <title type="variant">écriture saint</title>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0002a|LIV0004a|LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000031" n="4">
+        <title type="main">Actes</title>
+        <title type="standard">Actes des Apôtres</title>
+        <title type="variant">acte</title>
+        <author key="Q128538">Luc</author>
+        <textLang key="Q26912310">koinè biblique</textLang>
+        <note type="genre" key="Q4677805">actes des apôtres</note>
+        <idno type="wikidata" cert="high">Q40309</idno>
+        <note type="description">cinquième livre du Nouveau Testament</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0022|LIV0026a|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q115259196|Q1146531|Q1143604</note>
+      </bibl>
+      <bibl xml:id="work-000032" n="4">
+        <title type="main">Apologie</title>
+        <title type="standard">Apologie</title>
+        <author key="Q170512">Apulée</author>
+        <textLang key="Q397">latin</textLang>
+        <note type="genre" key="Q1416320">apologie</note>
+        <idno type="wikidata" cert="high">Q3620725</idno>
+        <note type="description">œuvre d'Apulée</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0014|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1416320|Q273668|Q2858487</note>
+      </bibl>
+      <bibl xml:id="work-000033" n="4">
+        <title type="main">Comédie</title>
+        <title type="standard">La Divine Comédie</title>
+        <author key="Q1067">Dante Alighieri</author>
+        <textLang key="Q1990745">toscan</textLang>
+        <note type="genre" key="Q37484">épopée</note>
+        <idno type="wikidata" cert="high">Q40185</idno>
+        <note type="description">poème narratif de Dante Alighieri, publié entre 1307 et 1321</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0009|LIV0015</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q157443|Q40831|Q222749</note>
+      </bibl>
+      <bibl xml:id="work-000034" n="4">
+        <title type="main">DE LA FREOVENTE COMMVNION</title>
+        <title type="variant">DE LA FRLQUENTE CoMMunIoN</title>
+        <title type="variant">DE LA FREQUENTE COMMVNION</title>
+        <title type="variant">Dr LA FRQUENTE CoMsaunIoN</title>
+        <title type="variant">de le freqvente communion</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0003</note>
+      </bibl>
+      <bibl xml:id="work-000035" n="4">
+        <title type="main">Epilogis</title>
+        <title type="variant">Epilogi</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000036" n="4">
+        <title type="main">Histoires de deux</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000037" n="4">
+        <title type="main">Homère</title>
+        <title type="standard">Homère</title>
+        <note type="genre" key="Q37484">épopée</note>
+        <idno type="wikidata" cert="high">Q6691</idno>
+        <note type="description">poète épique de la Grèce antique, auteur de l’Illiade et de l’Odyssée</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0019|LIV0026a|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q65557968|Q49126008|Q11710021</note>
+      </bibl>
+      <bibl xml:id="work-000038" n="4">
+        <title type="main">ouvrage</title>
+        <title type="standard">livre scientifique</title>
+        <note type="genre" key="Q12042160">littérature scientifique</note>
+        <idno type="wikidata" cert="medium">Q7433672</idno>
+        <note type="description">monographie scientifique</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q571|Q386724|Q20540385</note>
+      </bibl>
+      <bibl xml:id="work-000039" n="4">
+        <title type="main">Panégyrique</title>
+        <title type="standard">Panégyrique</title>
+        <author key="Q221182">Isocrate</author>
+        <textLang key="Q35497">grec ancien</textLang>
+        <note type="genre" key="Q591055">panégyrique</note>
+        <idno type="wikidata" cert="high">Q3893205</idno>
+        <note type="description">discours d'Isocrate</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0004a|LIV0012|LIV0015|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q591055|Q1096001|Q66134045</note>
+      </bibl>
+      <bibl xml:id="work-000040" n="4">
+        <title type="main">Poincte</title>
+        <title type="variant">pointe</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000041" n="4">
+        <title type="main">Poète ancien</title>
+        <title type="variant">poeste|poeste ancien</title>
+        <title type="variant">poerte|poette|poite| ancien</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025b|LIV0026b|LIV0028</note>
+      </bibl>
+      <bibl xml:id="work-000042" n="4">
+        <title type="main">Poète Lucain</title>
+        <title type="variant">poeate|poette|poête Lucain</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0031_t2</note>
+      </bibl>
+      <bibl xml:id="work-000043" n="4">
+        <title type="main">Prose</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q676|Q37004182|Q1416480</note>
+      </bibl>
+      <bibl xml:id="work-000044" n="4">
+        <title type="main">Remarques</title>
+        <title type="standard">Notes critiques sur la question nationale</title>
+        <title type="variant">remarque</title>
+        <author key="Q1394">Lénine</author>
+        <textLang key="Q7737">russe</textLang>
+        <idno type="wikidata" cert="medium">Q6045549</idno>
+        <note type="description">livre de Vladimir Lenin</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q64706686|Q19227288|Q64706617</note>
+      </bibl>
+      <bibl xml:id="work-000045" n="4">
+        <title type="main">Remarques du sieur de Vaugelas</title>
+        <title type="variant">Remarques du sieur de Vaugelas sur la</title>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000046" n="3">
+        <title type="main">Absynthe</title>
+        <title type="variant">absinthe</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q164298|Q15869231|Q13490478</note>
+      </bibl>
+      <bibl xml:id="work-000047" n="3">
+        <title type="main">Annal</title>
+        <title type="standard">Ab Urbe condita libri</title>
+        <author key="Q2039">Tite-Live</author>
+        <textLang key="Q397">latin</textLang>
+        <note type="genre" key="Q30277550">historiographie</note>
+        <idno type="wikidata" cert="medium">Q1155892</idno>
+        <note type="description">œuvre de Tite-Live</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026a|LIV0032</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q326122|Q1821243|Q2431664</note>
+      </bibl>
+      <bibl xml:id="work-000048" n="3">
+        <title type="main">Conciles</title>
+        <title type="variant">concile</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000049" n="3">
+        <title type="main">Doctrine Curieuse</title>
+        <title type="variant">Doctrine curisuse</title>
+        <title type="variant">doctrine curieux</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000050" n="3">
+        <title type="main">Genese</title>
+        <title type="standard">La Genèse</title>
+        <title type="variant">genêce</title>
+        <author key="Q9077">Moïse</author>
+        <textLang key="Q1982248">hébreu biblique</textLang>
+        <note type="genre" key="Q179461">texte sacré</note>
+        <idno type="wikidata" cert="high">Q9184</idno>
+        <note type="description">premier livre de la Bible, composé de 50 chapitres</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025b|LIV0026a|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37517494|Q23853276|Q3100984</note>
+      </bibl>
+      <bibl xml:id="work-000051" n="3">
+        <title type="main">Horaces</title>
+        <title type="standard">Les Horaces et les Curiaces</title>
+        <date type="publication" when="1961-01-01"/>
+        <note type="genre" key="Q130232">drame</note>
+        <idno type="wikidata" cert="medium">Q3233244</idno>
+        <note type="description">film sorti en 1961</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0027</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q535799</note>
+      </bibl>
+      <bibl xml:id="work-000052" n="3">
+        <title type="main">Jurisprudence</title>
+        <title type="variant">iurisprudence</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025b|LIV0027</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q4932206|Q11022655|Q126842</note>
+      </bibl>
+      <bibl xml:id="work-000053" n="3">
+        <title type="main">L’Interieur Chrétien</title>
+        <title type="variant">L’Iatereurur Chrétien</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0006</note>
+      </bibl>
+      <bibl xml:id="work-000054" n="3">
+        <title type="main">L’invocation des Anges</title>
+        <title type="variant">l’invocation des</title>
+        <title type="variant">Anges</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000055" n="3">
+        <title type="main">MonMesdisance</title>
+        <title type="variant">Médisance</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000056" n="3">
+        <title type="main">Mémoire</title>
+        <title type="standard">Memoire</title>
+        <title type="variant">De la Mémoire</title>
+        <title type="variant">de le mémoire</title>
+        <date type="publication" when="1994-07-24"/>
+        <note type="genre" key="Q485395">rock gothique</note>
+        <note type="genre" key="Q49451">rock progressif</note>
+        <idno type="wikidata" cert="high">Q1050426</idno>
+        <note type="description">EP de Malice Mizer, sorti en 1994</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q114375|Q1266946|Q1907875</note>
+      </bibl>
+      <bibl xml:id="work-000057" n="3">
+        <title type="main">narration</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0012</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1318295|Q3328821|Q33005760</note>
+      </bibl>
+      <bibl xml:id="work-000058" n="3">
+        <title type="main">Pentateuche</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t1|LIV0031_t2</note>
+      </bibl>
+      <bibl xml:id="work-000059" n="3">
+        <title type="main">Pline</title>
+        <title type="standard">Pline</title>
+        <author key="Q2777729">Mari Yamazaki</author>
+        <author key="Q3313737">Miki Tori</author>
+        <textLang key="Q5287">japonais</textLang>
+        <note type="genre" key="Q101240934">historical anime and manga</note>
+        <idno type="wikidata" cert="high">Q22124801</idno>
+        <note type="description">Manga écrit par Mari Yamazaki et dessiné en collaboration avec Miki Tori sur le thème de la vie de Pline l'Ancien</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0028|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37190766|Q111835637|Q82778</note>
+      </bibl>
+      <bibl xml:id="work-000060" n="3">
+        <title type="main">Plutarque</title>
+        <title type="standard">Plutarque</title>
+        <note type="genre" key="Q36279">biographie</note>
+        <idno type="wikidata" cert="high">Q41523</idno>
+        <note type="description">philosophe, biographe et moraliste grec de la Rome antique</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0025b|LIV0027</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q537304|Q97062838|Q115921725</note>
+      </bibl>
+      <bibl xml:id="work-000061" n="3">
+        <title type="main">Rabelais</title>
+        <title type="variant">Rabela</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000062" n="3">
+        <title type="main">Roman des Cyclopes</title>
+        <title type="variant">roman de_le cyclope</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t2</note>
+      </bibl>
+      <bibl xml:id="work-000063" n="3">
+        <title type="main">Éloquence</title>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0020|LIV0027</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1489271|Q2109598|Q5367195</note>
+      </bibl>
+      <bibl xml:id="work-000064" n="3">
+        <title type="main">Évangile</title>
+        <title type="standard">évangile</title>
+        <title type="variant">euangile</title>
+        <textLang key="Q28602">araméen</textLang>
+        <idno type="wikidata" cert="high">Q34274</idno>
+        <note type="description">récit sur la vie de Jésus</note>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0003|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q392302|Q39939|Q36766</note>
+      </bibl>
+      <bibl xml:id="work-000065" n="2">
+        <title type="main">Amphitryon de Plaute</title>
+        <title type="variant">Amphitrion</title>
+        <title type="variant">de Plaute</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000066" n="2">
+        <title type="main">Annales</title>
+        <title type="standard">Annales. Histoire, Sciences sociales</title>
+        <title type="variant">annale</title>
+        <textLang key="Q150">français</textLang>
+        <idno type="wikidata" cert="high">Q3098897</idno>
+        <note type="description">revue académique</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q193866|Q15762238|Q21386125</note>
+      </bibl>
+      <bibl xml:id="work-000067" n="2">
+        <title type="main">Apologetique</title>
+        <title type="standard">Apologétique</title>
+        <author key="Q174929">Tertullien</author>
+        <date type="publication" when="0197"/>
+        <textLang key="Q397">latin</textLang>
+        <note type="genre" key="Q1416320">apologie</note>
+        <note type="genre" key="Q27406">polémique</note>
+        <idno type="wikidata" cert="high">Q4780426</idno>
+        <note type="description">œuvre de Tertullien</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q191776|Q1377898|Q124247143</note>
+      </bibl>
+      <bibl xml:id="work-000068" n="2">
+        <title type="main">Au surplus</title>
+        <title type="variant">à_le surplus</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000069" n="2">
+        <title type="main">Barraconnomachie</title>
+        <title type="variant">baraconnomachie</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000070" n="2">
+        <title type="main">Briefueté</title>
+        <title type="variant">Brieffete</title>
+        <title type="variant">brièveet</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000071" n="2">
+        <title type="main">Cantique des</title>
+        <title type="standard">Cantique des Cantiques</title>
+        <title type="variant">Cantiques</title>
+        <title type="variant">cantique de_le cantique</title>
+        <textLang key="Q1982248">hébreu biblique</textLang>
+        <note type="genre" key="Q546729">littérature sapientiale</note>
+        <idno type="wikidata" cert="medium">Q51670</idno>
+        <note type="description">livre de la Bible</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q686091|Q2471572|Q2936617</note>
+      </bibl>
+      <bibl xml:id="work-000072" n="2">
+        <title type="main">Cathégorie</title>
+        <title type="variant">catégorie</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000073" n="2">
+        <title type="main">Chimère</title>
+        <title type="standard">Chimère</title>
+        <date type="publication" when="1989-01-01"/>
+        <note type="genre" key="Q130232">drame</note>
+        <idno type="wikidata" cert="medium">Q2963688</idno>
+        <note type="description">film de Claire Devers, sorti en 1989</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q129694846|Q182790|Q1387388</note>
+      </bibl>
+      <bibl xml:id="work-000074" n="2">
+        <title type="main">composé</title>
+        <title type="variant">composer</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000075" n="2">
+        <title type="main">Confession</title>
+        <title type="standard">Confession</title>
+        <date type="publication" when="2003"/>
+        <textLang key="Q1321">espagnol</textLang>
+        <note type="genre" key="Q20378">metal alternatif</note>
+        <idno type="wikidata" cert="high">Q2153065</idno>
+        <note type="description">album d'Ill Niño</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q13414953|Q847337|Q5159980</note>
+      </bibl>
+      <bibl xml:id="work-000076" n="2">
+        <title type="main">Conjouislance</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0001</note>
+      </bibl>
+      <bibl xml:id="work-000077" n="2">
+        <title type="main">Cour Sainte</title>
+        <title type="variant">cour saint</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t2</note>
+      </bibl>
+      <bibl xml:id="work-000078" n="2">
+        <title type="main">De LA FREQUENTE</title>
+        <title type="standard">De la fréquente communion</title>
+        <author key="Q353887">Antoine Arnauld</author>
+        <date type="publication" when="1643"/>
+        <textLang key="Q3100376">français classique</textLang>
+        <note type="genre" key="Q35760">essai</note>
+        <idno type="wikidata" cert="medium">Q18611129</idno>
+        <note type="description">ouvrage de théologie publié par Antoine Arnauld en 1643</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">medium</note>
+      </bibl>
+      <bibl xml:id="work-000079" n="2">
+        <title type="main">De la Royauté</title>
+        <title type="standard">De regimine principum</title>
+        <title type="variant">De la Nouveaute</title>
+        <title type="variant">de le royaute</title>
+        <author key="Q9438">Thomas d’Aquin</author>
+        <textLang key="Q1163234">latin médiéval</textLang>
+        <note type="genre" key="Q1483342">miroir des princes</note>
+        <idno type="wikidata" cert="high">Q331046</idno>
+        <note type="description">traité par Thomas d'Aquin</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3020433</note>
+      </bibl>
+      <bibl xml:id="work-000080" n="2">
+        <title type="main">Dialogue</title>
+        <title type="standard">Dialogue</title>
+        <date type="publication" when="1999-02-01"/>
+        <textLang key="Q22282939">pas de contenu linguistique</textLang>
+        <note type="genre" key="Q205560">trip hop</note>
+        <idno type="wikidata" cert="medium">Q427392</idno>
+        <note type="description">album de Four Tet</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0017</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q131395|Q3025978|Q5270595</note>
+      </bibl>
+      <bibl xml:id="work-000081" n="2">
+        <title type="main">Dialogues</title>
+        <title type="variant">dialogue</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022|LIV0026a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q24255736|Q55609521|Q42188867</note>
+      </bibl>
+      <bibl xml:id="work-000082" n="2">
+        <title type="main">Dialéctique</title>
+        <title type="standard">Dialectique</title>
+        <author key="Q4295">Pierre Abélard</author>
+        <textLang key="Q397">latin</textLang>
+        <note type="genre" key="Q35760">essai</note>
+        <idno type="wikidata" cert="high">Q3706551</idno>
+        <note type="description">œuvre de Pierre Abélard</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0017</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q9453|Q1974273|Q1208415</note>
+      </bibl>
+      <bibl xml:id="work-000083" n="2">
+        <title type="main">discours</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0026a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q861911|Q190539|Q15054354</note>
+      </bibl>
+      <bibl xml:id="work-000084" n="2">
+        <title type="main">Divination</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1043197|Q2542738|Q111467100</note>
+      </bibl>
+      <bibl xml:id="work-000085" n="2">
+        <title type="main">Ds PA</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+      </bibl>
+      <bibl xml:id="work-000086" n="2">
+        <title type="main">Décameron</title>
+        <title type="standard">Décaméron</title>
+        <title type="variant">décaméron de Boccace</title>
+        <author key="Q1402">Boccace</author>
+        <date type="publication" when="1353"/>
+        <textLang key="Q21550769">italien médiéval</textLang>
+        <note type="genre" key="Q43334491">novella</note>
+        <idno type="wikidata" cert="high">Q16438</idno>
+        <note type="description">recueil de nouvelles écrites par Boccace</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q720159|Q43148668|Q43387682</note>
+      </bibl>
+      <bibl xml:id="work-000087" n="2">
+        <title type="main">Elegiaque</title>
+        <title type="variant">Elegie</title>
+        <title type="variant">Elegia</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000088" n="2">
+        <title type="main">Epigrammatum</title>
+        <title type="variant">Epigrammatis</title>
+        <title type="variant">Epigrammates</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q125403634</note>
+      </bibl>
+      <bibl xml:id="work-000089" n="2">
+        <title type="main">Farces</title>
+        <title type="variant">farce</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q136775852|Q472134|Q2064279</note>
+      </bibl>
+      <bibl xml:id="work-000090" n="2">
+        <title type="main">Fhétorique Francoise</title>
+        <title type="variant">le fhétorique français</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+      </bibl>
+      <bibl xml:id="work-000091" n="2">
+        <title type="main">Genes</title>
+        <title type="standard">Genes</title>
+        <textLang key="Q1860">anglais</textLang>
+        <idno type="wikidata" cert="medium">Q5532699</idno>
+        <note type="description">revue scientifique</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q7187|Q37568277|Q1449</note>
+      </bibl>
+      <bibl xml:id="work-000092" n="2">
+        <title type="main">Grammlarre</title>
+        <title type="variant">grammerre</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000093" n="2">
+        <title type="main">Hayne</title>
+        <title type="variant">haine</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q69414|Q16870615|Q647552</note>
+      </bibl>
+      <bibl xml:id="work-000094" n="2">
+        <title type="main">Histoires</title>
+        <title type="standard">Histoires</title>
+        <title type="variant">histoire</title>
+        <author key="Q26825">Hérodote</author>
+        <textLang key="Q35497">grec ancien</textLang>
+        <note type="genre" key="Q30277550">historiographie</note>
+        <idno type="wikidata" cert="high">Q746583</idno>
+        <note type="description">œuvre d'Hérodote</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q639493|Q250816|Q1247073</note>
+      </bibl>
+      <bibl xml:id="work-000095" n="2">
+        <title type="main">Hyperboles</title>
+        <title type="variant">hyperbole</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">low</note>
+      </bibl>
+      <bibl xml:id="work-000096" n="2">
+        <title type="main">Hébraique</title>
+        <title type="variant">le hébraïque</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000097" n="2">
+        <title type="main">Judiciaire</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000098" n="2">
+        <title type="main">JUGEMENT DE LA</title>
+        <title type="standard">La Nuit du jugement</title>
+        <date type="publication" when="1993-01-01"/>
+        <note type="genre" key="Q188473">film et téléfilm d'action</note>
+        <note type="genre" key="Q2421031">néo-noir</note>
+        <note type="genre" key="Q2484376">thriller</note>
+        <idno type="wikidata" cert="medium">Q1710973</idno>
+        <note type="description">film sorti en 1993</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q65731857</note>
+      </bibl>
+      <bibl xml:id="work-000099" n="2">
+        <title type="main">La Règle</title>
+        <title type="standard">La Règle du jeu</title>
+        <date type="publication" when="1939-07-07"/>
+        <note type="genre" key="Q130232">drame</note>
+        <note type="genre" key="Q1054574">film ou téléfilm d'amour</note>
+        <note type="genre" key="Q1135802">film d'art</note>
+        <idno type="wikidata" cert="medium">Q748599</idno>
+        <note type="description">film de Jean Renoir, sorti en 1939</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0005</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1110299|Q3028040|Q2321357</note>
+      </bibl>
+      <bibl xml:id="work-000100" n="2">
+        <title type="main">LA TROISIESME</title>
+        <title type="variant">le troisième</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0021</note>
+      </bibl>
+      <bibl xml:id="work-000101" n="2">
+        <title type="main">la vie des Pères</title>
+        <title type="variant">le vie de_le père</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q7936712|Q114031996|Q131561627</note>
+      </bibl>
+      <bibl xml:id="work-000102" n="2">
+        <title type="main">Lame</title>
+        <title type="variant">lame de plomb</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+      </bibl>
+      <bibl xml:id="work-000103" n="2">
+        <title type="main">LAQUATRIESME</title>
+        <title type="variant">LAUVATRIESME</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0021</note>
+      </bibl>
+      <bibl xml:id="work-000104" n="2">
+        <title type="main">le Comique</title>
+        <title type="variant">Comique</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015|LIV0028</note>
+        <note type="reconciliation-confidence">low</note>
+      </bibl>
+      <bibl xml:id="work-000105" n="2">
+        <title type="main">Litutfss</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000106" n="2">
+        <title type="main">Logicque</title>
+        <title type="variant">logique</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000107" n="2">
+        <title type="main">Lyrique</title>
+        <title type="standard">Lyrique</title>
+        <note type="genre" key="Q128115">art abstrait</note>
+        <idno type="wikidata" cert="medium">Q2371035</idno>
+        <note type="description">tableau de Wassily Kandinsky</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022|LIV0027</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q602446|Q3326349|Q1076506</note>
+      </bibl>
+      <bibl xml:id="work-000108" n="2">
+        <title type="main">L’abbord</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000109" n="2">
+        <title type="main">L’Intereurur Chrétien</title>
+        <title type="variant">L’Interieur Chrétien</title>
+        <title type="variant">intérieur chrétien</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0006</note>
+      </bibl>
+      <bibl xml:id="work-000110" n="2">
+        <title type="main">Magie</title>
+        <title type="standard">Magie</title>
+        <title type="variant">livre de magie</title>
+        <date type="publication" when="1994"/>
+        <textLang key="Q150">français</textLang>
+        <note type="genre" key="Q1752683">soukous</note>
+        <idno type="wikidata" cert="high">Q3276947</idno>
+        <note type="description">album de Koffi Olomidé et de son Orchestre Quartier Latin International</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37132398|Q81741|Q148442</note>
+      </bibl>
+      <bibl xml:id="work-000111" n="2">
+        <title type="main">Manuelle</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q99337245|Q15767482|Q2393642</note>
+      </bibl>
+      <bibl xml:id="work-000112" n="2">
+        <title type="main">Mem</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q16563|Q108271743|Q14825</note>
+      </bibl>
+      <bibl xml:id="work-000113" n="2">
+        <title type="main">Methaphysique</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000114" n="2">
+        <title type="main">Morale</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q37556145|Q6023513|Q48324</note>
+      </bibl>
+      <bibl xml:id="work-000115" n="2">
+        <title type="main">Musique</title>
+        <title type="standard">Musique</title>
+        <date type="publication" when="2000-10-02"/>
+        <textLang key="Q1860">anglais</textLang>
+        <note type="genre" key="Q208494">metal industriel</note>
+        <note type="genre" key="Q325504">rock électronique</note>
+        <idno type="wikidata" cert="high">Q3279339</idno>
+        <note type="description">album de Theatre of Tragedy, sorti en 2000</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q638|Q85854192|Q37073</note>
+      </bibl>
+      <bibl xml:id="work-000116" n="2">
+        <title type="main">Métamorphoses</title>
+        <title type="standard">Métamorphoses</title>
+        <title type="variant">métamorphose</title>
+        <author key="Q7198">Ovide</author>
+        <textLang key="Q253854">latin classique</textLang>
+        <note type="genre" key="Q37484">épopée</note>
+        <idno type="wikidata" cert="high">Q184742</idno>
+        <note type="description">poème épique d'Ovide</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0027</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1044767|Q56065738|Q16335942</note>
+      </bibl>
+      <bibl xml:id="work-000117" n="2">
+        <title type="main">Méthode</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0021</note>
+      </bibl>
+      <bibl xml:id="work-000118" n="2">
+        <title type="main">Opuscules</title>
+        <title type="variant">opuscule</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b|LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q28739962|Q78602845|Q78603038</note>
+      </bibl>
+      <bibl xml:id="work-000119" n="2">
+        <title type="main">Oraison mentale</title>
+        <title type="variant">oraison mental</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000120" n="2">
+        <title type="main">Oratio</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q861911|Q106408120|Q367360</note>
+      </bibl>
+      <bibl xml:id="work-000121" n="2">
+        <title type="main">Philofophie</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a|LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000122" n="2">
+        <title type="main">Philosod</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000123" n="2">
+        <title type="main">Philosophie</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q5891|Q9471|Q179805</note>
+      </bibl>
+      <bibl xml:id="work-000124" n="2">
+        <title type="main">Philososophie</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000125" n="2">
+        <title type="main">Pièces</title>
+        <title type="standard">Pieces</title>
+        <date type="publication" when="2005-02-22"/>
+        <note type="genre" key="Q11366">rock alternatif</note>
+        <idno type="wikidata" cert="high">Q2594622</idno>
+        <note type="description">chanson du groupe Sum 41</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q7366|Q25379|Q41207</note>
+      </bibl>
+      <bibl xml:id="work-000126" n="2">
+        <title type="main">Poctes non</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000127" n="2">
+        <title type="main">Policratique</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000128" n="2">
+        <title type="main">Politique</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q7163|Q1156854|Q1519812</note>
+      </bibl>
+      <bibl xml:id="work-000129" n="2">
+        <title type="main">Poétique</title>
+        <title type="standard">Poétique</title>
+        <title type="variant">le poestique</title>
+        <author key="Q868">Aristote</author>
+        <textLang key="Q35497">grec ancien</textLang>
+        <note type="genre" key="Q384515">traité</note>
+        <idno type="wikidata" cert="high">Q264714</idno>
+        <note type="description">œuvre de Aristote</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3401121|Q835023|Q9160460</note>
+      </bibl>
+      <bibl xml:id="work-000130" n="2">
+        <title type="main">Prophéties</title>
+        <title type="standard">prophétie</title>
+        <title type="variant">prophétie</title>
+        <note type="genre" key="Q748250">prédiction</note>
+        <idno type="wikidata" cert="high">Q214267</idno>
+        <note type="description">message d'un prophète ou d'une prophétesse révélant une volonté divine</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q100934044|Q122032721|Q117713147</note>
+      </bibl>
+      <bibl xml:id="work-000131" n="2">
+        <title type="main">Prosopopée</title>
+        <title type="variant">Prosopopèèe</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q13409844|Q19225731|Q113461634</note>
+      </bibl>
+      <bibl xml:id="work-000132" n="2">
+        <title type="main">Préface</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q670787|Q1345079|Q110824375</note>
+      </bibl>
+      <bibl xml:id="work-000133" n="2">
+        <title type="main">Recherche</title>
+        <title type="variant">recherche de_le recherche</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q42240|Q15750698|Q3421914</note>
+      </bibl>
+      <bibl xml:id="work-000134" n="2">
+        <title type="main">Rhétorique Française</title>
+        <title type="variant">rhétorique franceois</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012|LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000135" n="2">
+        <title type="main">SciMatth</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </bibl>
+      <bibl xml:id="work-000136" n="2">
+        <title type="main">Sénèque</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q2054|Q273671|Q20562599</note>
+      </bibl>
+      <bibl xml:id="work-000137" n="2">
+        <title type="main">Topiques</title>
+        <title type="standard">Topiques</title>
+        <title type="variant">topique</title>
+        <author key="Q868">Aristote</author>
+        <textLang key="Q35497">grec ancien</textLang>
+        <note type="genre" key="Q384515">traité</note>
+        <idno type="wikidata" cert="high">Q1095335</idno>
+        <note type="description">œuvre d'Aristote</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q112175088</note>
+      </bibl>
+      <bibl xml:id="work-000138" n="2">
+        <title type="main">Tragédie de Christus</title>
+        <title type="variant">tragédie de Christus patient</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000139" n="2">
+        <title type="main">Trithème</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q60178</note>
+      </bibl>
+      <bibl xml:id="work-000140" n="2">
+        <title type="main">Vacationes Autumnales</title>
+        <title type="variant">uacatio autumnalis</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000141" n="2">
+        <title type="main">Vies</title>
+        <title type="standard">Vies des peintres, sculpteurs et architectes</title>
+        <author key="Q128027">Giorgio Vasari</author>
+        <date type="publication" when="1841"/>
+        <textLang key="Q150">français</textLang>
+        <idno type="wikidata" cert="medium">Q107820146</idno>
+        <note type="description">traduction française de 1841 de l'ouvrage de Giorgio Vasari</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q51967|Q53896708|Q1105676</note>
+      </bibl>
+      <bibl xml:id="work-000142" n="2">
+        <title type="main">Écrivains Écccccctiques</title>
+        <title type="variant">Écrivains</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000143" n="2">
+        <title type="main">Épitaphes</title>
+        <title type="variant">épitaphe</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q135009891|Q29111013|Q135117622</note>
+      </bibl>
+      <bibl xml:id="work-000144" n="2">
+        <title type="main">Épitaphi infœliciu</title>
+        <title type="variant">Épitaphi</title>
+        <title type="variant">infœlici</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000145" n="2">
+        <title type="main">Épîtres</title>
+        <title type="standard">épître</title>
+        <title type="variant">épître</title>
+        <author key="Q2818964">AA.VV.</author>
+        <idno type="wikidata" cert="high">Q215495</idno>
+        <note type="description">a letter written for a didactic purpose</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c|LIV0028</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q265283|Q755655|Q1226213</note>
+      </bibl>
+      <bibl xml:id="work-000146" n="2">
+        <title type="main">Épîtres de</title>
+        <title type="standard">Épîtres de Paul</title>
+        <title type="variant">épître de bèze</title>
+        <author key="Q9200">Paul de Tarse</author>
+        <idno type="wikidata" cert="medium">Q265283</idno>
+        <note type="description">lettres et épîtres écrites par Paul de Tarse</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q654807|Q5383624|Q10470183</note>
+      </bibl>
+      <bibl xml:id="work-000147" n="2">
+        <title type="main">Ésopété</title>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000148" n="1">
+        <title type="main">A présent</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000149" n="1">
+        <title type="main">Ab alienis</title>
+        <title type="variant">ab aliéni</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000150" n="1">
+        <title type="main">ACTIS ET EPISTOLIS</title>
+        <title type="variant">Actius et2 Epistolius</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </bibl>
+      <bibl xml:id="work-000151" n="1">
+        <title type="main">Aeschines</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000152" n="1">
+        <title type="main">Agesilauns</title>
+        <title type="variant">agesilais</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000153" n="1">
+        <title type="main">Annales des Franes</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000154" n="1">
+        <title type="main">Annales d’Aventin</title>
+        <title type="variant">annale de</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000155" n="1">
+        <title type="main">Annalium</title>
+        <title type="variant">Annalius</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000156" n="1">
+        <title type="main">AntiEinapas</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000157" n="1">
+        <title type="main">Apocryphes</title>
+        <title type="variant">apocryphe</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000158" n="1">
+        <title type="main">Argumentum</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000159" n="1">
+        <title type="main">Auteurs</title>
+        <title type="variant">auteur</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </bibl>
+      <bibl xml:id="work-000160" n="1">
+        <title type="main">Auteurs célèbres</title>
+        <title type="variant">auteur célèbre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000161" n="1">
+        <title type="main">Banquet des Sages</title>
+        <title type="variant">banquet de_le sage</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000162" n="1">
+        <title type="main">breviaire</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000163" n="1">
+        <title type="main">Brutus</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000164" n="1">
+        <title type="main">Burlesque</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000165" n="1">
+        <title type="main">Béatitudes</title>
+        <title type="variant">béatitude</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000166" n="1">
+        <title type="main">Béatitudes Éuxngéliques</title>
+        <title type="variant">béatitude euxngeliques</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </bibl>
+      <bibl xml:id="work-000167" n="1">
+        <title type="main">Cabale doncques</title>
+        <title type="variant">cabale donc</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000168" n="1">
+        <title type="main">Cantique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000169" n="1">
+        <title type="main">CARMEN.</title>
+        <title type="variant">Carmes</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </bibl>
+      <bibl xml:id="work-000170" n="1">
+        <title type="main">ce livre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000171" n="1">
+        <title type="main">Chapitres</title>
+        <title type="variant">chapitre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000172" n="1">
+        <title type="main">Chimie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000173" n="1">
+        <title type="main">Ciceromastix</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000174" n="1">
+        <title type="main">Codicis</title>
+        <title type="variant">Cadicus</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000175" n="1">
+        <title type="main">composition</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      </bibl>
+      <bibl xml:id="work-000176" n="1">
+        <title type="main">Comédies</title>
+        <title type="variant">comédie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </bibl>
+      <bibl xml:id="work-000177" n="1">
+        <title type="main">Comœdia</title>
+        <title type="variant">Comoedia</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000178" n="1">
+        <title type="main">Concile des Grecs</title>
+        <title type="variant">concile de_le grec</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000179" n="1">
+        <title type="main">Confes</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000180" n="1">
+        <title type="main">conte Ésopique</title>
+        <title type="variant">conte Gsopique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000181" n="1">
+        <title type="main">Contro</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000182" n="1">
+        <title type="main">De la Cholère</title>
+        <title type="variant">de le cholère</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000183" n="1">
+        <title type="main">De la Concorde et Discorde</title>
+        <title type="variant">de le Concorde discorde</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000184" n="1">
+        <title type="main">De la Convaitise</title>
+        <title type="variant">de le convoitise</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000185" n="1">
+        <title type="main">DE LA FRE QUENTE COMMVNION</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </bibl>
+      <bibl xml:id="work-000186" n="1">
+        <title type="main">DE LA FREQUENTE CoMMunON</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </bibl>
+      <bibl xml:id="work-000187" n="1">
+        <title type="main">De la Hâtiveté</title>
+        <title type="variant">de le Hastiuête</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000188" n="1">
+        <title type="main">De la Privation</title>
+        <title type="variant">de le privation</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000189" n="1">
+        <title type="main">De la Prospérité et Adversité</title>
+        <title type="variant">de le prospérite aduersite 24</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000190" n="1">
+        <title type="main">De la Sedition</title>
+        <title type="variant">de le sédition</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000191" n="1">
+        <title type="main">De la Simplicité jointe à la Prudence</title>
+        <title type="variant">de le simplicite joindre avoir le Prudence</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000192" n="1">
+        <title type="main">De la Subtilité</title>
+        <title type="variant">de le subtilite</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000193" n="1">
+        <title type="main">De la Tardiveté</title>
+        <title type="variant">de le Tardivete</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000194" n="1">
+        <title type="main">De la Tranquillité</title>
+        <title type="variant">de le tranquillite</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000195" n="1">
+        <title type="main">De la Tromppie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000196" n="1">
+        <title type="main">De la Témerite</title>
+        <title type="variant">de le témérite</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000197" n="1">
+        <title type="main">De l’Authorité et de la Raison</title>
+        <title type="variant">de le autorité de le raison</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000198" n="1">
+        <title type="main">De l’Oleur</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000199" n="1">
+        <title type="main">Des Lois</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000200" n="1">
+        <title type="main">Dictionaires Français</title>
+        <title type="variant">dictionnaire francèer</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000201" n="1">
+        <title type="main">Discours de Controuerses</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </bibl>
+      <bibl xml:id="work-000202" n="1">
+        <title type="main">Doute</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000203" n="1">
+        <title type="main">Décalogue</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      </bibl>
+      <bibl xml:id="work-000204" n="1">
+        <title type="main">Démphène</title>
+        <title type="variant">Démosthène</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000205" n="1">
+        <title type="main">Eneid</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c|LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000206" n="1">
+        <title type="main">Eucharifie</title>
+        <title type="variant">l’Euchariftie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000207" n="1">
+        <title type="main">Euripide</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000208" n="1">
+        <title type="main">ExemPles</title>
+        <title type="variant">exemple</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000209" n="1">
+        <title type="main">Exotériques</title>
+        <title type="variant">exoterique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000210" n="1">
+        <title type="main">Fables</title>
+        <title type="variant">fable</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000211" n="1">
+        <title type="main">Fin de conte</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000212" n="1">
+        <title type="main">Geommétrie</title>
+        <title type="variant">géométrie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000213" n="1">
+        <title type="main">Grammaire solœciâmes</title>
+        <title type="variant">grammaire sollisme</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000214" n="1">
+        <title type="main">Généalogie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000215" n="1">
+        <title type="main">Géographie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000216" n="1">
+        <title type="main">Herennium</title>
+        <title type="variant">Herennius</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000217" n="1">
+        <title type="main">Histoire de Port-Royal</title>
+        <title type="variant">histoire de port</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </bibl>
+      <bibl xml:id="work-000218" n="1">
+        <title type="main">Horace</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000219" n="1">
+        <title type="main">Horologium</title>
+        <title type="variant">Horologius</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000220" n="1">
+        <title type="main">iaLettres</title>
+        <title type="variant">ialettre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000221" n="1">
+        <title type="main">Idyl</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000222" n="1">
+        <title type="main">Idyll</title>
+        <title type="variant">Idyllus</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000223" n="1">
+        <title type="main">Iliad</title>
+        <title type="variant">Ilias</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000224" n="1">
+        <title type="main">Iliade</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000225" n="1">
+        <title type="main">Ilias</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000226" n="1">
+        <title type="main">Inscriptions Romaines</title>
+        <title type="variant">inscription romain</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </bibl>
+      <bibl xml:id="work-000227" n="1">
+        <title type="main">Je Ciel</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      </bibl>
+      <bibl xml:id="work-000228" n="1">
+        <title type="main">Joachin du Bellai</title>
+        <title type="variant">joachin de_le Bellay</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000229" n="1">
+        <title type="main">Jronies</title>
+        <title type="variant">ironie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000230" n="1">
+        <title type="main">Jérémie</title>
+        <title type="variant">Hyéremie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000231" n="1">
+        <title type="main">La Leçon de Cyrus</title>
+        <title type="variant">le Lecron de Cyrus</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000232" n="1">
+        <title type="main">la Métaphore</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </bibl>
+      <bibl xml:id="work-000233" n="1">
+        <title type="main">La Règle de Perfection</title>
+        <title type="variant">le règle de perfection</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0005</note>
+      </bibl>
+      <bibl xml:id="work-000234" n="1">
+        <title type="main">Lacédemone</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000235" n="1">
+        <title type="main">Les Voyages</title>
+        <title type="variant">le voyage</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </bibl>
+      <bibl xml:id="work-000236" n="1">
+        <title type="main">Lettre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      </bibl>
+      <bibl xml:id="work-000237" n="1">
+        <title type="main">Liturgies</title>
+        <title type="variant">liturgie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000238" n="1">
+        <title type="main">livre X. des Antiquités Françaises</title>
+        <title type="variant">livre x de_le antiquité franceois</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000239" n="1">
+        <title type="main">livres Acroamatiques</title>
+        <title type="variant">livre acroamatique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000240" n="1">
+        <title type="main">livres lascifs</title>
+        <title type="variant">livre lascif</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000241" n="1">
+        <title type="main">Logogriphes</title>
+        <title type="variant">logogriphe</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </bibl>
+      <bibl xml:id="work-000242" n="1">
+        <title type="main">Lucubrations</title>
+        <title type="variant">lucubration</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000243" n="1">
+        <title type="main">lÉcriture</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </bibl>
+      <bibl xml:id="work-000244" n="1">
+        <title type="main">L’Exultation</title>
+        <title type="variant">exultation</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0005</note>
+      </bibl>
+      <bibl xml:id="work-000245" n="1">
+        <title type="main">manuscrit</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000246" n="1">
+        <title type="main">Martial</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000247" n="1">
+        <title type="main">Methonimie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000248" n="1">
+        <title type="main">Mosaique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000249" n="1">
+        <title type="main">Méditations</title>
+        <title type="variant">méditation</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0006</note>
+      </bibl>
+      <bibl xml:id="work-000250" n="1">
+        <title type="main">Mémoires historiques et chronologiques</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </bibl>
+      <bibl xml:id="work-000251" n="1">
+        <title type="main">Ménologe des Grecs</title>
+        <title type="variant">menologe de_le grec</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </bibl>
+      <bibl xml:id="work-000252" n="1">
+        <title type="main">Nombres</title>
+        <title type="variant">nombre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </bibl>
+      <bibl xml:id="work-000253" n="1">
+        <title type="main">nouveau Testament</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000254" n="1">
+        <title type="main">NovveAU Testament</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </bibl>
+      <bibl xml:id="work-000255" n="1">
+        <title type="main">Obseruations</title>
+        <title type="variant">obseruation</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </bibl>
+      <bibl xml:id="work-000256" n="1">
+        <title type="main">Odissee</title>
+        <title type="variant">odyssee</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000257" n="1">
+        <title type="main">Optat au liu</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000258" n="1">
+        <title type="main">Opuscule</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000259" n="1">
+        <title type="main">Oraculum</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000260" n="1">
+        <title type="main">Ouurage</title>
+        <title type="variant">ouvrage</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0021</note>
+      </bibl>
+      <bibl xml:id="work-000261" n="1">
+        <title type="main">Panegyrica oratione</title>
+        <title type="variant">Panegyricus oratio</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000262" n="1">
+        <title type="main">Paradoxe de la vanité des sciences</title>
+        <title type="variant">paradoxe de le vanité de_le science</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000263" n="1">
+        <title type="main">Paraventure</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000264" n="1">
+        <title type="main">Parnasse Satyrique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000265" n="1">
+        <title type="main">parole</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000266" n="1">
+        <title type="main">Phéniix</title>
+        <title type="variant">Phénix</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000267" n="1">
+        <title type="main">Pimandre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000268" n="1">
+        <title type="main">pièce</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000269" n="1">
+        <title type="main">pièces de théctre</title>
+        <title type="variant">pièce de théâtre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000270" n="1">
+        <title type="main">Platonique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000271" n="1">
+        <title type="main">Plutar</title>
+        <title type="variant">Plutarchus</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000272" n="1">
+        <title type="main">Poire de rateau</title>
+        <title type="variant">poere de ratea</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000273" n="1">
+        <title type="main">Polyhymnia</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000274" n="1">
+        <title type="main">Polymathia</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000275" n="1">
+        <title type="main">Pooésie</title>
+        <title type="variant">poewsie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000276" n="1">
+        <title type="main">Portes de lumière</title>
+        <title type="variant">porte de lumière</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000277" n="1">
+        <title type="main">poème</title>
+        <title type="variant">poemme</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000278" n="1">
+        <title type="main">poème héroïque</title>
+        <title type="variant">poemme héroieque</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000279" n="1">
+        <title type="main">Poète Grec</title>
+        <title type="variant">poeste|poette|porett grec</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000280" n="1">
+        <title type="main">Poète Grec ancien</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000281" n="1">
+        <title type="main">Poète ingénieux</title>
+        <title type="variant">poeste|poéette ingénieux</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000282" n="1">
+        <title type="main">Poète ingéniieux</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </bibl>
+      <bibl xml:id="work-000283" n="1">
+        <title type="main">Poésie Hébraïque</title>
+        <title type="variant">poewsie hébraïeque</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      </bibl>
+      <bibl xml:id="work-000284" n="1">
+        <title type="main">Problematis</title>
+        <title type="variant">problematus</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000285" n="1">
+        <title type="main">Protée des Poètes</title>
+        <title type="variant">protèer de_le poestes</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000286" n="1">
+        <title type="main">Providentia</title>
+        <title type="variant">Prouidentia</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000287" n="1">
+        <title type="main">Préture</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </bibl>
+      <bibl xml:id="work-000288" n="1">
+        <title type="main">Psalme</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000289" n="1">
+        <title type="main">Pseaumes</title>
+        <title type="variant">psaume</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      </bibl>
+      <bibl xml:id="work-000290" n="1">
+        <title type="main">Pseaumes de David</title>
+        <title type="variant">psaume de Dauid</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </bibl>
+      <bibl xml:id="work-000291" n="1">
+        <title type="main">ReGLE III</title>
+        <title type="variant">regle trois</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0021</note>
+      </bibl>
+      <bibl xml:id="work-000292" n="1">
+        <title type="main">Romants</title>
+        <title type="variant">roman</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </bibl>
+      <bibl xml:id="work-000293" n="1">
+        <title type="main">Romulo</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000294" n="1">
+        <title type="main">Rondeau</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000295" n="1">
+        <title type="main">Règles</title>
+        <title type="variant">règle</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0021</note>
+      </bibl>
+      <bibl xml:id="work-000296" n="1">
+        <title type="main">sainte Écritures</title>
+        <title type="variant">saint écriture</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </bibl>
+      <bibl xml:id="work-000297" n="1">
+        <title type="main">Saintes lettres</title>
+        <title type="variant">saint lettre</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </bibl>
+      <bibl xml:id="work-000298" n="1">
+        <title type="main">Satyra</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000299" n="1">
+        <title type="main">Sermon</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </bibl>
+      <bibl xml:id="work-000300" n="1">
+        <title type="main">Sermons</title>
+        <title type="variant">sermon</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0006</note>
+      </bibl>
+      <bibl xml:id="work-000301" n="1">
+        <title type="main">Suidas</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000302" n="1">
+        <title type="main">Symphonie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000303" n="1">
+        <title type="main">Sympos</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </bibl>
+      <bibl xml:id="work-000304" n="1">
+        <title type="main">Tapisseries</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      </bibl>
+      <bibl xml:id="work-000305" n="1">
+        <title type="main">Ternaire sacré</title>
+        <title type="variant">ternaire sacrer</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000306" n="1">
+        <title type="main">Tertullien</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000307" n="1">
+        <title type="main">Thehonnêtes</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+      </bibl>
+      <bibl xml:id="work-000308" n="1">
+        <title type="main">Théogonie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000309" n="1">
+        <title type="main">Théologie Morale</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </bibl>
+      <bibl xml:id="work-000310" n="1">
+        <title type="main">Tome II</title>
+        <title type="variant">tome 2</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </bibl>
+      <bibl xml:id="work-000311" n="1">
+        <title type="main">Tragicomedie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </bibl>
+      <bibl xml:id="work-000312" n="1">
+        <title type="main">Tragédies</title>
+        <title type="variant">tragédie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000313" n="1">
+        <title type="main">Traitten des Energumenes</title>
+        <title type="variant">traiter de_le énergumène</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </bibl>
+      <bibl xml:id="work-000314" n="1">
+        <title type="main">Tropes</title>
+        <title type="variant">trope</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0020</note>
+      </bibl>
+      <bibl xml:id="work-000315" n="1">
+        <title type="main">Tusculanes</title>
+        <title type="variant">tusculane</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </bibl>
+      <bibl xml:id="work-000316" n="1">
+        <title type="main">Vengeance</title>
+        <title type="variant">Vengeancse</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000317" n="1">
+        <title type="main">Virgile</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a|LIV0008</note>
+      </bibl>
+      <bibl xml:id="work-000318" n="1">
+        <title type="main">Zodiaque</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000319" n="1">
+        <title type="main">Zohar</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000320" n="1">
+        <title type="main">écrits</title>
+        <title type="variant">écrit</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000321" n="1">
+        <title type="main">Écrivains</title>
+        <title type="variant">encrivains</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </bibl>
+      <bibl xml:id="work-000322" n="1">
+        <title type="main">Émblemes</title>
+        <title type="variant">emblème</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000323" n="1">
+        <title type="main">Épigramme</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </bibl>
+      <bibl xml:id="work-000324" n="1">
+        <title type="main">Épigramme d’un Poète recent</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000325" n="1">
+        <title type="main">Épigramme Grec</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </bibl>
+      <bibl xml:id="work-000326" n="1">
+        <title type="main">Épigrammes</title>
+        <title type="variant">épigramme</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </bibl>
+      <bibl xml:id="work-000327" n="1">
+        <title type="main">Épigrammies</title>
+        <title type="variant">épigrammie</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000328" n="1">
+        <title type="main">épître</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000329" n="1">
+        <title type="main">Éthiques</title>
+        <title type="variant">éthique</title>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </bibl>
+      <bibl xml:id="work-000330" n="0">
+        <title type="main">Cels</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0033</note>
+      </bibl>
+      <bibl xml:id="work-000331" n="0">
+        <title type="main">Cyrop</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000332" n="0">
+        <title type="main">Epigramma Epigramma Graecus</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000333" n="0">
+        <title type="main">Horat</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000334" n="0">
+        <title type="main">inBrut</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000335" n="0">
+        <title type="main">Luc</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0008|LIV0026c</note>
+      </bibl>
+      <bibl xml:id="work-000336" n="0">
+        <title type="main">Lucai</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0003</note>
+      </bibl>
+      <bibl xml:id="work-000337" n="0">
+        <title type="main">Melpom</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000338" n="0">
+        <title type="main">OCVLI</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0032</note>
+      </bibl>
+      <bibl xml:id="work-000339" n="0">
+        <title type="main">Plutaresc</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0027</note>
+      </bibl>
+      <bibl xml:id="work-000340" n="0">
+        <title type="main">poeètes</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0031_t1</note>
+      </bibl>
+      <bibl xml:id="work-000341" n="0">
+        <title type="main">Prou</title>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0026c</note>
+      </bibl>
+    </listBibl>
+  </standOff>
 </TEI>

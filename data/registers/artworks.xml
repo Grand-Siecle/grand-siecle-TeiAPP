@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-artworks">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Registre des objets et oeuvres d'art — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Projet Grand Siecle — UNIL</publisher>
+                <availability status="restricted"><licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence></availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Pipeline NER (CamemBERT + GLiNER) + reconciliation Wikidata</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2026-06-12">Generation automatique depuis les entites NER reconciliees (scripts/build_registers.py)</change>
+        </revisionDesc>
+    </teiHeader>
+  <standOff>
+    <listObject>
+      <object xml:id="artwork-000001" n="100">
+        <objectName type="main">images</objectName>
+        <objectName type="standard">image</objectName>
+        <objectName type="variant">image</objectName>
+        <objectName type="variant">gé</objectName>
+        <objectType key="Q139243747">type of artifact</objectType>
+        <idno type="wikidata" cert="high">Q478798</idno>
+        <idno type="aat">300264387</idno>
+        <note type="description">représentation visuelle, voire mentale, de quelque chose</note>
+        <note type="mentions">100</note>
+        <note type="sources">LIV0024|LIV0027|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1659622|Q2259762|Q132137</note>
+      </object>
+      <object xml:id="artwork-000002" n="13">
+        <objectName type="main">statues</objectName>
+        <objectName type="variant">statuer</objectName>
+        <objectName type="variant">statue</objectName>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0008|LIV0009|LIV0024|LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q9344596|Q109323266|Q1140288</note>
+      </object>
+      <object xml:id="artwork-000003" n="8">
+        <objectName type="main">tableau</objectName>
+        <objectName type="standard">peinture</objectName>
+        <objectName type="variant">Un tableau</objectName>
+        <objectType key="Q116474095">forme d'œuvre d'art</objectType>
+        <idno type="wikidata" cert="high">Q3305213</idno>
+        <idno type="aat">300033618</idno>
+        <note type="description">œuvre artistique peinte sur une surface</note>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0015|LIV0018|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q16593391|Q1047337|Q496946</note>
+      </object>
+      <object xml:id="artwork-000004" n="7">
+        <objectName type="main">image</objectName>
+        <objectName type="standard">image</objectName>
+        <objectType key="Q139243747">type of artifact</objectType>
+        <idno type="wikidata" cert="high">Q478798</idno>
+        <idno type="aat">300264387</idno>
+        <note type="description">représentation visuelle, voire mentale, de quelque chose</note>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0005</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1659584|Q860623|Q208376</note>
+      </object>
+      <object xml:id="artwork-000005" n="4">
+        <objectName type="main">voile</objectName>
+        <objectName type="standard">voile</objectName>
+        <idno type="wikidata" cert="high">Q25999</idno>
+        <idno type="aat">300185694</idno>
+        <note type="description">polygone de tissu utilisant l’énergie du vent pour faire avancer les bateaux</note>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q14085739|Q10521|Q467410</note>
+      </object>
+      <object xml:id="artwork-000006" n="3">
+        <objectName type="main">Belle peinture</objectName>
+        <objectName type="variant">beau peinture</objectName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0027|LIV0028</note>
+      </object>
+      <object xml:id="artwork-000007" n="3">
+        <objectName type="main">La peinture</objectName>
+        <objectName type="variant">peinture</objectName>
+        <objectName type="variant">le peinture</objectName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0028|LIV0031_t2</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q18191159|Q19007950|Q19007910</note>
+      </object>
+      <object xml:id="artwork-000008" n="3">
+        <objectName type="main">miroérs</objectName>
+        <objectName type="variant">miroer</objectName>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026a</note>
+      </object>
+      <object xml:id="artwork-000009" n="2">
+        <objectName type="main">Arche du Propitiatoi</objectName>
+        <objectName type="variant">arche de_le propitiatoi</objectName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+      </object>
+      <object xml:id="artwork-000010" n="2">
+        <objectName type="main">Bon enrure</objectName>
+        <objectName type="variant">bonauenrure</objectName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+      </object>
+      <object xml:id="artwork-000011" n="2">
+        <objectName type="main">crucifix</objectName>
+        <objectName type="standard">crucifix</objectName>
+        <idno type="wikidata" cert="high">Q20460</idno>
+        <idno type="aat">300248835</idno>
+        <note type="description">symbole chrétien rappelant la Crucifixion</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0005|LIV0008</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q51636|Q392371|Q1141919</note>
+      </object>
+      <object xml:id="artwork-000012" n="2">
+        <objectName type="main">frontispice</objectName>
+        <objectName type="standard">frontispice</objectName>
+        <idno type="wikidata" cert="high">Q583866</idno>
+        <idno type="aat">300083021</idno>
+        <note type="description">illustration placée au début d'un livre</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008|LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q18338548|Q18338579|Q95789248</note>
+      </object>
+      <object xml:id="artwork-000013" n="2">
+        <objectName type="main">miroirs</objectName>
+        <objectName type="variant">miroir</objectName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q131304234|Q131304363|Q20014906</note>
+      </object>
+      <object xml:id="artwork-000014" n="2">
+        <objectName type="main">ornement</objectName>
+        <objectName type="standard">ornement</objectName>
+        <idno type="wikidata" cert="high">Q335261</idno>
+        <idno type="aat">300266794</idno>
+        <note type="description">décoration utilisée pour embellir un bâtiment ou un objet</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q4470686|Q739589|Q3356530</note>
+      </object>
+      <object xml:id="artwork-000015" n="2">
+        <objectName type="main">Peintre</objectName>
+        <objectName type="variant">Peintres</objectName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q782791|Q1028181|Q98209512</note>
+      </object>
+      <object xml:id="artwork-000016" n="2">
+        <objectName type="main">portrait</objectName>
+        <objectName type="standard">portrait</objectName>
+        <objectType key="Q1792379">genre artistique</objectType>
+        <objectType key="Q1437361">forme</objectType>
+        <idno type="wikidata" cert="high">Q134307</idno>
+        <idno type="aat">300015637</idno>
+        <note type="description">représentation artistique des personnes</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q7232229|Q7232233|Q7232231</note>
+      </object>
+      <object xml:id="artwork-000017" n="2">
+        <objectName type="main">Seigneur figure</objectName>
+        <objectName type="variant">veter figure</objectName>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+      </object>
+      <object xml:id="artwork-000018" n="2">
+        <objectName type="main">statue</objectName>
+        <objectName type="standard">statue</objectName>
+        <objectType key="Q18783400">genre statuaire</objectType>
+        <idno type="wikidata" cert="high">Q179700</idno>
+        <idno type="aat">300047600</idno>
+        <note type="description">œuvre artistique</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0011|LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1066288|Q9202|Q2293362</note>
+      </object>
+      <object xml:id="artwork-000019" n="2">
+        <objectName type="main">Épigramme</objectName>
+        <objectName type="standard">épigramme</objectName>
+        <objectType key="Q12119802">genre lyrique</objectType>
+        <idno type="wikidata" cert="high">Q193121</idno>
+        <idno type="aat">300202533</idno>
+        <note type="description">forme poétique brève</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0018|LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q16604285|Q55479948|Q41620489</note>
+      </object>
+      <object xml:id="artwork-000020" n="2">
+        <objectName type="main">Épitaphe</objectName>
+        <objectName type="standard">épitaphe</objectName>
+        <objectType key="Q223393">genre littéraire</objectType>
+        <objectType key="Q124709316">type d'inscription</objectType>
+        <idno type="wikidata" cert="high">Q1772</idno>
+        <idno type="aat">300028729</idno>
+        <note type="description">inscription sur un tombeau qui célèbre la personne ensevelie</note>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q13578361|Q109023787|Q19168672</note>
+      </object>
+      <object xml:id="artwork-000021" n="1">
+        <objectName type="main">Androcydes</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q4759430|Q4759434|Q4759431</note>
+      </object>
+      <object xml:id="artwork-000022" n="1">
+        <objectName type="main">Architraves</objectName>
+        <objectName type="variant">architrave</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </object>
+      <object xml:id="artwork-000023" n="1">
+        <objectName type="main">Aristotelis effigies</objectName>
+        <objectName type="variant">Aristoteles effigies</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </object>
+      <object xml:id="artwork-000024" n="1">
+        <objectName type="main">arteo</objectName>
+        <objectName type="variant">art</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q9160449|Q13146745|Q95611692</note>
+      </object>
+      <object xml:id="artwork-000025" n="1">
+        <objectName type="main">Artn</objectName>
+        <objectName type="variant">art</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q266566|Q14912166|Q24380537</note>
+      </object>
+      <object xml:id="artwork-000026" n="1">
+        <objectName type="main">Asnesse et Asnon</objectName>
+        <objectName type="variant">asnesse Asnon Asnon</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </object>
+      <object xml:id="artwork-000027" n="1">
+        <objectName type="main">Belles statues</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </object>
+      <object xml:id="artwork-000028" n="1">
+        <objectName type="main">brossailles</objectName>
+        <objectName type="variant">brousaille</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </object>
+      <object xml:id="artwork-000029" n="1">
+        <objectName type="main">Calliftr</objectName>
+        <objectName type="variant">calliftrum</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </object>
+      <object xml:id="artwork-000030" n="1">
+        <objectName type="main">Chapiteaux</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q29213611|Q29213612|Q29213621</note>
+      </object>
+      <object xml:id="artwork-000031" n="1">
+        <objectName type="main">Couronnes</objectName>
+        <objectName type="variant">couronner</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q131016|Q136307242|Q3001292</note>
+      </object>
+      <object xml:id="artwork-000032" n="1">
+        <objectName type="main">dessin</objectName>
+        <objectName type="standard">dessin</objectName>
+        <objectType key="Q116474095">forme d'œuvre d'art</objectType>
+        <idno type="wikidata" cert="high">Q93184</idno>
+        <idno type="aat">300033973</idno>
+        <note type="description">surface portant une représentation faite à l’aide d'un matériel d'écriture</note>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0018</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37459523|Q2921001|Q15296811</note>
+      </object>
+      <object xml:id="artwork-000033" n="1">
+        <objectName type="main">forartifices</objectName>
+        <objectName type="variant">forartifice</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </object>
+      <object xml:id="artwork-000034" n="1">
+        <objectName type="main">Glose</objectName>
+        <objectName type="standard">glose</objectName>
+        <idno type="wikidata" cert="high">Q1132324</idno>
+        <idno type="aat">300211708</idno>
+        <note type="description">commentaire linguistique pour expliquer un mot</note>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37453029|Q37566679|Q82014552</note>
+      </object>
+      <object xml:id="artwork-000035" n="1">
+        <objectName type="main">Hieroglyphes</objectName>
+        <objectName type="standard">hiéroglyphes égyptiens</objectName>
+        <objectName type="variant">hiéroglyphe</objectName>
+        <objectType key="Q8192">système d’écriture</objectType>
+        <objectType key="Q3953107">écriture logographique</objectType>
+        <objectType key="Q4004706">alphabet unicaméral</objectType>
+        <idno type="wikidata" cert="medium">Q132659</idno>
+        <idno type="aat">300028721</idno>
+        <note type="description">système d'écriture de l'antiquité égyptienne</note>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q2494183|Q193762|Q20312899</note>
+      </object>
+      <object xml:id="artwork-000036" n="1">
+        <objectName type="main">Hieroglyphique</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+        <note type="reconciliation-confidence">low</note>
+      </object>
+      <object xml:id="artwork-000037" n="1">
+        <objectName type="main">iceux</objectName>
+        <objectName type="variant">icelui</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0005</note>
+      </object>
+      <object xml:id="artwork-000038" n="1">
+        <objectName type="main">Iconibus</objectName>
+        <objectName type="variant">Iconis</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </object>
+      <object xml:id="artwork-000039" n="1">
+        <objectName type="main">Image de la Vierge</objectName>
+        <objectName type="variant">image de le vierge</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </object>
+      <object xml:id="artwork-000040" n="1">
+        <objectName type="main">Imago crucifixi</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </object>
+      <object xml:id="artwork-000041" n="1">
+        <objectName type="main">la figure</objectName>
+        <objectName type="variant">le figure</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1202029|Q12148705|Q56034555</note>
+      </object>
+      <object xml:id="artwork-000042" n="1">
+        <objectName type="main">La troisième</objectName>
+        <objectName type="variant">le troisième</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3468905|Q654170|Q1788187</note>
+      </object>
+      <object xml:id="artwork-000043" n="1">
+        <objectName type="main">les comédies</objectName>
+        <objectName type="variant">le comédie</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+      </object>
+      <object xml:id="artwork-000044" n="1">
+        <objectName type="main">Les peintres</objectName>
+        <objectName type="variant">le peintre</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q114239943|Q18203234|Q98858366</note>
+      </object>
+      <object xml:id="artwork-000045" n="1">
+        <objectName type="main">Lyomme Chrétien</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </object>
+      <object xml:id="artwork-000046" n="1">
+        <objectName type="main">phantâmes</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </object>
+      <object xml:id="artwork-000047" n="1">
+        <objectName type="main">Plinium</objectName>
+        <objectName type="variant">Plinius</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </object>
+      <object xml:id="artwork-000048" n="1">
+        <objectName type="main">Sa peinture</objectName>
+        <objectName type="variant">son peinture</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </object>
+      <object xml:id="artwork-000049" n="1">
+        <objectName type="main">Saintes Reliques</objectName>
+        <objectName type="variant">saint relique</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+        <note type="reconciliation-confidence">low</note>
+      </object>
+      <object xml:id="artwork-000050" n="1">
+        <objectName type="main">simulacres</objectName>
+        <objectName type="variant">simulacre</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3484803|Q904403|Q110662515</note>
+      </object>
+      <object xml:id="artwork-000051" n="1">
+        <objectName type="main">tableaux</objectName>
+        <objectName type="variant">tableau</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q15711026|Q358648|Q83947872</note>
+      </object>
+      <object xml:id="artwork-000052" n="1">
+        <objectName type="main">tapissedles</objectName>
+        <objectName type="variant">tapissedle</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </object>
+      <object xml:id="artwork-000053" n="1">
+        <objectName type="main">Thermopyles</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0019</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q521432|Q3452057|Q21533414</note>
+      </object>
+      <object xml:id="artwork-000054" n="1">
+        <objectName type="main">œuvres de nature</objectName>
+        <objectName type="variant">œuvre de nature</objectName>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </object>
+    </listObject>
+  </standOff>
+</TEI>

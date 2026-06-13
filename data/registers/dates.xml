@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-dates">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Chronologie — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Projet Grand Siecle — UNIL</publisher>
+                <availability status="restricted"><licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence></availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Pipeline NER (CamemBERT + GLiNER) + reconciliation Wikidata</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2026-06-12">Generation automatique depuis les entites NER reconciliees (scripts/build_registers.py)</change>
+        </revisionDesc>
+    </teiHeader>
+  <standOff>
+    <list type="chronology">
+      <item xml:id="date-000001" n="11">
+        <date>Août mille cinq cent quarante et un</date>
+        <date type="variant">an mille cinq cent quarante sept</date>
+        <date type="variant">l’an mille cinq cent quarante un</date>
+        <note type="mentions">11</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000002" n="10">
+        <date>Février</date>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0023|LIV0026b|LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000003" n="9">
+        <date>Juillet</date>
+        <note type="mentions">9</note>
+        <note type="sources">LIV0007|LIV0023|LIV0031_t1</note>
+      </item>
+      <item xml:id="date-000004" n="8">
+        <date>Vendredi</date>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0002a|LIV0007|LIV0009|LIV0031_t1|LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000005" n="7">
+        <date>Adar dernier</date>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000006" n="7">
+        <date>CDXCVIII</date>
+        <date type="variant">CDXVII</date>
+        <date type="variant">CDXVIII</date>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000007" n="7">
+        <date>Mecredi</date>
+        <date type="variant">Mercredi</date>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0015</note>
+      </item>
+      <item xml:id="date-000008" n="5">
+        <date>Janvier</date>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0008|LIV0009|LIV0014</note>
+      </item>
+      <item xml:id="date-000009" n="5">
+        <date>Nisan</date>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000010" n="4">
+        <date>Date</date>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0013|LIV0015|LIV0026a</note>
+      </item>
+      <item xml:id="date-000011" n="4">
+        <date>quatrième siècle</date>
+        <date type="variant">treizieme siècle</date>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0003|LIV0024|LIV0033</note>
+      </item>
+      <item xml:id="date-000012" n="4">
+        <date>vingtséptiesme jour de Mai</date>
+        <date type="variant">vingtunième jour de Mars</date>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000013" n="3">
+        <date>Auguſt</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0003|LIV0013|LIV0026c</note>
+      </item>
+      <item xml:id="date-000014" n="3">
+        <date>deuxième de Septembre</date>
+        <date type="variant">dixième de Septembre</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000015" n="3">
+        <date>dix-séptième jour de Mai</date>
+        <date type="variant">septtième jour de mars</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000016" n="3">
+        <date>huit cents ans</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0033</note>
+      </item>
+      <item xml:id="date-000017" n="3">
+        <date>jour de Septembre</date>
+        <date type="variant">dixième jour de Septembre</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000018" n="3">
+        <date>lendemain</date>
+        <date type="variant">Le lendemain</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0009|LIV0014</note>
+      </item>
+      <item xml:id="date-000019" n="3">
+        <date>Lundi</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0006|LIV0008|LIV0009</note>
+      </item>
+      <item xml:id="date-000020" n="3">
+        <date>Noembre</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000021" n="3">
+        <date>Samedi</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000022" n="3">
+        <date>Septembre</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0008|LIV0014</note>
+      </item>
+      <item xml:id="date-000023" n="3">
+        <date>trentième jour d’Août</date>
+        <date type="variant">trentième</date>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0023|LIV0031_t1</note>
+      </item>
+      <item xml:id="date-000024" n="2">
+        <date>année suivante</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c|LIV0027</note>
+      </item>
+      <item xml:id="date-000025" n="2">
+        <date>CCXXVII</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002a</note>
+      </item>
+      <item xml:id="date-000026" n="2">
+        <date>CDXXII</date>
+        <date type="variant">DCXII</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000027" n="2">
+        <date>cents ans auparavant</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020</note>
+      </item>
+      <item xml:id="date-000028" n="2">
+        <date>commencement du</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0033</note>
+      </item>
+      <item xml:id="date-000029" n="2">
+        <date>deuxième jour du</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+      </item>
+      <item xml:id="date-000030" n="2">
+        <date>Feburier</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000031" n="2">
+        <date>il y a</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022</note>
+      </item>
+      <item xml:id="date-000032" n="2">
+        <date>Iul.</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0032</note>
+      </item>
+      <item xml:id="date-000033" n="2">
+        <date>jour d’Octobre</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000034" n="2">
+        <date>juin</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002a|LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000035" n="2">
+        <date>Le vingt deuxièmee</date>
+        <date type="variant">Le vingt deuxième</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000036" n="2">
+        <date>Lundi dixhuitième</date>
+        <date type="variant">Lundi huitième</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000037" n="2">
+        <date>l’an mille cinq cens</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000038" n="2">
+        <date>L’an mille quatre vingts dix neuf</date>
+        <date type="variant">L’an mille quatre cens vingt-sept</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000039" n="2">
+        <date>mardi</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002b|LIV0009</note>
+      </item>
+      <item xml:id="date-000040" n="2">
+        <date>Novembre</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000041" n="2">
+        <date>premier jour d’Octobre</date>
+        <date type="variant">premier jour de Mai</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000042" n="2">
+        <date>quatriesme</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </item>
+      <item xml:id="date-000043" n="2">
+        <date>quatrième de Juin</date>
+        <date type="variant">quatriesme</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014</note>
+      </item>
+      <item xml:id="date-000044" n="2">
+        <date>septième Octobre</date>
+        <date type="variant">huitième Octobre</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000045" n="2">
+        <date>Septémbris</date>
+        <date type="variant">Septembre</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0021</note>
+      </item>
+      <item xml:id="date-000046" n="2">
+        <date>sixième</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000047" n="2">
+        <date>vingseptième Octobre mil</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000048" n="2">
+        <date>vingt sixième</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014</note>
+      </item>
+      <item xml:id="date-000049" n="2">
+        <date>vingt unième dudit mois</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000050" n="2">
+        <date>vingt-cinquième Mars</date>
+        <date type="variant">vingt-cinquiême</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022</note>
+      </item>
+      <item xml:id="date-000051" n="2">
+        <date>vingtième Mai</date>
+        <date type="variant">vingtième Mars</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000052" n="2">
+        <date>vingtsixième jour</date>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014</note>
+      </item>
+      <item xml:id="date-000053" n="1">
+        <date>ANNO DOMINI CIO IOCXXXII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000054" n="1">
+        <date>aot</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </item>
+      <item xml:id="date-000055" n="1">
+        <date>Août</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000056" n="1">
+        <date>Aug.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </item>
+      <item xml:id="date-000057" n="1">
+        <date>Avril</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </item>
+      <item xml:id="date-000058" n="1">
+        <date>CCCLXXXII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000059" n="1">
+        <date>CCCLXXXIII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000060" n="1">
+        <date>CCCX</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </item>
+      <item xml:id="date-000061" n="1">
+        <date>CCCXCIII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000062" n="1">
+        <date>CCCXCIX</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000063" n="1">
+        <date>cCXVII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </item>
+      <item xml:id="date-000064" n="1">
+        <date>CDLXXXII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000065" n="1">
+        <date>CDXIII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000066" n="1">
+        <date>CDXXXVIII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000067" n="1">
+        <date>CGXII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </item>
+      <item xml:id="date-000068" n="1">
+        <date>Chr</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </item>
+      <item xml:id="date-000069" n="1">
+        <date>DCXIX</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000070" n="1">
+        <date>DCXVII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000071" n="1">
+        <date>DCXXVII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000072" n="1">
+        <date>DCXXXII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000073" n="1">
+        <date>DCXXXIII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000074" n="1">
+        <date>dimanche</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </item>
+      <item xml:id="date-000075" n="1">
+        <date>Dimanche trentième Novembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000076" n="1">
+        <date>Dimanche vingt-quatrième</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000077" n="1">
+        <date>dixième de Mai</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000078" n="1">
+        <date>douzième jour de Nodembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0006</note>
+      </item>
+      <item xml:id="date-000079" n="1">
+        <date>DXCIII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000080" n="1">
+        <date>DXGVI</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000081" n="1">
+        <date>DXXX</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000082" n="1">
+        <date>décembre suivant</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000083" n="1">
+        <date>fraîche date</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </item>
+      <item xml:id="date-000084" n="1">
+        <date>féisième Janvier</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000085" n="1">
+        <date>ggéère</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </item>
+      <item xml:id="date-000086" n="1">
+        <date>huit d’Août</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </item>
+      <item xml:id="date-000087" n="1">
+        <date>I. Chr.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </item>
+      <item xml:id="date-000088" n="1">
+        <date>Id. Octobris</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000089" n="1">
+        <date>II. jour d’Octobre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </item>
+      <item xml:id="date-000090" n="1">
+        <date>IIX</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </item>
+      <item xml:id="date-000091" n="1">
+        <date>il y a quelques années</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </item>
+      <item xml:id="date-000092" n="1">
+        <date>IV.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </item>
+      <item xml:id="date-000093" n="1">
+        <date>JEGLE XI</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0021</note>
+      </item>
+      <item xml:id="date-000094" n="1">
+        <date>juil.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </item>
+      <item xml:id="date-000095" n="1">
+        <date>Julliet</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000096" n="1">
+        <date>Kal. Aug.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000097" n="1">
+        <date>Kal. Iun</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000098" n="1">
+        <date>Kal. Septembr</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000099" n="1">
+        <date>Le quatorzième du matin</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000100" n="1">
+        <date>Le septième de Novembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000101" n="1">
+        <date>Le unzième</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000102" n="1">
+        <date>Leseirième dudit mois de Mai</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000103" n="1">
+        <date>Lundi vingt-deuxième</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000104" n="1">
+        <date>Léèmain</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </item>
+      <item xml:id="date-000105" n="1">
+        <date>l’an mille cinq</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000106" n="1">
+        <date>l’an mille cinq cens soixante et huit</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000107" n="1">
+        <date>M. CCCC. L.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000108" n="1">
+        <date>M. DC. LIV</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000109" n="1">
+        <date>MARS</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </item>
+      <item xml:id="date-000110" n="1">
+        <date>mercredi</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000111" n="1">
+        <date>nono kalSept.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </item>
+      <item xml:id="date-000112" n="1">
+        <date>Nouembre mil sixcens dix</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000113" n="1">
+        <date>nouvelle date</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </item>
+      <item xml:id="date-000114" n="1">
+        <date>Nâtembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </item>
+      <item xml:id="date-000115" n="1">
+        <date>octauodecimo anno</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </item>
+      <item xml:id="date-000116" n="1">
+        <date>Octobre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0021</note>
+      </item>
+      <item xml:id="date-000117" n="1">
+        <date>premier Janvier</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000118" n="1">
+        <date>premier jour de mai</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </item>
+      <item xml:id="date-000119" n="1">
+        <date>quatriesme Nouembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000120" n="1">
+        <date>quinzième de Décembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000121" n="1">
+        <date>quinzième jour de Juillet</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </item>
+      <item xml:id="date-000122" n="1">
+        <date>quinzième Septembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </item>
+      <item xml:id="date-000123" n="1">
+        <date>Samedi dix-huitième</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000124" n="1">
+        <date>Samedi huitième Novembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000125" n="1">
+        <date>Sat. IG.</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </item>
+      <item xml:id="date-000126" n="1">
+        <date>seisième Août</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </item>
+      <item xml:id="date-000127" n="1">
+        <date>seizième de Nodembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </item>
+      <item xml:id="date-000128" n="1">
+        <date>sept ans après</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </item>
+      <item xml:id="date-000129" n="1">
+        <date>sixieme année</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      </item>
+      <item xml:id="date-000130" n="1">
+        <date>sixieme siccle</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </item>
+      <item xml:id="date-000131" n="1">
+        <date>sixième Mars</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000132" n="1">
+        <date>sixième siècle</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </item>
+      <item xml:id="date-000133" n="1">
+        <date>suième Novembre</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </item>
+      <item xml:id="date-000134" n="1">
+        <date>sxième Février iégs</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </item>
+      <item xml:id="date-000135" n="1">
+        <date>third of August</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </item>
+      <item xml:id="date-000136" n="1">
+        <date>trentième jour dudit mois</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000137" n="1">
+        <date>unzième jour de Juin</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000138" n="1">
+        <date>vieille date</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </item>
+      <item xml:id="date-000139" n="1">
+        <date>vingt et unième Mars</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </item>
+      <item xml:id="date-000140" n="1">
+        <date>vingt. huitième jour d’Aouft</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </item>
+      <item xml:id="date-000141" n="1">
+        <date>XXIII</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </item>
+      <item xml:id="date-000142" n="1">
+        <date>z. c</date>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </item>
+    </list>
+  </standOff>
+</TEI>

@@ -1,0 +1,2638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-events">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Registre des evenements — Grand Siecle</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Projet Grand Siecle — UNIL</publisher>
+                <availability status="restricted"><licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence></availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Pipeline NER (CamemBERT + GLiNER) + reconciliation Wikidata</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2026-06-12">Generation automatique depuis les entites NER reconciliees (scripts/build_registers.py)</change>
+        </revisionDesc>
+    </teiHeader>
+  <standOff>
+    <listEvent>
+      <event xml:id="event-000001" n="248">
+        <label type="main">Concile</label>
+        <label type="standard">concile de Trente</label>
+        <label type="variant">Concile de Nicée</label>
+        <label type="variant">Conciles</label>
+        <label type="variant">Concile de Trente</label>
+        <label type="variant">Concile de</label>
+        <label type="variant">second Concile de Nicée</label>
+        <label type="variant">Concile de Francfort</label>
+        <date notBefore="1545-12-13"/>
+        <date notAfter="1563-02-21"/>
+        <placeName key="Q3376">Trente</placeName>
+        <idno type="wikidata" cert="medium">Q172991</idno>
+        <desc>concile œcuménique de l'Église catholique tenu à Trente de 1545 à 1563</desc>
+        <note type="mentions">248</note>
+        <note type="sources">LIV0003|LIV0008|LIV0022|LIV0023|LIV0024|LIV0025b|LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q10551516|Q169789|Q190857</note>
+      </event>
+      <event xml:id="event-000002" n="182">
+        <label type="main">Pénitence</label>
+        <label type="standard">pénitence de Canossa</label>
+        <label type="variant">Pénitece</label>
+        <label type="variant">De la Pénitence</label>
+        <label type="variant">de le pénitence</label>
+        <date notBefore="1076-12"/>
+        <date notAfter="1077-01"/>
+        <idno type="wikidata" cert="medium">Q325656</idno>
+        <desc>événement historique de janvier 1077</desc>
+        <note type="mentions">182</note>
+        <note type="sources">LIV0003|LIV0025b</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q10909316|Q1640496|Q52489694</note>
+      </event>
+      <event xml:id="event-000003" n="74">
+        <label type="main">Concile de Trente</label>
+        <label type="standard">concile de Trente</label>
+        <label type="variant">Concile</label>
+        <label type="variant">de Trente</label>
+        <label type="variant">Concile de Latran</label>
+        <label type="variant">Concile de Cologne</label>
+        <label type="variant">Concile de</label>
+        <label type="variant">Trente</label>
+        <date notBefore="1545-12-13"/>
+        <date notAfter="1563-02-21"/>
+        <placeName key="Q3376">Trente</placeName>
+        <idno type="wikidata" cert="high">Q172991</idno>
+        <desc>concile œcuménique de l'Église catholique tenu à Trente de 1545 à 1563</desc>
+        <note type="mentions">74</note>
+        <note type="sources">LIV0003|LIV0026a|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q119217896</note>
+      </event>
+      <event xml:id="event-000004" n="65">
+        <label type="main">Guerre</label>
+        <label type="standard">guerre</label>
+        <label type="variant">la guerre</label>
+        <label type="variant">guerres</label>
+        <idno type="wikidata" cert="high">Q198</idno>
+        <desc>conflit armé opposant des groupes organisés</desc>
+        <note type="mentions">65</note>
+        <note type="sources">LIV0003|LIV0012|LIV0014|LIV0025a|LIV0025b|LIV0026b|LIV0027|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q37480524|Q60158|Q362</note>
+      </event>
+      <event xml:id="event-000005" n="40">
+        <label type="main">Baptême</label>
+        <label type="standard">Baptême du Christ</label>
+        <label type="variant">Baptesme</label>
+        <idno type="wikidata" cert="medium">Q217048</idno>
+        <desc>épisode de la vie du Christ</desc>
+        <note type="mentions">40</note>
+        <note type="sources">LIV0003|LIV0012|LIV0024|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q35856|Q2883694|Q2883697</note>
+      </event>
+      <event xml:id="event-000006" n="35">
+        <label type="main">Passion</label>
+        <label type="variant">la Passion</label>
+        <label type="variant">Passions</label>
+        <label type="variant">passios</label>
+        <note type="mentions">35</note>
+        <note type="sources">LIV0005|LIV0006|LIV0026b|LIV0026c|LIV0028</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q662635|Q7142703|Q7142709</note>
+      </event>
+      <event xml:id="event-000007" n="35">
+        <label type="main">Résurrection</label>
+        <label type="standard">Résurrection</label>
+        <label type="variant">resurrétion</label>
+        <label type="variant">Resurrcction</label>
+        <label type="variant">ressurrection</label>
+        <label type="variant">resserretion</label>
+        <label type="variant">reasurrection</label>
+        <placeName key="Q131395743">Room 27</placeName>
+        <idno type="wikidata" cert="medium">Q759595</idno>
+        <desc>religious stained-glass panel by Gerhard Remisch</desc>
+        <note type="mentions">35</note>
+        <note type="sources">LIV0002b|LIV0008|LIV0022|LIV0024|LIV0025b|LIV0026a|LIV0026b|LIV0026c|LIV0031_t1</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q188681|Q51624|Q146866</note>
+      </event>
+      <event xml:id="event-000008" n="26">
+        <label type="main">siècle</label>
+        <label type="standard">siècle des Lumières</label>
+        <label type="variant">le siècle</label>
+        <date notBefore="1700"/>
+        <date notAfter="1820"/>
+        <placeName key="Q27496">Europe de l'Ouest</placeName>
+        <idno type="wikidata" cert="medium">Q12539</idno>
+        <desc>période historique</desc>
+        <note type="mentions">26</note>
+        <note type="sources">LIV0003|LIV0006|LIV0017|LIV0026b|LIV0026c|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q578|Q3104547|Q530936</note>
+      </event>
+      <event xml:id="event-000009" n="22">
+        <label type="main">Concile de Francfort</label>
+        <label type="standard">synode de Francfort</label>
+        <label type="variant">Concile général</label>
+        <label type="variant">Concile</label>
+        <label type="variant">de Francfort</label>
+        <label type="variant">Concile de</label>
+        <label type="variant">Francfort</label>
+        <date when="0794-06-01"/>
+        <placeName key="Q1794">Francfort-sur-le-Main</placeName>
+        <idno type="wikidata" cert="high">Q637220</idno>
+        <desc>concile (794)</desc>
+        <note type="mentions">22</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+      </event>
+      <event xml:id="event-000010" n="18">
+        <label type="main">Carême</label>
+        <note type="mentions">18</note>
+        <note type="sources">LIV0002a|LIV0002b|LIV0003|LIV0007|LIV0026a|LIV0026b</note>
+      </event>
+      <event xml:id="event-000011" n="17">
+        <label type="main">Pasques</label>
+        <label type="variant">Pasque</label>
+        <label type="variant">Pâques</label>
+        <note type="mentions">17</note>
+        <note type="sources">LIV0003|LIV0008|LIV0024|LIV0026b|LIV0031_t1|LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000012" n="16">
+        <label type="main">Concile de</label>
+        <label type="standard">concile de Trente</label>
+        <label type="variant">Concile de Trente</label>
+        <label type="variant">Concile de Chalcedoine</label>
+        <date notBefore="1545-12-13"/>
+        <date notAfter="1563-02-21"/>
+        <placeName key="Q3376">Trente</placeName>
+        <idno type="wikidata" cert="medium">Q172991</idno>
+        <desc>concile œcuménique de l'Église catholique tenu à Trente de 1545 à 1563</desc>
+        <note type="mentions">16</note>
+        <note type="sources">LIV0003|LIV0024|LIV0025b|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q169789|Q154001|Q133331</note>
+      </event>
+      <event xml:id="event-000013" n="16">
+        <label type="main">persécution</label>
+        <label type="standard">persécution de Dioclétien</label>
+        <label type="variant">persécutions</label>
+        <label type="variant">perseccution</label>
+        <label type="variant">perse-cution</label>
+        <date notBefore="0303-02-24"/>
+        <date notAfter="0313"/>
+        <idno type="wikidata" cert="medium">Q1265674</idno>
+        <desc>désigne la grande répression du christianisme sous le règne de Dioclétien</desc>
+        <note type="mentions">16</note>
+        <note type="sources">LIV0002a|LIV0002b|LIV0003|LIV0015|LIV0024|LIV0033</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q851824|Q3376112|Q33487</note>
+      </event>
+      <event xml:id="event-000014" n="14">
+        <label type="main">Concile de Nicée</label>
+        <label type="standard">concile de Nicée</label>
+        <label type="variant">Concile de Lyon</label>
+        <label type="variant">Concile de Nice</label>
+        <label type="variant">Concile</label>
+        <label type="variant">de Nicée</label>
+        <date notBefore="0325"/>
+        <idno type="wikidata" cert="high">Q232572</idno>
+        <desc>page d'homonymie de Wikimédia</desc>
+        <note type="mentions">14</note>
+        <note type="sources">LIV0031_t2|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q133331|Q187201</note>
+      </event>
+      <event xml:id="event-000015" n="13">
+        <label type="main">Concile de Laodicée</label>
+        <label type="standard">concile de Laodicée</label>
+        <label type="variant">Concile de Nicée</label>
+        <label type="variant">Concile de</label>
+        <label type="variant">Laodicée</label>
+        <label type="variant">concile de Laodice</label>
+        <label type="variant">de Laodice</label>
+        <date notBefore="0363"/>
+        <date notAfter="0364"/>
+        <idno type="wikidata" cert="high">Q1264941</idno>
+        <desc>concile de l'Église en 364</desc>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0024</note>
+        <note type="reconciliation-confidence">high</note>
+      </event>
+      <event xml:id="event-000016" n="13">
+        <label type="main">Nativité</label>
+        <label type="standard">Nativité</label>
+        <label type="variant">natiuiter</label>
+        <label type="variant">natiuite</label>
+        <date when="-0007"/>
+        <idno type="wikidata" cert="high">Q51628</idno>
+        <desc>naissance de Jésus</desc>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0008|LIV0022|LIV0024|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q19809|Q501107|Q171365</note>
+      </event>
+      <event xml:id="event-000017" n="13">
+        <label type="main">Proces</label>
+        <label type="variant">Le procès</label>
+        <note type="mentions">13</note>
+        <note type="sources">LIV0014|LIV0027|LIV0031_t1|LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000018" n="11">
+        <label type="main">Communion</label>
+        <label type="standard">Église orthodoxe</label>
+        <placeName key="Q27468">Europe de l'Est</placeName>
+        <idno type="wikidata" cert="medium">Q35032</idno>
+        <desc>communion des Églises chrétiennes autocéphales qui suivent le christianisme orthodoxe</desc>
+        <note type="mentions">11</note>
+        <note type="sources">LIV0003|LIV0024</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q16246466|Q378097|Q5405829</note>
+      </event>
+      <event xml:id="event-000019" n="11">
+        <label type="main">Pénitence publique</label>
+        <label type="variant">Pénitece publique</label>
+        <label type="variant">Pénite publique</label>
+        <label type="variant">Pénitence</label>
+        <label type="variant">publique</label>
+        <label type="variant">pénitence public</label>
+        <note type="mentions">11</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000020" n="10">
+        <label type="main">Le mariage</label>
+        <label type="standard">Le Mariage</label>
+        <label type="variant">mariage</label>
+        <label type="variant">semariages</label>
+        <placeName key="Q769416">Australian Museum</placeName>
+        <idno type="wikidata" cert="medium">Q15849955</idno>
+        <desc>peinture de Francisco de Goya</desc>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0013|LIV0025b|LIV0031_t1</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q4179360|Q2030685|Q3282035</note>
+      </event>
+      <event xml:id="event-000021" n="10">
+        <label type="main">Victoire</label>
+        <label type="standard">place des Victoires</label>
+        <label type="variant">victoires</label>
+        <placeName key="Q3413149">Vivienne</placeName>
+        <idno type="wikidata" cert="medium">Q1362670</idno>
+        <desc>place de Paris, en France</desc>
+        <note type="mentions">10</note>
+        <note type="sources">LIV0025a|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1470456|Q9439|Q18328183</note>
+      </event>
+      <event xml:id="event-000022" n="9">
+        <label type="main">la paix</label>
+        <label type="variant">paix</label>
+        <label type="variant">le paix</label>
+        <note type="mentions">9</note>
+        <note type="sources">LIV0012|LIV0014|LIV0025a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q2679455|Q109650584|Q47037253</note>
+      </event>
+      <event xml:id="event-000023" n="8">
+        <label type="main">Jugement</label>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0014|LIV0025b|LIV0026c</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3769186|Q1969661|Q12621536</note>
+      </event>
+      <event xml:id="event-000024" n="8">
+        <label type="main">Pâques</label>
+        <label type="variant">Pasque</label>
+        <note type="mentions">8</note>
+        <note type="sources">LIV0002a|LIV0002b|LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q21196|Q98219486|Q111221869</note>
+      </event>
+      <event xml:id="event-000025" n="7">
+        <label type="main">bataille</label>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0004a|LIV0009|LIV0012|LIV0014|LIV0015|LIV0025a</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q21482962|Q178561|Q1110936</note>
+      </event>
+      <event xml:id="event-000026" n="7">
+        <label type="main">festin</label>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000027" n="7">
+        <label type="main">Incarnation</label>
+        <label type="standard">L'Incarnation du Christ</label>
+        <label type="variant">lncarnation</label>
+        <label type="variant">l’InCarnation</label>
+        <placeName key="Q51252">galerie des Offices</placeName>
+        <idno type="wikidata" cert="medium">Q3204084</idno>
+        <desc>peinture de Piero di Cosimo</desc>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0002b|LIV0006|LIV0022|LIV0026a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q41374|Q616175|Q183862</note>
+      </event>
+      <event xml:id="event-000028" n="7">
+        <label type="main">Jubilé</label>
+        <label type="variant">Iubile</label>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0002a|LIV0008</note>
+      </event>
+      <event xml:id="event-000029" n="7">
+        <label type="main">mort</label>
+        <label type="standard">La Mort de Marat</label>
+        <label type="variant">la Mort</label>
+        <label type="variant">le mort</label>
+        <placeName key="Q377500">musées royaux des Beaux-Arts de Belgique</placeName>
+        <idno type="wikidata" cert="medium">Q636537</idno>
+        <desc>peinture de Jacques-Louis David, Bruxelles, musées royaux des Beaux-Arts de Belgique</desc>
+        <note type="mentions">7</note>
+        <note type="sources">LIV0025a|LIV0025b|LIV0026b</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q4|Q60589574|Q1193907</note>
+      </event>
+      <event xml:id="event-000030" n="6">
+        <label type="main">Aller à la rencontre</label>
+        <label type="variant">aller à la</label>
+        <label type="variant">rencontre</label>
+        <label type="variant">aller avoir le rencontre</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q139930758|Q2761147|Q16510064</note>
+      </event>
+      <event xml:id="event-000031" n="6">
+        <label type="main">Annihilation</label>
+        <label type="variant">l’annihilaton</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0005</note>
+      </event>
+      <event xml:id="event-000032" n="6">
+        <label type="main">Colloque de Poissi</label>
+        <label type="variant">Colloque</label>
+        <label type="variant">de Poissi</label>
+        <label type="variant">colloque de poissy</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0004a|LIV0022</note>
+      </event>
+      <event xml:id="event-000033" n="6">
+        <label type="main">famine</label>
+        <label type="standard">Famine</label>
+        <placeName key="Q5311021">Dublin quays</placeName>
+        <idno type="wikidata" cert="medium">Q18411659</idno>
+        <desc>1997 Rowan Gillespie series of sculptures in Dublin, Ireland</desc>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0026c|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q168247|Q165947|Q165058</note>
+      </event>
+      <event xml:id="event-000034" n="6">
+        <label type="main">La tribulation</label>
+        <label type="variant">tribulation</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0031_t1|LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000035" n="6">
+        <label type="main">Libertinage</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000036" n="6">
+        <label type="main">Reformation</label>
+        <label type="standard">Réforme protestante</label>
+        <date notBefore="1517-10-31"/>
+        <date notAfter="1648"/>
+        <idno type="wikidata" cert="high">Q12562</idno>
+        <desc>mouvement de transformation du christianisme occidental initié par Martin Luther en 1517</desc>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0003|LIV0022</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q7307444|Q15760300|Q3931626</note>
+      </event>
+      <event xml:id="event-000037" n="6">
+        <label type="main">Rencontre</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0015|LIV0020</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q2761147|Q16510064|Q52359320</note>
+      </event>
+      <event xml:id="event-000038" n="6">
+        <label type="main">Rodomontades</label>
+        <label type="variant">rodomontade</label>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0011|LIV0026a|LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000039" n="6">
+        <label type="main">Synode</label>
+        <label type="standard">concile cadavérique</label>
+        <label type="variant">Synode écumenique</label>
+        <date when="0897"/>
+        <placeName key="Q848394">palais de Latran</placeName>
+        <idno type="wikidata" cert="medium">Q1414811</idno>
+        <desc>procès posthume du pape Formose</desc>
+        <note type="mentions">6</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q111161|Q3508861|Q866210</note>
+      </event>
+      <event xml:id="event-000040" n="5">
+        <label type="main">antiquité</label>
+        <label type="standard">Antiquité</label>
+        <date notBefore="-3200"/>
+        <date notAfter="0500"/>
+        <idno type="wikidata" cert="high">Q41493</idno>
+        <desc>période historique</desc>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0003|LIV0014|LIV0026a|LIV0027|LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1747689|Q486761|Q11772</note>
+      </event>
+      <event xml:id="event-000041" n="5">
+        <label type="main">anéantissement</label>
+        <label type="variant">anéantissements</label>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0006</note>
+      </event>
+      <event xml:id="event-000042" n="5">
+        <label type="main">bello</label>
+        <label type="standard">Bello</label>
+        <label type="variant">bellum</label>
+        <placeName key="Q3926556">quadrangle de Beethoven</placeName>
+        <idno type="wikidata" cert="high">Q3696572</idno>
+        <desc>cratère sur Mercure</desc>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0010|LIV0032</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q3637811|Q24663955|Q16479858</note>
+      </event>
+      <event xml:id="event-000043" n="5">
+        <label type="main">Concile d’Agde</label>
+        <label type="standard">concile d'Agde</label>
+        <label type="variant">Concile</label>
+        <label type="variant">concile de</label>
+        <date when="0506"/>
+        <idno type="wikidata" cert="high">Q1290650</idno>
+        <desc>synod</desc>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+      </event>
+      <event xml:id="event-000044" n="5">
+        <label type="main">Concile général</label>
+        <label type="variant">général</label>
+        <label type="variant">de_le concile général</label>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0003|LIV0008|LIV0011|LIV0024</note>
+      </event>
+      <event xml:id="event-000045" n="5">
+        <label type="main">conquêtes</label>
+        <label type="standard">conquêtes mongoles</label>
+        <label type="variant">conquête</label>
+        <date notBefore="1206-01-01"/>
+        <date notAfter="1337-01-01"/>
+        <placeName key="Q5401">Eurasie</placeName>
+        <idno type="wikidata" cert="medium">Q2092093</idno>
+        <desc>series of Mongol invasions and conquests (1206–1405)</desc>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0012|LIV0022</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q2566899|Q986561|Q55457142</note>
+      </event>
+      <event xml:id="event-000046" n="5">
+        <label type="main">Exode</label>
+        <label type="variant">l’Exode</label>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0024|LIV0025b|LIV0026b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q96748503|Q96739275|Q9190</note>
+      </event>
+      <event xml:id="event-000047" n="5">
+        <label type="main">histoire</label>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0026a|LIV0026b|LIV0031_t1|LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000048" n="5">
+        <label type="main">Pentecoste</label>
+        <label type="variant">la Pentecoste</label>
+        <label type="variant">pentecôte</label>
+        <label type="variant">le pentécoste|péntécost</label>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0003|LIV0008|LIV0025b|LIV0031_t2</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1815210|Q39864|Q11940807</note>
+      </event>
+      <event xml:id="event-000049" n="5">
+        <label type="main">Vie humaine</label>
+        <label type="variant">Vie humain</label>
+        <note type="mentions">5</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000050" n="4">
+        <label type="main">Concile de Constantinople</label>
+        <label type="standard">concile de Constantinople</label>
+        <label type="variant">Concile de</label>
+        <label type="variant">Constantinople</label>
+        <date when="0815"/>
+        <placeName key="Q16869">Constantinople</placeName>
+        <idno type="wikidata" cert="high">Q5176386</idno>
+        <desc>local council that restored Iconoclasm</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q179826|Q208037|Q28221977</note>
+      </event>
+      <event xml:id="event-000051" n="4">
+        <label type="main">Concile de Rheims</label>
+        <label type="variant">Concile de Florance</label>
+        <label type="variant">Concile de Tours</label>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025b|LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000052" n="4">
+        <label type="main">Contrition</label>
+        <label type="standard">regret in Islam</label>
+        <placeName key="Q779924">civilisation islamique</placeName>
+        <idno type="wikidata" cert="medium">Q126808094</idno>
+        <desc>Islamic view about the negative conscious and emotional reaction to personal past acts and behaviours</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q3312847|Q7313970|Q1188761</note>
+      </event>
+      <event xml:id="event-000053" n="4">
+        <label type="main">Crime</label>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0003|LIV0012</note>
+      </event>
+      <event xml:id="event-000054" n="4">
+        <label type="main">Holocauste</label>
+        <label type="variant">Holocaûta</label>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025a|LIV0026a</note>
+      </event>
+      <event xml:id="event-000055" n="4">
+        <label type="main">jeux Olympiques</label>
+        <label type="standard">Jeux olympiques</label>
+        <label type="variant">jeu olympique</label>
+        <placeName key="Q107640409">site des Jeux olympiques</placeName>
+        <idno type="wikidata" cert="high">Q5389</idno>
+        <desc>compétitions sportives mondiales</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0004a|LIV0026a|LIV0031_t1|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q8577|Q8567|Q8558</note>
+      </event>
+      <event xml:id="event-000056" n="4">
+        <label type="main">messe</label>
+        <label type="standard">messe</label>
+        <label type="variant">la Messe</label>
+        <label type="variant">le messe</label>
+        <idno type="wikidata" cert="high">Q132612</idno>
+        <desc>rite liturgique central de l'Église catholique</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0008|LIV0009</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1148884|Q75809|Q75841136</note>
+      </event>
+      <event xml:id="event-000057" n="4">
+        <label type="main">Pentecôte</label>
+        <label type="standard">Pentecôte</label>
+        <label type="variant">La Pentecôte</label>
+        <label type="variant">pentecoète</label>
+        <placeName key="Q10855544">Galleria dell'Accademia de Florence</placeName>
+        <idno type="wikidata" cert="medium">Q3899261</idno>
+        <desc>peinture d'Andrea Orcagna et Jacopo di Cione dans la Galleria dell'Accademia, Florence</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0002a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q39864|Q65560542|Q107426200</note>
+      </event>
+      <event xml:id="event-000058" n="4">
+        <label type="main">Péché</label>
+        <label type="standard">pêche</label>
+        <label type="variant">péchée</label>
+        <placeName key="Q10396778">banc de pêche</placeName>
+        <idno type="wikidata" cert="high">Q14373</idno>
+        <desc>activité consistant à capturer des animaux aquatiques à branchies</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0003</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q55238429|Q36973101|Q13189</note>
+      </event>
+      <event xml:id="event-000059" n="4">
+        <label type="main">Reconciliation</label>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000060" n="4">
+        <label type="main">supplice</label>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0014|LIV0025a|LIV0026a</note>
+      </event>
+      <event xml:id="event-000061" n="4">
+        <label type="main">Synode de</label>
+        <label type="standard">synode de Dordrecht</label>
+        <label type="variant">Le Synode de Paris</label>
+        <label type="variant">Synode de Paris</label>
+        <date notBefore="1618"/>
+        <date notAfter="1619"/>
+        <placeName key="Q26421">Dordrecht</placeName>
+        <idno type="wikidata" cert="medium">Q901769</idno>
+        <desc>réunion universelle des églises réformées</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q866210|Q539002|Q48727485</note>
+      </event>
+      <event xml:id="event-000062" n="4">
+        <label type="main">Vertu</label>
+        <label type="standard">Vertumne</label>
+        <placeName key="Q1891413">château de Skokloster</placeName>
+        <idno type="wikidata" cert="medium">Q16333797</idno>
+        <desc>peinture de Giuseppe Arcimboldo</desc>
+        <note type="mentions">4</note>
+        <note type="sources">LIV0018|LIV0025a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1130409|Q1061775|Q157811</note>
+      </event>
+      <event xml:id="event-000063" n="3">
+        <label type="main">Campaigne</label>
+        <label type="variant">campagne</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0027</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q15253558|Q17653364|Q124302243</note>
+      </event>
+      <event xml:id="event-000064" n="3">
+        <label type="main">Concile de Latran</label>
+        <label type="standard">quatrième concile du Latran</label>
+        <date when="1215-11-01"/>
+        <date notBefore="1215-11-11"/>
+        <date notAfter="1215-11-30"/>
+        <placeName key="Q848394">palais de Latran</placeName>
+        <idno type="wikidata" cert="medium">Q719992</idno>
+        <desc>concile œcuménique de l'Église catholique tenu à Rome en 1215</desc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0011|LIV0025b|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q2992024</note>
+      </event>
+      <event xml:id="event-000065" n="3">
+        <label type="main">Concile Prouincial</label>
+        <label type="variant">troisième Concile Prouincial</label>
+        <label type="variant">Conciles Prouinciaux</label>
+        <label type="variant">concile provincial</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000066" n="3">
+        <label type="main">Concorde</label>
+        <label type="standard">Concorde</label>
+        <idno type="wikidata" cert="high">Q6505</idno>
+        <desc>premier avion de ligne supersonique franco-britannique</desc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q970075|Q5158928|Q11691388</note>
+      </event>
+      <event xml:id="event-000067" n="3">
+        <label type="main">confnénération</label>
+        <label type="variant">conféderaÉion</label>
+        <label type="variant">confédération</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000068" n="3">
+        <label type="main">conquête</label>
+        <label type="standard">guerre des Gaules</label>
+        <date notBefore="-0058-01-01"/>
+        <date notAfter="-0051-01-01"/>
+        <placeName key="Q38060">Gaule</placeName>
+        <idno type="wikidata" cert="medium">Q202161</idno>
+        <desc>campagne d'assujettissement par Rome des peuples de la région des Gaules (hors Gaule narbonnaise)</desc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q194465|Q1064739|Q2888296</note>
+      </event>
+      <event xml:id="event-000069" n="3">
+        <label type="main">conversion</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025b|LIV0027|LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000070" n="3">
+        <label type="main">expédition</label>
+        <label type="variant">expeditio</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0013|LIV0015</note>
+      </event>
+      <event xml:id="event-000071" n="3">
+        <label type="main">Fraude Punique</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000072" n="3">
+        <label type="main">fréquente Communion</label>
+        <label type="variant">fréquent communion</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000073" n="3">
+        <label type="main">Guerre d’Aquitaine</label>
+        <label type="variant">guerre</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000074" n="3">
+        <label type="main">l’Apocalypse</label>
+        <label type="variant">Apocalypse</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0025b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3202153|Q42040|Q2739729</note>
+      </event>
+      <event xml:id="event-000075" n="3">
+        <label type="main">martyre</label>
+        <label type="variant">martyr</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026c|LIV0028</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q6498826|Q12326334|Q46999986</note>
+      </event>
+      <event xml:id="event-000076" n="3">
+        <label type="main">meurtre</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000077" n="3">
+        <label type="main">naufrage</label>
+        <label type="standard">naufragé</label>
+        <placeName key="Q23442">île</placeName>
+        <idno type="wikidata" cert="high">Q508230</idno>
+        <desc>personne abandonnée à son sort après un naufrage</desc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0008|LIV0026b|LIV0031_t2</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q906512|Q30880545|Q43306475</note>
+      </event>
+      <event xml:id="event-000078" n="3">
+        <label type="main">Olympiques</label>
+        <label type="standard">Jeux olympiques</label>
+        <label type="variant">jeux Olympiques</label>
+        <placeName key="Q107640409">site des Jeux olympiques</placeName>
+        <idno type="wikidata" cert="high">Q5389</idno>
+        <desc>compétitions sportives mondiales</desc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q18146776|Q1194342|Q3351723</note>
+      </event>
+      <event xml:id="event-000079" n="3">
+        <label type="main">passé</label>
+        <label type="standard">passereaux</label>
+        <label type="variant">passer</label>
+        <date notBefore="-52500000"/>
+        <idno type="wikidata" cert="medium">Q25341</idno>
+        <desc>ordre d'oiseaux</desc>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0031_t1</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1994301|Q194240|Q14683</note>
+      </event>
+      <event xml:id="event-000080" n="3">
+        <label type="main">Pontificat</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000081" n="3">
+        <label type="main">siècles passés</label>
+        <label type="variant">siècle passe</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0017|LIV0019|LIV0025b</note>
+      </event>
+      <event xml:id="event-000082" n="3">
+        <label type="main">tempête</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0012|LIV0025b</note>
+      </event>
+      <event xml:id="event-000083" n="3">
+        <label type="main">tempêtes</label>
+        <label type="variant">tempête</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0025a|LIV0026b</note>
+      </event>
+      <event xml:id="event-000084" n="3">
+        <label type="main">Tribulations</label>
+        <label type="variant">tribulation</label>
+        <note type="mentions">3</note>
+        <note type="sources">LIV0026a|LIV0026b|LIV0026c</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q11898357|Q1136084|Q3538829</note>
+      </event>
+      <event xml:id="event-000085" n="2">
+        <label type="main">accidents propres</label>
+        <label type="variant">accident propre</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000086" n="2">
+        <label type="main">calamité</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000087" n="2">
+        <label type="main">calamités</label>
+        <label type="variant">calamité</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0018</note>
+      </event>
+      <event xml:id="event-000088" n="2">
+        <label type="main">Calvaire</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002b</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q371752|Q11331347|Q2333043</note>
+      </event>
+      <event xml:id="event-000089" n="2">
+        <label type="main">Campagne de Rome</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0011|LIV0031_t2</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q41515812|Q41515831</note>
+      </event>
+      <event xml:id="event-000090" n="2">
+        <label type="main">chute de Troie</label>
+        <label type="variant">cheval de Troie</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0020|LIV0026c</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3821535</note>
+      </event>
+      <event xml:id="event-000091" n="2">
+        <label type="main">cinqvantiesime</label>
+        <label type="variant">cinquantièsime</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0004a</note>
+      </event>
+      <event xml:id="event-000092" n="2">
+        <label type="main">Combat des trois</label>
+        <label type="variant">combat de_le trois</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000093" n="2">
+        <label type="main">Comédie</label>
+        <label type="variant">la Comédie</label>
+        <label type="variant">le comédie</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000094" n="2">
+        <label type="main">Concile de Calcedoine</label>
+        <label type="variant">concile de Chalcédoine</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008|LIV0033</note>
+      </event>
+      <event xml:id="event-000095" n="2">
+        <label type="main">Concile de Constance</label>
+        <label type="standard">concile de Constance</label>
+        <date notBefore="1414-11-05"/>
+        <date notAfter="1418-04-22"/>
+        <placeName key="Q1285506">Konzilgebäude Konstanz</placeName>
+        <idno type="wikidata" cert="high">Q154001</idno>
+        <desc>concile œcuménique de l'Église catholique tenu à Constance de 1414 à 1418</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023</note>
+        <note type="reconciliation-confidence">high</note>
+      </event>
+      <event xml:id="event-000096" n="2">
+        <label type="main">Concile Oecumeniqueexpliquees</label>
+        <label type="variant">Concile Oecumenique</label>
+        <label type="variant">concile oecumeniquees</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000097" n="2">
+        <label type="main">Concile universel</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008|LIV0033</note>
+      </event>
+      <event xml:id="event-000098" n="2">
+        <label type="main">Concile Élibéri</label>
+        <label type="variant">Concile Éliberin</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000099" n="2">
+        <label type="main">Conciles</label>
+        <label type="standard">synodes de Split</label>
+        <placeName key="Q1663">Split</placeName>
+        <idno type="wikidata" cert="medium">Q12642515</idno>
+        <desc>série de trois synodes ayant eu lieu à Split (Croatie) en 925, 928 et 1060</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q752404|Q66493851|Q1174250</note>
+      </event>
+      <event xml:id="event-000100" n="2">
+        <label type="main">Conclave</label>
+        <label type="variant">conclaue</label>
+        <label type="variant">conclaire</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007|LIV0008</note>
+      </event>
+      <event xml:id="event-000101" n="2">
+        <label type="main">conmerce</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000102" n="2">
+        <label type="main">conspiration</label>
+        <label type="standard">conspiration des Poudres</label>
+        <date when="1605-11-05"/>
+        <placeName key="Q3139260">Holbeche House</placeName>
+        <idno type="wikidata" cert="medium">Q45810</idno>
+        <desc>tentative d'assassinat ratée en 1605 contre le roi Jacques Ier d'Angleterre et roi d'Écosse</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014|LIV0026a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q930164|Q19831149|Q159535</note>
+      </event>
+      <event xml:id="event-000103" n="2">
+        <label type="main">Constantinople</label>
+        <label type="standard">patriarcat latin de Constantinople</label>
+        <date notBefore="1204"/>
+        <date notAfter="1964"/>
+        <idno type="wikidata" cert="high">Q1296901</idno>
+        <desc>ancient patriarchate of the Roman Catholic Church. titular see</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q16869|Q23725|Q30600623</note>
+      </event>
+      <event xml:id="event-000104" n="2">
+        <label type="main">Création</label>
+        <label type="standard">univers</label>
+        <date notBefore="-13798000000"/>
+        <idno type="wikidata" cert="high">Q1</idno>
+        <desc>ensemble de tout ce qui existe : énergie, espace, temps et matière</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q386724|Q11398090|Q3352472</note>
+      </event>
+      <event xml:id="event-000105" n="2">
+        <label type="main">Deluge</label>
+        <label type="standard">Déluge</label>
+        <label type="variant">le Deluge</label>
+        <label type="variant">déluge jusque</label>
+        <date notBefore="1655"/>
+        <date notAfter="1660"/>
+        <placeName key="Q172107">république des Deux Nations</placeName>
+        <idno type="wikidata" cert="high">Q631163</idno>
+        <desc>guerre suédo-polonaise</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q1185023|Q8068|Q134052</note>
+      </event>
+      <event xml:id="event-000106" n="2">
+        <label type="main">dernierembrasement</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000107" n="2">
+        <label type="main">Dimanche des</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000108" n="2">
+        <label type="main">dissentions civiles</label>
+        <label type="variant">dissension civil</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000109" n="2">
+        <label type="main">du lion</label>
+        <label type="variant">y de_le lion</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000110" n="2">
+        <label type="main">Dypiades</label>
+        <label type="variant">Dipiades</label>
+        <label type="variant">dypiade</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000111" n="2">
+        <label type="main">débauches</label>
+        <label type="variant">débauche</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000112" n="2">
+        <label type="main">Décebre</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023</note>
+      </event>
+      <event xml:id="event-000113" n="2">
+        <label type="main">Délge</label>
+        <label type="variant">déluge</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026a|LIV0028</note>
+      </event>
+      <event xml:id="event-000114" n="2">
+        <label type="main">Détrait</label>
+        <label type="variant">détroit</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000115" n="2">
+        <label type="main">Exhalaison du lac</label>
+        <label type="variant">exhalaison de_le lac de</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000116" n="2">
+        <label type="main">faim</label>
+        <label type="variant">la faim</label>
+        <label type="variant">le faim</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0028</note>
+      </event>
+      <event xml:id="event-000117" n="2">
+        <label type="main">forfait</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000118" n="2">
+        <label type="main">Futur</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0021</note>
+      </event>
+      <event xml:id="event-000119" n="2">
+        <label type="main">Fête des Rois</label>
+        <label type="variant">fête de_le roi</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000120" n="2">
+        <label type="main">Fêtes des Martyrs</label>
+        <label type="variant">Fêtes de Martyrs</label>
+        <label type="variant">feste de_le martyr</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000121" n="2">
+        <label type="main">grand miracle</label>
+        <label type="variant">grands</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000122" n="2">
+        <label type="main">Grande révolution</label>
+        <label type="variant">grand réuolution</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000123" n="2">
+        <label type="main">guerre civile d’Allemagne</label>
+        <label type="variant">guerre civile</label>
+        <label type="variant">guerre civil</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0023</note>
+      </event>
+      <event xml:id="event-000124" n="2">
+        <label type="main">Guerre des</label>
+        <label type="standard">guerre de Quatre-Vingts Ans</label>
+        <label type="variant">guerre de_le naas</label>
+        <date notBefore="1568-05-23"/>
+        <date notAfter="1648-01-30"/>
+        <placeName key="Q476033">Pays-Bas (historiques)</placeName>
+        <idno type="wikidata" cert="medium">Q164432</idno>
+        <desc>révolte néerlandaise contre la monarchie Habsbourg, de 1568 à 1648</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q49077|Q48249|Q150229</note>
+      </event>
+      <event xml:id="event-000125" n="2">
+        <label type="main">guerres</label>
+        <label type="standard">guerres indiennes</label>
+        <label type="variant">guerre</label>
+        <date notBefore="1622"/>
+        <date notAfter="1924"/>
+        <placeName key="Q49">Amérique du Nord</placeName>
+        <idno type="wikidata" cert="medium">Q849680</idno>
+        <desc>conflits frontaliers intermittents entre les colons américains, canadiens et européens et les peuples autochtones d'Amérique du Nord</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002a|LIV0017</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q78994|Q207318|Q2697981</note>
+      </event>
+      <event xml:id="event-000126" n="2">
+        <label type="main">guerres civiles</label>
+        <label type="standard">guerres civiles romaines</label>
+        <label type="variant">guerre civil</label>
+        <date notBefore="-0509"/>
+        <date notAfter="0476"/>
+        <idno type="wikidata" cert="medium">Q1747183</idno>
+        <desc>civil conflicts within ancient Rome</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009|LIV0031_t2</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q2697981|Q257724|Q2908804</note>
+      </event>
+      <event xml:id="event-000127" n="2">
+        <label type="main">Haine du</label>
+        <label type="variant">haine de_le siècle</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000128" n="2">
+        <label type="main">Hercution</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000129" n="2">
+        <label type="main">Hist. des Persécutions</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002a</note>
+      </event>
+      <event xml:id="event-000130" n="2">
+        <label type="main">holocaustes</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0028</note>
+      </event>
+      <event xml:id="event-000131" n="2">
+        <label type="main">Hécatombes</label>
+        <label type="variant">hécatombe</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000132" n="2">
+        <label type="main">Le Purgatoire</label>
+        <label type="variant">Purgatoire</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q29318947|Q29318866|Q29150705</note>
+      </event>
+      <event xml:id="event-000133" n="2">
+        <label type="main">L’invocation des Saints</label>
+        <label type="variant">inuocation de_le saint</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000134" n="2">
+        <label type="main">Matines</label>
+        <label type="standard">Matines de Bruges (histoire)</label>
+        <date when="1302-05-18"/>
+        <date notBefore="1302-05-18"/>
+        <date notAfter="1302-05-18"/>
+        <placeName key="Q12994">Bruges</placeName>
+        <idno type="wikidata" cert="medium">Q850188</idno>
+        <desc>terme désignant le massacre survenu le 18 mai 1302</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1437648|Q3299129|Q136712236</note>
+      </event>
+      <event xml:id="event-000135" n="2">
+        <label type="main">miracles</label>
+        <label type="variant">miracle</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008|LIV0024</note>
+      </event>
+      <event xml:id="event-000136" n="2">
+        <label type="main">Mort temporelle</label>
+        <label type="variant">mort temporel</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b</note>
+      </event>
+      <event xml:id="event-000137" n="2">
+        <label type="main">mystère de l’Incarnation</label>
+        <label type="variant">mystère de le</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000138" n="2">
+        <label type="main">Naissance</label>
+        <label type="standard">Nativité</label>
+        <date when="-0007"/>
+        <idno type="wikidata" cert="medium">Q51628</idno>
+        <desc>naissance de Jésus</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0006|LIV0022</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q55598739|Q14819852|Q21012909</note>
+      </event>
+      <event xml:id="event-000139" n="2">
+        <label type="main">Néanmassacre</label>
+        <label type="variant">Neartmassacre</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000140" n="2">
+        <label type="main">orage</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012|LIV0022</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q2857578|Q3354992|Q3354989</note>
+      </event>
+      <event xml:id="event-000141" n="2">
+        <label type="main">Persecutions</label>
+        <label type="standard">persécution de Dioclétien</label>
+        <label type="variant">perfétion</label>
+        <date notBefore="0303-02-24"/>
+        <date notAfter="0313"/>
+        <idno type="wikidata" cert="medium">Q1265674</idno>
+        <desc>désigne la grande répression du christianisme sous le règne de Dioclétien</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1800556|Q554482|Q301585</note>
+      </event>
+      <event xml:id="event-000142" n="2">
+        <label type="main">perTourmente</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000143" n="2">
+        <label type="main">pinceau</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0033</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q193897|Q3004693|Q2688969</note>
+      </event>
+      <event xml:id="event-000144" n="2">
+        <label type="main">ploFestins</label>
+        <label type="variant">plofestin</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000145" n="2">
+        <label type="main">premiers Conciles</label>
+        <label type="variant">z premier concile</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000146" n="2">
+        <label type="main">Printemps</label>
+        <label type="standard">Laboratoire professions, institutions, temporalités</label>
+        <placeName key="Q237303">Guyancourt</placeName>
+        <idno type="wikidata" cert="high">Q29620711</idno>
+        <desc>Laboratoire de recherche de l'université Paris-Saclay, de l'université de Versailles-Saint-Quentin-en-Yvelines et du CNRS</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025b|LIV0031_t1</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q7245284|Q1312|Q1535260</note>
+      </event>
+      <event xml:id="event-000147" n="2">
+        <label type="main">PromAmb</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0005</note>
+      </event>
+      <event xml:id="event-000148" n="2">
+        <label type="main">prousses</label>
+        <label type="variant">prouer</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000149" n="2">
+        <label type="main">Présentation</label>
+        <label type="variant">la Présentation</label>
+        <label type="variant">le présentation</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000150" n="2">
+        <label type="main">Purification</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000151" n="2">
+        <label type="main">Pœnitentiam</label>
+        <label type="variant">poenitentia</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000152" n="2">
+        <label type="main">redemption</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008|LIV0022</note>
+      </event>
+      <event xml:id="event-000153" n="2">
+        <label type="main">Renaissance</label>
+        <label type="standard">Renaissance</label>
+        <date notBefore="1400"/>
+        <date notAfter="1650"/>
+        <placeName key="Q46">Europe</placeName>
+        <idno type="wikidata" cert="high">Q4692</idno>
+        <desc>période historique associée à la redécouverte des arts et sciences de l'Antiquité</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q23731823|Q236122|Q112595827</note>
+      </event>
+      <event xml:id="event-000154" n="2">
+        <label type="main">révolution</label>
+        <label type="variant">réuolution</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a|LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000155" n="2">
+        <label type="main">révolution des siècles</label>
+        <label type="variant">réuolution de_le siècle</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0003|LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000156" n="2">
+        <label type="main">Septuagésime</label>
+        <label type="variant">septuageèsime</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0002a</note>
+      </event>
+      <event xml:id="event-000157" n="2">
+        <label type="main">Solstice</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0007</note>
+      </event>
+      <event xml:id="event-000158" n="2">
+        <label type="main">suffrages</label>
+        <label type="variant">suffrage</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000159" n="2">
+        <label type="main">Synode sixième de funaum</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0027</note>
+      </event>
+      <event xml:id="event-000160" n="2">
+        <label type="main">tableau</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0031_t2</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q3305213|Q16593391|Q1047337</note>
+      </event>
+      <event xml:id="event-000161" n="2">
+        <label type="main">Tragédie</label>
+        <label type="variant">trage</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012|LIV0017</note>
+      </event>
+      <event xml:id="event-000162" n="2">
+        <label type="main">Trahison</label>
+        <label type="standard">La Trahison des images</label>
+        <placeName key="Q60276691">Ahmanson Building</placeName>
+        <idno type="wikidata" cert="medium">Q1061035</idno>
+        <desc>peinture de René Magritte</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q160128|Q2166722|Q1536329</note>
+      </event>
+      <event xml:id="event-000163" n="2">
+        <label type="main">tremblements de terre</label>
+        <label type="variant">tremblement de terre</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000164" n="2">
+        <label type="main">Triumvirat</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0008</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q682330|Q83204|Q6152960</note>
+      </event>
+      <event xml:id="event-000165" n="2">
+        <label type="main">Ténèbres</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000166" n="2">
+        <label type="main">Vieil</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000167" n="2">
+        <label type="main">Vigiles des</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000168" n="2">
+        <label type="main">élections</label>
+        <label type="variant">élection</label>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0011</note>
+      </event>
+      <event xml:id="event-000169" n="2">
+        <label type="main">événements</label>
+        <label type="standard">Événement de Heinrich</label>
+        <label type="variant">euénement</label>
+        <placeName key="Q97">océan Atlantique</placeName>
+        <idno type="wikidata" cert="medium">Q1596382</idno>
+        <desc>Événement</desc>
+        <note type="mentions">2</note>
+        <note type="sources">LIV0025a</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q1190554|Q1656682|Q200790</note>
+      </event>
+      <event xml:id="event-000170" n="1">
+        <label type="main">ablection</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </event>
+      <event xml:id="event-000171" n="1">
+        <label type="main">accident</label>
+        <label type="standard">accident vasculaire cérébral</label>
+        <placeName key="Q492038">cerveau humain</placeName>
+        <idno type="wikidata" cert="medium">Q12202</idno>
+        <desc>déficit neurologique soudain d'origine vasculaire</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q171558|Q754489|Q9687</note>
+      </event>
+      <event xml:id="event-000172" n="1">
+        <label type="main">acrifice</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000173" n="1">
+        <label type="main">Actes du Concile de Nicée</label>
+        <label type="variant">acte de_le concile de Nicéèé</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000174" n="1">
+        <label type="main">adultère</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000175" n="1">
+        <label type="main">Aduocat du Roi</label>
+        <label type="variant">aduocat de_le roi</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000176" n="1">
+        <label type="main">Aestiuarum ludus</label>
+        <label type="variant">aestiua ludus</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000177" n="1">
+        <label type="main">Afflicion</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000178" n="1">
+        <label type="main">agonie</label>
+        <label type="standard">Angoisses</label>
+        <placeName key="Q1464509">musée national du Victoria</placeName>
+        <idno type="wikidata" cert="high">Q20392215</idno>
+        <desc>peinture d'August Friedrich Schenk</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q395295|Q23850861|Q2467856</note>
+      </event>
+      <event xml:id="event-000179" n="1">
+        <label type="main">Antiquitie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </event>
+      <event xml:id="event-000180" n="1">
+        <label type="main">assitance</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </event>
+      <event xml:id="event-000181" n="1">
+        <label type="main">Assomption</label>
+        <label type="standard">Assomption</label>
+        <placeName key="Q165631">Gemäldegalerie</placeName>
+        <idno type="wikidata" cert="medium">Q3714311</idno>
+        <desc>peinture de Giotto di Bondone, Gemäldegalerie Berlin</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q162691|Q2933|Q538758</note>
+      </event>
+      <event xml:id="event-000182" n="1">
+        <label type="main">August</label>
+        <label type="variant">augus</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000183" n="1">
+        <label type="main">Automne</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q1314|Q787459|Q136408675</note>
+      </event>
+      <event xml:id="event-000184" n="1">
+        <label type="main">Ave Maria</label>
+        <label type="standard">Ia Orana Maria</label>
+        <placeName key="Q160236">Metropolitan Museum of Art</placeName>
+        <idno type="wikidata" cert="high">Q1118465</idno>
+        <desc>peinture de Paul Gauguin</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q790314|Q42203|Q108985685</note>
+      </event>
+      <event xml:id="event-000185" n="1">
+        <label type="main">aventure</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000186" n="1">
+        <label type="main">aventure du lion</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000187" n="1">
+        <label type="main">Baptismum</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000188" n="1">
+        <label type="main">Baptiſme</label>
+        <label type="variant">Baptis</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q93191|Q2122370|Q217048</note>
+      </event>
+      <event xml:id="event-000189" n="1">
+        <label type="main">bataille de Canne</label>
+        <label type="standard">bataille de Cannes</label>
+        <date when="-0216-08-02"/>
+        <placeName key="Q568611">Canne</placeName>
+        <idno type="wikidata" cert="medium">Q179591</idno>
+        <desc>bataille de la deuxième guerre punique</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q608438|Q124651332</note>
+      </event>
+      <event xml:id="event-000190" n="1">
+        <label type="main">bataille de Cannes</label>
+        <label type="standard">bataille de Cannes</label>
+        <date when="-0216-08-02"/>
+        <placeName key="Q568611">Canne</placeName>
+        <idno type="wikidata" cert="high">Q179591</idno>
+        <desc>bataille de la deuxième guerre punique</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+        <note type="reconciliation-confidence">high</note>
+        <note type="wikidata-candidates">Q608438|Q124651332</note>
+      </event>
+      <event xml:id="event-000191" n="1">
+        <label type="main">bataille de Potidee</label>
+        <label type="standard">bataille de Potidée</label>
+        <label type="variant">bataille de Pocidee</label>
+        <date when="-0432"/>
+        <placeName key="Q999468">Potidée</placeName>
+        <idno type="wikidata" cert="high">Q1356189</idno>
+        <desc>431 BCE battle</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+        <note type="reconciliation-confidence">high</note>
+      </event>
+      <event xml:id="event-000192" n="1">
+        <label type="main">bataille de Pyle</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000193" n="1">
+        <label type="main">bataille de Varnes</label>
+        <label type="variant">bataille de Varna</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000194" n="1">
+        <label type="main">bellum Germanicum</label>
+        <label type="variant">bellum Germanicus</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </event>
+      <event xml:id="event-000195" n="1">
+        <label type="main">beL’évangile du XIVe dimanche après la Pentecôte</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </event>
+      <event xml:id="event-000196" n="1">
+        <label type="main">brigandage</label>
+        <label type="standard">deuxième concile d'Éphèse</label>
+        <date when="0449"/>
+        <placeName key="Q47611">Éphèse</placeName>
+        <idno type="wikidata" cert="medium">Q1258045</idno>
+        <desc>concile tenu à Éphèse en 449</desc>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+        <note type="reconciliation-confidence">medium</note>
+        <note type="wikidata-candidates">Q915425|Q14625613|Q106437260</note>
+      </event>
+      <event xml:id="event-000197" n="1">
+        <label type="main">brigandages</label>
+        <label type="variant">brigandage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+        <note type="reconciliation-confidence">low</note>
+        <note type="wikidata-candidates">Q106437260</note>
+      </event>
+      <event xml:id="event-000198" n="1">
+        <label type="main">Béhiram</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000199" n="1">
+        <label type="main">Callège des Pontifes</label>
+        <label type="variant">callège de_le pontife</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </event>
+      <event xml:id="event-000200" n="1">
+        <label type="main">Campagne</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </event>
+      <event xml:id="event-000201" n="1">
+        <label type="main">Canon</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000202" n="1">
+        <label type="main">capitulation</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000203" n="1">
+        <label type="main">carnages</label>
+        <label type="variant">carnage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000204" n="1">
+        <label type="main">Carnaual</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000205" n="1">
+        <label type="main">Chalcedoine</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000206" n="1">
+        <label type="main">chutes</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000207" n="1">
+        <label type="main">Circoncision</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000208" n="1">
+        <label type="main">Cognaissance</label>
+        <label type="variant">connaissance</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </event>
+      <event xml:id="event-000209" n="1">
+        <label type="main">Colloque</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </event>
+      <event xml:id="event-000210" n="1">
+        <label type="main">COLLÉGIO PONTINICUM</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </event>
+      <event xml:id="event-000211" n="1">
+        <label type="main">combatz</label>
+        <label type="variant">combat</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0018</note>
+      </event>
+      <event xml:id="event-000212" n="1">
+        <label type="main">Comitia</label>
+        <label type="variant">comitium</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </event>
+      <event xml:id="event-000213" n="1">
+        <label type="main">commencegnominie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000214" n="1">
+        <label type="main">Concile de Bâle</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </event>
+      <event xml:id="event-000215" n="1">
+        <label type="main">Concile de Carthage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000216" n="1">
+        <label type="main">Concile de Chalcedoine</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000217" n="1">
+        <label type="main">Concile de Diospoli</label>
+        <label type="variant">concile de Diospoly</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000218" n="1">
+        <label type="main">Concile deuxième</label>
+        <label type="variant">Corcile deuxième</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000219" n="1">
+        <label type="main">Concile septieme</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000220" n="1">
+        <label type="main">Concile sixième</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000221" n="1">
+        <label type="main">Concile Éliberitain</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000222" n="1">
+        <label type="main">Conciliis</label>
+        <label type="variant">concilium</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000223" n="1">
+        <label type="main">Confusion Babylonienne</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026a</note>
+      </event>
+      <event xml:id="event-000224" n="1">
+        <label type="main">Conférence</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000225" n="1">
+        <label type="main">conquerage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000226" n="1">
+        <label type="main">Crois</label>
+        <label type="variant">croix</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0006</note>
+      </event>
+      <event xml:id="event-000227" n="1">
+        <label type="main">cruciatuum</label>
+        <label type="variant">cruciatus</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000228" n="1">
+        <label type="main">crucifixion</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000229" n="1">
+        <label type="main">crucifiément</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      </event>
+      <event xml:id="event-000230" n="1">
+        <label type="main">Des Élénéments</label>
+        <label type="variant">de_le événement</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </event>
+      <event xml:id="event-000231" n="1">
+        <label type="main">Dimanche d’Otobre</label>
+        <label type="variant">dimanche de</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000232" n="1">
+        <label type="main">dispute publique</label>
+        <label type="variant">dispute public</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </event>
+      <event xml:id="event-000233" n="1">
+        <label type="main">Dissuasion</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000234" n="1">
+        <label type="main">duel</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000235" n="1">
+        <label type="main">débandade</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000236" n="1">
+        <label type="main">dénudation</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0005</note>
+      </event>
+      <event xml:id="event-000237" n="1">
+        <label type="main">déprauation du siècle</label>
+        <label type="variant">déprauation de_le siècle</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000238" n="1">
+        <label type="main">désastres</label>
+        <label type="variant">désastre</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000239" n="1">
+        <label type="main">Enagedie du Caluaire</label>
+        <label type="variant">tragédie de_le caloaire</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0006</note>
+      </event>
+      <event xml:id="event-000240" n="1">
+        <label type="main">Epiphanio</label>
+        <label type="variant">Epiphanius</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000241" n="1">
+        <label type="main">Eucharistie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000242" n="1">
+        <label type="main">Evangile</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000243" n="1">
+        <label type="main">Exil</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </event>
+      <event xml:id="event-000244" n="1">
+        <label type="main">Exode trentième</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000245" n="1">
+        <label type="main">expérience</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000246" n="1">
+        <label type="main">faits et gêtes</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000247" n="1">
+        <label type="main">faits remarquables de guerre</label>
+        <label type="variant">fait remarquable de guerre</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000248" n="1">
+        <label type="main">festins</label>
+        <label type="variant">festin</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000249" n="1">
+        <label type="main">Fleurs de Lys</label>
+        <label type="variant">fleur de lys</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000250" n="1">
+        <label type="main">fondation</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000251" n="1">
+        <label type="main">foudroyement</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000252" n="1">
+        <label type="main">Fronde</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </event>
+      <event xml:id="event-000253" n="1">
+        <label type="main">funestes combats</label>
+        <label type="variant">funeste combat</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000254" n="1">
+        <label type="main">funérailles</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000255" n="1">
+        <label type="main">Furieuse fête</label>
+        <label type="variant">furieux fête</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </event>
+      <event xml:id="event-000256" n="1">
+        <label type="main">fête</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000257" n="1">
+        <label type="main">Fête des Taureaux</label>
+        <label type="variant">fête de_le taureaux</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000258" n="1">
+        <label type="main">Gataille</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </event>
+      <event xml:id="event-000259" n="1">
+        <label type="main">grande guerre</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </event>
+      <event xml:id="event-000260" n="1">
+        <label type="main">grande messe</label>
+        <label type="variant">grand messe</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000261" n="1">
+        <label type="main">grandes fêtes</label>
+        <label type="variant">grand feète</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </event>
+      <event xml:id="event-000262" n="1">
+        <label type="main">Guerre de Bourgongne-làtte Gombault</label>
+        <label type="variant">guerre de Bourgogne conter</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000263" n="1">
+        <label type="main">guerre de Candie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </event>
+      <event xml:id="event-000264" n="1">
+        <label type="main">guerre de Pont</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000265" n="1">
+        <label type="main">guerre de Troie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </event>
+      <event xml:id="event-000266" n="1">
+        <label type="main">Guerreautant</label>
+        <label type="variant">guerreautaët</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000267" n="1">
+        <label type="main">guerres de Hongrie</label>
+        <label type="variant">guerre de Hongrie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000268" n="1">
+        <label type="main">générales assises</label>
+        <label type="variant">général assise</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </event>
+      <event xml:id="event-000269" n="1">
+        <label type="main">Herennium</label>
+        <label type="variant">Herennius</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000270" n="1">
+        <label type="main">Heresies</label>
+        <label type="variant">hérésie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000271" n="1">
+        <label type="main">Histoire des Persécutions</label>
+        <label type="variant">histoire de_le perse-cution</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </event>
+      <event xml:id="event-000272" n="1">
+        <label type="main">Histoire Romaine</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000273" n="1">
+        <label type="main">Homilie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000274" n="1">
+        <label type="main">Homilie sur l’Ascension</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000275" n="1">
+        <label type="main">images</label>
+        <label type="variant">image</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000276" n="1">
+        <label type="main">In bello</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000277" n="1">
+        <label type="main">incendie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000278" n="1">
+        <label type="main">inquisition</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000279" n="1">
+        <label type="main">intéholocaustes</label>
+        <label type="variant">intesholocauste</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000280" n="1">
+        <label type="main">iudiciumque</label>
+        <label type="variant">iudicium</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000281" n="1">
+        <label type="main">JExode</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0028</note>
+      </event>
+      <event xml:id="event-000282" n="1">
+        <label type="main">journée</label>
+        <label type="variant">journer</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </event>
+      <event xml:id="event-000283" n="1">
+        <label type="main">la grande Circoncision</label>
+        <label type="variant">le grand circoncision</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000284" n="1">
+        <label type="main">La licence de Mars</label>
+        <label type="variant">le licence de Mars</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </event>
+      <event xml:id="event-000285" n="1">
+        <label type="main">La perpétuelle Croix</label>
+        <label type="variant">le perpétuel croix</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0001</note>
+      </event>
+      <event xml:id="event-000286" n="1">
+        <label type="main">la sanglante bataille</label>
+        <label type="variant">le sanglant bataille</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </event>
+      <event xml:id="event-000287" n="1">
+        <label type="main">la Slève</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0023</note>
+      </event>
+      <event xml:id="event-000288" n="1">
+        <label type="main">las zambras y saraos</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000289" n="1">
+        <label type="main">les embrasements</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000290" n="1">
+        <label type="main">Les Saturnales</label>
+        <label type="variant">le saturnales</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0004a</note>
+      </event>
+      <event xml:id="event-000291" n="1">
+        <label type="main">Les sept fêtes de la Vierge</label>
+        <label type="variant">le sept fête de le vierge</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000292" n="1">
+        <label type="main">Livre de l’Analogie des mots</label>
+        <label type="variant">livre de le analogie de_le</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000293" n="1">
+        <label type="main">Loi des douze tables</label>
+        <label type="variant">loi de_le douze table</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000294" n="1">
+        <label type="main">Lords Supper</label>
+        <label type="variant">lordum supper</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </event>
+      <event xml:id="event-000295" n="1">
+        <label type="main">L’absolution</label>
+        <label type="variant">absolution</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000296" n="1">
+        <label type="main">marché</label>
+        <label type="variant">marcher</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000297" n="1">
+        <label type="main">marCiel</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000298" n="1">
+        <label type="main">Mardi-gras</label>
+        <label type="variant">mardi</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </event>
+      <event xml:id="event-000299" n="1">
+        <label type="main">mariaLge</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0012</note>
+      </event>
+      <event xml:id="event-000300" n="1">
+        <label type="main">Martyrium</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000301" n="1">
+        <label type="main">matière</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </event>
+      <event xml:id="event-000302" n="1">
+        <label type="main">matière divine</label>
+        <label type="variant">matière divinement</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      </event>
+      <event xml:id="event-000303" n="1">
+        <label type="main">Miltiade</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000304" n="1">
+        <label type="main">Murænæ causa</label>
+        <label type="variant">Muraena causa</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000305" n="1">
+        <label type="main">MÉCHANT SIÈCLE</label>
+        <label type="variant">meschant siescli</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </event>
+      <event xml:id="event-000306" n="1">
+        <label type="main">Natali</label>
+        <label type="variant">Natalis</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000307" n="1">
+        <label type="main">naufragio</label>
+        <label type="variant">naufragium</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000308" n="1">
+        <label type="main">nauigatsion sur mer</label>
+        <label type="variant">nauigation sur mer</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0027</note>
+      </event>
+      <event xml:id="event-000309" n="1">
+        <label type="main">Nouveau-Testament</label>
+        <label type="variant">testament</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </event>
+      <event xml:id="event-000310" n="1">
+        <label type="main">Nélèbres victoires</label>
+        <label type="variant">célèbre victoire</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000311" n="1">
+        <label type="main">Olympici ludi</label>
+        <label type="variant">Olympicus ludus</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000312" n="1">
+        <label type="main">orages</label>
+        <label type="variant">orage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000313" n="1">
+        <label type="main">Oraison</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000314" n="1">
+        <label type="main">Origènements</label>
+        <label type="variant">origene</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000315" n="1">
+        <label type="main">parricide</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0015</note>
+      </event>
+      <event xml:id="event-000316" n="1">
+        <label type="main">Pascha</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000317" n="1">
+        <label type="main">Pasques dernières</label>
+        <label type="variant">pasque dernier</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000318" n="1">
+        <label type="main">patriæ calamitate</label>
+        <label type="variant">patria calamitas</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000319" n="1">
+        <label type="main">Pauvrété</label>
+        <label type="variant">pauvretée</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000320" n="1">
+        <label type="main">Paſcua</label>
+        <label type="variant">pascuum</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0010</note>
+      </event>
+      <event xml:id="event-000321" n="1">
+        <label type="main">Phocide</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000322" n="1">
+        <label type="main">premiers siècles</label>
+        <label type="variant">premier siècle</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000323" n="1">
+        <label type="main">princichangements</label>
+        <label type="variant">princichangement</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000324" n="1">
+        <label type="main">Proceffion</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000325" n="1">
+        <label type="main">Processions éternelles</label>
+        <label type="variant">procession éternel</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000326" n="1">
+        <label type="main">Prohibition</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000327" n="1">
+        <label type="main">présent</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025a</note>
+      </event>
+      <event xml:id="event-000328" n="1">
+        <label type="main">Préture</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000329" n="1">
+        <label type="main">purgation</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000330" n="1">
+        <label type="main">pèregrinatonon</label>
+        <label type="variant">pérégrinatio</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000331" n="1">
+        <label type="main">Radaman</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000332" n="1">
+        <label type="main">Renaissances</label>
+        <label type="variant">renaître</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0013</note>
+      </event>
+      <event xml:id="event-000333" n="1">
+        <label type="main">Resurrecton</label>
+        <label type="variant">resurrectiou</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000334" n="1">
+        <label type="main">Retoncuation</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000335" n="1">
+        <label type="main">Royal festin</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000336" n="1">
+        <label type="main">Rubicon</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000337" n="1">
+        <label type="main">Rédicophani</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0011</note>
+      </event>
+      <event xml:id="event-000338" n="1">
+        <label type="main">rétablissement</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000339" n="1">
+        <label type="main">révolution des temps</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000340" n="1">
+        <label type="main">Sacrifice</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000341" n="1">
+        <label type="main">saintes fêtes</label>
+        <label type="variant">saint feète</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002b</note>
+      </event>
+      <event xml:id="event-000342" n="1">
+        <label type="main">Samedi de Pasques</label>
+        <label type="variant">samedi de Pâques</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0022</note>
+      </event>
+      <event xml:id="event-000343" n="1">
+        <label type="main">Samedis</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </event>
+      <event xml:id="event-000344" n="1">
+        <label type="main">Sepmaine</label>
+        <label type="variant">semaine</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000345" n="1">
+        <label type="main">Seure fortie de la Chandeleur</label>
+        <label type="variant">sûr fortie de le chandeleur</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000346" n="1">
+        <label type="main">Siecies</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000347" n="1">
+        <label type="main">sixième Concile universel</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000348" n="1">
+        <label type="main">Siècle doré</label>
+        <label type="variant">siècle dorer</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0025b</note>
+      </event>
+      <event xml:id="event-000349" n="1">
+        <label type="main">siècles précédents</label>
+        <label type="variant">siècle précédent</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000350" n="1">
+        <label type="main">Sympose</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000351" n="1">
+        <label type="main">Synode Eliberitain</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000352" n="1">
+        <label type="main">Synode Grec</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0033</note>
+      </event>
+      <event xml:id="event-000353" n="1">
+        <label type="main">tapisserie tendue</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0007</note>
+      </event>
+      <event xml:id="event-000354" n="1">
+        <label type="main">tempêtes marines</label>
+        <label type="variant">tempête marin</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026c</note>
+      </event>
+      <event xml:id="event-000355" n="1">
+        <label type="main">théatre</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000356" n="1">
+        <label type="main">Tous les siècles</label>
+        <label type="variant">tout le siècle</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      </event>
+      <event xml:id="event-000357" n="1">
+        <label type="main">tradidie</label>
+        <label type="variant">tragédie</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      </event>
+      <event xml:id="event-000358" n="1">
+        <label type="main">tradidieDomitius</label>
+        <label type="variant">tragédiedomitius</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0017</note>
+      </event>
+      <event xml:id="event-000359" n="1">
+        <label type="main">Tragédies</label>
+        <label type="variant">tragédiens</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0014</note>
+      </event>
+      <event xml:id="event-000360" n="1">
+        <label type="main">Traité de la Paix</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000361" n="1">
+        <label type="main">Transfiguration</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000362" n="1">
+        <label type="main">triomphes anciens</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000363" n="1">
+        <label type="main">Troianum bellum</label>
+        <label type="variant">Troianus bellum</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000364" n="1">
+        <label type="main">turicOnfiance</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000365" n="1">
+        <label type="main">vendredi saint</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0002a</note>
+      </event>
+      <event xml:id="event-000366" n="1">
+        <label type="main">Vespres Sicilienes</label>
+        <label type="variant">sicilien</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000367" n="1">
+        <label type="main">vieux siècles</label>
+        <label type="variant">vieux siècle</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0026b</note>
+      </event>
+      <event xml:id="event-000368" n="1">
+        <label type="main">vindemialibus feriis</label>
+        <label type="variant">uindemialis feriae</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0032</note>
+      </event>
+      <event xml:id="event-000369" n="1">
+        <label type="main">Visitation de Notre-Dame</label>
+        <label type="variant">visitation de Nostre</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0031_t1</note>
+      </event>
+      <event xml:id="event-000370" n="1">
+        <label type="main">voyage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0008</note>
+      </event>
+      <event xml:id="event-000371" n="1">
+        <label type="main">Voyage-là</label>
+        <label type="variant">voyage</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0018</note>
+      </event>
+      <event xml:id="event-000372" n="1">
+        <label type="main">ÉihesSacrifice</label>
+        <note type="mentions">1</note>
+        <note type="sources">LIV0003</note>
+      </event>
+      <event xml:id="event-000373" n="0">
+        <label type="main">audience</label>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0009</note>
+      </event>
+      <event xml:id="event-000374" n="0">
+        <label type="main">hefeiguerre</label>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0031_t2</note>
+      </event>
+      <event xml:id="event-000375" n="0">
+        <label type="main">XIV</label>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0024</note>
+      </event>
+      <event xml:id="event-000376" n="0">
+        <label type="main">YYII</label>
+        <note type="mentions">0</note>
+        <note type="sources">LIV0024</note>
+      </event>
+    </listEvent>
+  </standOff>
+</TEI>
