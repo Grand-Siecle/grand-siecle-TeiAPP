@@ -1,425 +1,561 @@
 {
-  "actions" : [ {
-    "app" : "jinks",
-    "description" : "Reindex the data",
-    "label" : "Reindex data",
-    "name" : "reindex"
-  }, {
-    "description" : "Rebuild list of ODDs and recompile",
-    "label" : "Fix ODDs",
-    "name" : "fix-odds"
-  }, {
-    "app" : "jinks",
-    "description" : "Download the app as a `.xar` file",
-    "label" : "Download",
-    "name" : "download"
-  }, {
-    "app" : "jinks",
-    "description" : "Sync the app to a directory on the local file system",
-    "label" : "Sync",
-    "name" : "file-sync",
-    "parameters" : [ {
-      "required" : true,
-      "description" : "The path to the target directory",
-      "label" : "Directory",
-      "name" : "target"
-    } ]
-  }, {
-    "description" : "Generate a sitemap.xml containing all document URLs and their pages",
-    "label" : "Sitemap",
-    "name" : "sitemap"
-  } ],
-  "profiles" : [ "base10", "theme-base10", "iiif", "registers", "landing-page", "toolbar-toggles", "metadata-panel", "edition-navigation", "timeline", "docker", "sitemap", "ci", "upload", "metadata-editor", "jinntap", "annotate" ],
-  "shortname" : "metadata",
-  "label" : "Grand Siècle",
-  "version" : "1.0.0",
-  "id" : "https://e-editiones.org/apps/GdSiecle",
-  "_update" : false,
-  "styles" : [ "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css", "resources/css/pico-components.css", "resources/css/jinks-theme.css", "resources/css/grand-siecle.css" ],
-  "_noDeploy" : false,
-  "ci" : {
-    "provider" : "github",
-    "enabled" : true
-  },
-  "depends" : [ "base10", "docker", "jinntap", "static", "theme-base10", "iiif", "registers", "landing-page", "toolbar-toggles", "metadata-panel", "edition-navigation", "timeline", "sitemap", "ci", "upload", "metadata-editor", "annotate" ],
-  "template-suffix" : "\\.tpl",
-  "profile" : {
-    "type" : "blueprint"
-  },
-  "ignore" : [ "repo.xml", "resources/css/components.css" ],
-  "target" : "/db/apps/jinks/temp/GdSiecle",
-  "menu" : {
-    "language" : true,
-    "delete" : true,
-    "dark-mode" : true,
-    "items" : [ {
-      "url" : "browse.html",
-      "id" : "Start"
-    }, {
-      "url" : "people",
-      "id" : "people"
-    }, {
-      "url" : "places",
-      "id" : "places"
-    }, {
-      "url" : "organizations",
-      "id" : "organizations"
-    }, {
-      "url" : "browse.html",
-      "id" : "explore"
-    } ],
-    "login" : true,
-    "download" : true,
-    "search" : true
-  },
-  "theme" : {
-    "layout" : {
-      "class" : "fixed-layout",
-      "search" : "before-top",
-      "footer" : {
-        "mobile" : {
-          "enabled" : true
+    "actions": [
+        {
+            "app": "jinks",
+            "description": "Reindex the data",
+            "label": "Reindex data",
+            "name": "reindex"
+        },
+        {
+            "description": "Rebuild list of ODDs and recompile",
+            "label": "Fix ODDs",
+            "name": "fix-odds"
+        },
+        {
+            "app": "jinks",
+            "description": "Download the app as a `.xar` file",
+            "label": "Download",
+            "name": "download"
+        },
+        {
+            "app": "jinks",
+            "description": "Sync the app to a directory on the local file system",
+            "label": "Sync",
+            "name": "file-sync",
+            "parameters": [
+                {
+                    "required": true,
+                    "description": "The path to the target directory",
+                    "label": "Directory",
+                    "name": "target"
+                }
+            ]
+        },
+        {
+            "description": "Generate a sitemap.xml containing all document URLs and their pages",
+            "label": "Sitemap",
+            "name": "sitemap"
         }
-      },
-      "after" : {
-        "width" : "min(30vw, 356px)",
-        "hidden" : false,
-        "toggle" : true
-      },
-      "before" : {
-        "width" : "min(30vw, 356px)",
-        "hidden" : false,
-        "toggle" : true
-      },
-      "max-width" : "84rem"
+    ],
+    "profiles": [
+        "base10",
+        "theme-base10",
+        "iiif",
+        "registers",
+        "landing-page",
+        "toolbar-toggles",
+        "metadata-panel",
+        "edition-navigation",
+        "timeline",
+        "docker",
+        "sitemap",
+        "ci",
+        "upload",
+        "metadata-editor",
+        "jinntap",
+        "annotate"
+    ],
+    "shortname": "metadata",
+    "label": "Grand Siècle",
+    "version": "1.0.0",
+    "id": "https://e-editiones.org/apps/GdSiecle",
+    "_update": false,
+    "styles": [
+        "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css",
+        "resources/css/pico-components.css",
+        "resources/css/jinks-theme.css",
+        "resources/css/grand-siecle.css"
+    ],
+    "_noDeploy": false,
+    "ci": {
+        "provider": "github",
+        "enabled": true
     },
-    "landing" : {
-      "hero" : {
-        "background-position" : "center",
-        "background-color" : "rgba(30, 58, 109, 0.55)",
-        "class" : "two-column",
-        "background-size" : "cover",
-        "background-image" : "../images/image-front_1.jpg",
-        "background-repeat" : "no-repeat"
-      },
-      "bottom" : {
-        "background-color" : "rgba(30, 58, 109, 0.7)",
-        "background-size" : "cover",
-        "background-image" : "../images/image-front_5.jpg",
-        "background-repeat" : "no-repeat"
-      }
+    "depends": [
+        "base10",
+        "docker",
+        "jinntap",
+        "static",
+        "theme-base10",
+        "iiif",
+        "registers",
+        "landing-page",
+        "toolbar-toggles",
+        "metadata-panel",
+        "edition-navigation",
+        "timeline",
+        "sitemap",
+        "ci",
+        "upload",
+        "metadata-editor",
+        "annotate"
+    ],
+    "template-suffix": "\\.tpl",
+    "profile": {
+        "type": "blueprint"
     },
-    "menubar" : {
-      "background-color" : "var(--jinks-colors-500)",
-      "color" : "#ffffff",
-      "background-image" : "none"
+    "ignore": [
+        "repo.xml",
+        "resources/css/components.css"
+    ],
+    "target": "/db/apps/jinks/temp/GdSiecle",
+    "menu": {
+        "language": true,
+        "delete": true,
+        "dark-mode": true,
+        "items": [
+            {
+                "url": "browse.html",
+                "id": "Start"
+            },
+            {
+                "url": "people",
+                "id": "people"
+            },
+            {
+                "url": "places",
+                "id": "places"
+            },
+            {
+                "url": "organizations",
+                "id": "organizations"
+            },
+            {
+                "url": "entities",
+                "id": "entities"
+            },
+            {
+                "url": "browse.html",
+                "id": "explore"
+            }
+        ],
+        "login": true,
+        "download": true,
+        "search": true
     },
-    "registers" : {
-      "columns" : 2
+    "theme": {
+        "layout": {
+            "class": "fixed-layout",
+            "search": "before-top",
+            "footer": {
+                "mobile": {
+                    "enabled": true
+                }
+            },
+            "after": {
+                "width": "min(30vw, 356px)",
+                "hidden": false,
+                "toggle": true
+            },
+            "before": {
+                "width": "min(30vw, 356px)",
+                "hidden": false,
+                "toggle": true
+            },
+            "max-width": "84rem"
+        },
+        "landing": {
+            "hero": {
+                "background-position": "center",
+                "background-color": "rgba(30, 58, 109, 0.55)",
+                "class": "two-column",
+                "background-size": "cover",
+                "background-image": "../images/image-front_1.jpg",
+                "background-repeat": "no-repeat"
+            },
+            "bottom": {
+                "background-color": "rgba(30, 58, 109, 0.7)",
+                "background-size": "cover",
+                "background-image": "../images/image-front_5.jpg",
+                "background-repeat": "no-repeat"
+            }
+        },
+        "menubar": {
+            "background-color": "var(--jinks-colors-500)",
+            "color": "#ffffff",
+            "background-image": "none"
+        },
+        "registers": {
+            "columns": 2
+        },
+        "splash": {
+            "width": "320px",
+            "image": "../images/tei-publisher-logo-color.svg",
+            "height": "auto"
+        },
+        "body": {
+            "background-color": "var(--jinks-colors-100)"
+        },
+        "logo": {
+            "width": "140px",
+            "image": "../images/tei-publisher-logo-contrast-color.svg",
+            "height": "48px"
+        },
+        "breadcrumbs": {
+            "max": "40ch"
+        },
+        "content": {
+            "max-width": "70ch"
+        },
+        "texture": {
+            "background-image": null
+        },
+        "colors": {
+            "palettes": {
+                "green": "palette-green.css",
+                "teal": "palette-teal.css",
+                "neutral": "palette-neutral.css",
+                "blue": "palette-blue.css",
+                "beige": "palette-beige.css"
+            },
+            "palette": "green"
+        },
+        "fonts": {
+            "toc": {
+                "size": "1.125rem"
+            },
+            "menubar": {
+                "size": "14px"
+            },
+            "footnote": {
+                "size": "0.9em"
+            },
+            "base": {
+                "family": "'Inter', 'Noto', sans-serif",
+                "line-height": "1.4",
+                "size": "16px",
+                "weight": "400"
+            },
+            "heading": {
+                "family": "'Inter', 'Noto', sans-serif",
+                "size": "1.2rem",
+                "weight": "400"
+            },
+            "breadcrumbs": {
+                "size": "0.9rem"
+            },
+            "content": {
+                "family": "JunicodeVF, Georgia, 'Times New Roman', serif",
+                "line-height": "150%",
+                "size": "1.25rem",
+                "weight": "400"
+            }
+        },
+        "toolbar": {
+            "background-color": "var(--jinks-colors-200)",
+            "color": "var(--jinks-color-primary)"
+        }
     },
-    "splash" : {
-      "width" : "320px",
-      "image" : "../images/tei-publisher-logo-color.svg",
-      "height" : "auto"
+    "features": {
+        "metadata": {
+            "enabled": true
+        },
+        "collab": {
+            "server": "wss://dev.tei-publisher.com/collab",
+            "enable": false
+        },
+        "menubar": true,
+        "register": {
+            "description": "auto",
+            "enabled": false
+        },
+        "upload": {
+            "target": "",
+            "accept": ".xml, .tei, .odd, .docx, .md, .mei",
+            "enabled": true
+        },
+        "timeline": {
+            "document-view": false,
+            "enabled": true
+        },
+        "iiif": {
+            "viewer": "pb-facsimile",
+            "base_uri": "",
+            "milestone_xpath": "//tei:pb",
+            "enabled": true,
+            "type": "iiif"
+        },
+        "toolbar": {
+            "zoom": true,
+            "navigation": true,
+            "enabled": true,
+            "progress": {
+                "subscribe": "transcription",
+                "enabled": true
+            }
+        },
+        "toolbar-toggles": {
+            "toggle-reading": false,
+            "enabled": false
+        },
+        "hero": false,
+        "toc": {
+            "collapse": false,
+            "enabled": false
+        },
+        "edition-navigation": {
+            "in-correspondence": false,
+            "navigation": false
+        },
+        "browse": {
+            "sort": {
+                "options": [
+                    {
+                        "label": "Category",
+                        "value": "category",
+                        "key": "browse.category"
+                    },
+                    {
+                        "label": "Title",
+                        "value": "title",
+                        "key": "browse.title"
+                    },
+                    {
+                        "label": "Author",
+                        "value": "author",
+                        "key": "browse.author"
+                    }
+                ],
+                "default": "category"
+            },
+            "field": {
+                "options": [
+                    {
+                        "label": "Content",
+                        "value": "text",
+                        "key": "search.content"
+                    },
+                    {
+                        "label": "Title",
+                        "value": "title",
+                        "key": "search.title"
+                    }
+                ],
+                "default": "text"
+            }
+        },
+        "jinntap": {
+            "cdn": "https://cdn.jsdelivr.net/npm/@jinntec/jinntap",
+            "schema": "resources/schema/schema.json",
+            "version": "1.27.0"
+        },
+        "sitemap": {
+            "custom": [
+                "index.html"
+            ],
+            "base-uri": "http://dev.tei-publisher.com"
+        }
     },
-    "body" : {
-      "background-color" : "var(--jinks-colors-100)"
+    "indexing": {
+        "tei": {
+            "enable": true,
+            "context": "div"
+        },
+        "docbook": {
+            "enable": true
+        },
+        "jats": {
+            "enable": true
+        }
     },
-    "logo" : {
-      "width" : "140px",
-      "image" : "../images/tei-publisher-logo-contrast-color.svg",
-      "height" : "48px"
+    "data": {
+        "landing": "landing/landing.xml"
     },
-    "breadcrumbs" : {
-      "max" : "40ch"
+    "_lastModified": null,
+    "pkg": {
+        "website": "http://tei-publisher.org",
+        "abbrev": "GdSiecle",
+        "author": "Wolfgang Meier et al.",
+        "version": "1.0.0",
+        "dependencies": [
+            {
+                "semver": "1",
+                "package": "http://e-editiones.org/roaster"
+            },
+            {
+                "semver": "6",
+                "package": "http://existsolutions.com/apps/tei-publisher-lib"
+            },
+            {
+                "semver": "1",
+                "package": "http://tei-publisher.com/library/jinks-templates"
+            },
+            {
+                "semver": "6",
+                "package": "http://expath.org/ns/crypto"
+            },
+            {
+                "semver": "2",
+                "package": "http://existsolutions.com/ns/jwt"
+            }
+        ],
+        "permissions": "rw-r--r--",
+        "user": {
+            "password": "simple",
+            "name": "tei",
+            "group": "tei"
+        }
     },
-    "content" : {
-      "max-width" : "70ch"
+    "description": "Application TEI Publisher dédiée à l'exploration des discours français sur la peinture du premier XVIIe siècle. Elle donne accès à un corpus de plusieurs centaines de sources anciennes — écrits d'artistes, d'amateurs et de curieux — éditées, commentées et interrogeables par mots-clefs. Cet outil s'inscrit dans un projet de recherche visant à retracer la naissance d'un langage artistique proprement français, entre la fin du XVIe siècle et les années 1650.",
+    "_dry": false,
+    "source": "/db/apps/jinks/profiles/annotate",
+    "type": "feature",
+    "skip": [
+        "^doc/.*$",
+        "setup.xql",
+        "config.json"
+    ],
+    "odds": [
+        "teipublisher.odd",
+        "landing.odd",
+        "annotations.odd",
+        "grand_siecle.odd"
+    ],
+    "docker": {
+        "eXist": "6.4.0",
+        "features": {
+            "nodejs": false,
+            "xst": false,
+            "ner": false,
+            "tex": false
+        },
+        "jwt": "2.0.1",
+        "roaster": "1.11.0",
+        "ports": {
+            "https": 8443,
+            "http": 8080
+        },
+        "crypto": "6.0.1",
+        "tei-publisher-lib": "6.0.2",
+        "ant": "1.10.15",
+        "jinks-templates": "1.2.0"
     },
-    "texture" : {
-      "background-image" : null
+    "category": "workflow",
+    "_overwrite": "quick",
+    "defaults": {
+        "data": "data",
+        "landing": "index.html",
+        "address-by-id": false,
+        "odd-root": "resources/odd",
+        "data-default": "",
+        "direction": "ltr",
+        "template": "view.html",
+        "browse": "browse.html",
+        "search": "div",
+        "languages": [
+            "bg",
+            "cs",
+            "zh_CN",
+            "zh_TW",
+            "de",
+            "en",
+            "es",
+            "el",
+            "fr",
+            "fi",
+            "it",
+            "ka",
+            "nl",
+            "no",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "sl",
+            "sv",
+            "tr",
+            "uk"
+        ],
+        "upload": "annotate",
+        "view": "div",
+        "data-exclude": [
+            "doc($config:data-root || '/taxonomy.xml')//tei:text",
+            "collection($config:register-root)//tei:text"
+        ],
+        "odd": "grand_siecle.odd",
+        "pagination": {
+            "fill": 5,
+            "depth": 10
+        },
+        "media": [
+            "web",
+            "print",
+            "epub"
+        ],
+        "register-root": "registers"
     },
-    "colors" : {
-      "palettes" : {
-        "green" : "palette-green.css",
-        "teal" : "palette-teal.css",
-        "neutral" : "palette-neutral.css",
-        "blue" : "palette-blue.css",
-        "beige" : "palette-beige.css"
-      },
-      "palette" : "green"
+    "templating": {
+        "use": [
+            "templates/iiif-blocks.html",
+            "templates/register-blocks.html",
+            "templates/toggle-blocks.html",
+            "templates/metadata-blocks.html",
+            "templates/edition-navigation-blocks.html",
+            "templates/timeline-blocks.html",
+            "templates/upload-blocks.html",
+            "templates/metadata-editor.html",
+            "templates/editor-blocks.html",
+            "templates/annotation-blocks.html"
+        ],
+        "modules": {
+            "http://teipublisher.com/ns/templates/browse": {
+                "at": "modules/templates/browse.xqm",
+                "prefix": "browse"
+            },
+            "http://teipublisher.com/ns/templates/landing-page": {
+                "at": "modules/templates/landing-page.xqm",
+                "prefix": "landing"
+            },
+            "http://teipublisher.com/ns/templates/page": {
+                "at": "modules/templates/page.xqm",
+                "prefix": "page"
+            }
+        }
     },
-    "fonts" : {
-      "toc" : {
-        "size" : "1.125rem"
-      },
-      "menubar" : {
-        "size" : "14px"
-      },
-      "footnote" : {
-        "size" : "0.9em"
-      },
-      "base" : {
-        "family" : "'Inter', 'Noto', sans-serif",
-        "line-height" : "1.4",
-        "size" : "16px",
-        "weight" : "400"
-      },
-      "heading" : {
-        "family" : "'Inter', 'Noto', sans-serif",
-        "size" : "1.2rem",
-        "weight" : "400"
-      },
-      "breadcrumbs" : {
-        "size" : "0.9rem"
-      },
-      "content" : {
-        "family" : "JunicodeVF, Georgia, 'Times New Roman', serif",
-        "line-height" : "150%",
-        "size" : "1.25rem",
-        "weight" : "400"
-      }
+    "script": {
+        "custom": [],
+        "webcomponents": "3.0.5",
+        "extra-components": [],
+        "cdn": "https://cdn.jsdelivr.net/npm/@teipublisher/pb-components",
+        "fore": "2.6.0"
     },
-    "toolbar" : {
-      "background-color" : "var(--jinks-colors-200)",
-      "color" : "var(--jinks-color-primary)"
-    }
-  },
-  "features" : {
-    "metadata" : {
-      "enabled" : true
-    },
-    "collab" : {
-      "server" : "wss://dev.tei-publisher.com/collab",
-      "enable" : false
-    },
-    "menubar" : true,
-    "register" : {
-      "description" : "auto",
-      "enabled" : false
-    },
-    "upload" : {
-      "target" : "",
-      "accept" : ".xml, .tei, .odd, .docx, .md, .mei",
-      "enabled" : true
-    },
-    "timeline" : {
-      "document-view" : false,
-      "enabled" : true
-    },
-    "iiif" : {
-      "viewer" : "pb-facsimile",
-      "base_uri" : "",
-      "milestone_xpath" : "//tei:pb",
-      "enabled" : true,
-      "type": "iiif"
-    },
-    "toolbar" : {
-      "zoom" : true,
-      "navigation" : true,
-      "enabled" : true,
-      "progress" : {
-        "subscribe" : "transcription",
-        "enabled" : true
-      }
-    },
-    "toolbar-toggles" : {
-      "toggle-reading" : false,
-      "enabled" : false
-    },
-    "hero" : false,
-    "toc" : {
-      "collapse" : false,
-      "enabled" : false
-    },
-    "edition-navigation" : {
-      "in-correspondence" : false,
-      "navigation" : false
-    },
-    "browse" : {
-      "sort" : {
-        "options" : [ {
-          "label" : "Category",
-          "value" : "category",
-          "key" : "browse.category"
-        }, {
-          "label" : "Title",
-          "value" : "title",
-          "key" : "browse.title"
-        }, {
-          "label" : "Author",
-          "value" : "author",
-          "key" : "browse.author"
-        } ],
-        "default" : "category"
-      },
-      "field" : {
-        "options" : [ {
-          "label" : "Content",
-          "value" : "text",
-          "key" : "search.content"
-        }, {
-          "label" : "Title",
-          "value" : "title",
-          "key" : "search.title"
-        } ],
-        "default" : "text"
-      }
-    },
-    "jinntap" : {
-      "cdn" : "https://cdn.jsdelivr.net/npm/@jinntec/jinntap",
-      "schema" : "resources/schema/schema.json",
-      "version" : "1.27.0"
-    },
-    "sitemap" : {
-      "custom" : [ "index.html" ],
-      "base-uri" : "http://dev.tei-publisher.com"
-    }
-  },
-  "indexing" : {
-    "tei" : {
-      "enable" : true,
-      "context" : "div"
-    },
-    "docbook" : {
-      "enable" : true
-    },
-    "jats" : {
-      "enable" : true
-    }
-  },
-  "data" : {
-    "landing" : "landing/landing.xml"
-  },
-  "_lastModified" : null,
-  "pkg" : {
-    "website" : "http://tei-publisher.org",
-    "abbrev" : "GdSiecle",
-    "author" : "Wolfgang Meier et al.",
-    "version" : "1.0.0",
-    "dependencies" : [ {
-      "semver" : "1",
-      "package" : "http://e-editiones.org/roaster"
-    }, {
-      "semver" : "6",
-      "package" : "http://existsolutions.com/apps/tei-publisher-lib"
-    }, {
-      "semver" : "1",
-      "package" : "http://tei-publisher.com/library/jinks-templates"
-    }, {
-      "semver" : "6",
-      "package" : "http://expath.org/ns/crypto"
-    }, {
-      "semver" : "2",
-      "package" : "http://existsolutions.com/ns/jwt"
-    } ],
-    "permissions" : "rw-r--r--",
-    "user" : {
-      "password" : "simple",
-      "name" : "tei",
-      "group" : "tei"
-    }
-  },
-  "description" : "Application TEI Publisher dédiée à l'exploration des discours français sur la peinture du premier XVIIe siècle. Elle donne accès à un corpus de plusieurs centaines de sources anciennes — écrits d'artistes, d'amateurs et de curieux — éditées, commentées et interrogeables par mots-clefs. Cet outil s'inscrit dans un projet de recherche visant à retracer la naissance d'un langage artistique proprement français, entre la fin du XVIe siècle et les années 1650.",
-  "_dry" : false,
-  "source" : "/db/apps/jinks/profiles/annotate",
-  "type" : "feature",
-  "skip" : [ "^doc/.*$", "setup.xql", "config.json" ],
-  "odds" : [ "teipublisher.odd", "landing.odd", "annotations.odd", "grand_siecle.odd" ],
-  "docker" : {
-    "eXist" : "6.4.0",
-    "features" : {
-      "nodejs" : false,
-      "xst" : false,
-      "ner" : false,
-      "tex" : false
-    },
-    "jwt" : "2.0.1",
-    "roaster" : "1.11.0",
-    "ports" : {
-      "https" : 8443,
-      "http" : 8080
-    },
-    "crypto" : "6.0.1",
-    "tei-publisher-lib" : "6.0.2",
-    "ant" : "1.10.15",
-    "jinks-templates" : "1.2.0"
-  },
-  "category" : "workflow",
-  "_overwrite" : "quick",
-  "defaults" : {
-    "data" : "data",
-    "landing" : "index.html",
-    "address-by-id" : false,
-    "odd-root" : "resources/odd",
-    "data-default" : "",
-    "direction" : "ltr",
-    "template" : "view.html",
-    "browse" : "browse.html",
-    "search" : "div",
-    "languages" : [ "bg", "cs", "zh_CN", "zh_TW", "de", "en", "es", "el", "fr", "fi", "it", "ka", "nl", "no", "pl", "pt", "ro", "ru", "sl", "sv", "tr", "uk" ],
-    "upload" : "annotate",
-    "view" : "div",
-    "data-exclude" : [ "doc($config:data-root || '/taxonomy.xml')//tei:text", "collection($config:register-root)//tei:text" ],
-    "odd" : "grand_siecle.odd",
-    "pagination" : {
-      "fill" : 5,
-      "depth" : 10
-    },
-    "media" : [ "web", "print", "epub" ],
-    "register-root" : "registers"
-  },
-  "templating" : {
-    "use" : [ "templates/iiif-blocks.html", "templates/register-blocks.html", "templates/toggle-blocks.html", "templates/metadata-blocks.html", "templates/edition-navigation-blocks.html", "templates/timeline-blocks.html", "templates/upload-blocks.html", "templates/metadata-editor.html", "templates/editor-blocks.html", "templates/annotation-blocks.html" ],
-    "modules" : {
-      "http://teipublisher.com/ns/templates/browse" : {
-        "at" : "modules/templates/browse.xqm",
-        "prefix" : "browse"
-      },
-      "http://teipublisher.com/ns/templates/landing-page" : {
-        "at" : "modules/templates/landing-page.xqm",
-        "prefix" : "landing"
-      },
-      "http://teipublisher.com/ns/templates/page" : {
-        "at" : "modules/templates/page.xqm",
-        "prefix" : "page"
-      }
-    }
-  },
-  "script" : {
-    "custom" : [ ],
-    "webcomponents" : "3.0.5",
-    "extra-components" : [ ],
-    "cdn" : "https://cdn.jsdelivr.net/npm/@teipublisher/pb-components",
-    "fore" : "2.6.0"
-  },
-  "order" : 102,
-  "$schema" : "../../schema/jinks.json",
-  "i18n" : [ "registers", "landing-page", "edition-navigation" ],
-  "api" : [ {
-    "spec" : "iiif-api.json",
-    "prefix" : "iiif",
-    "id" : "https://e-editiones.org/api/iiif",
-    "path" : "iiif-api.xql"
-  }, {
-    "spec" : "registers-api.json",
-    "prefix" : "rview",
-    "id" : "http://teipublisher.com/api/registers/view",
-    "path" : "registers-api.xql"
-  }, {
-    "spec" : "timeline-api.json",
-    "prefix" : "timeline",
-    "id" : "http://teipublisher.com/api/timeline",
-    "path" : "timeline-api.xql"
-  }, {
-    "spec" : "sitemap-api.json",
-    "prefix" : "sitemap",
-    "id" : "http://tei-publisher.org/api/sitemap",
-    "path" : "sitemap.xql"
-  }, {
-    "spec" : "annotations/api.json",
-    "prefix" : "anno",
-    "id" : "http://teipublisher.com/api/annotations",
-    "path" : "annotations/annotations.xql"
-  } ]
+    "order": 102,
+    "$schema": "../../schema/jinks.json",
+    "i18n": [
+        "registers",
+        "landing-page",
+        "edition-navigation"
+    ],
+    "api": [
+        {
+            "spec": "iiif-api.json",
+            "prefix": "iiif",
+            "id": "https://e-editiones.org/api/iiif",
+            "path": "iiif-api.xql"
+        },
+        {
+            "spec": "registers-api.json",
+            "prefix": "rview",
+            "id": "http://teipublisher.com/api/registers/view",
+            "path": "registers-api.xql"
+        },
+        {
+            "spec": "timeline-api.json",
+            "prefix": "timeline",
+            "id": "http://teipublisher.com/api/timeline",
+            "path": "timeline-api.xql"
+        },
+        {
+            "spec": "sitemap-api.json",
+            "prefix": "sitemap",
+            "id": "http://tei-publisher.org/api/sitemap",
+            "path": "sitemap.xql"
+        },
+        {
+            "spec": "annotations/api.json",
+            "prefix": "anno",
+            "id": "http://teipublisher.com/api/annotations",
+            "path": "annotations/annotations.xql"
+        }
+    ]
 }
