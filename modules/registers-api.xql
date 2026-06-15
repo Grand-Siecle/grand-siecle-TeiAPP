@@ -221,24 +221,40 @@ declare function rview:cited($request as map(*)) {
             case "date" return $doc//tei:date[@ref = $ref]
             default return $doc//*[@ref = $ref]
     let $limit := 12
+    let $offset := xs:integer((($request?parameters?offset)[. castable as xs:integer], 0)[1])
     let $docUrl := $config:context-path || '/' || $file
+    let $label := rview:entry-label(collection($config:register-root)/id($id) => head())
+    let $searchUrl := $config:context-path || '/search.html?query=' || encode-for-uri('"' || $label || '"') || '&amp;doc=' || encode-for-uri($file)
     let $count := count($hits)
+    let $page := subsequence($hits, $offset + 1, $limit)
+    let $remaining := $count - ($offset + $limit)
+    let $more :=
+        if ($remaining > 0) then
+            <button type="button" class="gs-kwic-more-btn" data-id="{$id}" data-doc="{$src}" data-offset="{$offset + $limit}">
+                Voir plus ({$remaining} passage{if ($remaining > 1) then 's' else ''})
+            </button>
+        else ()
     return
-        <div class="gs-kwic">
-            <a class="gs-kwic-open" href="{$docUrl}" target="_blank" rel="noopener">Ouvrir le document ↗</a>
-            {
-                if ($count = 0) then
-                    <p class="gs-kwic-empty">Aucun passage localisé (mention sur un calque non affiché).</p>
-                else
-                    for $m in subsequence($hits, 1, $limit)
-                    return rview:kwic-line($m, $docUrl)
-            }
-            {
-                if ($count > $limit) then
-                    <p class="gs-kwic-more">… et {$count - $limit} autres passages</p>
-                else ()
-            }
-        </div>
+        if ($offset = 0) then
+            <div class="gs-kwic">
+                <div class="gs-kwic-actions">
+                    <a class="gs-kwic-open" href="{$docUrl}" target="_blank" rel="noopener">Ouvrir le document ↗</a>
+                    <a class="gs-kwic-search" href="{$searchUrl}" target="_blank" rel="noopener" title="Recherche plein-texte « {$label} » dans ce document (nouvel onglet)">Recherche « {$label} » dans ce document ↗</a>
+                </div>
+                {
+                    if ($count = 0) then
+                        <p class="gs-kwic-empty">Aucun passage localisé (mention sur un calque non affiché).</p>
+                    else
+                        for $m in $page
+                        return rview:kwic-line($m, $docUrl)
+                }
+                {$more}
+            </div>
+        else
+            <div class="gs-kwic-batch">
+                {for $m in $page return rview:kwic-line($m, $docUrl)}
+                {$more}
+            </div>
 };
 
 (:~ Build one keyword-in-context line around a mention element. :)

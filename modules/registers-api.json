@@ -2977,6 +2977,14 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
                     }
                 ],
                 "responses": {

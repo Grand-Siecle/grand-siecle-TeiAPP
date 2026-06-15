@@ -364,14 +364,21 @@ pb-leaflet-map {
 
 .gs-kwic-panel { padding: 0.2rem 0 0.7rem 1.3rem; }
 .gs-kwic { display: flex; flex-direction: column; gap: 0.4rem; }
-.gs-kwic-open {
-    align-self: flex-start;
+.gs-kwic-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.gs-kwic-open,
+.gs-kwic-search {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    color: var(--gs-gold, #9C7A3C);
-    margin-bottom: 0.2rem;
 }
+.gs-kwic-open { color: var(--gs-gold, #9C7A3C); }
+.gs-kwic-search { color: var(--gs-blue, #1E3A6D); }
+.gs-kwic-search:hover { color: var(--gs-gold, #9C7A3C); }
 .gs-kwic-line {
     display: block;
     font-family: "EB Garamond", Garamond, serif;
@@ -397,6 +404,19 @@ pb-leaflet-map {
     font-style: italic;
     margin: 0.2rem 0;
 }
+.gs-kwic-more-btn {
+    align-self: flex-start;
+    margin-top: 0.3rem;
+    background: none;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.4));
+    border-radius: 2px;
+    padding: 0.3rem 0.7rem;
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 0.85rem;
+    color: var(--gs-blue, #1E3A6D);
+    cursor: pointer;
+}
+.gs-kwic-more-btn:hover { border-color: var(--gs-gold, #9C7A3C); color: var(--gs-gold, #9C7A3C); }
 
 /* Sliders */
 .gs-slider-single { display: flex; align-items: center; gap: 0.6rem; }

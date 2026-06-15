@@ -35,4 +35,29 @@
                 });
         });
     });
+
+    // "Voir plus" — load the next batch of KWIC passages in place (delegated,
+    // because the buttons are injected dynamically).
+    document.addEventListener('click', function (ev) {
+        var more = ev.target.closest && ev.target.closest('.gs-kwic-more-btn');
+        if (!more) return;
+        ev.preventDefault();
+        var id = more.dataset.id, doc = more.dataset.doc, offset = more.dataset.offset;
+        var label = more.textContent;
+        more.textContent = 'Chargement…';
+        more.disabled = true;
+        fetch(endpoint + '/api/cited?id=' + encodeURIComponent(id)
+                + '&doc=' + encodeURIComponent(doc) + '&offset=' + encodeURIComponent(offset))
+            .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+            .then(function (html) {
+                var tmp = document.createElement('div');
+                tmp.innerHTML = html;
+                var batch = tmp.firstElementChild;
+                if (batch) {
+                    while (batch.firstChild) more.parentNode.insertBefore(batch.firstChild, more);
+                }
+                more.remove();
+            })
+            .catch(function () { more.textContent = label; more.disabled = false; });
+    });
 })();
