@@ -34,6 +34,12 @@ declare function sapi:autocomplete($request as map(*)) {
 };
 
 declare function sapi:search($request as map(*)) {
+    (: roaster passes an array(*) for the array-typed `doc` param; flatten to the
+       xs:string* that query:query-default expects (otherwise FORG0001 / 500).
+       Each value is a document filename relative to data-default, e.g.
+       "LIV0020_reconciled.tei.xml" → restricts the search to that document. :)
+    let $docs := (if ($request?parameters?doc instance of array(*)) then $request?parameters?doc?* else $request?parameters?doc)[. != '']
+    return
     (:If there is no query string, fill up the map with existing values:)
     if (empty($request?parameters?query))
     then
@@ -44,7 +50,7 @@ declare function sapi:search($request as map(*)) {
         (:The query passed to a Luecene query in ft:query is an XML element <query> containing one or two <bool>. The <bool> contain the original query and the transliterated query, as indicated by the user in $query-scripts.:)
         let $hitsAll :=
                 (:If the $query-scope is narrow, query the elements immediately below the lowest div in tei:text and the four major element below tei:teiHeader.:)
-                for $hit in query:query-default($request?parameters?field, $request?parameters?query, $request?parameters?doc, ())
+                for $hit in query:query-default($request?parameters?field, $request?parameters?query, $docs, ())
                 order by ft:score($hit) descending
                 return $hit
         let $hitCount := count($hitsAll)
@@ -55,10 +61,10 @@ declare function sapi:search($request as map(*)) {
             session:set-attribute($config:session-prefix || ".hitCount", $hitCount),
             session:set-attribute($config:session-prefix || ".search", $request?parameters?query),
             session:set-attribute($config:session-prefix || ".field", $request?parameters?field),
-            session:set-attribute($config:session-prefix || ".docs", $request?parameters?doc)
+            session:set-attribute($config:session-prefix || ".docs", $docs)
         )
         return
-            sapi:show-hits($request, $hits, $request?parameters?doc)
+            sapi:show-hits($request, $hits, $docs)
 };
 
 declare %private function sapi:show-hits($request as map(*), $hits as item()*, $docs as xs:string*) {
@@ -68,7 +74,7 @@ declare %private function sapi:show-hits($request as map(*), $hits as item()*, $
     let $config := tpu:parse-pi(root($hit), $request?parameters?view)
     let $parent := query:get-parent-section($config, $hit)
     let $parent-id := config:get-identifier($parent)
-    let $parent-id := if (exists($docs)) then replace($parent-id, "^.*?([^/]*)$", "$1") else $parent-id
+    let $parent-id := if (exists($docs)) then tokenize($parent-id, '/')[last()] else $parent-id
     let $div := query:get-current($config, $parent)
     let $expanded := util:expand($hit, "add-exist-id=all")
     let $docId := config:get-identifier($div)

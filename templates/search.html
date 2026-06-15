@@ -54,6 +54,9 @@
 
     [% template before %]
     <pb-search id="search-form" subscribe="search" value="[[ page:parameter($context, 'query', '') ]]" submit-on-load="submit-on-load" subforms=".facets">
+        [% if page:parameter($context, 'doc', '') != '' %]
+        <input type="hidden" name="doc" value="[[ page:parameter($context, 'doc', '') ]]"/>
+        [% endif %]
         <!-- <div class="targets">
             <label>
                 <input type="checkbox" name="field" value="text"/>
