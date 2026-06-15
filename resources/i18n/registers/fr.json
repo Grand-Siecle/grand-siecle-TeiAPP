@@ -2,9 +2,40 @@
     "menu": {
         "people": "Personnes",
         "places": "Lieux",
-        "bibliography": "Bibliographie"
+        "bibliography": "Bibliographie",
+        "entities": "Index",
+        "works": "Œuvres",
+        "events": "Événements",
+        "materials": "Matériaux",
+        "techniques": "Techniques",
+        "artworks": "Objets & œuvres d'art",
+        "dates": "Chronologie",
+        "organizations": "Organisations"
     },
     "form": {
         "description": "Afficher les descriptions"
+    },
+    "register": {
+        "cited-in": "Cité dans",
+        "documents": "documents",
+        "mentions": "mentions",
+        "experimental": "Registre expérimental : entités issues d'une détection automatique sur OCR brut, peu ou pas réconciliées. À utiliser avec prudence."
+    },
+    "hub": {
+        "title": "Index des entités",
+        "reconciled": "réconciliées"
+    },
+    "filter": {
+        "confidence": "Confiance",
+        "all": "Toutes",
+        "any": "Tou·te·s",
+        "authority": "Référentiel",
+        "has-authority": "Avec lien d'autorité",
+        "min-mentions": "Mentions (min.)",
+        "period": "Période",
+        "reset": "Réinitialiser",
+        "more": "Afficher plus",
+        "more-params": "Afficher plus de paramètres",
+        "bce-hint": "Négatif = avant J.-C. (ex. −384)"
     }
 }

@@ -2,9 +2,40 @@
     "menu": {
         "people": "People",
         "places": "Places",
-        "bibliography": "Bibliography"
+        "bibliography": "Bibliography",
+        "entities": "Index",
+        "works": "Works",
+        "events": "Events",
+        "materials": "Materials",
+        "techniques": "Techniques",
+        "artworks": "Objects & artworks",
+        "dates": "Chronology",
+        "organizations": "Organizations"
     },
     "form": {
         "description": "Show descriptions"
+    },
+    "register": {
+        "cited-in": "Cited in",
+        "documents": "documents",
+        "mentions": "mentions",
+        "experimental": "Experimental register: entities from automatic detection over raw OCR, little or no authority reconciliation. Use with caution."
+    },
+    "hub": {
+        "title": "Entity index",
+        "reconciled": "reconciled"
+    },
+    "filter": {
+        "confidence": "Confidence",
+        "all": "All",
+        "any": "Any",
+        "authority": "Authority",
+        "has-authority": "With authority link",
+        "min-mentions": "Mentions (min.)",
+        "period": "Period",
+        "reset": "Reset",
+        "more": "Show more",
+        "more-params": "Show more parameters",
+        "bce-hint": "Negative = BCE (e.g. −384)"
     }
 }

@@ -1,0 +1,52 @@
+<div class="gs-hub">
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html"
+        },
+        "features": {
+            "toolbar": {
+                "zoom": false,
+                "navigation": false
+            },
+            "timeline": {
+                "enabled": false
+            },
+            "upload": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "resources/css/registers-theme.css"
+        ],
+        "theme": {
+            "layout": {
+                "footer": {
+                    "mobile": {
+                        "enabled": false
+                    }
+                }
+            }
+        }
+    }
+    ---
+    [% template breadcrumb %]
+    <li>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><pb-i18n key="menu.entities">Index des entités</pb-i18n></li>
+            </ul>
+        </nav>
+    </li>
+    [% endtemplate %]
+    <section class="gs-hub-section">
+        <header class="gs-hub-header">
+            <span class="gs-section-marker">Référentiels d'autorité</span>
+            <h1 class="gs-hub-title"><pb-i18n key="hub.title">Index des entités</pb-i18n></h1>
+            <p class="gs-hub-intro">
+                <pb-i18n key="hub.intro">Personnes, lieux, organisations, œuvres et autres entités identifiées dans le corpus par détection automatique (NER) puis réconciliées avec Wikidata. Chaque notice renvoie aux documents qui la citent.</pb-i18n>
+            </p>
+        </header>
+        [[ $hub?cards ]]
+    </section>
+</div>

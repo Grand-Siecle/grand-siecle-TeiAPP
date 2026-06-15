@@ -17,16 +17,14 @@
             }
         },
         "styles": [
-            "transform/teipublisher.css",
             "resources/css/registers-theme.css"
         ],
         "theme": {
             "layout": {
-                "after-width": "min(30vw, 356px)"
-            },
-            "footer": {
-                "mobile": {
-                    "enabled": false
+                "footer": {
+                    "mobile": {
+                        "enabled": false
+                    }
                 }
             }
         }
@@ -36,14 +34,15 @@
     <li>
         <nav aria-label="breadcrumb">
             <ul>
-                <li><a href="[[ $context-path ]]/people"><pb-i18n key="menu.people"/></a></li>
-                <li>[[ $entity-data?root/head((tei:persName[@type = ('reg', 'main', 'full')], tei:persName))/string() ]]</li>
+                <li><a href="[[ $context-path ]]/entities"><pb-i18n key="menu.entities">Index</pb-i18n></a></li>
+                <li><a href="[[ $context-path ]]/[[ $entity-data?slug ]]"><pb-i18n key="menu.[[ $entity-data?slug ]]">[[ $entity-data?slug ]]</pb-i18n></a></li>
+                <li>[[ $entity-data?label ]]</li>
             </ul>
         </nav>
     </li>
     [% endtemplate %]
-    <section class="person">
-        [[ page:transform($entity-data?root, map { "mode": "register-details" , "webcomponents": true()}) ]]
+    <section class="gs-entity-detail gs-entity-detail-[[ $entity-data?type ]]">
+        [[ $entity-data?body ]]
         [[ $entity-data?backlinks ]]
     </section>
 </template>

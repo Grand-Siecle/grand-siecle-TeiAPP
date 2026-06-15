@@ -2,6 +2,37 @@
     "menu": {
         "people": "Personen",
         "places": "Orte",
-        "bibliography": "Literatur"
+        "bibliography": "Literatur",
+        "entities": "Index",
+        "works": "Werke",
+        "events": "Ereignisse",
+        "materials": "Materialien",
+        "techniques": "Techniken",
+        "artworks": "Objekte & Kunstwerke",
+        "dates": "Chronologie",
+        "organizations": "Organisationen"
+    },
+    "register": {
+        "cited-in": "Erwähnt in",
+        "documents": "Dokumenten",
+        "mentions": "Erwähnungen",
+        "experimental": "Experimentelles Register: Entitäten aus automatischer Erkennung über rohem OCR, kaum bzw. nicht abgeglichen. Mit Vorsicht zu verwenden."
+    },
+    "hub": {
+        "title": "Entitäten-Index",
+        "reconciled": "abgeglichen"
+    },
+    "filter": {
+        "confidence": "Konfidenz",
+        "all": "Alle",
+        "any": "Alle",
+        "authority": "Normdatei",
+        "has-authority": "Mit Normdatei-Link",
+        "min-mentions": "Erwähnungen (min.)",
+        "period": "Zeitraum",
+        "reset": "Zurücksetzen",
+        "more": "Mehr anzeigen",
+        "more-params": "Mehr Parameter anzeigen",
+        "bce-hint": "Negativ = v. Chr. (z. B. −384)"
     }
 }

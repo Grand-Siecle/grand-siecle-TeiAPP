@@ -60,5 +60,6 @@
     [% endtemplate %]
     <section class="place">
         [[ page:transform($entity-data?root, map { "mode": "register-details" }) ]]
+        [[ $entity-data?backlinks ]]
     </section>
 </template>

@@ -79,3 +79,951 @@ pb-leaflet-map {
         white-space: normal;
     }
 }
+
+/* ---------------------------------------------------------------------------
+   "Cité dans" — backlinks from an authority entry to the corpus documents
+   that mention it (built server-side from note[@type='sources'] + @n).
+   --------------------------------------------------------------------------- */
+.gs-backlinks {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25));
+}
+
+.gs-backlinks-title {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--gs-blue, #1E3A6D);
+    margin: 0 0 1rem;
+    letter-spacing: 0.01em;
+}
+
+.gs-backlinks-count,
+.gs-backlinks-mentions {
+    font-weight: 700;
+    color: var(--gs-gold, #9C7A3C);
+}
+
+.gs-backlinks-sep {
+    color: var(--gs-sepia-light, #8a7a6a);
+}
+
+.gs-backlinks-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 0.35rem 1.25rem;
+}
+
+.gs-backlinks-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.35rem 0.1rem;
+    border-bottom: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.18));
+}
+
+.gs-backlinks-doc {
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1.02rem;
+    color: var(--gs-blue, #1E3A6D);
+    text-decoration: none;
+}
+
+.gs-backlinks-doc:hover {
+    color: var(--gs-gold, #9C7A3C);
+    text-decoration: underline;
+}
+
+.gs-backlinks-id {
+    flex: 0 0 auto;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    color: var(--gs-sepia-light, #8a7a6a);
+    letter-spacing: 0.02em;
+}
+
+/* ===========================================================================
+   Generic entity index (Phase 2) — shared by all 9 register types
+   =========================================================================== */
+
+/* Canonical per-type accent colours */
+.gs-register,
+.gs-entity-detail,
+.gs-hub {
+    --gs-type-person: #2B5B8A;
+    --gs-type-place: #3A6B4A;
+    --gs-type-organization: #5B3A7A;
+    --gs-type-work: #A85831;
+    --gs-type-event: #5C4B8C;
+    --gs-type-technique: #6B6B2F;
+    --gs-type-date: #7A5A3A;
+    --gs-type-artwork: #8A5A2A;
+    --gs-type-material: #4A5A6A;
+}
+
+.gs-register-list {
+    max-width: var(--pb-view-max-width, 1100px);
+    margin: 0 auto;
+    padding: 1.25rem 1rem 3rem;
+}
+
+.gs-register-header {
+    margin-bottom: 0.75rem;
+}
+
+/* Faceted browser: two-column layout (sidebar + results) */
+.gs-browse-head { margin: 0; padding: 1.25rem 1.75rem 0.25rem; }
+.gs-browse-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 1.75rem;
+    margin: 0;
+    padding: 0.5rem 1.75rem 3rem;
+    align-items: start;
+}
+.gs-browse-facets {
+    display: block;
+    align-self: start;
+    padding-right: 0.4rem;
+}
+.gs-facet-search { padding-bottom: 0.5rem; }
+.gs-facet-group {
+    border: 0;
+    border-top: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25));
+    margin: 0;
+    padding: 0.7rem 0 0.3rem;
+}
+.gs-facet-group legend {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--gs-gold, #9C7A3C);
+    padding: 0;
+    margin-bottom: 0.4rem;
+}
+.gs-filter-search {
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.4));
+    border-radius: 2px;
+    background: var(--gs-cream-light, #FEFCF7);
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1rem;
+    color: var(--gs-sepia, #2C2418);
+}
+.gs-check {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    padding: 0.16rem 0;
+    cursor: pointer;
+    font-size: 0.92rem;
+    color: var(--gs-sepia, #2C2418);
+}
+.gs-check input { margin: 0; flex: 0 0 auto; accent-color: var(--gs-blue, #1E3A6D); }
+.gs-check-label { flex: 1 1 auto; }
+.gs-count {
+    flex: 0 0 auto;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    color: var(--gs-sepia-light, #8a7a6a);
+}
+.gs-facet-filter {
+    width: 100%;
+    margin-bottom: 0.4rem;
+    padding: 0.3rem 0.45rem;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+    border-radius: 2px;
+    background: var(--gs-cream-light, #FEFCF7);
+    font-size: 0.85rem;
+}
+.gs-facet-options { padding-right: 0.2rem; }
+.gs-facet-more {
+    margin-top: 0.3rem;
+    background: none;
+    border: 0;
+    padding: 0.15rem 0;
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 0.82rem;
+    color: var(--gs-blue, #1E3A6D);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.gs-facet-more:hover { color: var(--gs-gold, #9C7A3C); }
+
+/* Year-range number inputs (replace the dual slider — precise, bug-free) */
+.gs-year-range { display: flex; align-items: center; gap: 0.5rem; }
+.gs-year-input {
+    width: 5.5rem;
+    padding: 0.35rem 0.45rem;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.4));
+    border-radius: 2px;
+    background: var(--gs-cream-light, #FEFCF7);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.85rem;
+    color: var(--gs-sepia, #2C2418);
+}
+.gs-year-sep { color: var(--gs-sepia-light, #8a7a6a); }
+.gs-year-hint { font-size: 0.72rem; color: var(--gs-sepia-medium, #5a4a3a); margin-top: 0.35rem; }
+
+/* "Show more parameters" toggle */
+.gs-more-params {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    border-top: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+    margin-top: 0.5rem;
+    padding: 0.65rem 0 0.2rem;
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 0.92rem;
+    color: var(--gs-blue, #1E3A6D);
+    cursor: pointer;
+}
+.gs-more-params:hover { color: var(--gs-gold, #9C7A3C); }
+.gs-more-params::before { content: "+ "; font-family: "JetBrains Mono", ui-monospace, monospace; }
+.gs-more-params[aria-expanded="true"]::before { content: "− "; }
+
+/* Sidebar in normal block flow → each facet group is a full-width block, the
+   "Filtrer…" bar sits on its own line, option lists stack below it (fixes the
+   fieldset-in-flexbox narrowing that pushed the filter to the left). */
+.gs-facet-group { display: block; width: 100%; min-width: 0; box-sizing: border-box; }
+.gs-facet-options { display: block; width: 100%; }
+.gs-facet-filter { display: block; width: 100%; box-sizing: border-box; }
+.gs-filter-search { box-sizing: border-box; }
+.gs-facet-group legend { display: block; width: 100%; }
+.gs-facet-group legend::before {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.45rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Browse-list reading hierarchy
+   Authority-backed (reconciled) entities read in full ink; the OCR /
+   non-reconciled long tail recedes to sepia so the scholarly entries stand out.
+   The mention chip's weight scales with citation frequency.
+   --------------------------------------------------------------------------- */
+.gs-entity-item.gs-unrecon .gs-entity-label {
+    color: var(--gs-sepia-medium, #5a4a3a);
+    font-weight: 400;
+}
+.gs-entity-item.gs-recon .gs-entity-label {
+    color: var(--gs-blue, #1E3A6D);
+    font-weight: 500;
+}
+
+.gs-entity-mentions.gs-m1 { opacity: 0.6; }
+.gs-entity-mentions.gs-m3 {
+    font-weight: 700;
+    color: var(--gs-sepia, #2C2418);
+    border-color: var(--gs-gold, #9C7A3C);
+}
+.gs-entity-mentions.gs-m4 {
+    font-weight: 700;
+    color: var(--gs-sepia, #2C2418);
+    background: var(--gs-gold-light, rgba(156, 122, 60, 0.22));
+    border-color: var(--gs-gold, #9C7A3C);
+}
+
+/* Sliders */
+.gs-slider-single { display: flex; align-items: center; gap: 0.6rem; }
+.gs-slider-single input[type=range] { flex: 1 1 auto; accent-color: var(--gs-blue, #1E3A6D); }
+.gs-slider-single output {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    min-width: 2.6em;
+    text-align: right;
+}
+.gs-range { position: relative; height: 30px; margin-top: 0.3rem; }
+.gs-range-track {
+    position: absolute; top: 13px; left: 0; right: 0; height: 4px;
+    background: var(--gs-cream-warm, #EDE5D8); border-radius: 2px;
+}
+.gs-range-fill { position: absolute; top: 0; bottom: 0; background: var(--gs-gold, #9C7A3C); border-radius: 2px; }
+.gs-range input[type=range] {
+    position: absolute; top: 0; left: 0; width: 100%; height: 30px; margin: 0;
+    -webkit-appearance: none; appearance: none; background: none; pointer-events: none;
+}
+.gs-range input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; pointer-events: auto;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--gs-blue, #1E3A6D); border: 2px solid var(--gs-cream-light, #FEFCF7);
+    cursor: pointer; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.gs-range input[type=range]::-moz-range-thumb {
+    pointer-events: auto; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--gs-blue, #1E3A6D); border: 2px solid var(--gs-cream-light, #FEFCF7); cursor: pointer;
+}
+.gs-range input[type=range]::-moz-range-track { background: none; border: 0; }
+.gs-range-labels {
+    display: flex; justify-content: space-between;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem; color: var(--gs-sepia-medium, #5a4a3a); margin-top: 0.2rem;
+}
+
+/* Results column */
+.gs-browse-results { min-width: 0; }
+.gs-browse-count {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--gs-gold, #9C7A3C); margin-bottom: 0.6rem;
+}
+.gs-browse-list { display: flex; flex-direction: column; }
+.gs-empty { color: var(--gs-sepia-light, #8a7a6a); font-style: italic; padding: 1rem 0; }
+.gs-loading .gs-browse-list { opacity: 0.45; transition: opacity 0.15s; }
+#gsReset { align-self: flex-start; margin-top: 0.6rem; }
+#gsMore { margin: 1rem auto 0; display: block; }
+
+@media (max-width: 760px) {
+    .gs-browse-layout { grid-template-columns: 1fr; }
+    .gs-browse-facets { position: static; max-height: none; }
+}
+
+.gs-register-title,
+.gs-hub-title {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-weight: 600;
+    color: var(--gs-blue, #1E3A6D);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin: 0 0 0.25rem;
+    letter-spacing: 0.01em;
+}
+
+/* Experimental-register notice + badge */
+.gs-exp-notice {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    background: var(--gs-cream-warm, #EDE5D8);
+    border-left: 3px solid var(--gs-gold, #9C7A3C);
+    padding: 0.7rem 0.9rem;
+    border-radius: 2px;
+    font-size: 0.92rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    margin: 0 0 1rem;
+}
+
+.gs-exp-badge {
+    flex: 0 0 auto;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--gs-gold, #9C7A3C);
+    color: var(--gs-cream-light, #FEFCF7);
+    padding: 0.1rem 0.35rem;
+    border-radius: 2px;
+}
+
+/* Browse-list rows */
+.gs-entity-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.75rem;
+    padding: 0.45rem 0.6rem;
+    border-bottom: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.18));
+    border-left: 3px solid var(--gs-type, var(--gs-gold, #9C7A3C));
+    background: var(--gs-cream-light, #FEFCF7);
+    text-decoration: none;
+    color: inherit;
+}
+.gs-entity-item:hover { background: #fff; }
+.gs-entity-item:hover .gs-entity-label { color: var(--gs-gold, #9C7A3C); }
+
+.gs-entity-item-person { --gs-type: var(--gs-type-person); }
+.gs-entity-item-place { --gs-type: var(--gs-type-place); }
+.gs-entity-item-organization { --gs-type: var(--gs-type-organization); }
+.gs-entity-item-work { --gs-type: var(--gs-type-work); }
+.gs-entity-item-event { --gs-type: var(--gs-type-event); }
+.gs-entity-item-technique { --gs-type: var(--gs-type-technique); }
+.gs-entity-item-date { --gs-type: var(--gs-type-date); }
+.gs-entity-item-artwork { --gs-type: var(--gs-type-artwork); }
+.gs-entity-item-material { --gs-type: var(--gs-type-material); }
+
+.gs-entity-label {
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1.1rem;
+    color: var(--gs-blue, #1E3A6D);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.gs-entity-mentions {
+    flex: 0 0 auto;
+    align-self: center;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    background: var(--gs-cream-warm, #EDE5D8);
+    border-radius: 9px;
+    padding: 0.05rem 0.45rem;
+}
+
+.gs-entity-row-meta {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-left: auto;
+    flex-wrap: wrap;
+}
+
+.gs-entity-meta {
+    font-size: 0.85rem;
+    color: var(--gs-sepia-light, #8a7a6a);
+}
+
+.gs-sep { color: var(--gs-sepia-light, #8a7a6a); }
+
+/* Confidence cue — glyph + colour, never colour alone */
+.gs-conf { font-size: 0.8rem; letter-spacing: -0.05em; }
+.gs-conf-high { color: #2e7d32; }
+.gs-conf-medium { color: var(--gs-gold, #9C7A3C); }
+.gs-conf-low { color: #b06a28; }
+.gs-conf-none { color: var(--gs-sepia-light, #b3a48f); }
+
+/* Authority abbreviation chips */
+.gs-auth-chips { display: inline-flex; gap: 0.25rem; flex-wrap: wrap; }
+.gs-auth-chip {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    background: var(--gs-cream-warm, #EDE5D8);
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .people .list, .places .list { --pb-categorized-list-columns: 1; }
+}
+
+/* ===========================================================================
+   Authority-file detail page
+   =========================================================================== */
+.gs-entity-detail {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+.gs-authority-head {
+    border-bottom: 2px solid var(--gs-gold, #9C7A3C);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.1rem;
+}
+
+.gs-authority-title {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-weight: 600;
+    color: var(--gs-blue, #1E3A6D);
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+.gs-authority-sub {
+    font-family: "EB Garamond", Garamond, serif;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    font-size: 1.05rem;
+    margin: 0.2rem 0 0;
+}
+
+.gs-authority-desc {
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1.12rem;
+    line-height: 1.55;
+    color: var(--gs-sepia, #2C2418);
+    margin: 0 0 1.1rem;
+}
+
+.gs-authority-variants {
+    font-size: 0.95rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    margin: 0 0 1.25rem;
+}
+
+.gs-label {
+    display: inline-block;
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gs-gold, #9C7A3C);
+    margin-right: 0.5rem;
+}
+
+/* Metadata key/value rows */
+.gs-meta { margin: 0 0 1.25rem; }
+.gs-meta-row {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: 0.5rem 1rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.15));
+}
+.gs-meta-key {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gs-gold, #9C7A3C);
+    padding-top: 0.15rem;
+}
+.gs-meta-val {
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1.04rem;
+    color: var(--gs-sepia, #2C2418);
+}
+
+/* External authority links */
+.gs-auth-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.gs-auth-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    text-decoration: none;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.35));
+    border-radius: 2px;
+    padding: 0.2rem 0.5rem;
+    background: var(--gs-cream-light, #FEFCF7);
+}
+.gs-auth-link:hover { border-color: var(--gs-gold, #9C7A3C); background: #fff; }
+.gs-auth-name {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gs-blue, #1E3A6D);
+}
+.gs-auth-id {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+}
+.gs-auth-cert {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    color: var(--gs-sepia-light, #8a7a6a);
+}
+
+/* Provenance / NER transparency */
+.gs-provenance {
+    margin-top: 1.5rem;
+    padding: 0.9rem 1rem;
+    background: var(--gs-cream-warm, #EDE5D8);
+    border-radius: 2px;
+    font-size: 0.9rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+}
+.gs-provenance-line, .gs-provenance-cands { margin: 0.2rem 0; }
+.gs-conf-text { font-weight: 700; }
+.gs-conf-text.gs-conf-high { color: #2e7d32; }
+.gs-conf-text.gs-conf-medium { color: var(--gs-gold, #9C7A3C); }
+.gs-conf-text.gs-conf-low { color: #b06a28; }
+.gs-conf-text.gs-conf-none { color: var(--gs-sepia-light, #8a7a6a); }
+
+/* ===========================================================================
+   Index hub (/entities)
+   =========================================================================== */
+.gs-hub-section { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.gs-hub-header { text-align: center; margin-bottom: 1.75rem; }
+.gs-hub-intro {
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    max-width: 720px;
+    margin: 0.4rem auto 0;
+}
+
+.gs-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gs-hub-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-decoration: none;
+    background: var(--gs-cream-light, #FEFCF7);
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25));
+    border-left: 4px solid var(--gs-type, var(--gs-gold, #9C7A3C));
+    border-radius: 3px;
+    padding: 1.1rem 1.2rem;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.gs-hub-card:hover {
+    box-shadow: 0 6px 18px rgba(44, 36, 24, 0.08);
+    transform: translateY(-2px);
+}
+.gs-hub-card-person { --gs-type: var(--gs-type-person); }
+.gs-hub-card-place { --gs-type: var(--gs-type-place); }
+.gs-hub-card-organization { --gs-type: var(--gs-type-organization); }
+.gs-hub-card-work { --gs-type: var(--gs-type-work); }
+.gs-hub-card-event { --gs-type: var(--gs-type-event); }
+.gs-hub-card-technique { --gs-type: var(--gs-type-technique); }
+.gs-hub-card-date { --gs-type: var(--gs-type-date); }
+.gs-hub-card-artwork { --gs-type: var(--gs-type-artwork); }
+.gs-hub-card-material { --gs-type: var(--gs-type-material); }
+
+.gs-hub-type {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gs-blue, #1E3A6D);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+.gs-hub-total {
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gs-type, var(--gs-gold, #9C7A3C));
+    line-height: 1;
+}
+.gs-hub-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-size: 0.85rem;
+    color: var(--gs-sepia-light, #8a7a6a);
+}
+.gs-hub-recon { color: var(--gs-sepia-medium, #5a4a3a); }
+.gs-hub-top { font-style: italic; }
+
+/* =====================================================================
+   EDITORIAL POLISH PASS
+   Ports the brand's gilded-rule / fleuron ornament motif across the three
+   entity-index surfaces; fixes hierarchy, rhythm and accessibility.
+   Additive — these rules override earlier ones by source order; no class
+   emitted by XQuery is renamed.
+   ===================================================================== */
+
+/* ---- Shared: focus-visible (WCAG 2.4.7) ---- */
+.gs-browse :where(a, button, input, select, [tabindex]):focus-visible,
+.gs-entity-detail :where(a, button):focus-visible,
+.gs-hub :where(a, button):focus-visible {
+    outline: 2px solid var(--gs-blue, #1E3A6D);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+.gs-hub-card:focus-visible { outline-offset: 4px; }
+
+/* ---- Shared: AA contrast — demote body-size gold/faint grey to sepia-medium ---- */
+.gs-count, .gs-entity-meta, .gs-hub-recon, .gs-hub-top,
+.gs-auth-cert, .gs-auth-id, .gs-backlinks-id {
+    color: var(--gs-sepia-medium, #5a4a3a);
+}
+
+/* ============================ HUB ============================ */
+.gs-hub-header .gs-section-marker {
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gs-gold, #9C7A3C);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0;
+    margin-bottom: 0.85rem;
+}
+.gs-hub-header .gs-section-marker::before,
+.gs-hub-header .gs-section-marker::after {
+    content: "";
+    display: inline-block;
+    width: 2.5rem;
+    height: 1px;
+    margin: 0;
+    background: var(--gs-gold-light, rgba(156, 122, 60, 0.5));
+}
+
+.gs-hub-grid { grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+@media (max-width: 820px) { .gs-hub-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+    .gs-hub-grid { grid-template-columns: 1fr; }
+    .gs-hub-card::after { display: none; }
+}
+
+.gs-hub-card {
+    position: relative;
+    gap: 0.5rem;
+    padding: 1.35rem 1.4rem 1.25rem;
+    background:
+        linear-gradient(var(--gs-cream-light, #FEFCF7), var(--gs-cream-light, #FEFCF7)) padding-box,
+        linear-gradient(160deg, color-mix(in srgb, var(--gs-type, #9C7A3C) 24%, transparent), transparent 55%) border-box;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25));
+    border-left: 4px solid var(--gs-type, var(--gs-gold, #9C7A3C));
+}
+.gs-hub-card::after {
+    content: "";
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.45));
+    border-right: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.45));
+}
+.gs-hub-total {
+    font-size: 2.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums lining-nums;
+    margin-top: 0.1rem;
+}
+.gs-hub-type .gs-exp-badge {
+    background: transparent;
+    color: var(--gs-gold, #9C7A3C);
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.5));
+    font-size: 0.58rem;
+    padding: 0.05rem 0.3rem;
+    align-self: center;
+}
+.gs-hub-recon::before { content: "✓ "; color: var(--gs-green, #3A6B4A); font-weight: 700; }
+
+/* ====================== BROWSE: SIDEBAR ====================== */
+.gs-browse-facets {
+    padding-left: 0.9rem;
+    border-left: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+}
+.gs-facet-group legend {
+    color: var(--gs-sepia-medium, #5a4a3a);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+.gs-facet-group legend::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 0.7rem;
+    height: 1px;
+    background: var(--gs-gold, #9C7A3C);
+}
+.gs-filter-search:focus,
+.gs-facet-filter:focus {
+    outline: none;
+    border-color: var(--gs-blue, #1E3A6D);
+    box-shadow: 0 0 0 3px rgba(30, 58, 109, 0.12);
+}
+.gs-check { padding: 0.3rem 0; }
+
+/* Dual-range slider: WCAG 2.5.8 target size + overlap fix */
+.gs-range { height: 40px; }
+.gs-range-track { top: 18px; }
+.gs-range input[type=range] { height: 40px; }
+.gs-range input[type=range]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 1px 4px rgba(44, 36, 24, 0.35);
+}
+.gs-range input[type=range]::-moz-range-thumb { width: 24px; height: 24px; }
+.gs-range input[type=range]:focus { z-index: 3; }
+
+/* ====================== BROWSE: RESULTS ====================== */
+.gs-browse-count {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gs-blue, #1E3A6D);
+    text-transform: none;
+    letter-spacing: 0;
+    font-feature-settings: "tnum";
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gs-gold, #9C7A3C);
+}
+.gs-conf-legend {
+    display: flex;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.2));
+}
+.gs-conf-legend span.gs-conf { margin-right: 0.2rem; }
+.gs-conf-legend::before {
+    content: "Réconciliation";
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    color: var(--gs-gold, #9C7A3C);
+    margin-right: 0.3rem;
+}
+
+.gs-browse-list { border-top: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25)); }
+.gs-entity-item {
+    padding: 0.6rem 0.75rem;
+    border-left-width: 3px;
+    border-bottom-color: rgba(156, 122, 60, 0.12);
+    background: transparent;
+    transition: background 0.12s ease, border-left-width 0.12s ease, padding-left 0.12s ease;
+}
+.gs-browse-list .split-list-item:nth-child(even) .gs-entity-item {
+    background: color-mix(in srgb, var(--gs-cream-warm, #EDE5D8) 35%, transparent);
+}
+.gs-entity-item:hover {
+    background: var(--gs-cream-light, #FEFCF7);
+    border-left-width: 6px;
+    padding-left: 0.6rem;
+}
+.gs-entity-label { font-size: 1.12rem; }
+.gs-entity-mentions {
+    background: transparent;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.35));
+    color: var(--gs-sepia-medium, #5a4a3a);
+}
+.gs-conf-glyph {
+    font-size: 0.95rem;
+    line-height: 1;
+    display: inline-block;
+    min-width: 1.6em;
+    text-align: center;
+}
+
+.gs-loading .gs-browse-list { opacity: 0.5; }
+.gs-loading .gs-browse-results { position: relative; }
+.gs-loading .gs-browse-results::after {
+    content: "Chargement…";
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Cormorant Garamond", Garamond, serif;
+    letter-spacing: 0.1em;
+    color: var(--gs-sepia-light, #8a7a6a);
+}
+.gs-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-style: italic;
+    border: 1px dashed var(--gs-gold-light, rgba(156, 122, 60, 0.4));
+    border-radius: 3px;
+}
+.gs-empty::before {
+    content: "❦";
+    display: block;
+    font-size: 1.6rem;
+    color: var(--gs-gold, #9C7A3C);
+    margin-bottom: 0.5rem;
+}
+
+/* ====================== AUTHORITY FILE ====================== */
+@media (min-width: 880px) {
+    .gs-authority {
+        display: grid;
+        grid-template-columns: 1fr 16rem;
+        gap: 0.2rem 2.5rem;
+        align-items: start;
+    }
+    .gs-authority-head,
+    .gs-authority-desc,
+    .gs-authority-variants,
+    .gs-meta:not(.gs-authority-ids) { grid-column: 1; }
+    .gs-authority-ids { grid-column: 2; grid-row: 1; align-self: start; margin: 0 0 1rem; }
+    .gs-provenance { grid-column: 2; grid-row: 2; align-self: start; margin: 0 0 1rem; }
+}
+.gs-authority-ids {
+    background: var(--gs-cream-light, #FEFCF7);
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+    border-top: 3px solid var(--gs-gold, #9C7A3C);
+    border-radius: 3px;
+    padding: 0.9rem 1rem;
+}
+.gs-authority-ids .gs-meta-row { display: block; border: 0; padding: 0; }
+.gs-authority-ids .gs-auth-links { flex-direction: column; gap: 0.4rem; margin-top: 0.5rem; }
+.gs-authority-ids .gs-auth-link { justify-content: space-between; width: 100%; }
+
+.gs-authority-title .gs-conf { align-self: center; transform: translateY(0.04em); }
+.gs-authority-title .gs-conf-glyph { font-size: 0.9rem; }
+.gs-authority-sub {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gs-sepia, #2C2418);
+    font-variant-numeric: lining-nums;
+}
+.gs-authority-sub::before { content: "✶ "; color: var(--gs-gold, #9C7A3C); font-style: normal; }
+
+.gs-authority-variants {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.4rem;
+}
+.gs-authority-variants .gs-label { flex: 0 0 100%; margin-bottom: 0.2rem; }
+.gs-variant {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+    border-radius: 2px;
+    padding: 0.05rem 0.4rem;
+    background: var(--gs-cream-light, #FEFCF7);
+}
+
+.gs-provenance {
+    background: transparent;
+    border-left: 3px solid var(--gs-gold, #9C7A3C);
+    border-radius: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+    font-style: italic;
+}
+
+.gs-backlinks-list { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.gs-backlinks-doc { font-size: 1.06rem; }
+.gs-backlinks-id {
+    background: var(--gs-cream-warm, #EDE5D8);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    opacity: 0.9;
+}
+.gs-backlinks-title::before { content: "❦ "; color: var(--gs-gold, #9C7A3C); }
+
+/* ============================ MOTION ============================ */
+@keyframes gs-fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .gs-browse-list .split-list-item {
+        animation: gs-fadeUp 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: calc(var(--i, 0) * 12ms);
+    }
+    .gs-hub-card {
+        transition: box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gs-hub-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(44, 36, 24, 0.10); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gs-hub-card, .gs-entity-item, .gs-auth-link, .gs-browse-list .split-list-item {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+}
