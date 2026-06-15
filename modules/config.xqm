@@ -331,6 +331,31 @@ declare variable $config:register-map := map {
         "id": "pb-works",
         "default": "work-default",
         "prefix": "work-"
+    },
+    "event": map {
+        "id": "pb-events",
+        "default": "event-default",
+        "prefix": "event-"
+    },
+    "artwork": map {
+        "id": "pb-artworks",
+        "default": "artwork-default",
+        "prefix": "artwork-"
+    },
+    "material": map {
+        "id": "pb-materials",
+        "default": "material-default",
+        "prefix": "material-"
+    },
+    "technique": map {
+        "id": "pb-techniques",
+        "default": "technique-default",
+        "prefix": "technique-"
+    },
+    "date": map {
+        "id": "pb-dates",
+        "default": "date-default",
+        "prefix": "date-"
     }
 };
 
