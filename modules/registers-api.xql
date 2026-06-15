@@ -225,8 +225,15 @@ declare function rview:cited($request as map(*)) {
     let $docUrl := $config:context-path || '/' || $file
     let $label := rview:entry-label(collection($config:register-root)/id($id) => head())
     let $searchUrl := $config:context-path || '/search.html?query=' || encode-for-uri('"' || $label || '"') || '&amp;doc=' || encode-for-uri($file)
-    let $count := count($hits)
-    let $page := subsequence($hits, $offset + 1, $limit)
+    (: collapse multiple mentions in the same block to a single passage, so the
+       KWIC isn't padded with identical snippets :)
+    let $passages :=
+        for $m in $hits
+        let $blk := ($m/ancestor::*[self::tei:p or self::tei:ab or self::tei:head or self::tei:l or self::tei:item][1], $m/..)[1]
+        group by $bid := generate-id($blk)
+        return head($m)
+    let $count := count($passages)
+    let $page := subsequence($passages, $offset + 1, $limit)
     let $remaining := $count - ($offset + $limit)
     let $more :=
         if ($remaining > 0) then

@@ -363,12 +363,24 @@ pb-leaflet-map {
 .gs-kwic-toggle:hover .gs-backlinks-doc { color: var(--gs-gold, #9C7A3C); }
 
 .gs-kwic-panel { padding: 0.2rem 0 0.7rem 1.3rem; }
-.gs-kwic { display: flex; flex-direction: column; gap: 0.4rem; }
+.gs-kwic {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-height: 26rem;
+    overflow-y: auto;
+    padding-right: 0.4rem;
+}
 .gs-kwic-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.2rem 1.1rem;
     margin-bottom: 0.3rem;
+    position: sticky;
+    top: 0;
+    background: var(--gs-cream, #F5F0E8);
+    padding: 0.1rem 0 0.35rem;
+    z-index: 1;
 }
 .gs-kwic-open,
 .gs-kwic-search {
@@ -405,17 +417,20 @@ pb-leaflet-map {
     margin: 0.2rem 0;
 }
 .gs-kwic-more-btn {
-    align-self: flex-start;
+    position: sticky;
+    bottom: 0;
+    align-self: stretch;
     margin-top: 0.3rem;
-    background: none;
+    background: var(--gs-cream-light, #FEFCF7);
     border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.4));
     border-radius: 2px;
-    padding: 0.3rem 0.7rem;
+    padding: 0.4rem 0.7rem;
     font-family: "EB Garamond", Garamond, serif;
     font-size: 0.85rem;
     color: var(--gs-blue, #1E3A6D);
     cursor: pointer;
 }
+.gs-kwic-more-btn:hover { border-color: var(--gs-gold, #9C7A3C); color: var(--gs-gold, #9C7A3C); }
 .gs-kwic-more-btn:hover { border-color: var(--gs-gold, #9C7A3C); color: var(--gs-gold, #9C7A3C); }
 
 /* Sliders */
