@@ -377,14 +377,19 @@ declare function rview:overview-meta($entry as element(), $type as xs:string) as
 declare function rview:overview-row($entry as element(), $type as xs:string) {
     let $id := string($entry/@xml:id)
     let $href := rview:slug($type) || '/' || $id
-    let $n := ($entry/@n[. castable as xs:integer])[1]
+    let $nInt := xs:integer(($entry/@n[. castable as xs:integer], 0)[1])
+    (: authority-backed (has a Wikidata QID) entities read stronger; the OCR /
+       non-reconciled long tail recedes. Mention count drives a magnitude tier
+       so citation frequency is legible at a glance. :)
+    let $reconciled := exists($entry/tei:idno[@type = 'wikidata'])
+    let $tier := if ($nInt >= 50) then "4" else if ($nInt >= 10) then "3" else if ($nInt >= 2) then "2" else "1"
     return
         <div class="split-list-item">
-            <a class="gs-entity-item gs-entity-item-{$type}" href="{$href}">
+            <a class="gs-entity-item gs-entity-item-{$type} {if ($reconciled) then 'gs-recon' else 'gs-unrecon'}" href="{$href}">
                 <span class="gs-entity-label">{rview:entry-label($entry)}</span>
                 {
-                    if ($n) then
-                        <span class="gs-entity-mentions" title="{$n} mention{if ($n > 1) then 's' else ''} dans le corpus">{string($n)}</span>
+                    if ($nInt > 0) then
+                        <span class="gs-entity-mentions gs-m{$tier}" title="{$nInt} mention{if ($nInt > 1) then 's' else ''} dans le corpus">{$nInt}</span>
                     else ()
                 }
                 <span class="gs-entity-row-meta">

@@ -1,0 +1,153 @@
+<div class="gs-register gs-browse" data-type="[[ $request?parameters?type ]]" data-slug="[[ $request?parameters?slug ]]" data-max-mentions="[[ $filters?max-mentions ]]">
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html"
+        },
+        "features": {
+            "toolbar": { "zoom": false, "navigation": false },
+            "timeline": { "enabled": false },
+            "upload": { "enabled": false }
+        },
+        "script": {
+            "custom": [ "resources/scripts/registers-browse.js" ]
+        },
+        "styles": [
+            "resources/css/registers-theme.css"
+        ],
+        "theme": {
+            "layout": {
+                "footer": { "mobile": { "enabled": false } }
+            }
+        }
+    }
+    ---
+    [% template breadcrumb %]
+    <li>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="[[ $context-path ]]/entities"><pb-i18n key="menu.entities">Index</pb-i18n></a></li>
+                <li><pb-i18n key="menu.[[ $request?parameters?slug ]]">[[ $request?parameters?slug ]]</pb-i18n></li>
+            </ul>
+        </nav>
+    </li>
+    [% endtemplate %]
+    <div class="gs-browse-head">
+        <h1 class="gs-register-title gs-entity-accent-[[ $request?parameters?type ]]">
+            <pb-i18n key="menu.[[ $request?parameters?slug ]]">[[ $request?parameters?slug ]]</pb-i18n>
+        </h1>
+        [% if $request?parameters?type = ('date', 'artwork') %]
+        <p class="gs-exp-notice">
+            <span class="gs-exp-badge">exp.</span>
+            <pb-i18n key="register.experimental">Registre expérimental : entités issues d'une détection automatique sur OCR brut, peu ou pas réconciliées. À utiliser avec prudence.</pb-i18n>
+        </p>
+        [% endif %]
+    </div>
+    <div class="gs-browse-layout">
+        <aside class="gs-browse-facets" id="gsFacets">
+            <div class="gs-facet-search">
+                <input type="search" id="gsSearch" class="gs-filter-search" data-i18n="[placeholder]search.search" placeholder="Rechercher…" value="[[ $request?parameters?search ]]"/>
+            </div>
+
+            [% if exists($filters?confidence) %]
+            <fieldset class="gs-facet-group" data-facet="conf">
+                <legend><pb-i18n key="filter.confidence">Confiance</pb-i18n></legend>
+                [% for $c in $filters?confidence %]
+                <label class="gs-check">
+                    <input type="checkbox" name="conf" value="[[ $c?value ]]"/>
+                    <span class="gs-check-label">[[ $c?label ]]</span>
+                    <span class="gs-count">[[ $c?count ]]</span>
+                </label>
+                [% endfor %]
+            </fieldset>
+            [% endif %]
+
+            [# Primary type facet (always visible) #]
+            [% if exists($filters?facets) %]
+            [% let $pf = head($filters?facets) %]
+            <fieldset class="gs-facet-group gs-facet-checklist" data-facet="[[ $pf?name ]]">
+                <legend>[[ $pf?label ]]</legend>
+                <input type="search" class="gs-facet-filter" placeholder="Filtrer…"/>
+                <div class="gs-facet-options">
+                    [% for $v in $pf?values %]
+                    <label class="gs-check">
+                        <input type="checkbox" name="[[ $pf?name ]]" value="[[ $v?value ]]"/>
+                        <span class="gs-check-label">[[ $v?label ]]</span>
+                        <span class="gs-count">[[ $v?count ]]</span>
+                    </label>
+                    [% endfor %]
+                </div>
+            </fieldset>
+            [% endlet %]
+            [% endif %]
+
+            <button type="button" id="gsMoreParams" class="gs-more-params" aria-expanded="false" aria-controls="gsAdvanced">
+                <pb-i18n key="filter.more-params">Afficher plus de paramètres</pb-i18n>
+            </button>
+
+            <div class="gs-facet-advanced" id="gsAdvanced" hidden="hidden">
+                <fieldset class="gs-facet-group">
+                    <legend><pb-i18n key="filter.authority">Référentiel</pb-i18n></legend>
+                    <label class="gs-check">
+                        <input type="checkbox" id="gsAuthority"/>
+                        <span class="gs-check-label"><pb-i18n key="filter.has-authority">Avec lien d'autorité</pb-i18n></span>
+                        <span class="gs-count">[[ $filters?authority-count ]]</span>
+                    </label>
+                </fieldset>
+
+                <fieldset class="gs-facet-group">
+                    <legend><pb-i18n key="filter.min-mentions">Mentions (min.)</pb-i18n></legend>
+                    <div class="gs-slider-single">
+                        <input type="range" id="gsMentions" min="0" max="[[ $filters?max-mentions ]]" value="0" step="1"/>
+                        <output id="gsMentionsOut">0</output>
+                    </div>
+                </fieldset>
+
+                [% if $filters?has-dates %]
+                <fieldset class="gs-facet-group" id="gsDateGroup">
+                    <legend><pb-i18n key="filter.period">Période</pb-i18n></legend>
+                    <div class="gs-year-range">
+                        <input type="number" id="gsYearMin" class="gs-year-input" inputmode="numeric"
+                               min="[[ $filters?year-min ]]" max="[[ $filters?year-max ]]"
+                               placeholder="[[ $filters?year-min ]]" aria-label="Année de début"/>
+                        <span class="gs-year-sep">→</span>
+                        <input type="number" id="gsYearMax" class="gs-year-input" inputmode="numeric"
+                               min="[[ $filters?year-min ]]" max="[[ $filters?year-max ]]"
+                               placeholder="[[ $filters?year-max ]]" aria-label="Année de fin"/>
+                    </div>
+                    <div class="gs-year-hint"><pb-i18n key="filter.bce-hint">Négatif = avant J.-C. (ex. −384)</pb-i18n></div>
+                </fieldset>
+                [% endif %]
+
+                [% for $f in tail($filters?facets) %]
+                <fieldset class="gs-facet-group gs-facet-checklist" data-facet="[[ $f?name ]]">
+                    <legend>[[ $f?label ]]</legend>
+                    <input type="search" class="gs-facet-filter" placeholder="Filtrer…"/>
+                    <div class="gs-facet-options">
+                        [% for $v in $f?values %]
+                        <label class="gs-check">
+                            <input type="checkbox" name="[[ $f?name ]]" value="[[ $v?value ]]"/>
+                            <span class="gs-check-label">[[ $v?label ]]</span>
+                            <span class="gs-count">[[ $v?count ]]</span>
+                        </label>
+                        [% endfor %]
+                    </div>
+                </fieldset>
+                [% endfor %]
+            </div>
+
+            <button type="button" id="gsReset" class="gs-btn gs-btn-ghost"><pb-i18n key="filter.reset">Réinitialiser</pb-i18n></button>
+        </aside>
+        <main class="gs-browse-results">
+            <div class="gs-conf-legend" aria-label="Légende des niveaux de réconciliation">
+                <span><span class="gs-conf gs-conf-high"><span class="gs-conf-glyph">◆◆◆</span></span> réconciliée fiable</span>
+                <span><span class="gs-conf gs-conf-medium"><span class="gs-conf-glyph">◆◆</span></span> moyenne</span>
+                <span><span class="gs-conf gs-conf-low"><span class="gs-conf-glyph">◆</span></span> incertaine</span>
+                <span><span class="gs-conf gs-conf-none"><span class="gs-conf-glyph">○</span></span> non réconciliée</span>
+            </div>
+            <div class="gs-browse-count" id="gsCount" aria-live="polite"></div>
+            <div class="gs-browse-list" id="gsList"></div>
+            <button type="button" id="gsMore" class="gs-btn gs-btn-ghost" hidden="hidden"><pb-i18n key="filter.more">Afficher plus</pb-i18n></button>
+        </main>
+    </div>
+</div>
