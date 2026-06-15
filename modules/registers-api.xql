@@ -5,6 +5,7 @@ module namespace rview="http://teipublisher.com/api/registers/view";
 import module namespace config="http://www.tei-c.org/tei-simple/config" at "config.xqm";
 import module namespace pm-config="http://www.tei-c.org/tei-simple/pm-config" at "pm-config.xql";
 import module namespace tpu="http://www.tei-c.org/tei-publisher/util" at "util.xql";
+import module namespace query="http://www.tei-c.org/tei-simple/query" at "query.xql";
 import module namespace vapi="http://teipublisher.com/api/view" at "lib/api/view.xql";
 import module namespace page="http://teipublisher.com/ns/templates/page" at "templates/page.xqm";
 
@@ -211,6 +212,7 @@ declare function rview:cited($request as map(*)) {
     let $src := $request?parameters?doc
     let $file := $src || '_reconciled.tei.xml'
     let $doc := config:get-document($file)
+    let $cfg := tpu:parse-pi(root($doc), ())
     let $ref := '#' || $id
     let $hits :=
         switch(substring-before($id, '-'))
@@ -253,19 +255,19 @@ declare function rview:cited($request as map(*)) {
                         <p class="gs-kwic-empty">Aucun passage localisé (mention sur un calque non affiché).</p>
                     else
                         for $m in $page
-                        return rview:kwic-line($m, $docUrl)
+                        return rview:kwic-line($m, $file, $cfg)
                 }
                 {$more}
             </div>
         else
             <div class="gs-kwic-batch">
-                {for $m in $page return rview:kwic-line($m, $docUrl)}
+                {for $m in $page return rview:kwic-line($m, $file, $cfg)}
                 {$more}
             </div>
 };
 
 (:~ Build one keyword-in-context line around a mention element. :)
-declare function rview:kwic-line($m as element(), $docUrl as xs:string) {
+declare function rview:kwic-line($m as element(), $docFile as xs:string, $cfg as map(*)) {
     let $block := ($m/ancestor::*[self::tei:p or self::tei:ab or self::tei:head or self::tei:l or self::tei:item][1], $m/..)[1]
     (: the corpus interleaves original + modernized spellings (tei:orig / tei:reg);
        read only the mention's own layer so the snippet isn't doubled :)
@@ -277,8 +279,18 @@ declare function rview:kwic-line($m as element(), $docUrl as xs:string) {
     )
     let $mention := normalize-space(string($m))
     let $win := 80
+    (: Deep-link to the page holding the mention, in PAGE view (one page between
+       <pb> breaks, ~1-3 s) — NOT the div view the search uses, which transforms
+       the whole book and hangs on these large documents. Works, but the doc-view
+       rendering is still slow; perf investigation tracked in TODO.md. :)
+    let $page := $m/preceding::tei:pb[1]
+    let $href :=
+        $config:context-path || '/' || $docFile
+        || '?' || (if (exists($page)) then 'root=' || util:node-id($page) || '&amp;' else '')
+        || 'view=page&amp;odd=' || $cfg?odd
+        || '#' || util:node-id($m)
     return
-        <a class="gs-kwic-line" href="{$docUrl}" target="_blank" rel="noopener">
+        <a class="gs-kwic-line" href="{$href}" target="_blank" rel="noopener">
         {
             if ($mention != '' and contains($full, $mention)) then
                 let $before := substring-before($full, $mention)
