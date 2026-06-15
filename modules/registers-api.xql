@@ -152,6 +152,7 @@ declare function rview:detail-html($request as map(*)) {
  : Returns () when the entry has no recorded sources (no block is rendered).
  :)
 declare function rview:backlinks($entry as element()?) {
+    let $id := string($entry/@xml:id)
     let $sources :=
         for $s in tokenize($entry/tei:note[@type = 'sources'], '\|')
         let $t := normalize-space($s)
@@ -189,17 +190,83 @@ declare function rview:backlinks($entry as element()?) {
                     order by lower-case($label)
                     return
                         <li class="gs-backlinks-item">
-                        {
-                            if (exists($doc)) then
-                                <a class="gs-backlinks-doc" href="{$config:context-path}/{$file}">{$label}</a>
-                            else
+                            <button type="button" class="gs-kwic-toggle" data-id="{$id}" data-doc="{$src}" aria-expanded="false">
                                 <span class="gs-backlinks-doc">{$label}</span>
-                        }
-                            <span class="gs-backlinks-id">{$src}</span>
+                                <span class="gs-backlinks-id">{$src}</span>
+                            </button>
+                            <div class="gs-kwic-panel" hidden="hidden"></div>
                         </li>
                 }
                 </ul>
             </div>
+};
+
+(:~ Lazy KWIC endpoint: for an entity id + a source document, return the
+ :  passages (keyword-in-context) where the entity is cited. Loaded on demand
+ :  when a document is expanded on the authority page, so the (multi-GB) corpus
+ :  is never scanned eagerly. Scoped to the element matching the id's type for
+ :  speed (uses the element-name index instead of a full //* attribute scan). :)
+declare function rview:cited($request as map(*)) {
+    let $id := xmldb:decode($request?parameters?id)
+    let $src := $request?parameters?doc
+    let $file := $src || '_reconciled.tei.xml'
+    let $doc := config:get-document($file)
+    let $ref := '#' || $id
+    let $hits :=
+        switch(substring-before($id, '-'))
+            case "person" return $doc//tei:persName[@ref = $ref]
+            case "place" return $doc//tei:placeName[@ref = $ref]
+            case "org" return $doc//tei:orgName[@ref = $ref]
+            case "work" return $doc//tei:title[@ref = $ref]
+            case "date" return $doc//tei:date[@ref = $ref]
+            default return $doc//*[@ref = $ref]
+    let $limit := 12
+    let $docUrl := $config:context-path || '/' || $file
+    let $count := count($hits)
+    return
+        <div class="gs-kwic">
+            <a class="gs-kwic-open" href="{$docUrl}" target="_blank" rel="noopener">Ouvrir le document ↗</a>
+            {
+                if ($count = 0) then
+                    <p class="gs-kwic-empty">Aucun passage localisé (mention sur un calque non affiché).</p>
+                else
+                    for $m in subsequence($hits, 1, $limit)
+                    return rview:kwic-line($m, $docUrl)
+            }
+            {
+                if ($count > $limit) then
+                    <p class="gs-kwic-more">… et {$count - $limit} autres passages</p>
+                else ()
+            }
+        </div>
+};
+
+(:~ Build one keyword-in-context line around a mention element. :)
+declare function rview:kwic-line($m as element(), $docUrl as xs:string) {
+    let $block := ($m/ancestor::*[self::tei:p or self::tei:ab or self::tei:head or self::tei:l or self::tei:item][1], $m/..)[1]
+    (: the corpus interleaves original + modernized spellings (tei:orig / tei:reg);
+       read only the mention's own layer so the snippet isn't doubled :)
+    let $excludeOrig := not(exists($m/ancestor::tei:orig))
+    let $full := normalize-space(
+        string-join(
+            $block//text()[if ($excludeOrig) then not(ancestor::tei:orig) else not(ancestor::tei:reg)],
+            ' ')
+    )
+    let $mention := normalize-space(string($m))
+    let $win := 80
+    return
+        <a class="gs-kwic-line" href="{$docUrl}" target="_blank" rel="noopener">
+        {
+            if ($mention != '' and contains($full, $mention)) then
+                let $before := substring-before($full, $mention)
+                let $after := substring-after($full, $mention)
+                let $pre := if (string-length($before) > $win) then '… ' || substring($before, string-length($before) - $win + 1) else $before
+                let $post := if (string-length($after) > $win) then substring($after, 1, $win) || ' …' else $after
+                return ($pre, <mark>{$mention}</mark>, $post)
+            else
+                if (string-length($full) > 170) then substring($full, 1, 170) || ' …' else $full
+        }
+        </a>
 };
 
 (:~ ============================================================================

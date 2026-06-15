@@ -333,6 +333,71 @@ pb-leaflet-map {
     border-color: var(--gs-gold, #9C7A3C);
 }
 
+/* ---------------------------------------------------------------------------
+   "Cité dans" — expandable KWIC passages per citing document
+   --------------------------------------------------------------------------- */
+.gs-backlinks-list { display: block; }
+.gs-backlinks-item { display: block; }
+
+.gs-kwic-toggle {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0.4rem 0.1rem;
+    font: inherit;
+}
+.gs-kwic-toggle::before {
+    content: "▸";
+    color: var(--gs-gold, #9C7A3C);
+    margin-right: 0.45rem;
+    display: inline-block;
+    transition: transform 0.15s ease;
+}
+.gs-kwic-toggle[aria-expanded="true"]::before { transform: rotate(90deg); }
+.gs-kwic-toggle:hover .gs-backlinks-doc { color: var(--gs-gold, #9C7A3C); }
+
+.gs-kwic-panel { padding: 0.2rem 0 0.7rem 1.3rem; }
+.gs-kwic { display: flex; flex-direction: column; gap: 0.4rem; }
+.gs-kwic-open {
+    align-self: flex-start;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gs-gold, #9C7A3C);
+    margin-bottom: 0.2rem;
+}
+.gs-kwic-line {
+    display: block;
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--gs-sepia, #2C2418);
+    text-decoration: none;
+    padding: 0.4rem 0.7rem;
+    border-left: 2px solid var(--gs-gold-light, rgba(156, 122, 60, 0.4));
+    background: var(--gs-cream-light, #FEFCF7);
+}
+.gs-kwic-line:hover { border-left-color: var(--gs-gold, #9C7A3C); background: #fff; }
+.gs-kwic-line mark {
+    background: var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+    color: var(--gs-blue, #1E3A6D);
+    font-weight: 600;
+    padding: 0 0.15rem;
+    border-radius: 1px;
+}
+.gs-kwic-empty, .gs-kwic-loading, .gs-kwic-more {
+    font-size: 0.85rem;
+    color: var(--gs-sepia-light, #8a7a6a);
+    font-style: italic;
+    margin: 0.2rem 0;
+}
+
 /* Sliders */
 .gs-slider-single { display: flex; align-items: center; gap: 0.6rem; }
 .gs-slider-single input[type=range] { flex: 1 1 auto; accent-color: var(--gs-blue, #1E3A6D); }

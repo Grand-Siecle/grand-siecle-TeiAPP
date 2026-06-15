@@ -2953,6 +2953,45 @@
                     }
                 }
             }
+        },
+        "/api/cited": {
+            "get": {
+                "summary": "KWIC passages where an entity is cited in a document",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:cited",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "doc",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML KWIC fragment",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "security": [
