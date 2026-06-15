@@ -41,85 +41,119 @@
     "paths": {
         "/people": {
             "get": {
-				"summary": "Landing page for people",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "people"
-						}
-					},
-					{
+                "summary": "Landing page for people",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
                     {
                         "name": "odd",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
-                    }				
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "person"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "people"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/people/{id}": {
             "get": {
-				"summary": "Landing page for people",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
+                "summary": "Landing page for people",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
                     {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the person",
-						"required": true,						
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "person"
-						}
-					},
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the person",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -127,45 +161,55 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/api/people": {
             "get": {
                 "summary": "List people",
                 "description": "Retrieve list of people in format required by pb-split-list",
-				"tags": ["registers"],
-                "operationId": "rview:people-categories",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "person"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -177,7 +221,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -195,6 +239,20 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -202,7 +260,7 @@
                         "description": "Categories and people to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -211,11 +269,13 @@
                 }
             }
         },
-		"/api/people/all": {
+        "/api/people/all": {
             "get": {
                 "summary": "List all people",
                 "description": "Retrieve list of all people",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:people-all",
                 "parameters": [
                     {
@@ -227,101 +287,45 @@
                         }
                     }
                 ],
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all people as JSON array",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}			
-		},
+                }
+            }
+        },
         "/bibliography": {
             "get": {
-				"summary": "Landing page for bibliography",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "bibliography"
-						}
-					},
-					{
-                        "name": "search",
+                "summary": "Landing page for bibliography",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
                         "in": "query",
-                        "schema":{
-                            "type": "string"
+                        "schema": {
+                            "type": "string",
+                            "default": "bibliography"
                         }
                     },
                     {
-                        "name": "odd",
+                        "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
-                    }				
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
-        },
-        "/bibliography/{id}": {
-            "get": {
-				"summary": "Landing page for bibliography entry",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["registers"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-                    {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the entry",
-						"required": true,						
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "bibliography-entry"
-						}
-					},
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -329,45 +333,107 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bibliography/{id}": {
+            "get": {
+                "summary": "Landing page for bibliography entry",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the entry",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "bibliography-entry"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/api/bibliography": {
             "get": {
                 "summary": "List bibliography",
                 "description": "Retrieve list of bibliography in format required by pb-split-list",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:bibliography-categories",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -379,7 +445,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -396,7 +462,7 @@
                         "description": "Categories and entries to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -405,46 +471,50 @@
                 }
             }
         },
-		"/api/bibliography/all": {
+        "/api/bibliography/all": {
             "get": {
                 "summary": "List all bibliography",
                 "description": "Retrieve list of all bibliography",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:bibliography-all",
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all bibliography entries as JSON array",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}			
-		},
-		"/places": {
+                }
+            }
+        },
+        "/places": {
             "get": {
-				"summary": "Landing page for places",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "places"
-						}
-					},
-					{
+                "summary": "Landing page for places",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -454,58 +524,90 @@
                         "schema": {
                             "type": "string"
                         }
-                    }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
-        },
-		"/places/{id}": {
-            "get": {
-				"summary": "HTML page for place details",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
+                    },
                     {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the person or place",
-						"required": true,						
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
                             "default": "place"
-						}
-					},
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "places"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/places/{id}": {
+            "get": {
+                "summary": "HTML page for place details",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the person or place",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -513,45 +615,55 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
-		"/api/places": {
+        "/api/places": {
             "get": {
                 "summary": "List places",
                 "description": "Retrieve list of places in format required by pb-split-list",
-				"tags": ["registers"],
-                "operationId": "rview:places",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "place"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -563,7 +675,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -581,6 +693,20 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -588,7 +714,7 @@
                         "description": "Categories and places to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -597,11 +723,13 @@
                 }
             }
         },
-		"/api/places/all": {
+        "/api/places/all": {
             "get": {
                 "summary": "List all places",
                 "description": "Retrieve list of all places",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:places-all",
                 "parameters": [
                     {
@@ -613,25 +741,27 @@
                         }
                     }
                 ],
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all places",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}			
-		},
-		"/api/static/{id}/single": {
+                }
+            }
+        },
+        "/api/static/{id}/single": {
             "get": {
                 "summary": "Retrieve index entry for the document given by id",
                 "description": "Retrieve index entry for the document given by id",
-                "tags": ["static"],
+                "tags": [
+                    "static"
+                ],
                 "operationId": "ridx:entry",
                 "parameters": [
                     {
@@ -657,7 +787,2165 @@
                         "description": "A single index entry for the document",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/organizations": {
+            "get": {
+                "summary": "Index page for organizations",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "organization"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "organizations"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/organizations/{id}": {
+            "get": {
+                "summary": "Authority file for a organization",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/organizations": {
+            "get": {
+                "summary": "List organizations",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "organization"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 80
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/works": {
+            "get": {
+                "summary": "Index page for works",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "work"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "works"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/works/{id}": {
+            "get": {
+                "summary": "Authority file for a work",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/works": {
+            "get": {
+                "summary": "List works",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "work"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 80
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/events": {
+            "get": {
+                "summary": "Index page for events",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "event"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "events"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/events/{id}": {
+            "get": {
+                "summary": "Authority file for a event",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/events": {
+            "get": {
+                "summary": "List events",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "event"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 80
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/materials": {
+            "get": {
+                "summary": "Index page for materials",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "material"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "materials"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/materials/{id}": {
+            "get": {
+                "summary": "Authority file for a material",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/materials": {
+            "get": {
+                "summary": "List materials",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "material"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 80
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/techniques": {
+            "get": {
+                "summary": "Index page for techniques",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "technique"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "techniques"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/techniques/{id}": {
+            "get": {
+                "summary": "Authority file for a technique",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/techniques": {
+            "get": {
+                "summary": "List techniques",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "technique"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 80
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/artworks": {
+            "get": {
+                "summary": "Index page for artworks",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "artwork"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "artworks"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/artworks/{id}": {
+            "get": {
+                "summary": "Authority file for a artwork",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/artworks": {
+            "get": {
+                "summary": "List artworks",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "artwork"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 80
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/dates": {
+            "get": {
+                "summary": "Index page for dates",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:index-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "register-index"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "date"
+                        }
+                    },
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "dates"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/dates/{id}": {
+            "get": {
+                "summary": "Authority file for a date",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/dates": {
+            "get": {
+                "summary": "List dates",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:categories",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "date"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 80
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facet",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/entities": {
+            "get": {
+                "summary": "Entity index hub",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:hub-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "entities"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/entities/overview": {
+            "get": {
+                "summary": "Entity hub overview cards",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:hub-overview",
+                "responses": {
+                    "200": {
+                        "description": "HTML cards",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/people/browse": {
+            "get": {
+                "summary": "Faceted browse of people",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "person"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/places/browse": {
+            "get": {
+                "summary": "Faceted browse of places",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "place"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/organizations/browse": {
+            "get": {
+                "summary": "Faceted browse of organizations",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "organization"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/works/browse": {
+            "get": {
+                "summary": "Faceted browse of works",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "work"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/events/browse": {
+            "get": {
+                "summary": "Faceted browse of events",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "event"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/materials/browse": {
+            "get": {
+                "summary": "Faceted browse of materials",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "material"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/techniques/browse": {
+            "get": {
+                "summary": "Faceted browse of techniques",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "technique"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/artworks/browse": {
+            "get": {
+                "summary": "Faceted browse of artworks",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "artwork"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/dates/browse": {
+            "get": {
+                "summary": "Faceted browse of dates",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:browse",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "date"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "conf",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "facets",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authority",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "minMentions",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "yearMin",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "yearMax",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 100
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
                                     "type": "object"
                                 }
                             }
