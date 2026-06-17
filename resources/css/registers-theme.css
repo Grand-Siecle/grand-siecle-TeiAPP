@@ -1232,26 +1232,28 @@ pb-leaflet-map {
 /* List / Carte segmented toggle (places only) */
 .gs-view-toggle {
     display: inline-flex;
-    margin-top: 0.85rem;
-    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.45));
+    margin: 1rem 0 0.25rem;
+    border: 1px solid var(--gs-gold, #9C7A3C);
     border-radius: 2px;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(44, 36, 24, 0.08);
 }
 .gs-view-btn {
     appearance: none;
     border: 0;
     cursor: pointer;
     background: var(--gs-cream-light, #FEFCF7);
-    color: var(--gs-sepia-medium, #5a4a3a);
+    color: var(--gs-sepia, #2C2418);
     font-family: "Cormorant Garamond", Garamond, serif;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.35rem 1.1rem;
+    letter-spacing: 0.08em;
+    padding: 0.62rem 1.8rem;
+    line-height: 1.2;
     transition: background 0.12s ease, color 0.12s ease;
 }
-.gs-view-btn + .gs-view-btn { border-left: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.45)); }
+.gs-view-btn + .gs-view-btn { border-left: 1px solid var(--gs-gold, #9C7A3C); }
 .gs-view-btn:hover { background: var(--gs-cream-warm, #EDE5D8); }
 .gs-view-btn.is-active {
     background: var(--gs-type-place, #3A6B4A);
@@ -1270,17 +1272,15 @@ pb-leaflet-map {
     color: var(--gs-type-place, #3A6B4A);
     font-size: 1.05rem;
     font-feature-settings: "tnum";
+    margin-right: 0.35em;
 }
 .gs-map-note {
     font-style: italic;
     color: var(--gs-sepia-light, #8a7a6a);
 }
 
-/* Map mode: the map shows ALL geolocated places (no reindex → unfiltered), so
-   hide the list-only chrome and let the map take the full width. */
-.gs-browse.gs-map-mode .gs-browse-layout { grid-template-columns: 1fr; }
-.gs-browse.gs-map-mode .gs-browse-facets,
-.gs-browse.gs-map-mode .gs-browse-toolbar,
+/* Map mode keeps the facets live (they drive the markers); only the list-only
+   confidence legend is dropped. */
 .gs-browse.gs-map-mode .gs-conf-legend { display: none; }
 .gs-map-wrap pb-leaflet-map {
     display: block;
