@@ -22,8 +22,13 @@
     function detect() {
         var file = getDocFile();
         if (!file) return;
-        // Fetch the raw TEI XML directly from the data collection
-        fetch('data/' + file)
+        // Fetch the raw TEI XML via the document API. Using an absolute,
+        // endpoint-anchored URL avoids relative-path resolution against the
+        // document-view URL (which would hit `…/data/<file>` → routed to the
+        // view handler → NOT_FOUND_404 since .xml isn't served statically).
+        var page = document.querySelector('pb-page');
+        var endpoint = (page && page.getAttribute('endpoint')) || '';
+        fetch(endpoint + '/api/document/' + encodeURIComponent(file))
             .then(function(resp) { return resp.ok ? resp.text() : null; })
             .then(function(text) {
                 if (text === null) return;
