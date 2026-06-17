@@ -8,6 +8,7 @@ import module namespace tpu="http://www.tei-c.org/tei-publisher/util" at "util.x
 import module namespace query="http://www.tei-c.org/tei-simple/query" at "query.xql";
 import module namespace vapi="http://teipublisher.com/api/view" at "lib/api/view.xql";
 import module namespace page="http://teipublisher.com/ns/templates/page" at "templates/page.xqm";
+import module namespace router="http://e-editiones.org/roaster";
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
@@ -597,6 +598,102 @@ declare function rview:entry-years($entry as element(), $type as xs:string) as x
         default return ()
 };
 
+(:~ Astronomical-free century of a (proleptic) year. Positive → CE, negative →
+ :  BCE (e.g. 1635 → 17, -50 → -1, -101 → -2). Year 0 is treated as 1st c. CE. :)
+declare function rview:century-of($year as xs:integer) as xs:integer {
+    if ($year >= 0) then ($year - 1) idiv 100 + 1
+    else -((abs($year) - 1) idiv 100 + 1)
+};
+
+declare function rview:roman($n as xs:integer) as xs:string {
+    if ($n <= 0) then ""
+    else if ($n >= 1000) then "M" || rview:roman($n - 1000)
+    else if ($n >= 900) then "CM" || rview:roman($n - 900)
+    else if ($n >= 500) then "D" || rview:roman($n - 500)
+    else if ($n >= 400) then "CD" || rview:roman($n - 400)
+    else if ($n >= 100) then "C" || rview:roman($n - 100)
+    else if ($n >= 90) then "XC" || rview:roman($n - 90)
+    else if ($n >= 50) then "L" || rview:roman($n - 50)
+    else if ($n >= 40) then "XL" || rview:roman($n - 40)
+    else if ($n >= 10) then "X" || rview:roman($n - 10)
+    else if ($n >= 9) then "IX" || rview:roman($n - 9)
+    else if ($n >= 5) then "V" || rview:roman($n - 5)
+    else if ($n >= 4) then "IV" || rview:roman($n - 4)
+    else "I" || rview:roman($n - 1)
+};
+
+(:~ Academic French century label, e.g. 17 → "XVIIe siècle", -1 → "Ier siècle av. J.-C." :)
+declare function rview:century-label($c as xs:integer) as xs:string {
+    let $abs := abs($c)
+    let $ord := rview:roman($abs) || (if ($abs = 1) then "er" else "e")
+    return $ord || " siècle" || (if ($c < 0) then " av. J.-C." else "")
+};
+
+(:~ "Siècle" facet values for a type (only person & event carry years), each
+ :  counting the entries with at least one representative year in that century. :)
+declare function rview:century-facet-values($all as element()*, $type as xs:string) as map(*)* {
+    let $pairs :=
+        for $e in $all
+        for $c in distinct-values(for $y in rview:entry-years($e, $type) return rview:century-of($y))
+        return $c
+    for $c in $pairs
+    group by $key := $c
+    order by xs:integer($key) descending
+    return map { "value": string($key), "label": rview:century-label(xs:integer($key)), "count": count($c) }
+};
+
+(:~ Title of a corpus source document from its `note[@type='sources']` token
+ :  (e.g. "LIV0001" → file "LIV0001_reconciled.tei.xml" → titleStmt/title). :)
+declare function rview:doc-title($token as xs:string) as xs:string {
+    let $doc := config:get-document($token || '_reconciled.tei.xml')
+    let $title := normalize-space(
+        ($doc//tei:fileDesc/tei:titleStmt/tei:title[@type = 'main'],
+         $doc//tei:fileDesc/tei:titleStmt/tei:title)[1])
+    return if ($title != '') then $title else $token
+};
+
+(:~ "Document source" facet values (all types), each counting the entries cited
+ :  in that corpus document. Ordered by citing-entity count, label = doc title.
+ :  The source tokens within one entry's note are already distinct (pipe-joined
+ :  by the build), so a single flat path step + group-by counts entries-per-doc
+ :  without a per-entry distinct-values (much cheaper than nested iteration). :)
+declare function rview:source-facet-values($all as element()*) as map(*)* {
+    let $pairs := $all/tei:note[@type = 'sources'] ! tokenize(., '\|')[. != '']
+    for $s in $pairs
+    group by $key := $s
+    order by count($s) descending, $key
+    return map { "value": $key, "label": rview:doc-title($key), "count": count($s) }
+};
+
+(:~ Lazy "document source" facet endpoint → the checklist fieldset HTML, injected
+ :  into the browse sidebar by registers-browse.js. Kept off the index render
+ :  because it reads every entry's sources note (≈7 s on the 7 400-person
+ :  register); served async so the page stays responsive. Same markup as the
+ :  template's generic facet checklists so the existing JS wiring applies. :)
+declare function rview:facet-source($request as map(*)) {
+    let $type := $request?parameters?type
+    let $values := rview:source-facet-values(rview:entries($type))
+    return
+        if (empty($values)) then
+            <span class="gs-facet-empty"/>
+        else
+            <fieldset class="gs-facet-group gs-facet-checklist" data-facet="source">
+                <legend>Document source</legend>
+                <input type="search" class="gs-facet-filter" placeholder="Filtrer…"/>
+                <div class="gs-facet-options">
+                {
+                    for $v in $values
+                    return
+                        <label class="gs-check">
+                            <input type="checkbox" name="source" value="{$v?value}"/>
+                            <span class="gs-check-label">{$v?label}</span>
+                            <span class="gs-count">{$v?count}</span>
+                        </label>
+                }
+                </div>
+            </fieldset>
+};
+
 (:~ Distinct values of a child element across entries, with counts (top N). :)
 declare function rview:top-facet-el($entries as element()*, $elem as xs:string, $keyAttr as xs:string, $limit as xs:integer) {
     let $groups :=
@@ -622,11 +719,19 @@ declare function rview:filter-options($type as xs:string) as map(*) {
          let $none := count($all[not(tei:note[@type = 'reconciliation-confidence'])])
          where $none > 0
          return map { "value": "none", "label": rview:conf-label("none"), "count": $none })
-    let $facets :=
+    let $facets := (
         for $d in rview:facet-defs($type)
         let $values := rview:top-facet-el($all, $d?elem, $d?keyAttr, 80)
         where exists($values)
-        return map { "name": $d?name, "label": $d?label, "values": $values }
+        return map { "name": $d?name, "label": $d?label, "values": $values },
+        (: index-free "siècle" facet — person & event carry representative years :)
+        let $cv := if ($type = ('person', 'event')) then rview:century-facet-values($all, $type) else ()
+        where exists($cv)
+        return map { "name": "century", "label": "Siècle", "values": $cv }
+        (: the "document source" facet is heavy on big registers (it reads every
+           entry's sources note), so it is NOT computed here — it is lazy-loaded
+           by registers-browse.js from rview:facet-source after the page renders. :)
+    )
     let $years := for $e in $all return rview:entry-years($e, $type)
     let $mentions := $all/@n[. castable as xs:integer] ! xs:integer(.)
     return map {
@@ -637,7 +742,10 @@ declare function rview:filter-options($type as xs:string) as map(*) {
         "has-dates": exists($years),
         "year-min": if (exists($years)) then min($years) else (),
         "year-max": if (exists($years)) then max($years) else (),
-        "max-mentions": if (exists($mentions)) then max($mentions) else 0
+        "max-mentions": if (exists($mentions)) then max($mentions) else 0,
+        (: place map coverage (Phase 4 map view) :)
+        "geo-count": if ($type = 'place') then count($all[tei:location/tei:geo[normalize-space() != '']]) else (),
+        "geo-total": if ($type = 'place') then count($all) else ()
     }
 };
 
@@ -652,11 +760,14 @@ declare function rview:parse-facets($s as xs:string?) as map(*) {
     )
 };
 
-(:~ Faceted browse endpoint: returns filtered + sorted + paginated rows as JSON.
+(:~ The filtered + sorted entry set for a type, from the request's query params.
+ :  Shared by rview:browse (paginated rows) and rview:export-csv (full set).
  :  Params: search, conf (csv), facets (compact), authority, minMentions,
- :  yearMin, yearMax, limit, offset. :)
-declare function rview:browse($request as map(*)) {
-    let $type := $request?parameters?type
+ :  yearMin, yearMax. The compact `facets` param also accepts two index-free
+ :  pseudo-facets handled here (not in facet-defs): `century` (filters on the
+ :  entry's representative year[s]) and `source` (filters on the precomputed
+ :  note[@type='sources'] document tokens). :)
+declare function rview:filtered($request as map(*), $type as xs:string) as element()* {
     let $search := normalize-space($request?parameters?search)
     let $confs := tokenize($request?parameters?conf, ',')[. != '']
     let $facetSel := rview:parse-facets($request?parameters?facets)
@@ -664,8 +775,6 @@ declare function rview:browse($request as map(*)) {
     let $minM := xs:integer((($request?parameters?minMentions)[. castable as xs:integer], 0)[1])
     let $yMin := ($request?parameters?yearMin)[. castable as xs:integer]
     let $yMax := ($request?parameters?yearMax)[. castable as xs:integer]
-    let $limit := xs:integer((($request?parameters?limit)[. castable as xs:integer], 100)[1])
-    let $offset := xs:integer((($request?parameters?offset)[. castable as xs:integer], 0)[1])
     let $defs := rview:facet-defs($type)
     let $all := rview:entries($type)
     let $r1 :=
@@ -679,15 +788,22 @@ declare function rview:browse($request as map(*)) {
         else $r1
     let $r3 :=
         fold-left(map:keys($facetSel), $r2, function($acc, $fname) {
-            let $def := $defs[?name = $fname]
+            let $vals := $facetSel($fname)
             return
-                if (empty($def)) then $acc
-                else
-                    let $vals := $facetSel($fname)
-                    let $elem := $def?elem
-                    let $ka := ($def?keyAttr, "key")[1]
-                    return $acc[some $v in *[local-name() = $elem]
-                                satisfies (string($v/@*[local-name() = $ka])[. != ''], normalize-space($v))[1] = $vals]
+                switch($fname)
+                    case "century" return
+                        $acc[some $y in rview:entry-years(., $type) satisfies string(rview:century-of($y)) = $vals]
+                    case "source" return
+                        $acc[some $s in tokenize(tei:note[@type = 'sources'], '\|')[. != ''] satisfies $s = $vals]
+                    default return
+                        let $def := $defs[?name = $fname]
+                        return
+                            if (empty($def)) then $acc
+                            else
+                                let $elem := $def?elem
+                                let $ka := ($def?keyAttr, "key")[1]
+                                return $acc[some $v in *[local-name() = $elem]
+                                            satisfies (string($v/@*[local-name() = $ka])[. != ''], normalize-space($v))[1] = $vals]
         })
     let $r4 := if ($authority) then $r3[tei:idno[@type = 'wikidata']] else $r3
     let $r5 := if ($minM > 0) then $r4[xs:integer((@n[. castable as xs:integer], 0)[1]) >= $minM] else $r4
@@ -697,14 +813,107 @@ declare function rview:browse($request as map(*)) {
         else $r5
     let $keyed := for $e in $r6 return [rview:entry-sort($e), $e]
     let $sorted := sort($keyed, "?lang=fr-FR", function($p) { $p?1 })
+    return for $p in $sorted return $p?2
+};
+
+(:~ Faceted browse endpoint: returns filtered + sorted + paginated rows as JSON.
+ :  Params: as rview:filtered, plus limit, offset. :)
+declare function rview:browse($request as map(*)) {
+    let $type := $request?parameters?type
+    let $limit := xs:integer((($request?parameters?limit)[. castable as xs:integer], 100)[1])
+    let $offset := xs:integer((($request?parameters?offset)[. castable as xs:integer], 0)[1])
+    let $sorted := rview:filtered($request, $type)
     let $total := count($sorted)
     let $page := subsequence($sorted, $offset + 1, $limit)
     return map {
         "total": $total,
         "offset": $offset,
         "shown": count($page),
-        "items": array { for $p in $page return rview:overview-row($p?2, $type) }
+        "items": array { for $e in $page return rview:overview-row($e, $type) }
     }
+};
+
+(:~ ---- Exports (no reindex) --------------------------------------------------
+ :  CSV of the current filtered result set, plus single-entry TEI (raw element,
+ :  round-trippable) and RIS (works only). All served via router:response with a
+ :  Content-Disposition download header. :)
+
+(:~ RFC-4180 CSV escaping: quote a cell if it holds a comma, quote, or newline. :)
+declare function rview:csv-cell($v as xs:string?) as xs:string {
+    let $s := string(($v[. != ''], '')[1])
+    return
+        if ($s = '' ) then ''
+        else if (contains($s, '"') or contains($s, ',') or contains($s, codepoints-to-string(10)) or contains($s, codepoints-to-string(13)))
+        then '"' || replace($s, '"', '""') || '"'
+        else $s
+};
+
+(:~ Export the filtered result set as CSV (one row per entity). Reuses the exact
+ :  filter logic of the browse view via rview:filtered. :)
+declare function rview:export-csv($request as map(*)) {
+    let $type := $request?parameters?type
+    let $entries := rview:filtered($request, $type)
+    let $nl := codepoints-to-string(10)
+    let $cols := ("id", "type", "label", "mentions", "confidence", "dates", "detail", "wikidata", "viaf", "gnd", "sources")
+    let $header := string-join($cols, ",")
+    let $rows :=
+        for $e in $entries
+        let $conf := let $c := rview:confidence($e) return if ($c = '') then 'none' else $c
+        let $n := string(($e/@n[. castable as xs:integer], 0)[1])
+        let $dates := string-join(for $y in rview:entry-years($e, $type) return string($y), " / ")
+        let $detail := string-join(rview:overview-meta($e, $type), " · ")
+        let $wd := normalize-space(($e/tei:idno[@type = 'wikidata'])[1])
+        let $viaf := normalize-space(($e/tei:idno[@type = 'viaf'])[1])
+        let $gnd := normalize-space(($e/tei:idno[@type = 'gnd'])[1])
+        let $src := string-join(tokenize($e/tei:note[@type = 'sources'], '\|')[. != ''], " ")
+        return string-join((
+            rview:csv-cell(string($e/@xml:id)), rview:csv-cell($type), rview:csv-cell(rview:entry-label($e)),
+            rview:csv-cell($n), rview:csv-cell($conf), rview:csv-cell($dates), rview:csv-cell($detail),
+            rview:csv-cell($wd), rview:csv-cell($viaf), rview:csv-cell($gnd), rview:csv-cell($src)
+        ), ",")
+    (: UTF-8 BOM so Excel reads accents correctly :)
+    let $csv := codepoints-to-string(65279) || string-join(($header, $rows), $nl)
+    return (
+        response:set-header("Content-Disposition", 'attachment; filename="' || rview:slug($type) || '-export.csv"'),
+        router:response(200, "text/csv; charset=utf-8", $csv)
+    )
+};
+
+(:~ RIS record for a work (tei:bibl). :)
+declare function rview:entry-ris($entry as element()) as xs:string {
+    let $nl := codepoints-to-string(10)
+    let $year := rview:disp-year(($entry/tei:date/@when, $entry/tei:date/@notBefore)[1])
+    return string-join((
+        "TY  - BOOK",
+        "TI  - " || rview:entry-label($entry),
+        for $a in $entry/tei:author[normalize-space() != ''] return "AU  - " || normalize-space($a),
+        if ($year != '') then "PY  - " || $year else (),
+        for $l in $entry/tei:textLang[normalize-space() != ''] return "LA  - " || normalize-space($l),
+        for $w in $entry/tei:idno[@type = 'wikidata'][normalize-space() != ''] return "UR  - https://www.wikidata.org/wiki/" || normalize-space($w),
+        for $d in $entry/tei:note[@type = 'description'][normalize-space() != ''] return "AB  - " || normalize-space($d),
+        "ER  - "
+    ), $nl) || $nl
+};
+
+(:~ Export a single entry: raw TEI element (default) or RIS (works only). :)
+declare function rview:export-entry($request as map(*)) {
+    let $id := xmldb:decode($request?parameters?id)
+    let $entry := collection($config:register-root)/id($id) => head()
+    let $format := ($request?parameters?format[. != ''], 'tei')[1]
+    return
+        if (empty($entry)) then
+            router:response(404, "text/plain; charset=utf-8", "Entrée introuvable : " || $id)
+        else if ($format = 'ris') then
+            (
+                response:set-header("Content-Disposition", 'attachment; filename="' || $id || '.ris"'),
+                router:response(200, "application/x-research-info-systems; charset=utf-8", rview:entry-ris($entry))
+            )
+        else
+            (
+                response:set-header("Content-Disposition", 'attachment; filename="' || $id || '.xml"'),
+                router:response(200, "application/xml; charset=utf-8",
+                    serialize($entry, map { "method": "xml", "indent": true() }))
+            )
 };
 
 (:~ Index page handler: renders the filter options into register-index.html. :)
@@ -902,7 +1111,75 @@ declare function rview:detail-body($entry as element()?, $type as xs:string) {
             {rview:authority-facts($entry, $type)}
             {rview:authority-links-block($entry)}
             {rview:provenance-block($entry, $conf)}
-        </div>
+            <div class="gs-export-actions">
+                <a class="gs-btn gs-btn-ghost gs-export-link" download="download"
+                   href="{$config:context-path}/api/export/entry?id={$entry/@xml:id}&amp;format=tei">
+                    <pb-i18n key="export.tei">Exporter TEI</pb-i18n>
+                </a>
+                {
+                    if ($type = 'work') then
+                        <a class="gs-btn gs-btn-ghost gs-export-link" download="download"
+                           href="{$config:context-path}/api/export/entry?id={$entry/@xml:id}&amp;format=ris">
+                            <pb-i18n key="export.ris">Exporter RIS</pb-i18n>
+                        </a>
+                    else ()
+                }
+            </div>
+        </div>,
+        (: co-occurrence ("appears with") — lazy-loaded by registers-entity.js :)
+        if ($entry/tei:note[@type = 'sources']) then
+            <section class="gs-cooccur" data-id="{string($entry/@xml:id)}">
+                <h2 class="gs-cooccur-title">Apparaît avec</h2>
+                <div class="gs-cooccur-mount"></div>
+            </section>
+        else ()
+};
+
+(:~ Co-occurrence: other entities (any type) sharing the most source documents
+ :  with this one, ranked by shared-document count. Pure XQuery over the
+ :  precomputed note[@type='sources'] — no index, lazy via /api/cooccur. :)
+declare function rview:cooccurrences($entry as element(), $limit as xs:integer) {
+    let $id := string($entry/@xml:id)
+    let $mySrc := tokenize($entry/tei:note[@type = 'sources'], '\|')[. != '']
+    return
+        if (empty($mySrc)) then ()
+        else
+            let $all := (
+                rview:entries("person"), rview:entries("place"), rview:entries("organization"),
+                rview:entries("work"), rview:entries("event"), rview:entries("artwork"),
+                rview:entries("material"), rview:entries("technique")
+            )
+            let $scored :=
+                for $e in $all
+                where string($e/@xml:id) != $id and not($e/@n = ('0', '1'))
+                let $shared := count($mySrc[. = tokenize($e/tei:note[@type = 'sources'], '\|')])
+                where $shared > 0
+                order by $shared descending, xs:integer(($e/@n[. castable as xs:integer], 0)[1]) descending
+                return map { "entry": $e, "shared": $shared }
+            return subsequence($scored, 1, $limit)
+};
+
+(:~ Lazy co-occurrence endpoint → HTML list. :)
+declare function rview:cooccur($request as map(*)) {
+    let $id := xmldb:decode($request?parameters?id)
+    let $entry := collection($config:register-root)/id($id) => head()
+    let $cooc := if (exists($entry)) then rview:cooccurrences($entry, 14) else ()
+    return
+        if (empty($cooc)) then
+            <p class="gs-cooccur-empty">Aucune co-occurrence dans le corpus.</p>
+        else
+            <ul class="gs-cooccur-list">
+            {
+                for $c in $cooc
+                let $e := $c?entry
+                let $t := rview:entry-type($e)
+                return
+                    <li class="gs-cooccur-item gs-entity-item-{$t}">
+                        <a class="gs-cooccur-link" href="{$config:context-path}/{rview:slug($t)}/{$e/@xml:id}">{rview:entry-label($e)}</a>
+                        <span class="gs-cooccur-shared" title="documents en commun">{$c?shared}</span>
+                    </li>
+            }
+            </ul>
 };
 
 declare function rview:type-label($t as xs:string) as xs:string {
