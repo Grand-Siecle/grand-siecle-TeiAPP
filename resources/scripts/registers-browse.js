@@ -129,7 +129,8 @@
             });
     }
 
-    function reload() { offset = 0; fetchData(false); }
+    var mapRefresh = null;   // set by initMap; refreshes map markers when in map mode
+    function reload() { offset = 0; fetchData(false); if (mapRefresh) mapRefresh(); }
 
     var timer;
     function debouncedReload() {
@@ -272,8 +273,9 @@
 
     // --- Places map view (only on /places). pb-leaflet-map needs the global
     //     pbEvents, defined by the deferred component bundle, so we wait for
-    //     DOMContentLoaded. Markers come from /api/places/all (geolocated only);
-    //     a marker click opens that place's authority file. The map is built
+    //     DOMContentLoaded. Markers come from /api/places/map, which applies the
+    //     SAME sidebar filters as the list, so the map follows the facets live.
+    //     A marker click opens that place's authority file. The map is built
     //     inside a hidden panel, so we force a resize when first shown to avoid
     //     Leaflet's blank-tile bug. ---
     function initMap() {
@@ -283,26 +285,37 @@
         var mapBtn = document.getElementById('gsViewMap');
         if (!mapEl || !mapWrap || typeof pbEvents === 'undefined') return;
 
-        var markersLoaded = false;
-        function loadMarkers() {
-            if (markersLoaded) return;
-            markersLoaded = true;
+        var mapMode = false;
+        var subscribed = false;
+        var shownCount = mapWrap.querySelector('.gs-map-shown');
+
+        function refreshMarkers() {
             pbEvents.ifReady(mapEl).then(function () {
-                fetch(endpoint + '/api/places/all')
+                if (!subscribed) {
+                    subscribed = true;
+                    pbEvents.subscribe('pb-leaflet-marker-click', 'map', function (ev) {
+                        var id = ev.detail && ev.detail.element && ev.detail.element.id;
+                        if (id) window.location = 'places/' + id;
+                    });
+                }
+                var p = buildParams(false);
+                p.delete('limit');
+                p.delete('offset');
+                p.set('type', type);
+                fetch(endpoint + '/api/places/map?' + p.toString())
                     .then(function (r) { return r.json(); })
-                    .then(function (json) { pbEvents.emit('pb-update-map', 'map', json); })
-                    .catch(function () { markersLoaded = false; });
-                pbEvents.subscribe('pb-leaflet-marker-click', 'map', function (ev) {
-                    var id = ev.detail && ev.detail.element && ev.detail.element.id;
-                    if (id) window.location = 'places/' + id;
-                });
+                    .then(function (json) {
+                        pbEvents.emit('pb-update-map', 'map', json);
+                        if (shownCount) shownCount.textContent = json.length;
+                    })
+                    .catch(function () {});
             });
         }
 
         function showMap(on) {
-            // map mode hides the list-specific chrome (facets/toolbar/legend) and
-            // lets the map span full width — the map shows ALL geolocated places,
-            // not the filtered set, so leaving the filters live would mislead.
+            // map mode swaps the list for the map and drops the (list-only)
+            // confidence legend; the facets stay live and drive the markers.
+            mapMode = on;
             root.classList.toggle('gs-map-mode', on);
             mapWrap.hidden = !on;
             listEl.hidden = on;
@@ -310,7 +323,7 @@
             if (mapBtn) { mapBtn.classList.toggle('is-active', on); mapBtn.setAttribute('aria-pressed', String(on)); }
             if (listBtn) { listBtn.classList.toggle('is-active', !on); listBtn.setAttribute('aria-pressed', String(!on)); }
             if (on) {
-                loadMarkers();
+                refreshMarkers();
                 // let the panel lay out, then nudge Leaflet to recompute its size
                 setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 60);
             }
@@ -318,6 +331,9 @@
 
         if (mapBtn) mapBtn.addEventListener('click', function () { showMap(true); });
         if (listBtn) listBtn.addEventListener('click', function () { showMap(false); });
+
+        // let reload() (any filter change) refresh the markers while in map mode
+        mapRefresh = function () { if (mapMode) refreshMarkers(); };
     }
 
     if (document.readyState === 'loading') {
