@@ -1203,7 +1203,7 @@ pb-leaflet-map {
     font-family: "Cormorant Garamond", Garamond, serif;
     font-size: 0.92rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--gs-gold, #9C7A3C);
     text-decoration: none;
@@ -1213,7 +1213,7 @@ pb-leaflet-map {
     white-space: nowrap;
     transition: background 0.12s ease, color 0.12s ease;
 }
-.gs-export-link::before { content: "⤓\00a0"; }
+.gs-export-link::before { content: "↓\00a0"; }
 .gs-export-link:hover,
 .gs-export-link:focus-visible {
     background: var(--gs-gold, #9C7A3C);
@@ -1234,7 +1234,7 @@ pb-leaflet-map {
     display: inline-flex;
     margin-top: 0.85rem;
     border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.45));
-    border-radius: 3px;
+    border-radius: 2px;
     overflow: hidden;
 }
 .gs-view-btn {
@@ -1255,7 +1255,7 @@ pb-leaflet-map {
 .gs-view-btn:hover { background: var(--gs-cream-warm, #EDE5D8); }
 .gs-view-btn.is-active {
     background: var(--gs-type-place, #3A6B4A);
-    color: #fff;
+    color: var(--gs-cream-light, #FEFCF7);
 }
 
 /* Places map panel */
@@ -1271,6 +1271,17 @@ pb-leaflet-map {
     font-size: 1.05rem;
     font-feature-settings: "tnum";
 }
+.gs-map-note {
+    font-style: italic;
+    color: var(--gs-sepia-light, #8a7a6a);
+}
+
+/* Map mode: the map shows ALL geolocated places (no reindex → unfiltered), so
+   hide the list-only chrome and let the map take the full width. */
+.gs-browse.gs-map-mode .gs-browse-layout { grid-template-columns: 1fr; }
+.gs-browse.gs-map-mode .gs-browse-facets,
+.gs-browse.gs-map-mode .gs-browse-toolbar,
+.gs-browse.gs-map-mode .gs-conf-legend { display: none; }
 .gs-map-wrap pb-leaflet-map {
     display: block;
     width: 100%;

@@ -172,9 +172,10 @@
                     <pb-i18n key="map.coverage-of">sur</pb-i18n>
                     <strong>[[ $filters?geo-total ]]</strong>
                     <pb-i18n key="map.coverage-places">lieux géolocalisés</pb-i18n>
+                    <span class="gs-map-note"><pb-i18n key="map.all-note">— tous les lieux géolocalisés, indépendamment des filtres</pb-i18n></span>
                 </p>
                 <pb-leaflet-map id="gsMap" subscribe="map" emit="map" zoom="5" cluster="" latitude="46.6" longitude="2.2">
-                    <pb-map-layer show="" base="" label="OpenStreetMap" url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" max-zoom="19" attribution="© OpenStreetMap"/>
+                    <pb-map-layer show="" base="" label="CARTO Positron" url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" max-zoom="19" attribution="© OpenStreetMap, © CARTO"/>
                 </pb-leaflet-map>
             </div>
             [% endif %]

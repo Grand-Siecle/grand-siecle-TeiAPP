@@ -300,6 +300,10 @@
         }
 
         function showMap(on) {
+            // map mode hides the list-specific chrome (facets/toolbar/legend) and
+            // lets the map span full width — the map shows ALL geolocated places,
+            // not the filtered set, so leaving the filters live would mislead.
+            root.classList.toggle('gs-map-mode', on);
             mapWrap.hidden = !on;
             listEl.hidden = on;
             if (moreBtn) moreBtn.style.display = on ? 'none' : (offset >= total ? 'none' : '');
