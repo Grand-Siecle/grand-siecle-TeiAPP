@@ -49,6 +49,7 @@
     },
     "map": {
         "coverage-of": "of",
-        "coverage-places": "georeferenced places"
+        "coverage-places": "georeferenced places",
+        "all-note": "— all georeferenced places, regardless of filters"
     }
 }

@@ -49,6 +49,7 @@
     },
     "map": {
         "coverage-of": "sur",
-        "coverage-places": "lieux géolocalisés"
+        "coverage-places": "lieux géolocalisés",
+        "all-note": "— tous les lieux géolocalisés, indépendamment des filtres"
     }
 }
