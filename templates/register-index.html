@@ -10,7 +10,8 @@
             "upload": { "enabled": false }
         },
         "script": {
-            "custom": [ "resources/scripts/registers-browse.js" ]
+            "custom": [ "resources/scripts/registers-browse.js" ],
+            "extra-components": [ "pb-leaflet-map" ]
         },
         "styles": [
             "resources/css/registers-theme.css"
@@ -41,6 +42,16 @@
             <span class="gs-exp-badge">exp.</span>
             <pb-i18n key="register.experimental">Registre expérimental : entités issues d'une détection automatique sur OCR brut, peu ou pas réconciliées. À utiliser avec prudence.</pb-i18n>
         </p>
+        [% endif %]
+        [% if $request?parameters?type = 'place' %]
+        <div class="gs-view-toggle" role="group" aria-label="Mode d'affichage">
+            <button type="button" id="gsViewList" class="gs-view-btn is-active" aria-pressed="true">
+                <pb-i18n key="view.list">Liste</pb-i18n>
+            </button>
+            <button type="button" id="gsViewMap" class="gs-view-btn" aria-pressed="false">
+                <pb-i18n key="view.map">Carte</pb-i18n>
+            </button>
+        </div>
         [% endif %]
     </div>
     <div class="gs-browse-layout">
@@ -134,6 +145,9 @@
                     </div>
                 </fieldset>
                 [% endfor %]
+
+                [# heavy "document source" facet — lazy-loaded into here by registers-browse.js #]
+                <div id="gsSourceFacet" class="gs-facet-lazy"></div>
             </div>
 
             <button type="button" id="gsReset" class="gs-btn gs-btn-ghost"><pb-i18n key="filter.reset">Réinitialiser</pb-i18n></button>
@@ -145,7 +159,25 @@
                 <span><span class="gs-conf gs-conf-low"><span class="gs-conf-glyph">◆</span></span> incertaine</span>
                 <span><span class="gs-conf gs-conf-none"><span class="gs-conf-glyph">○</span></span> non réconciliée</span>
             </div>
-            <div class="gs-browse-count" id="gsCount" aria-live="polite"></div>
+            <div class="gs-browse-toolbar">
+                <div class="gs-browse-count" id="gsCount" aria-live="polite"></div>
+                <a id="gsExport" class="gs-export-link" href="#" download="download" title="Télécharger les résultats filtrés au format CSV">
+                    <pb-i18n key="filter.export-csv">Exporter (CSV)</pb-i18n>
+                </a>
+            </div>
+            [% if $request?parameters?type = 'place' %]
+            <div class="gs-map-wrap" id="gsMapWrap" hidden="hidden">
+                <p class="gs-map-coverage">
+                    <strong>[[ $filters?geo-count ]]</strong>
+                    <pb-i18n key="map.coverage-of">sur</pb-i18n>
+                    <strong>[[ $filters?geo-total ]]</strong>
+                    <pb-i18n key="map.coverage-places">lieux géolocalisés</pb-i18n>
+                </p>
+                <pb-leaflet-map id="gsMap" subscribe="map" emit="map" zoom="5" cluster="" latitude="46.6" longitude="2.2">
+                    <pb-map-layer show="" base="" label="OpenStreetMap" url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" max-zoom="19" attribution="© OpenStreetMap"/>
+                </pb-leaflet-map>
+            </div>
+            [% endif %]
             <div class="gs-browse-list" id="gsList"></div>
             <button type="button" id="gsMore" class="gs-btn gs-btn-ghost" hidden="hidden"><pb-i18n key="filter.more">Afficher plus</pb-i18n></button>
         </main>

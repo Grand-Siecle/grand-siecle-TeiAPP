@@ -17,6 +17,7 @@
     var page = document.querySelector('pb-page');
     var endpoint = (page && page.getAttribute('endpoint')) || '';
 
+    var type = root.getAttribute('data-type');
     var listEl = document.getElementById('gsList');
     var countEl = document.getElementById('gsCount');
     var moreBtn = document.getElementById('gsMore');
@@ -25,6 +26,7 @@
     var mentionsEl = document.getElementById('gsMentions');
     var yMinEl = document.getElementById('gsYearMin');
     var yMaxEl = document.getElementById('gsYearMax');
+    var exportEl = document.getElementById('gsExport');
 
     var limit = 100;
     var offset = 0;
@@ -74,6 +76,17 @@
         return p;
     }
 
+    // Keep the "Export (CSV)" link pointing at the current filter set.
+    function updateExport() {
+        if (!exportEl) return;
+        var p = buildParams(false);
+        p.delete('limit');
+        p.delete('offset');
+        p.set('type', type);
+        p.set('format', 'csv');
+        exportEl.href = endpoint + '/api/export?' + p.toString();
+    }
+
     function setStagger(startIndex) {
         var kids = listEl.children;
         for (var i = startIndex; i < kids.length; i++) {
@@ -101,6 +114,7 @@
         if (loading) return;
         loading = true;
         root.classList.add('gs-loading');
+        updateExport();
         var p = buildParams(append);
         fetch(endpoint + '/api/' + slug + '/browse?' + p.toString())
             .then(function (r) { return r.json(); })
@@ -159,11 +173,13 @@
 
     // --- collapsible facet checklists: show top N, "+ N autres" to expand,
     //     no inner scrollbar; the search-within only shows up for long facets
-    //     and matches across ALL values. ---
+    //     and matches across ALL values. Defined as a function so it can also be
+    //     applied to the lazily-injected "document source" facet. ---
     var FACET_CAP = 6;
     var checklistResets = [];
-    root.querySelectorAll('.gs-facet-checklist').forEach(function (fs) {
+    function setupChecklist(fs) {
         var optionsBox = fs.querySelector('.gs-facet-options');
+        if (!optionsBox) return;
         var filterInput = fs.querySelector('.gs-facet-filter');
         var checks = Array.prototype.slice.call(optionsBox.querySelectorAll('.gs-check'));
         var expanded = false;
@@ -213,7 +229,8 @@
             if (filterInput) filterInput.value = '';
             applyView();
         });
-    });
+    }
+    root.querySelectorAll('.gs-facet-checklist').forEach(setupChecklist);
 
     document.getElementById('gsReset').addEventListener('click', function () {
         root.querySelectorAll('input[type=checkbox]').forEach(function (c) { c.checked = false; });
@@ -229,4 +246,79 @@
 
     // initial load
     fetchData(false);
+
+    // --- lazy "document source" facet: heavy server-side (reads every entry's
+    //     sources note), so it loads after the page is interactive and is then
+    //     injected + wired like the other checklists. buildParams() already
+    //     picks up any .gs-facet-checklist[data-facet] at query time, so the
+    //     injected fieldset filters with no further plumbing. ---
+    (function loadSourceFacet() {
+        var holder = document.getElementById('gsSourceFacet');
+        if (!holder) return;
+        holder.innerHTML = '<p class="gs-facet-loading">Chargement des documents sources…</p>';
+        fetch(endpoint + '/api/facet-source?type=' + encodeURIComponent(type))
+            .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+            .then(function (html) {
+                holder.innerHTML = html;
+                var fs = holder.querySelector('.gs-facet-checklist');
+                if (!fs) { holder.innerHTML = ''; return; }
+                fs.querySelectorAll('input[type=checkbox]').forEach(function (c) {
+                    c.addEventListener('change', reload);
+                });
+                setupChecklist(fs);
+            })
+            .catch(function () { holder.innerHTML = ''; });
+    })();
+
+    // --- Places map view (only on /places). pb-leaflet-map needs the global
+    //     pbEvents, defined by the deferred component bundle, so we wait for
+    //     DOMContentLoaded. Markers come from /api/places/all (geolocated only);
+    //     a marker click opens that place's authority file. The map is built
+    //     inside a hidden panel, so we force a resize when first shown to avoid
+    //     Leaflet's blank-tile bug. ---
+    function initMap() {
+        var mapEl = document.getElementById('gsMap');
+        var mapWrap = document.getElementById('gsMapWrap');
+        var listBtn = document.getElementById('gsViewList');
+        var mapBtn = document.getElementById('gsViewMap');
+        if (!mapEl || !mapWrap || typeof pbEvents === 'undefined') return;
+
+        var markersLoaded = false;
+        function loadMarkers() {
+            if (markersLoaded) return;
+            markersLoaded = true;
+            pbEvents.ifReady(mapEl).then(function () {
+                fetch(endpoint + '/api/places/all')
+                    .then(function (r) { return r.json(); })
+                    .then(function (json) { pbEvents.emit('pb-update-map', 'map', json); })
+                    .catch(function () { markersLoaded = false; });
+                pbEvents.subscribe('pb-leaflet-marker-click', 'map', function (ev) {
+                    var id = ev.detail && ev.detail.element && ev.detail.element.id;
+                    if (id) window.location = 'places/' + id;
+                });
+            });
+        }
+
+        function showMap(on) {
+            mapWrap.hidden = !on;
+            listEl.hidden = on;
+            if (moreBtn) moreBtn.style.display = on ? 'none' : (offset >= total ? 'none' : '');
+            if (mapBtn) { mapBtn.classList.toggle('is-active', on); mapBtn.setAttribute('aria-pressed', String(on)); }
+            if (listBtn) { listBtn.classList.toggle('is-active', !on); listBtn.setAttribute('aria-pressed', String(!on)); }
+            if (on) {
+                loadMarkers();
+                // let the panel lay out, then nudge Leaflet to recompute its size
+                setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 60);
+            }
+        }
+
+        if (mapBtn) mapBtn.addEventListener('click', function () { showMap(true); });
+        if (listBtn) listBtn.addEventListener('click', function () { showMap(false); });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMap);
+    } else {
+        initMap();
+    }
 })();

@@ -8,6 +8,19 @@
     var page = document.querySelector('pb-page');
     var endpoint = (page && page.getAttribute('endpoint')) || '';
 
+    // Co-occurrence ("Apparaît avec") — load on page load into the mount.
+    var cooccur = document.querySelector('.gs-cooccur[data-id]');
+    if (cooccur) {
+        var mount = cooccur.querySelector('.gs-cooccur-mount');
+        if (mount) {
+            mount.innerHTML = '<p class="gs-cooccur-loading">Calcul des co-occurrences…</p>';
+            fetch(endpoint + '/api/cooccur?id=' + encodeURIComponent(cooccur.dataset.id))
+                .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+                .then(function (html) { mount.innerHTML = html; })
+                .catch(function () { mount.innerHTML = '<p class="gs-cooccur-empty">Co-occurrences indisponibles.</p>'; });
+        }
+    }
+
     document.querySelectorAll('.gs-kwic-toggle').forEach(function (btn) {
         btn.addEventListener('click', function () {
             var panel = btn.nextElementSibling;
