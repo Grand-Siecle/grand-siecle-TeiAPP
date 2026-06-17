@@ -1299,19 +1299,36 @@ declare function rview:output-place($list, $category as xs:string, $search as xs
 
 declare function rview:places-all($request as map(*)) {
     let $places := collection($config:register-root)/id("pb-places")//tei:place
-    return 
-        array { 
+    return
+        array {
             for $place in $places[tei:location/tei:geo/text()]
                 let $geo := $place/tei:location/tei:geo
                 let $coords := tokenize($geo, ' ')
-                return 
+                return
                     map {
                         "latitude":$coords[1],
                         "longitude":$coords[2],
                         "label":($place/tei:placeName)[1]/string(),
                         "id": $place/@xml:id/string()
                     }
-            }        
+            }
+};
+
+(:~ Geolocated places matching the browse filters, as map markers. Reuses
+ :  rview:filtered so the places map follows the sidebar facets (country,
+ :  source, confidence, authority, mentions, …) — same params as /…/browse. :)
+declare function rview:places-map($request as map(*)) {
+    array {
+        for $place in rview:filtered($request, 'place')[tei:location/tei:geo[normalize-space() != '']]
+            let $coords := tokenize($place/tei:location/tei:geo, '\s+')[. != '']
+            return
+                map {
+                    "latitude": $coords[1],
+                    "longitude": $coords[2],
+                    "label": rview:entry-label($place),
+                    "id": string($place/@xml:id)
+                }
+    }
 };
 
 declare function rview:geonames-link($id) {
