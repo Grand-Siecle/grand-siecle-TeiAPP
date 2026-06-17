@@ -109,24 +109,46 @@
                 "id": "Start"
             },
             {
-                "url": "people",
-                "id": "people"
-            },
-            {
-                "url": "places",
-                "id": "places"
-            },
-            {
-                "url": "organizations",
-                "id": "organizations"
-            },
-            {
                 "url": "entities",
-                "id": "entities"
-            },
-            {
-                "url": "browse.html",
-                "id": "explore"
+                "id": "entities",
+                "subitems": [
+                    {
+                        "url": "people",
+                        "id": "people"
+                    },
+                    {
+                        "url": "places",
+                        "id": "places"
+                    },
+                    {
+                        "url": "organizations",
+                        "id": "organizations"
+                    },
+                    {
+                        "url": "works",
+                        "id": "works"
+                    },
+                    {
+                        "url": "events",
+                        "id": "events"
+                    },
+                    {
+                        "url": "artworks",
+                        "id": "artworks"
+                    },
+                    {
+                        "url": "materials",
+                        "id": "materials"
+                    },
+                    {
+                        "url": "techniques",
+                        "id": "techniques"
+                    },
+                    {
+                        "url": "dates",
+                        "id": "dates"
+                    }
+                ]
             }
         ],
         "login": true,
