@@ -1127,3 +1127,164 @@ pb-leaflet-map {
         transform: none !important;
     }
 }
+
+/* ---------------------------------------------------------------------------
+   Co-occurrence ("Apparaît avec") — entities sharing source documents
+   --------------------------------------------------------------------------- */
+.gs-cooccur {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25));
+}
+.gs-cooccur-title {
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--gs-blue, #1E3A6D);
+    margin: 0 0 0.9rem;
+}
+.gs-cooccur-title::before { content: "❦ "; color: var(--gs-gold, #9C7A3C); }
+.gs-cooccur-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.gs-cooccur-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25));
+    border-left: 3px solid var(--gs-type, var(--gs-gold, #9C7A3C));
+    border-radius: 2px;
+    padding: 0.28rem 0.6rem;
+    background: var(--gs-cream-light, #FEFCF7);
+}
+.gs-cooccur-link {
+    font-family: "EB Garamond", Garamond, serif;
+    font-size: 1rem;
+    color: var(--gs-blue, #1E3A6D);
+    text-decoration: none;
+}
+.gs-cooccur-link:hover { color: var(--gs-gold, #9C7A3C); }
+.gs-cooccur-shared {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.68rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    background: var(--gs-cream-warm, #EDE5D8);
+    border-radius: 9px;
+    padding: 0.02rem 0.4rem;
+}
+.gs-cooccur-empty, .gs-cooccur-loading {
+    font-style: italic;
+    color: var(--gs-sepia-light, #8a7a6a);
+    font-size: 0.9rem;
+}
+
+/* ===========================================================================
+   Phase 4 — exports (CSV/TEI/RIS), places map view & list/map toggle
+   =========================================================================== */
+
+/* Results header: count on the left, "Export (CSV)" on the right, shared rule */
+.gs-browse-toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gs-gold, #9C7A3C);
+}
+.gs-browse-toolbar .gs-browse-count {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Export affordance — used in the browse toolbar and on the authority page */
+.gs-export-link {
+    flex: 0 0 auto;
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gs-gold, #9C7A3C);
+    text-decoration: none;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.4));
+    border-radius: 2px;
+    padding: 0.3rem 0.7rem;
+    white-space: nowrap;
+    transition: background 0.12s ease, color 0.12s ease;
+}
+.gs-export-link::before { content: "⤓\00a0"; }
+.gs-export-link:hover,
+.gs-export-link:focus-visible {
+    background: var(--gs-gold, #9C7A3C);
+    color: var(--gs-cream-light, #FEFCF7);
+}
+
+.gs-export-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.25));
+}
+
+/* List / Carte segmented toggle (places only) */
+.gs-view-toggle {
+    display: inline-flex;
+    margin-top: 0.85rem;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.45));
+    border-radius: 3px;
+    overflow: hidden;
+}
+.gs-view-btn {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    background: var(--gs-cream-light, #FEFCF7);
+    color: var(--gs-sepia-medium, #5a4a3a);
+    font-family: "Cormorant Garamond", Garamond, serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 1.1rem;
+    transition: background 0.12s ease, color 0.12s ease;
+}
+.gs-view-btn + .gs-view-btn { border-left: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.45)); }
+.gs-view-btn:hover { background: var(--gs-cream-warm, #EDE5D8); }
+.gs-view-btn.is-active {
+    background: var(--gs-type-place, #3A6B4A);
+    color: #fff;
+}
+
+/* Places map panel */
+.gs-map-wrap { margin-bottom: 1rem; }
+.gs-map-wrap[hidden] { display: none; }
+.gs-map-coverage {
+    font-size: 0.85rem;
+    color: var(--gs-sepia-medium, #5a4a3a);
+    margin: 0 0 0.5rem;
+}
+.gs-map-coverage strong {
+    color: var(--gs-type-place, #3A6B4A);
+    font-size: 1.05rem;
+    font-feature-settings: "tnum";
+}
+.gs-map-wrap pb-leaflet-map {
+    display: block;
+    width: 100%;
+    height: 70vh;
+    min-height: 460px;
+    border: 1px solid var(--gs-gold-light, rgba(156, 122, 60, 0.3));
+    border-radius: 2px;
+}
+.gs-browse-list[hidden] { display: none; }
+
+/* lazy "document source" facet placeholder */
+.gs-facet-loading {
+    font-style: italic;
+    color: var(--gs-sepia-light, #8a7a6a);
+    font-size: 0.82rem;
+    margin: 0.4rem 0 0;
+}
