@@ -66,6 +66,9 @@ nav.toolbar ul:first-of-type {
 
 .menubar details.dropdown summary::after {
     height: 1rem;
+    /* Pico's chevron SVG ships with a dark stroke → invisible on the coloured
+       (blue/green) menubar. Force it light so the "expandable" arrow reads. */
+    filter: brightness(0) invert(1);
 }
 
 .menubar details {
@@ -100,6 +103,19 @@ nav.toolbar ul:first-of-type {
 
 .menubar .dropdown summary, .menubar .dropdown summary::after {
     color: var(--jinks-menubar-color);
+}
+
+/* Hybrid menubar dropdown: the summary holds a real link (navigates to the
+   index hub) while the caret opens the register list. The link must read like
+   the other top-level menubar links, not the dropdown-item colour. */
+.menubar details.gs-nav-dropdown > summary { cursor: pointer; }
+.menubar details.gs-nav-dropdown > summary .gs-nav-link:link,
+.menubar details.gs-nav-dropdown > summary .gs-nav-link:visited {
+    color: var(--jinks-menubar-color);
+    text-decoration: none;
+}
+.menubar details.gs-nav-dropdown > summary .gs-nav-link:hover {
+    text-decoration: underline;
 }
 
 .mobile.menubar {

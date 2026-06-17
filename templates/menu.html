@@ -4,7 +4,25 @@
             <a href="[[ head(($context?defaults?site-root, $context-path)) ]]"/>
         </li>
         [% for $item in $menu?items?* %]
-        [% if $item?url or $item?url = ''%]
+        [% if $item?url and exists($item?subitems) %]
+        [# clickable label (navigates) + dropdown for quick navigation #]
+        [% let $url = if (starts-with($item?url, 'http')) then $item?url else $context-path || '/' || $item?url %]
+        <li class="hidden-mobile">
+            <details class="dropdown gs-nav-dropdown">
+                <summary>
+                    <a class="gs-nav-link" href="[[ replace($url, 'browse\.html', $context?defaults?browse) ]]" onclick="event.stopPropagation()"><pb-i18n key="menu.[[ $item?id ]]">[[ $item?id ]]</pb-i18n></a>
+                </summary>
+                <ul>
+                    [% for $subitem in $item?subitems?* %]
+                    <li>
+                        <a href="[[ $context-path ]]/[[ replace($subitem?url, 'browse\.html', $context?defaults?browse) ]]"><pb-i18n key="menu.[[ $subitem?id ]]">[[ $subitem?id ]]</pb-i18n></a>
+                    </li>
+                    [% endfor %]
+                </ul>
+            </details>
+        </li>
+        [% endlet %]
+        [% elif $item?url or $item?url = ''%]
         [% let $url = if (starts-with($item?url, 'http')) then $item?url else $context-path || '/' || $item?url %]
         <li class="hidden-mobile">
             <a href="[[ replace($url, 'browse\.html', $context?defaults?browse) ]]">
