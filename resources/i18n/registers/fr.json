@@ -36,6 +36,19 @@
         "reset": "Réinitialiser",
         "more": "Afficher plus",
         "more-params": "Afficher plus de paramètres",
-        "bce-hint": "Négatif = avant J.-C. (ex. −384)"
+        "bce-hint": "Négatif = avant J.-C. (ex. −384)",
+        "export-csv": "Exporter (CSV)"
+    },
+    "export": {
+        "tei": "Exporter TEI",
+        "ris": "Exporter RIS"
+    },
+    "view": {
+        "list": "Liste",
+        "map": "Carte"
+    },
+    "map": {
+        "coverage-of": "sur",
+        "coverage-places": "lieux géolocalisés"
     }
 }

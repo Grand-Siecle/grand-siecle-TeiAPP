@@ -33,6 +33,19 @@
         "reset": "Zurücksetzen",
         "more": "Mehr anzeigen",
         "more-params": "Mehr Parameter anzeigen",
-        "bce-hint": "Negativ = v. Chr. (z. B. −384)"
+        "bce-hint": "Negativ = v. Chr. (z. B. −384)",
+        "export-csv": "Export (CSV)"
+    },
+    "export": {
+        "tei": "TEI exportieren",
+        "ris": "RIS exportieren"
+    },
+    "view": {
+        "list": "Liste",
+        "map": "Karte"
+    },
+    "map": {
+        "coverage-of": "von",
+        "coverage-places": "georeferenzierten Orten"
     }
 }

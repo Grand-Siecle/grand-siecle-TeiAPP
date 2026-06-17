@@ -36,6 +36,19 @@
         "reset": "Reset",
         "more": "Show more",
         "more-params": "Show more parameters",
-        "bce-hint": "Negative = BCE (e.g. −384)"
+        "bce-hint": "Negative = BCE (e.g. −384)",
+        "export-csv": "Export (CSV)"
+    },
+    "export": {
+        "tei": "Export TEI",
+        "ris": "Export RIS"
+    },
+    "view": {
+        "list": "List",
+        "map": "Map"
+    },
+    "map": {
+        "coverage-of": "of",
+        "coverage-places": "georeferenced places"
     }
 }
